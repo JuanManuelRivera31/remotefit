@@ -1,0 +1,4 @@
+{
+  "$comment": "Empresas a seguir. Cada entrada: name, ats (greenhouse | lever | ashby), boardToken (el identificador del tablero en la URL publica de empleos), active (true/false), notes. Se completa en la sesion S4 y se verifica a mano.",
+  "companies": []
+}

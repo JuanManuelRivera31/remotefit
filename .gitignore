@@ -1,0 +1,23 @@
+# Dependencias y builds
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Secretos y datos personales
+.env
+.env.local
+data/profile.json
+
+# Claude Code: archivos personales y worktrees
+.claude/settings.local.json
+.claude/worktrees/
+CLAUDE.local.md
+
+# Reportes de evaluación con datos de ofertas (opcional versionarlos)
+packages/core/evals/reports/
+
+# Sistema
+.DS_Store
+Thumbs.db
