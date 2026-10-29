@@ -1,0 +1,13 @@
+{
+  "$comment": "Copia este archivo como data/profile.json (no se sube a git y Claude no puede leerlo). Se usa en la sesion S8.",
+  "cvText": "Pega aqui tu CV en texto plano, en ingles.",
+  "skills": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "MongoDB", "Java"],
+  "seniority": "junior",
+  "preferences": {
+    "roles": ["full-stack", "frontend", "backend", "junior AI/LLM engineer"],
+    "hiringModels": ["contractor", "eor", "employee"],
+    "minSalaryUsdMonthly": null,
+    "timezone": "America/Bogota",
+    "englishLevel": "B2"
+  }
+}
