@@ -53,7 +53,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
 
 - [ ] **S7 · Conjunto de evaluación** 🔴 👤
   Depende de S3–S4 y S6b. Primer hito: **150 casos** en `packages/core/evals/eligibility/`, sembrados desde `data/seed-career-ops/`: los 15 reportes, los 5 `jds`, la tabla de casos difíciles de `docs/07-aprendizajes-career-ops.md` (sección 3) y ofertas de `scan-history.tsv`.
-  - Ese archivo no trae el cuerpo de las ofertas: se descarga con los conectores. Las que ya cerraron quedan fuera, así que conviene hacerlo pronto.
+  - Ese archivo no trae el cuerpo de las ofertas. 397 de las 411 de Greenhouse, Lever y Ashby ya están rescatadas en `data/seed-career-ops/bodies/`, con `raw` sin normalizar; `rescue-report.tsv` da el estado de cada URL.
   - De los reportes se toma **solo** el texto verbatim de la oferta, nunca tu evaluación personal: lo que va al LLM es capa gratuita.
   - El texto de las ofertas queda fuera de git (ADR 0002); en git van los identificadores y las etiquetas.
   - 👤 **La etiqueta correcta la decides tú.** Claude prepara el formato y una herramienta para facilitar el etiquetado.
