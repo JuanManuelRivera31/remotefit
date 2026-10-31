@@ -58,6 +58,8 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   - El texto de las ofertas queda fuera de git (ADR 0002); en git van los identificadores y las etiquetas.
   - 👤 **La etiqueta correcta la decides tú.** Claude prepara el formato y una herramienta para facilitar el etiquetado.
   - Reparto inicial de 50 en desarrollo y 100 en prueba. El conjunto de prueba se congela al tener ≥ 60 aplicables para Colombia; hasta entonces los informes salen como "provisionales" y se le suman ofertas de la ingesta.
+  - **Estado (2026-10-31, decisión D2):** el conjunto inicial quedó en **160 casos** (50 en desarrollo, 110 en prueba; ninguna empresa con más de 10 candidatos) en `packages/core/evals/eligibility/cases.json`, con etiquetas `pending` hasta que 👤 las confirme. Con las sugerencias heurísticas hay ~54 posibles aplicables en prueba, por debajo de los 60 del ADR 0004. No se amplía el directorio ni se sube el límite por empresa.
+  - [ ] **Tarea explícita, tras S4 (ingesta diaria):** agregar candidatos nuevos de la ingesta **solo al split de prueba** (nunca a desarrollo; las vacantes hermanas van juntas), hasta tener ≥ 60 aplicables para Colombia **según las etiquetas confirmadas de 👤**; entonces **congelar** el conjunto de prueba (ADR 0004). Mientras no esté congelado, todo informe se marca **"provisional"**.
 
   Runner `npm run eval -- --split dev|test`: precisión y recall de aplicables, matriz de confusión, ejemplos fallidos solo de desarrollo, tokens y costo equivalente por oferta. Incluye la línea base de solo reglas contra reglas + LLM. Usa la skill `/eval-clasificador` para iterar.
   *Meta:* precisión ≥ 95 % y recall ≥ 80 % (ADR 0004).

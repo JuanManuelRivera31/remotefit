@@ -2,6 +2,15 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-10-31 · S2 casi lista, falta correr contra la base (rama `feat/s2-database`, sin unir a main)
+- Hecho: Drizzle ORM + `pg` en `apps/api`; esquema de las 6 tablas de `docs/03` en `apps/api/src/db/schema.ts` con sus índices únicos y la clave compuesta de `llm_usage_daily`; migración `0000_init.sql` generada; `createDb` con `DATABASE_URL`; `npm run db:generate` y `npm run db:migrate` (el migrador es propio y carga `.env` con `process.loadEnvFile`); prueba de humo que se salta si no hay `DATABASE_URL`. Lint y typecheck pasan.
+- Pendiente / problemas: **la migración no se ha aplicado ni probado contra PostgreSQL**. Docker Desktop está apagado (puerto 5432 rechaza la conexión) y el sistema me negó arrancarlo, así que la prueba de humo falla (2 pruebas) y no uní la rama a main. Para cerrar S2: `docker compose up -d db`, luego `npm run db:migrate` y `npm test`.
+- Siguiente paso: levantar la base, correr esos dos comandos y, si pasan, marcar S2 y unir a main.
+
+## 2026-10-31 · Decisión D2: el conjunto queda en 160 casos (S7 sigue abierta)
+- Decisión: sin ronda del `ats-researcher` y sin subir el límite por empresa. El conjunto queda en 160 casos y los informes salen "provisionales" mientras la prueba tenga menos de 60 aplicables según tus etiquetas. Cuando S4 tenga ingesta diaria se agregan candidatos nuevos solo al split de prueba hasta llegar a 60, y se congela. La tarea quedó explícita en `docs/04-backlog.md`, dentro de S7.
+- Siguiente paso: S2 mientras etiquetas.
+
 ## 2026-10-31 · Más candidatos en prueba (S7 sigue abierta)
 - Hecho: `scripts/build-eval-set.mjs` agrega 10 candidatos estrictos solo al split de prueba (desarrollo no cambia: 50). El conjunto queda en 160 casos (50 dev + 110 prueba, 90 candidatos). Ninguna empresa pasa de 10 candidatos, y las vacantes hermanas solo entran si todas sus hermanas ya están en prueba.
 - Métricas: con las sugerencias heurísticas, la prueba tiene **54 posibles aplicables** (antes 44), no los 75 pedidos. El techo se alcanzó: con las 13 empresas actuales y el límite de 10, ya no quedan candidatos estrictos sin usar.
