@@ -23,4 +23,4 @@ Los nombres exactos de los campos deben confirmarse con respuestas reales. En S3
 ## Consecuencias
 - Datos legales y estables, sin navegador automatizado.
 - Cobertura limitada a empresas que usan estos ATS (muchas startups de EE. UU. lo hacen). Workable y Recruitee también tienen endpoints públicos y pueden añadirse con la skill `/nueva-fuente-ats`.
-- Respetar límites: pausa entre peticiones, `User-Agent` identificable, no redistribuir las ofertas públicamente.
+- Respetar límites: pausa entre peticiones, `User-Agent` identificable, no redistribuir públicamente el texto de las ofertas. Publicar título, empresa, etiqueta y enlace al original se permite solo tras revisar los términos de cada ATS (ADR 0005).

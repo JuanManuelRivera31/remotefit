@@ -15,10 +15,11 @@ flowchart LR
     subgraph Core["packages/core"]
         CON[Conectores ATS] --> NOR[Normalización]
         NOR --> RUL[Prefiltro por reglas]
-        RUL -->|sin decisión clara| CLS[Clasificador LLM]
-        CLS --> FIT[Puntaje de encaje]
-        LLM[(Proveedor LLM<br/>interfaz)] --- CLS
-        LLM --- FIT
+        RUL -->|sin decisión clara| QUE[Cola con control de ritmo]
+        QUE --> CLS[Clasificador LLM]
+        CLS --> APP[isApplicable por país]
+        APP --> FIT[Encaje por reglas]
+        LLM[(LLMProvider<br/>capa gratuita de Gemini)] --- CLS
     end
 
     GH & LV & AS --> CON
@@ -36,7 +37,7 @@ remotefit/
 ├── apps/
 │   ├── api/                 # Express + TypeScript: API REST y comandos (ingest)
 │   │   └── src/
-│   │       ├── routes/      # jobs, profile, applications
+│   │       ├── routes/      # jobs, profile
 │   │       ├── db/          # esquema Drizzle, migraciones, conexión
 │   │       └── cli/         # ingest.ts, classify.ts
 │   └── web/                 # React + Vite + TypeScript + Tailwind
@@ -50,13 +51,16 @@ remotefit/
 │       │   ├── ats/         # greenhouse.ts, lever.ts, ashby.ts, types.ts
 │       │   ├── normalize/   # NormalizedJob, limpieza de HTML, hash
 │       │   ├── rules/       # prefiltro por expresiones regulares
-│       │   ├── llm/         # interfaz LLMProvider + implementación Anthropic
-│       │   ├── eligibility/ # esquema Zod, prompt versionado, clasificador
-│       │   └── fit/         # esquema Zod, prompt, puntaje
-│       ├── fixtures/        # respuestas reales de cada ATS guardadas para pruebas
+│       │   ├── llm/         # interfaz LLMProvider, proveedor Gemini, pricing.ts
+│       │   ├── queue/       # control de ritmo y reintentos, sin I/O propio
+│       │   ├── eligibility/ # esquema Zod, prompt versionado, clasificador, isApplicable
+│       │   └── fit/         # encaje por reglas deterministas
+│       ├── fixtures/        # respuestas reales de cada ATS y ubicaciones reales para pruebas
 │       └── evals/           # conjunto etiquetado + runner
 ├── data/
-│   └── companies.json       # empresas a seguir (ATS + identificador del tablero)
+│   ├── companies.json       # empresas a seguir (ATS + identificador del tablero)
+│   ├── llm-limits.json      # RPM, TPM y RPD por modelo (desde S6b)
+│   └── seed-career-ops/     # datos reales de la prueba, fuera de git
 ├── docs/                    # visión, arquitectura, decisiones, backlog, guías
 └── .claude/                 # configuración de Claude Code (agentes, skills, hooks, reglas)
 ```
@@ -72,54 +76,112 @@ remotefit/
 | Base de datos | PostgreSQL + Drizzle ORM | Lo conoces; Drizzle es tipado y genera migraciones; pgvector queda disponible para v0.2 |
 | Frontend | React + Vite + Tailwind + TanStack Query | Lo conoces; Vite es rápido; TanStack Query maneja caché y estados de carga |
 | Pruebas | Vitest | Rápido, compatible con TypeScript sin configuración extra |
-| LLM | Interfaz `LLMProvider`; implementación inicial con la API de Anthropic (modelo pequeño para clasificar) | Permite cambiar de proveedor o usar uno gratuito/local sin tocar el resto |
+| LLM | Interfaz `LLMProvider`; solo capa gratuita de la API de Gemini, sin facturación vinculada (ADR 0005) | Gasto de USD 0; cambiar de modelo no toca el resto del código |
 | Calidad | ESLint + Prettier (hook automático de Claude Code) | Formato consistente sin pensar en ello |
 
 Las decisiones importantes están justificadas en `docs/adr/`.
 
 ## 4. Flujo de datos
 
-1. **Ingesta** (`npm run ingest`): por cada empresa de `data/companies.json`, el conector de su ATS descarga las ofertas, las convierte en `NormalizedJob` y calcula `content_hash` (título + ubicación + descripción). Se hace *upsert* por `(source, external_id)`. Las ofertas que ya no aparecen se marcan `is_active = false`.
-2. **Prefiltro por reglas**: busca frases con decisión clara. Si encuentra "US only" sin contradicción, guarda `not_eligible` con `decided_by = 'rules'` y no llama al LLM.
-3. **Clasificación LLM**: solo para ofertas nuevas o cambiadas cuyo `(content_hash, prompt_version)` no tenga resultado. Respuesta en JSON validada con Zod; si falla la validación, un reintento; si vuelve a fallar, `unclear`.
-4. **Encaje**: solo para `eligible` y `likely_eligible`, contra la versión actual del perfil.
-5. **API y web**: la web pide `/api/jobs?status=eligible&minScore=60`, muestra la lista y el detalle con la evidencia, y permite cambiar el estado de la aplicación.
+1. **Ingesta** (`npm run ingest`): por cada empresa de `data/companies.json`, el conector de su ATS descarga las ofertas, las convierte en `NormalizedJob` y calcula `content_hash` (título + ubicación + descripción). Se hace *upsert* por `(source, external_id)`. Las ofertas que ya no aparecen se marcan `is_active = false`. Se asignan `requisition_id`, cuando el ATS lo expone, y `sibling_group`.
+2. **Prefiltro por reglas**: busca frases con decisión clara. Si encuentra "US only" sin contradicción, guarda `us_only` con `decided_by = 'rules'` y no llama al LLM. Las reglas solo descartan: nunca marcan una oferta como aplicable. Si la ubicación y el cuerpo se contradicen, la oferta pasa al LLM.
+3. **Clasificación LLM**: las ofertas activas sin resultado para `(content_hash, prompt_version, model)` entran a la cola. Respuesta en JSON validada con Zod; si falla la validación, un reintento; si vuelve a fallar, `unclear`. Los errores de cuota o de red no generan resultado: la oferta sigue pendiente.
+4. **Aplicabilidad**: `isApplicable(result, userCountry)` se calcula en código, sin LLM y sin guardarse (ADR 0004).
+5. **Encaje** (`npm run score`): solo para ofertas aplicables y accesibles para el nivel del perfil. Usa reglas deterministas, sin LLM: el perfil nunca sale del sistema.
+6. **API y web**: la web pide `/api/jobs?country=CO&seniority=junior&maxAgeDays=180&minScore=60`, muestra la lista y el detalle con la evidencia. Las vacantes hermanas se muestran como una sola, con su lista de países.
 
-## 5. Contrato de la salida del clasificador
+## 5. Contrato del clasificador
+
+La taxonomía, los atributos y las reglas de interpretación están en el ADR 0004.
 
 ```ts
 // packages/core/src/eligibility/schema.ts (borrador)
+const CountryCode = z.string().regex(/^[A-Z]{2}$/); // ISO 3166-1 alpha-2
+
 export const EligibilitySchema = z.object({
-  status: z.enum(["eligible", "likely_eligible", "unclear", "not_eligible"]),
-  allowedRegions: z.array(z.string()),          // "worldwide", "latam", "americas", "us_only", "colombia", ...
+  label: z.enum([
+    "latam_eligible",
+    "worldwide",
+    "us_only",
+    "country_specific",
+    "onsite_or_hybrid",
+    "unclear",
+  ]),
+  countries: z.array(CountryCode),
+  excludedCountries: z.array(CountryCode),
+  workModel: z.enum(["remote", "hybrid", "onsite", "unknown"]),
+  workModelConflict: z.boolean(),
+  seniority: z.enum(["intern", "junior", "mid", "senior", "lead_or_above", "unknown"]),
+  minYearsExperience: z.number().int().min(0).nullable(),
   hiringModel: z.enum(["employee", "contractor", "eor", "unknown"]),
+  timezoneRequirement: z.string().max(60).nullable(),
   requiresUsWorkAuthorization: z.boolean().nullable(),
-  timezoneRequirement: z.string().nullable(),   // p. ej. "EST overlap 4h"
-  salary: z.object({
-    min: z.number().nullable(),
-    max: z.number().nullable(),
-    currency: z.string().nullable(),
-    period: z.enum(["hour", "month", "year"]).nullable(),
-  }).nullable(),
-  evidence: z.array(z.string()).min(1),          // citas textuales de la oferta
-  reasoning: z.string(),                         // explicación breve
-  confidence: z.number().min(0).max(1),
+  postingLanguage: z.enum(["en", "es", "pt", "other"]),
+  evidence: z.array(z.string().min(1).max(160)).min(1).max(2), // citas textuales de la oferta
 });
+export type Eligibility = z.infer<typeof EligibilitySchema>;
 ```
 
-Reglas de interpretación que el prompt debe aplicar:
-- "Remote (US)", "US-based", "must reside in the US", "W-2" → `not_eligible`.
-- "Remote — Americas", "LATAM", "worldwide", "anywhere", "contractor" sin restricción de país → `eligible` o `likely_eligible`.
-- Sin ninguna señal → `unclear` (nunca inventar).
+- **Salida corta:** meta de menos de 300 tokens. `maxTokens` se fija algo por encima de la meta, porque un JSON cortado falla la validación y gasta un reintento.
+- **Reglas:** cuando decide el prefiltro, el resultado usa el mismo esquema, con la frase encontrada como evidencia y los atributos que no extrae en `unknown` o `null`.
 
-## 6. Costos del LLM
+### Proveedores intercambiables
 
-- La API del LLM **se paga aparte** del plan Pro de Claude. Crea una clave en la consola del proveedor y configura un **límite de gasto mensual** bajo.
-- Cada llamada guarda `tokens_in`, `tokens_out` y `cost_usd` para ver el gasto real en el panel y en `npm run eval`.
-- Tres frenos de costo: prefiltro por reglas, caché por hash y procesar solo ofertas nuevas.
+Todo acceso al LLM pasa por esta interfaz. El SDK del proveedor solo se importa dentro de `src/llm/`. En el MVP las implementaciones son `GeminiProvider` y `FakeLLMProvider`, este último para pruebas; agregar otro proveedor no toca el clasificador, pero uno de pago requiere un nuevo ADR.
 
-## 7. Seguridad y configuración
+```ts
+// packages/core/src/llm/types.ts (borrador)
+export interface LLMUsage {
+  inputTokens: number;
+  outputTokens: number;
+  equivalentCostUsd: number; // price if it were paid; real spend is USD 0
+}
+
+export interface LLMProvider {
+  readonly name: string; // "gemini", "fake"
+  generateStructured<T>(args: {
+    model: string;
+    system: string;
+    user: string;
+    schema: z.ZodType<T>;
+    schemaName: string;
+    maxTokens?: number;
+  }): Promise<{ data: T; usage: LLMUsage; model: string }>;
+}
+
+export class RateLimitError extends Error {
+  constructor(readonly retryAfterMs?: number) {
+    super("rate limited");
+  }
+}
+
+export class QuotaExhaustedError extends Error {}
+```
+
+La cola solo conoce estos dos errores: el proveedor traduce sus respuestas 429 a `RateLimitError` (límite por minuto, se reintenta) o `QuotaExhaustedError` (cuota diaria, se pausa).
+
+### Clave de caché
+
+Cada resultado se identifica por **`content_hash` + `prompt_version` + `model`**. Una oferta se clasifica una sola vez y el resultado se comparte entre todos los usuarios y entre ofertas con contenido idéntico. Cambiar el texto, el prompt o el modelo genera una clave nueva y, por tanto, una reclasificación.
+
+## 6. Costos y cuotas
+
+- **Gasto en dinero: USD 0.** Solo se usa la capa gratuita de la API de Gemini, sin cuenta de facturación vinculada (ADR 0005). Pasar a un modelo de pago requiere un nuevo ADR.
+- **Frenos de uso:** prefiltro por reglas, caché por clave completa, procesar solo ofertas nuevas o cambiadas, salida corta.
+- **Costo equivalente:** cada llamada guarda `tokens_in`, `tokens_out` y `equivalent_cost_usd`, calculado con `llm/pricing.ts`, para saber cuánto costaría pasar a pago.
+- **Límites en configuración:** RPM, TPM y RPD varían por modelo y cambian con el tiempo. Se leen en Google AI Studio y se guardan en `data/llm-limits.json`, no en el código.
+
+### Cola con control de ritmo
+
+- Respeta RPM, TPM y RPD. El uso diario se lee de `llm_usage_daily`, para que el conteo sobreviva entre ejecuciones del CLI.
+- Ante `RateLimitError` reintenta con espera exponencial y un máximo de intentos. Los reintentos por validación también consumen cuota y se cuentan.
+- Orden: ofertas nuevas primero, luego las que cambiaron.
+- Ante `QuotaExhaustedError`, o al llegar al RPD configurado, **pausa la clasificación nueva**: el comando termina informando cuántas ofertas quedan pendientes, y la siguiente ejecución las retoma. Lo ya clasificado se sigue sirviendo. En el MVP no hay un proceso permanente; lo pendiente son las ofertas activas sin resultado.
+- Avisa en consola al superar el 80 % del RPD. Nunca falla en silencio.
+
+## 7. Seguridad, privacidad y configuración
 
 - Variables en `.env` (nunca en git). Ver `.env.example`.
-- La clave del LLM se llama `RF_LLM_API_KEY` y se pasa explícitamente al SDK. **No uses `ANTHROPIC_API_KEY` como variable global de Windows**: si existe, Claude Code la usa y te cobra por API en lugar de usar tu plan Pro.
+- La clave del LLM es la de Google AI Studio, se llama `RF_LLM_API_KEY` y se pasa explícitamente al SDK. **No uses `ANTHROPIC_API_KEY` como variable global de Windows**: si existe, Claude Code la usa y te cobra por API en lugar de usar tu plan Pro.
+- A la capa gratuita solo se envía **texto público de ofertas**, porque Google puede usarlo para mejorar sus productos. Nunca se envían datos personales de usuarios: perfil, CV o correo. Tampoco las evaluaciones personales de `data/seed-career-ops/reports/`.
 - Claude Code tiene prohibido leer `.env` (ver `.claude/settings.json`).

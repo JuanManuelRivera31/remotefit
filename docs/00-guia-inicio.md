@@ -67,7 +67,7 @@ Elige una:
 - **Sin instalar nada (recomendado para empezar):** crea una base PostgreSQL gratuita en la nube (Neon o Supabase) y copia su cadena de conexión.
 - **Local con Docker:** instala Docker Desktop y ejecuta `docker compose up -d` en la carpeta del proyecto.
 
-Luego: copia `.env.example` como `.env` y pega tu `DATABASE_URL`. La clave del LLM la necesitarás hasta la sesión S6; cuando llegues, créala en la consola de Anthropic (https://console.anthropic.com), pon un **límite de gasto mensual** bajo y pégala en `RF_LLM_API_KEY`.
+Luego: copia `.env.example` como `.env` y pega tu `DATABASE_URL`. La clave del LLM la necesitarás hasta la sesión S6; cuando llegues, créala en Google AI Studio (https://aistudio.google.com) en un proyecto **sin cuenta de facturación vinculada** y pégala en `RF_LLM_API_KEY`. Sin facturación no hay cobros posibles (ADR 0005).
 
 ## Paso 5 · Tu primera sesión
 
