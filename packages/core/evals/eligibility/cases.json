@@ -4,28 +4,28 @@
   "seed": 7,
   "note": "Ids and provenance only; posting text lives in data/seed-career-ops/bodies/ (ignored by git, ADR 0002). Every label is pending until the project owner confirms it (ADR 0004). proposedLabel is a heuristic suggestion, not a decision.",
   "composition": {
-    "total": 150,
+    "total": 160,
     "bySplit": {
       "dev": 50,
-      "test": 100
+      "test": 110
     },
     "byGroup": {
-      "candidate": 80,
+      "candidate": 90,
       "hard_negative": 50,
       "career_ops_discard": 20
     },
     "bySubtype": {
-      "candidate/strict_location": 74,
+      "candidate/strict_location": 79,
       "hard_negative/false_match": 10,
       "career_ops_discard/skipped_location": 20,
       "hard_negative/hybrid": 8,
       "hard_negative/us_only": 12,
       "hard_negative/country_specific": 12,
       "hard_negative/worldwide_doubtful": 8,
-      "candidate/worldwide_location": 6
+      "candidate/worldwide_location": 11
     },
     "byBoard": {
-      "addi": 10,
+      "addi": 11,
       "canals": 7,
       "claylabs": 1,
       "elevenlabs": 9,
@@ -33,15 +33,15 @@
       "workos": 1,
       "amplemarket": 6,
       "anthropic": 1,
-      "clara": 19,
+      "clara": 20,
       "sezzle": 17,
       "sumup": 3,
       "turing": 7,
       "vercel": 1,
       "wizeline": 1,
       "caseware": 7,
-      "ciandt": 11,
-      "deuna": 8,
+      "ciandt": 13,
+      "deuna": 9,
       "oowlish": 10,
       "pigment": 1,
       "decagon": 1,
@@ -54,7 +54,7 @@
       "runpod": 1,
       "sierra": 1,
       "wayve": 1,
-      "canonical": 11,
+      "canonical": 16,
       "celonis": 1,
       "gleanwork": 1,
       "planetscale": 2,
@@ -1088,6 +1088,23 @@
       "labelStatus": "pending"
     },
     {
+      "id": "ashby:addi:b3b0f097-8961-4001-b8ba-0baacda32bb7",
+      "ats": "ashby",
+      "board": "addi",
+      "externalId": "b3b0f097-8961-4001-b8ba-0baacda32bb7",
+      "url": "https://jobs.ashbyhq.com/addi/b3b0f097-8961-4001-b8ba-0baacda32bb7",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "strict_location",
+      "siblingKey": "addi|lead business analyst",
+      "selectionReason": "matched \"LatAm\"",
+      "proposedLabel": "latam_eligible",
+      "proposedCountries": [],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
       "id": "ashby:addi:ba1672b9-622a-4ec9-8685-15b0eadd332d",
       "ats": "ashby",
       "board": "addi",
@@ -1600,6 +1617,23 @@
       "labelStatus": "pending"
     },
     {
+      "id": "greenhouse:canonical:3159992",
+      "ats": "greenhouse",
+      "board": "canonical",
+      "externalId": "3159992",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/3159992",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "worldwide_location",
+      "siblingKey": "canonical|software engineer",
+      "selectionReason": "matched \"Worldwide\"",
+      "proposedLabel": "worldwide",
+      "proposedCountries": [],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
       "id": "greenhouse:canonical:3275433",
       "ats": "greenhouse",
       "board": "canonical",
@@ -1634,6 +1668,40 @@
       "labelStatus": "pending"
     },
     {
+      "id": "greenhouse:canonical:3752633",
+      "ats": "greenhouse",
+      "board": "canonical",
+      "externalId": "3752633",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/3752633",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "worldwide_location",
+      "siblingKey": "canonical|software engineer - python and k8s",
+      "selectionReason": "matched \"Worldwide\"",
+      "proposedLabel": "worldwide",
+      "proposedCountries": [],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
+      "id": "greenhouse:canonical:3798310",
+      "ats": "greenhouse",
+      "board": "canonical",
+      "externalId": "3798310",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/3798310",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "worldwide_location",
+      "siblingKey": "canonical|technical author",
+      "selectionReason": "matched \"Worldwide\"",
+      "proposedLabel": "worldwide",
+      "proposedCountries": [],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
       "id": "greenhouse:canonical:4536726",
       "ats": "greenhouse",
       "board": "canonical",
@@ -1647,6 +1715,23 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
+      "id": "greenhouse:canonical:4717512",
+      "ats": "greenhouse",
+      "board": "canonical",
+      "externalId": "4717512",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/4717512",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "worldwide_location",
+      "siblingKey": "canonical|linux cryptography and security engineer",
+      "selectionReason": "matched \"Worldwide\"",
+      "proposedLabel": "worldwide",
+      "proposedCountries": [],
+      "proposedWorkModel": "unknown",
       "label": null,
       "labelStatus": "pending"
     },
@@ -1696,6 +1781,23 @@
       "siblingKey": "canonical|partner sales manager - hewlett packard enterprise",
       "selectionReason": "matched \"Americas\"",
       "proposedLabel": "unclear",
+      "proposedCountries": [],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
+      "id": "greenhouse:canonical:5798264",
+      "ats": "greenhouse",
+      "board": "canonical",
+      "externalId": "5798264",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/5798264",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "worldwide_location",
+      "siblingKey": "canonical|business services team manager",
+      "selectionReason": "matched \"Worldwide\"",
+      "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
       "label": null,
@@ -1809,6 +1911,27 @@
       "board": "clara",
       "externalId": "5204916007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5204916007",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "strict_location",
+      "siblingKey": "clara|fullstack software engineer - [ingeniero de software fullstack]",
+      "selectionReason": "matched \"Colombia\"",
+      "proposedLabel": "country_specific",
+      "proposedCountries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
+      "id": "greenhouse:clara:5204918007",
+      "ats": "greenhouse",
+      "board": "clara",
+      "externalId": "5204918007",
+      "url": "https://job-boards.greenhouse.io/clara/jobs/5204918007",
       "split": "test",
       "group": "candidate",
       "subtype": "strict_location",
@@ -2548,6 +2671,44 @@
       "labelStatus": "pending"
     },
     {
+      "id": "lever:ciandt:4a84bde1-ae39-4d3b-9faf-1e917891aecf",
+      "ats": "lever",
+      "board": "ciandt",
+      "externalId": "4a84bde1-ae39-4d3b-9faf-1e917891aecf",
+      "url": "https://jobs.lever.co/ciandt/4a84bde1-ae39-4d3b-9faf-1e917891aecf",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "strict_location",
+      "siblingKey": "ciandt|[ job - 31855] data product manager",
+      "selectionReason": "matched \"Colombia\"",
+      "proposedLabel": "country_specific",
+      "proposedCountries": [
+        "CO"
+      ],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
+      "id": "lever:ciandt:c65b97b9-63d6-4827-861e-db23d86da2f9",
+      "ats": "lever",
+      "board": "ciandt",
+      "externalId": "c65b97b9-63d6-4827-861e-db23d86da2f9",
+      "url": "https://jobs.lever.co/ciandt/c65b97b9-63d6-4827-861e-db23d86da2f9",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "strict_location",
+      "siblingKey": "ciandt|[job-31837] master data developer - data ops",
+      "selectionReason": "matched \"Colombia\"",
+      "proposedLabel": "country_specific",
+      "proposedCountries": [
+        "CO"
+      ],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
       "id": "lever:ciandt:eb5ddeb6-7c22-4b35-b233-65d119a20c71",
       "ats": "lever",
       "board": "ciandt",
@@ -2660,6 +2821,26 @@
       "selectionReason": "matched \"Latin America\"",
       "proposedLabel": "country_specific",
       "proposedCountries": [
+        "MX"
+      ],
+      "proposedWorkModel": "unknown",
+      "label": null,
+      "labelStatus": "pending"
+    },
+    {
+      "id": "lever:deuna:c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
+      "ats": "lever",
+      "board": "deuna",
+      "externalId": "c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
+      "url": "https://jobs.lever.co/deuna/c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
+      "split": "test",
+      "group": "candidate",
+      "subtype": "strict_location",
+      "siblingKey": "deuna|product manager",
+      "selectionReason": "matched \"Bogotá\"",
+      "proposedLabel": "country_specific",
+      "proposedCountries": [
+        "CO",
         "MX"
       ],
       "proposedWorkModel": "unknown",
