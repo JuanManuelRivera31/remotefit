@@ -61,22 +61,22 @@
       "name": "Nearsure",
       "ats": "greenhouse",
       "boardToken": "nearsure",
-      "active": true,
-      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero."
+      "active": false,
+      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero. 2026-10-31: token greenhouse 404; nearsure.com/careers redirige a nortal.com/careers. Desactivada."
     },
     {
       "name": "10Pearls",
       "ats": "greenhouse",
       "boardToken": "10pearls",
-      "active": true,
-      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero."
+      "active": false,
+      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero. 2026-10-31: token greenhouse 404; su pagina de empleo no enlaza a Greenhouse/Lever/Ashby. Desactivada."
     },
     {
       "name": "Koombea",
       "ats": "lever",
       "boardToken": "koombea",
-      "active": true,
-      "notes": "Nearshore LATAM (Colombia). Vacantes vistas vencidas: verificar tablero."
+      "active": false,
+      "notes": "Nearshore LATAM (Colombia). Vacantes vistas vencidas: verificar tablero. 2026-10-31: usa BambooHR (koombea.bamboohr.com), fuera del alcance del ADR 0002. Desactivada."
     },
     {
       "name": "Oowlish",
@@ -105,6 +105,34 @@
       "boardToken": "teampathy",
       "active": false,
       "notes": "Visto solo por busqueda web (vencidas). Verificar antes de activar."
+    },
+    {
+      "name": "Canals",
+      "ats": "ashby",
+      "boardToken": "canals",
+      "active": true,
+      "notes": "Aprobado 2026-10-31. Ashby API: Colombia (Bogota), Argentina, Brasil. Rol Junior Software Engineer."
+    },
+    {
+      "name": "Caseware",
+      "ats": "lever",
+      "boardToken": "caseware",
+      "active": true,
+      "notes": "Aprobado 2026-10-31. Lever: posicion remota localizada en Colombia (Bogota, Medellin). Roles vistos: senior."
+    },
+    {
+      "name": "Turing",
+      "ats": "greenhouse",
+      "boardToken": "turing",
+      "active": true,
+      "notes": "Aprobado 2026-10-31. Greenhouse: ubicacion Colombia en roles de ML/Data y Research."
+    },
+    {
+      "name": "Canonical",
+      "ats": "greenhouse",
+      "boardToken": "canonical",
+      "active": true,
+      "notes": "Aprobado 2026-10-31. Greenhouse: Home based Worldwide/Americas; roles junior (Associate Linux Support Engineer)."
     }
   ]
 }
