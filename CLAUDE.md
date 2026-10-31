@@ -46,3 +46,23 @@ Monorepo npm workspaces en TypeScript. Detalle: `docs/02-arquitectura.md`, datos
 - Skills en `.claude/skills/`: `/siguiente-tarea`, `/nueva-fuente-ats`, `/eval-clasificador`, `/revisar`, `/commit`, `/cierre-de-sesion`.
 - Un hook formatea con Prettier cada archivo que edites (cuando Prettier esté instalado).
 - Estado del proyecto y bitácora: `docs/progreso.md`.
+
+## Política de decisiones
+
+Decide tú y continúa, explicando la decisión en el resumen final, cuando:
+- Es técnica y no contradice los ADR ni docs/: estructura, nombres, librerías menores, pruebas, refactors, orden de tareas dentro de una sesión.
+- La opción sigue las reglas del proyecto: privacidad, solo capa gratuita, precisión antes que recall, no contaminar el conjunto de prueba.
+- Es fácil de revertir con git.
+
+Pregúntame y espera solo cuando:
+- Cambia el alcance del MVP, un ADR, la taxonomía o la métrica.
+- Implica dinero, facturación o un proveedor de pago.
+- Implica términos de uso o temas legales de una fuente nueva.
+- Involucra datos personales.
+- Se trata de etiquetar el conjunto de evaluación: puedes proponer etiquetas, pero la decisión final es mía.
+- Agrega empresas nuevas al directorio.
+- Borra datos que no están en git, reescribe historial o hace push forzado.
+
+Cuando preguntes: máximo 3 decisiones, cada una con tu opción recomendada, y sigue avanzando con lo que no dependa de ellas.
+
+Git: trabaja en ramas; al final de cada sesión, si las pruebas pasan, une a main y haz push.

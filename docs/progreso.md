@@ -2,6 +2,13 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-10-31 · Get on Board descartado y rescate de boards del directorio (fuera del backlog)
+- Hecho: revisados los términos (`/about/tos`, `/about/privacy`), `robots.txt` y `/api-doc.html` de Get on Board. Veredicto: **ambiguo**. Ninguna cláusula permite a terceros guardar el texto; la sección 7 prohíbe la descarga automática y el uso para entrenar modelos (escrita para clientes), y `robots.txt` declara `ai-train=no` con reserva de derechos de la UE. La documentación de la API no se pudo leer (se renderiza con JavaScript). Por tu regla, **Get on Board queda fuera** y sus 43 ofertas no se rescatan.
+- Hecho: `scripts/rescue-seed-offers.mjs --source=companies` descarga todas las ofertas vigentes de los boards activos de `data/companies.json` (sin los 3 inactivos). Corrida real: 866 ofertas leídas de 12 boards, 804 nuevas y 62 ya guardadas. Fallaron 3 boards: nearsure y 10pearls (`fetch failed`) y koombea (404). Informe en `data/seed-career-ops/bodies/rescue-report-companies.tsv`. Los 21 MB siguen fuera de git.
+- Hecho: sección "Política de decisiones" añadida a `CLAUDE.md`.
+- Pendiente / problemas: las 804 ofertas nuevas incluyen mucho que no es LATAM (Sezzle 273, Clara 155, ElevenLabs 144, CI&T 151); hay que clasificarlas antes de contar aplicables. El `ats-researcher` solo verificó 7 empresas (Canals, Caseware, Turing, Canonical, GitLab, Elastic, Remedy), no las 15–25 pedidas; falta tu aprobación para agregarlas a `companies.json`.
+- Siguiente paso: aprobar o ajustar la lista de empresas candidatas; reintentar nearsure y 10pearls y buscar el token correcto de koombea.
+
 ## 2026-10-31 · Rescate del texto de las ofertas del seed (fuera del backlog)
 - Hecho: script temporal `scripts/rescue-seed-offers.mjs`, sin dependencias, y corrida completa sobre las 411 ofertas de Greenhouse, Lever y Ashby de `scan-history.tsv`. El texto quedó en `data/seed-career-ops/bodies/`, fuera de git, con el detalle por URL en `rescue-report.tsv`.
 - Decisiones: se guarda `raw` sin normalizar, porque eso es de S3; el script nunca sobrescribe y se puede volver a correr. Get on Board queda fuera hasta revisar sus términos. No hace falta un ADR nuevo.
