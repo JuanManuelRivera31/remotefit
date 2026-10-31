@@ -1,7 +1,9 @@
 # ADR 0003 — LLM detrás de una interfaz, con control de costos
 
-- **Estado:** aceptada
+- **Estado:** sustituida por el ADR 0005 (2026-10-31)
 - **Fecha:** 2026-10-29
+
+> Se conserva como historial. La interfaz de proveedores vigente está en `docs/02-arquitectura.md`, sección 5; la decisión de proveedor y costos, en el ADR 0005. Ya no aplican: Anthropic como implementación inicial, el pago por uso, el límite de gasto en la consola del proveedor ni la clave de caché sin modelo.
 
 ## Contexto
 La clasificación de elegibilidad y el puntaje de encaje necesitan un LLM. La API se paga por uso y es independiente del plan Pro de Claude. El presupuesto es pequeño.
