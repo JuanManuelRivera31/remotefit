@@ -34,6 +34,7 @@ erDiagram
         timestamptz posted_at
         timestamptz first_seen_at
         timestamptz last_seen_at
+        timestamptz closed_at "null si sigue abierta"
         boolean is_active
     }
     eligibility_results {
@@ -104,6 +105,7 @@ erDiagram
 
 - **`sibling_group`:** se calcula en la ingesta con `company_id + requisition_id`, o con `company_id + título normalizado` sin sufijos de región como "(LATAM)" o "(Colombia)" si no hay `requisition_id`. Solo 144 de las 671 ofertas del seed lo traen. El respaldo por título puede unir vacantes distintas con el mismo nombre: verificarlo con datos reales en S4.
 - **`llm_usage_daily.usage_date`:** usa el día de cuota del proveedor, no el día local. Según recuerdo, Gemini lo renueva a medianoche hora del Pacífico; confirmarlo en S6b.
+- **Ofertas cerradas:** nunca se borran. `is_active = false` las oculta del panel y de la cola; `closed_at` guarda cuándo cerraron y vuelve a `null` si la oferta reaparece (ADR 0002).
 - **Cola:** no tiene tabla propia. Lo pendiente son las ofertas activas sin resultado para la clave actual, ordenadas por `first_seen_at` descendente: las nuevas quedan primero.
 - **`applications`:** no existe en el MVP. El seguimiento de postulaciones está fuera de alcance (docs/06, sección 4.4).
 

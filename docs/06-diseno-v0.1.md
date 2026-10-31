@@ -2,7 +2,7 @@
 
 > Contexto para el asistente: este documento resume decisiones y aprendizajes para construir RemoteFit. Úsalo como fuente de verdad del alcance y las prioridades. Las secciones marcadas **[DECIDIR]** están abiertas y deben resolverse antes de implementar lo que dependa de ellas.
 
-> **Estado (2026-10-31):** las secciones 4.1, 4.2 y 4.3 quedaron decididas en el ADR 0004, y los costos en el ADR 0005; donde difieran, prevalecen los ADR. Las secciones 4.5 y 4.6 siguen abiertas.
+> **Estado (2026-10-31):** las secciones 4.1, 4.2 y 4.3 quedaron decididas en el ADR 0004, la 4.5 en el ADR 0002 y los costos en el ADR 0005; donde difieran, prevalecen los ADR. La sección 4.6 sigue abierta.
 
 ## 1. Qué es RemoteFit
 
@@ -77,11 +77,11 @@ Para el usuario, un falso "sí puedes aplicar" es peor que perderse una oferta (
 Dentro: ingesta, prefiltro, clasificación con evidencia, puntaje de encaje, vista de resultados, evaluación.
 Fuera (por ahora): CV adaptado, cartas, tracker de postulaciones, preparación de entrevistas, envío de postulaciones.
 
-### 4.5 Fuentes y vigencia [DECIDIR]
+### 4.5 Fuentes y vigencia (decidido: ADR 0002)
 - Solo APIs públicas de ATS; sin scraping de LinkedIn ni sitios que lo prohíban.
 - Directorio inicial de empresas con historial de contratar en LATAM (ejemplos verificados en la prueba: Sezzle, Clara, Addi, Wizeline, Deuna, Amplemarket, Supabase, ElevenLabs, CI&T, Koombea, Nearsure, 10Pearls).
-- Definir cómo crece el directorio (descubrimiento automático, aportes de usuarios).
-- Definir frecuencia de re-verificación de vigencia y qué hacer con ofertas cerradas (marcar, ocultar, borrar).
+- El directorio crece por curación manual: cada semana el scan propone candidatas y Juan Manuel las aprueba antes de agregarlas a `data/companies.json`.
+- Las ofertas abiertas se re-verifican a diario con una petición HTTP al ATS, sin LLM. Si responde 404 o la oferta desaparece del board, se marca como cerrada y se oculta; no se borra.
 
 ### 4.6 Forma de entrega [DECIDIR]
 Opciones: aplicación web, resumen semanal por correo, extensión de navegador, API. Define la arquitectura (autenticación, perfiles, jobs programados) y es una diferencia clara frente a una herramienta de terminal.
