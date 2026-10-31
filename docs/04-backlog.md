@@ -32,9 +32,9 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   *Paralelo posible:* tres worktrees (`claude -w greenhouse`, `claude -w lever`, `claude -w ashby`), pero en Pro conviene hacer uno y reutilizar el patrón para los otros dos.
 
 - [ ] **S4 · Comando de ingesta + lista de empresas** 🔴 👤
-  `npm run ingest`: recorre `data/companies.json`, llama al conector, hace upsert, asigna `sibling_group`, marca inactivas, imprime un resumen. Pausa entre peticiones.
+  `npm run ingest`: recorre `data/companies.json`, llama al conector, hace upsert, asigna `sibling_group`, re-verifica la vigencia (ADR 0002), imprime un resumen. Las ofertas con 404 o ausentes de un board que respondió bien se marcan cerradas con `closed_at` y no se borran; un error del board no cierra nada y sale en el resumen; una oferta que reaparece se reabre. Pausa entre peticiones.
   👤 `data/companies.json` ya trae 15 empresas sembradas. Verifica las marcadas como pendientes y amplíala a 20–30 con el subagente `ats-researcher`, priorizando empresas con historial de contratar en LATAM: las fuentes pesan más que el filtro. **Verifica tú cada una** abriendo su página de empleo.
-  *Hecho cuando:* las vacantes hermanas reales de Sezzle quedan agrupadas y no se unen vacantes distintas con el mismo título.
+  *Hecho cuando:* las vacantes hermanas reales de Sezzle quedan agrupadas y no se unen vacantes distintas con el mismo título; con fixtures, una oferta ausente se cierra sin borrarse y un fallo del board no cierra ninguna.
 
 ## Fase 3 — La parte de IA (el corazón del proyecto)
 
@@ -79,7 +79,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   Lista ordenada por encaje, filtros "aplicable desde mi país", "accesible para mi nivel" y antigüedad, indicador de vacantes de más de 180 días, una sola tarjeta por grupo de hermanas con su lista de países, detalle con la evidencia resaltada y el desglose del encaje, página de perfil. **Sin tracker:** no hay estados de postulación.
 
 - [ ] **S11 · Uso real + pulido** 👤
-  Correr la ingesta a diario durante 2 semanas, anotar errores en `docs/notas-de-uso.md`, corregir los más graves. Sumar al conjunto de prueba hasta llegar a 60 aplicables. README de portafolio con capturas, diagrama y resultados del eval.
+  Correr la ingesta a diario durante 2 semanas, anotar errores en `docs/notas-de-uso.md`, corregir los más graves. Cada semana, revisar las empresas candidatas que proponga el scan y aprobar las que entren a `data/companies.json` (ADR 0002). Sumar al conjunto de prueba hasta llegar a 60 aplicables. README de portafolio con capturas, diagrama y resultados del eval.
 
 ## Después del MVP (no empezar hasta cerrar S11)
 
