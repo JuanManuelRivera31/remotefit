@@ -2,6 +2,12 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-10-31 · Conteo de candidatos a aplicables (fuera del backlog)
+- Hecho: agregadas Canals, Caseware, Turing y Canonical a `data/companies.json` y descargadas (417 ofertas nuevas; 1618 archivos en total, contando el seed). GitLab y Elastic no se agregan: ningún campo de ubicación de sus 238 y 407 ofertas menciona Colombia o LATAM. Remedy no se agrega. Nearsure, 10Pearls y Koombea quedaron `active=false`: Nearsure redirige a Nortal, 10Pearls no enlaza a ningún ATS permitido y Koombea usa BambooHR (fuera del ADR 0002).
+- Métricas (sin LLM, regex sobre ubicación y cuerpo; script en el scratchpad, no versionado): criterio amplio = 542 candidatos (383 títulos distintos). Criterio estricto (término de Colombia/LATAM en el campo de ubicación, sin marca "solo EE. UU.", sin híbrido/presencial) = 356 (203 títulos distintos por empresa; Sezzle aporta 100 por publicar la misma vacante por país). "Worldwide/Americas" en ubicación: 209, casi todo Canonical. Solo 11 ofertas con marca de EE. UU. entre las candidatas.
+- Pendiente / problemas: la precisión del criterio amplio es baja (muestra de 10: ~4 correctas; el ruido viene de descripciones de empresa como "líder en Latin America" y de ofertas híbridas o de otros países). Son candidatos, no aplicables: falta clasificar y etiquetar.
+- Siguiente paso: S1; los 150 casos de S7 salen de estos candidatos (usar el criterio estricto).
+
 ## 2026-10-31 · Get on Board descartado y rescate de boards del directorio (fuera del backlog)
 - Hecho: revisados los términos (`/about/tos`, `/about/privacy`), `robots.txt` y `/api-doc.html` de Get on Board. Veredicto: **ambiguo**. Ninguna cláusula permite a terceros guardar el texto; la sección 7 prohíbe la descarga automática y el uso para entrenar modelos (escrita para clientes), y `robots.txt` declara `ai-train=no` con reserva de derechos de la UE. La documentación de la API no se pudo leer (se renderiza con JavaScript). Por tu regla, **Get on Board queda fuera** y sus 43 ofertas no se rescatan.
 - Hecho: `scripts/rescue-seed-offers.mjs --source=companies` descarga todas las ofertas vigentes de los boards activos de `data/companies.json` (sin los 3 inactivos). Corrida real: 866 ofertas leídas de 12 boards, 804 nuevas y 62 ya guardadas. Fallaron 3 boards: nearsure y 10pearls (`fetch failed`) y koombea (404). Informe en `data/seed-career-ops/bodies/rescue-report-companies.tsv`. Los 21 MB siguen fuera de git.
