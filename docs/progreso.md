@@ -2,6 +2,12 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-10-31 · Más candidatos en prueba (S7 sigue abierta)
+- Hecho: `scripts/build-eval-set.mjs` agrega 10 candidatos estrictos solo al split de prueba (desarrollo no cambia: 50). El conjunto queda en 160 casos (50 dev + 110 prueba, 90 candidatos). Ninguna empresa pasa de 10 candidatos, y las vacantes hermanas solo entran si todas sus hermanas ya están en prueba.
+- Métricas: con las sugerencias heurísticas, la prueba tiene **54 posibles aplicables** (antes 44), no los 75 pedidos. El techo se alcanzó: con las 13 empresas actuales y el límite de 10, ya no quedan candidatos estrictos sin usar.
+- Pendiente / problemas: para llegar a ≥ 75 en prueba hacen falta unas 21 candidatas más de empresas nuevas (ronda dirigida del `ats-researcher`) o subir el límite por empresa. Aun con el límite de 10, 54 no garantiza el ≥ 60 del ADR 0004 tras tus correcciones.
+- Siguiente paso: decidir cómo ampliar (ronda del `ats-researcher` o límite por empresa); después, etiquetar con la hoja.
+
 ## 2026-10-31 · S1 hecha y primer conjunto de 150 casos para S7 (S7 sigue abierta)
 - Hecho S1: monorepo con npm workspaces (`apps/api`, `apps/web`, `packages/core`), `tsconfig.base.json` estricto, ESLint (con `no-explicit-any`) y Prettier, Vitest y una prueba por paquete. `npm run lint && npm run typecheck && npm test` pasan, y `npm run build` también. `ingest` y `eval` son stubs que fallan a propósito hasta S4 y S7. `core` se consume como TypeScript directo, sin paso de build. Express 5, React 19 y Vite.
 - Hecho S7 (solo el conjunto): `scripts/build-eval-set.mjs` (temporal, determinista, semilla 7) genera `packages/core/evals/eligibility/cases.json` y `data/seed-career-ops/eval-labeling-sheet.tsv` (títulos, ubicaciones y extractos, fuera de git). En git van solo identificadores, división y procedencia, sin texto de ofertas.

@@ -13,6 +13,9 @@ const SHEET_OUT = "data/seed-career-ops/eval-labeling-sheet.tsv";
 const SEED = 7;
 const MAX_PER_COMPANY = 10;
 const TARGET = { candidates: 80, hardNegatives: 50, discards: 20 };
+// Extra strict candidates appended to the TEST split only, so the frozen-test rule (>= 60 applicable for Colombia,
+// ADR 0004) has margin when the owner corrects labels. Dev is untouched.
+const TEST_APPLICABLE_GOAL = 75;
 const HARD_NEGATIVE_QUOTAS = { us_only: 12, country_specific: 12, worldwide_doubtful: 8, hybrid: 8, false_match: 10 };
 
 // ---------- text helpers ----------
@@ -242,6 +245,28 @@ function proposeLabel(o) {
 }
 
 cases = cases.map((c) => ({ ...c, proposal: proposeLabel(c) }));
+
+// ---------- extra test candidates ----------
+const isLikelyApplicable = (c) =>
+  ["latam_eligible", "worldwide"].includes(c.proposal.label) || (c.proposal.label === "country_specific" && c.proposal.countries.includes("CO"));
+// A sibling variant (same vacancy, other country) may join only if every existing member is already in test.
+const blockedKeys = new Set(cases.filter((c) => c.split === "dev").map((c) => c.key));
+const perBoard = (board) => cases.filter((c) => c.group === "candidate" && c.board === board).length;
+const extraPool = take(all)
+  .filter((o) => !blockedKeys.has(o.key) && !o.usFlag && !o.onsite && ((o.tier === "A") || (o.tier === "C" && o.locWeak && /worldwide|americas/i.test(o.loc) && !o.restriction)))
+  .map((o) => ({ ...o, proposal: proposeLabel(o), group: "candidate", subtype: o.tier === "A" ? "strict_location" : "worldwide_location", split: "test" }))
+  .filter(isLikelyApplicable);
+const testLikely = () => cases.filter((c) => c.split === "test" && isLikelyApplicable(c)).length;
+let extraAdded = 0;
+for (const o of roundRobin(extraPool, (x) => x.board, extraPool.length, MAX_PER_COMPANY)) {
+  if (testLikely() >= TEST_APPLICABLE_GOAL) break;
+  if (perBoard(o.board) >= MAX_PER_COMPANY) continue;
+  cases.push(o);
+  mark([o]);
+  extraAdded += 1;
+}
+console.log(`extra test candidates added: ${extraAdded}; likely-applicable in test: ${testLikely()} (goal ${TEST_APPLICABLE_GOAL})`);
+
 cases.sort((a, b) => (a.split === b.split ? a.id.localeCompare(b.id) : a.split === "dev" ? -1 : 1));
 
 // ---------- write ----------
