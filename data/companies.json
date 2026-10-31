@@ -1,4 +1,110 @@
 {
-  "$comment": "Empresas a seguir. Cada entrada: name, ats (greenhouse | lever | ashby), boardToken (el identificador del tablero en la URL publica de empleos), active (true/false), notes. Se completa en la sesion S4 y se verifica a mano.",
-  "companies": []
+  "$comment": "Empresas a seguir. Sembrado desde el escaneo de career-ops del 2026-10-29 (identificadores tomados de URLs reales). active=false: verificar a mano antes de activar. Wizeline y otras empresas sin URL de ATS en el escaneo quedan pendientes para S4.",
+  "companies": [
+    {
+      "name": "Sezzle",
+      "ats": "greenhouse",
+      "boardToken": "sezzle",
+      "active": true,
+      "notes": "career-ops 2026-10-29: 9 pasaron / 33. Publica la misma vacante por pais (LATAM, Colombia, Mexico...)."
+    },
+    {
+      "name": "Supabase",
+      "ats": "ashby",
+      "boardToken": "supabase",
+      "active": true,
+      "notes": "career-ops: 6 pasaron. Remoto global; muchas vacantes senior (Go/Rust)."
+    },
+    {
+      "name": "Addi",
+      "ats": "ashby",
+      "boardToken": "addi",
+      "active": true,
+      "notes": "career-ops: 4 pasaron. Remoto Colombia."
+    },
+    {
+      "name": "ElevenLabs",
+      "ats": "ashby",
+      "boardToken": "elevenlabs",
+      "active": true,
+      "notes": "career-ops: 2 pasaron / 12. Ojo: 'Remote' que en el cuerpo limita a Europa y costa este de EE. UU."
+    },
+    {
+      "name": "Amplemarket",
+      "ats": "greenhouse",
+      "boardToken": "amplemarket",
+      "active": true,
+      "notes": "career-ops: 2 pasaron. Tablero EU (job-boards.eu.greenhouse.io): verificar host de la API en S3."
+    },
+    {
+      "name": "Clara",
+      "ats": "greenhouse",
+      "boardToken": "clara",
+      "active": true,
+      "notes": "career-ops: 2 pasaron / 4. Remote-first Bogota/Mexico."
+    },
+    {
+      "name": "Deuna",
+      "ats": "lever",
+      "boardToken": "deuna",
+      "active": true,
+      "notes": "career-ops: 1 paso."
+    },
+    {
+      "name": "CI&T",
+      "ats": "lever",
+      "boardToken": "ciandt",
+      "active": true,
+      "notes": "Nearshore LATAM. Las 8 vacantes vistas por busqueda web estaban vencidas: verificar tablero."
+    },
+    {
+      "name": "Nearsure",
+      "ats": "greenhouse",
+      "boardToken": "nearsure",
+      "active": true,
+      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero."
+    },
+    {
+      "name": "10Pearls",
+      "ats": "greenhouse",
+      "boardToken": "10pearls",
+      "active": true,
+      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero."
+    },
+    {
+      "name": "Koombea",
+      "ats": "lever",
+      "boardToken": "koombea",
+      "active": true,
+      "notes": "Nearshore LATAM (Colombia). Vacantes vistas vencidas: verificar tablero."
+    },
+    {
+      "name": "Oowlish",
+      "ats": "lever",
+      "boardToken": "oowlish",
+      "active": true,
+      "notes": "Nearshore LATAM. Vacantes vistas vencidas: verificar tablero."
+    },
+    {
+      "name": "Moovx",
+      "ats": "greenhouse",
+      "boardToken": "moovx",
+      "active": false,
+      "notes": "Visto solo por busqueda web (vencidas). Verificar antes de activar."
+    },
+    {
+      "name": "Coderoad",
+      "ats": "greenhouse",
+      "boardToken": "coderoad",
+      "active": false,
+      "notes": "Visto solo por busqueda web (vencida). Verificar antes de activar."
+    },
+    {
+      "name": "Teampathy",
+      "ats": "greenhouse",
+      "boardToken": "teampathy",
+      "active": false,
+      "notes": "Visto solo por busqueda web (vencidas). Verificar antes de activar."
+    }
+  ]
 }
