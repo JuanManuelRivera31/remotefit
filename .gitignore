@@ -21,3 +21,6 @@ packages/core/evals/reports/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Datos reales de career-ops (evaluaciones personales y ofertas): no versionar
+data/seed-career-ops/
