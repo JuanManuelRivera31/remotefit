@@ -8,13 +8,19 @@
     "build": "tsc -p tsconfig.json --noEmit",
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "ingest": "tsx src/cli/ingest.ts"
+    "ingest": "tsx src/cli/ingest.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts"
   },
   "dependencies": {
     "@remotefit/core": "*",
-    "express": "^5.0.0"
+    "drizzle-orm": "^0.45.4",
+    "express": "^5.0.0",
+    "pg": "^8.23.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6"
+    "@types/express": "^5.0.6",
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^0.31.11"
   }
 }
