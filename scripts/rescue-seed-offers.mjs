@@ -1,6 +1,7 @@
 // One-off rescue of posting text for the career-ops seed. Delete once the S3-S4 connectors replace it.
 // Output stays in data/seed-career-ops/bodies/, which is ignored by git.
-// Usage: node scripts/rescue-seed-offers.mjs [--dry-run] [--only=<board>]
+// Usage: node scripts/rescue-seed-offers.mjs [--dry-run] [--only=<board>] [--source=companies]
+// --source=companies downloads every current posting of the active boards in data/companies.json.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -152,8 +153,10 @@ async function saveOffer(offer, raw, fetchedAt) {
     await writeFile(path.join(directory, `${offer.externalId}.json`), JSON.stringify(record, null, 2), {
       flag: "wx",
     });
+    return true;
   } catch (error) {
     if (error.code !== "EEXIST") throw error;
+    return false;
   }
 }
 
@@ -191,7 +194,42 @@ function countBy(items, key) {
   return counts;
 }
 
-async function writeReport(results) {
+async function readCompanyBoards() {
+  const file = JSON.parse(await readFile("data/companies.json", "utf8"));
+  return file.companies
+    .filter((company) => company.active === true && fetchers[company.ats])
+    .map((company) => ({ ats: company.ats, board: company.boardToken, name: company.name }));
+}
+
+function jobUrl(job, ats, board) {
+  const url = job.absolute_url ?? job.hostedUrl ?? job.jobUrl;
+  if (url) return url;
+  return ats === "ashby" ? `https://jobs.ashbyhq.com/${board}/${job.id}` : `${ats}:${board}/${job.id}`;
+}
+
+// Saves every current posting of one board, whether or not career-ops accepted it.
+async function rescueWholeBoard({ ats, board }, dryRun) {
+  let jobs;
+  try {
+    jobs = await fetchers[ats](board);
+  } catch (error) {
+    return [{ url: "", ats, board, externalId: "", status: "board_error", detail: error.message }];
+  }
+  const fetchedAt = new Date().toISOString();
+  const results = [];
+  for (const job of jobs) {
+    const offer = { url: jobUrl(job, ats, board), ats, board, externalId: String(job.id) };
+    if (!SAFE_SEGMENT.test(offer.externalId)) {
+      results.push({ ...offer, status: "bad_id", detail: "" });
+      continue;
+    }
+    const status = dryRun ? "would_save" : (await saveOffer(offer, job, fetchedAt)) ? "saved" : "already_saved";
+    results.push({ ...offer, status, detail: String(job.location?.name ?? job.location ?? "") });
+  }
+  return results;
+}
+
+async function writeReport(results, fileName = "rescue-report.tsv") {
   const header = "url\tats\tboard\texternal_id\tstatus\tdetail";
   const lines = results.map((result) =>
     [result.url, result.ats, result.board, result.externalId, result.status, result.detail]
@@ -199,12 +237,27 @@ async function writeReport(results) {
       .join("\t"),
   );
   await mkdir(OUTPUT_DIR, { recursive: true });
-  await writeFile(path.join(OUTPUT_DIR, "rescue-report.tsv"), `${[header, ...lines].join("\n")}\n`);
+  await writeFile(path.join(OUTPUT_DIR, fileName),`${[header, ...lines].join("\n")}\n`);
 }
 
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
   const only = process.argv.find((arg) => arg.startsWith("--only="))?.slice("--only=".length);
+
+  if (process.argv.includes("--source=companies")) {
+    const boards = (await readCompanyBoards()).filter((entry) => !only || entry.board === only);
+    console.log(`Active boards: ${boards.length}${dryRun ? " (dry run, nothing saved)" : ""}`);
+    const results = [];
+    for (const entry of boards) {
+      const boardResults = await rescueWholeBoard(entry, dryRun);
+      results.push(...boardResults);
+      console.log(`${entry.ats}:${entry.board}`, countBy(boardResults, (result) => result.status));
+      await sleep(PAUSE_MS);
+    }
+    if (!dryRun && !only) await writeReport(results, "rescue-report-companies.tsv");
+    console.log("Total:", countBy(results, (result) => result.status));
+    return;
+  }
 
   const offers = await readSeedOffers();
   const groups = new Map();
