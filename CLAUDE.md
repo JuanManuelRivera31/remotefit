@@ -59,9 +59,11 @@ Pregúntame y espera solo cuando:
 - Implica dinero, facturación o un proveedor de pago.
 - Implica términos de uso o temas legales de una fuente nueva.
 - Involucra datos personales.
-- Se trata de etiquetar el conjunto de evaluación: puedes proponer etiquetas, pero la decisión final es mía.
+- Se trata de fijar las etiquetas finales del conjunto de evaluación: puedes proponerlas, pero confirmarlas es cosa mía. La selección, composición y división (desarrollo/prueba) de los casos la decides tú.
 - Agrega empresas nuevas al directorio.
 - Borra datos que no están en git, reescribe historial o hace push forzado.
+
+En general, si tu recomendación es clara y cumple las reglas del proyecto, ejecútala y repórtala en el resumen en lugar de preguntarme.
 
 Cuando preguntes: máximo 3 decisiones, cada una con tu opción recomendada, y sigue avanzando con lo que no dependa de ellas.
 

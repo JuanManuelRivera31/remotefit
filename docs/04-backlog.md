@@ -14,7 +14,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
 
 ## Fase 1 — Cimientos
 
-- [ ] **S1 · Esqueleto del monorepo** 🔴
+- [x] **S1 · Esqueleto del monorepo** 🔴
   npm workspaces (`apps/api`, `apps/web`, `packages/core`), `tsconfig` base, ESLint + Prettier, Vitest, scripts raíz: `dev`, `build`, `lint`, `typecheck`, `test`, `ingest`, `eval`. Una prueba trivial por paquete.
   *Hecho cuando:* `npm run lint && npm run typecheck && npm test` pasan.
   *Prompt sugerido:* `Lee docs/02-arquitectura.md y haz la sesión S1 del backlog. Planea primero y espera mi aprobación.`
