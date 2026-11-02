@@ -10,5 +10,8 @@
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
     "eval": "tsx evals/run.ts"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
   }
 }

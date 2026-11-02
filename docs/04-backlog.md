@@ -25,9 +25,9 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
 
 ## Fase 2 — Ingesta
 
-- [ ] **S3a · Conector Greenhouse** 🟢
-- [ ] **S3b · Conector Lever** 🟢
-- [ ] **S3c · Conector Ashby** 🟢
+- [x] **S3a · Conector Greenhouse** 🟢
+- [x] **S3b · Conector Lever** 🟢
+- [x] **S3c · Conector Ashby** 🟢
   Cada uno: descargar una respuesta real y guardarla en `packages/core/fixtures/<ats>/`, tipos de la respuesta, función `fetchJobs(boardToken)` y `toNormalizedJob()`, pruebas contra el fixture. Mapea `postedAt` y `requisitionId` cuando el ATS los exponga. Usa la skill `/nueva-fuente-ats <ats>`.
   *Paralelo posible:* tres worktrees (`claude -w greenhouse`, `claude -w lever`, `claude -w ashby`), pero en Pro conviene hacer uno y reutilizar el patrón para los otros dos.
 
