@@ -2,9 +2,14 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-01 · Revisión del dueño de los 9 casos dudosos (S7 sigue abierta)
+- Hecho: Juan Manuel revisó los 9 casos. Aceptó 1, 2, 3, 4, 5, 8 y 9 tal cual. En el 8 (Clara Security Engineer) se registra `workModelConflict = true` por la etapa presencial inicial. En 6 y 7 (Clara Fullstack) se mantiene `workModel = remote` porque el cuerpo lo dice explícitamente ("This is a remote-first role: you'll work from home day to day"). Los 9 quedan con `labelStatus = "owner_reviewed"`. Se acepta usar los metadatos del ATS cuando el cuerpo no diga la modalidad.
+- Métricas: con la regla completa del ADR 0004 (`isApplicable`: `workModel = remote` y etiqueta válida para CO) quedan **30 aplicables en desarrollo y 59 en prueba**, igual que con el conteo anterior porque ningún caso con etiqueta válida tenía `workModel` distinto de `remote`. La prueba sigue bajo 60: informes "provisionales".
+- Siguiente paso: 1 aplicable más en prueba para congelarla; después, el ejecutor de `npm run eval` (S7).
+
 ## 2026-11-01 · Etiquetas asistidas por LLM para los 160 casos (S7 sigue abierta)
 - Hecho: `scripts/apply-eval-labels.mjs` importa a `packages/core/evals/eligibility/cases.json` las etiquetas de Claude (`labelSource = "llm-assisted"`, `labeledAt = 2026-11-01`, con `countries`, `workModel` y `evidence`). Las 71 filas con `verificar_cuerpo = si` se contrastaron con el cuerpo completo (solo local, ADR 0002); las 89 restantes no se tocaron. 64 de las 71 cambiaron algo (casi todo `workModel`: de `unknown` a `remote`/`hybrid`/`onsite`) y 11 cambiaron de etiqueta o países.
-- Etiquetas asistidas por LLM (Claude) con reglas aprobadas por Juan Manuel. La verificación humana se limita a los 9 casos con `labelStatus = "needs_review"`. Queda anotado en el ADR 0004 (sección 6).
+- Etiquetas asistidas por LLM (Claude) con reglas aprobadas por Juan Manuel. La verificación humana se limitó a 9 casos, ya revisados (ver entrada siguiente). Queda anotado en el ADR 0004 (sección 6).
 - Métricas: aplicables para Colombia con estas etiquetas: **30 en desarrollo y 59 en prueba**. La prueba queda por debajo de 60, así que los informes siguen **"provisionales"** (D2).
 - Decisión técnica: cuando el cuerpo no dice la modalidad, `workModel` toma los metadatos del ATS (`workplaceType` de Ashby y Lever), como indica el ADR 0004; si tampoco hay metadatos, queda `unknown`.
 - Pendiente / problemas: faltan 1 o más aplicables en prueba para congelarla; revisar los 9 casos `needs_review`.
