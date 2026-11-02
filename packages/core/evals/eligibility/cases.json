@@ -2,7 +2,7 @@
   "version": 1,
   "generatedAt": "2026-10-31",
   "seed": 7,
-  "note": "Ids and provenance only; posting text lives in data/seed-career-ops/bodies/ (ignored by git, ADR 0002). Every label is pending until the project owner confirms it (ADR 0004). proposedLabel is a heuristic suggestion, not a decision.",
+  "note": "Ids and provenance only; posting text lives in data/seed-career-ops/bodies/ (ignored by git, ADR 0002). Labels are LLM-assisted (Claude) under rules approved by the project owner (ADR 0004); human review is limited to the 9 cases the owner reviewed (labelStatus 'owner_reviewed'). proposedLabel is the original heuristic suggestion, kept for reference.",
   "composition": {
     "total": 160,
     "bySplit": {
@@ -77,8 +77,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"LatAm\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:676f2e71-f40d-42c1-9ebb-4148fbf48df7",
@@ -96,8 +103,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"Colombia\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:7dd51523-34c3-44a4-b305-f621e99f2a75",
@@ -113,8 +129,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"LatAm\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:195c6203-ec1d-49e5-a9d0-e17f81832b6d",
@@ -130,8 +153,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:claylabs:046cb127-d5fc-444f-a2a9-fb4029d6a503",
@@ -147,8 +179,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:6a530871-b6c6-4783-ac6b-69cc3b084192",
@@ -164,8 +205,24 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "GB",
+        "IE",
+        "ES",
+        "US",
+        "BG",
+        "DE",
+        "PL",
+        "NL"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:supabase:dcf09dfe-55bc-44ba-b5db-1a2de7f33216",
@@ -181,8 +238,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:workos:ffba59a1-cead-4231-bd2d-a24649c6a3b9",
@@ -198,8 +262,18 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US",
+        "CA"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:amplemarket:4066888101",
@@ -215,8 +289,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:amplemarket:4066899101",
@@ -232,8 +313,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:amplemarket:4066973101",
@@ -249,8 +337,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:anthropic:5238637008",
@@ -266,8 +361,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5134418007",
@@ -285,8 +389,17 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5136291007",
@@ -306,8 +419,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "evidence": "This is a hybrid role: you'll split your time between the office, customers and home.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5220436007",
@@ -326,8 +450,18 @@
         "MX"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5257213007",
@@ -347,8 +481,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:6037486003",
@@ -364,8 +509,15 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "Location \"Latin America\", office \"Latin America [Remote]\"; body ends \"#Li-remote\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:6110227003",
@@ -381,8 +533,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "AR"
+      ],
+      "workModel": "remote",
+      "evidence": "Title \"(Argentina, All Levels)\", location \"Argentina, Remote\"; body \"#Li-remote\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:6502997003",
@@ -398,8 +559,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:6503000003",
@@ -415,8 +583,17 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7712191003",
@@ -432,8 +609,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "Location \"Bogota, Colombia\"; \"must be able to collaborate with US-based teams daily\"; \"#Li-remote\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7984970003",
@@ -449,8 +635,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7984978003",
@@ -466,8 +659,17 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7998737003",
@@ -485,8 +687,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:8039614003",
@@ -502,8 +713,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "Location \"Colombia\"; \"must be able to collaborate with US-based teams daily\"; \"#Li-remote\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sumup:6651430002",
@@ -519,8 +739,20 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BG",
+        "DE",
+        "GB",
+        "LT"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sumup:7475989002",
@@ -538,8 +770,17 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sumup:8583427002",
@@ -555,8 +796,20 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "BG",
+        "DE",
+        "GB",
+        "LT"
+      ],
+      "workModel": "onsite",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:5819904004",
@@ -574,8 +827,18 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:5819908004",
@@ -593,8 +856,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:6209679004",
@@ -613,8 +885,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "BR",
+        "AR"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:6216854004",
@@ -633,8 +916,18 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:vercel:6181759004",
@@ -650,8 +943,17 @@
       "proposedLabel": "onsite_or_hybrid",
       "proposedCountries": [],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:wizeline:7264950",
@@ -669,8 +971,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "unclear",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "unknown",
+      "evidence": "Body names no location or work model; metadata only says location \"Colombia\", office \"Barcelona\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:d59a9355-ca96-46d7-968d-60401531b0dd",
@@ -686,8 +997,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CA"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:e723f716-7249-4567-8d44-46e273599ee5",
@@ -705,8 +1025,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a fully remote position located in Colombia.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:4162ee2d-21be-4528-bf28-e7ac92a5cb7d",
@@ -724,8 +1053,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:57b0f135-f0a6-4149-a086-75e10183d81a",
@@ -743,8 +1081,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:989a2fd5-f970-4c05-a379-5035cd24ec39",
@@ -762,8 +1109,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:a75a23c9-bc2b-481c-9022-e83094964de7",
@@ -781,8 +1137,17 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:b51b1a14-b9cd-4f45-b732-595936ed8a61",
@@ -800,8 +1165,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:b779c0c9-048d-423c-b579-34e69b20b8c6",
@@ -819,8 +1193,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:8527095e-8e96-48ab-b40b-75518e1ee868",
@@ -838,8 +1221,17 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:17dc9523-7f32-47b5-8d41-d27bb3d99032",
@@ -860,8 +1252,23 @@
         "GT"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX",
+        "CO",
+        "GT",
+        "SV",
+        "CR",
+        "UY",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:240424ff-5a04-44df-b9bf-5530bccf7727",
@@ -879,8 +1286,17 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:96cd75f8-f887-4c7e-8a6c-ddb33d7d9cda",
@@ -899,8 +1315,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "AR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:9c0d5139-e494-41c2-891a-d63102d57a97",
@@ -919,8 +1347,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "AR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:d56664b8-6091-4614-91d6-0f59b276c24d",
@@ -939,8 +1379,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "AR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:f57a8278-e116-4259-9062-c2c20d3a2000",
@@ -959,8 +1411,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "AR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:pigment:dad6777e-77e7-4885-b8cc-751ad141df6a",
@@ -976,8 +1440,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "FR"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:152a9e69-8f20-4097-bb07-a76a18e61ed0",
@@ -993,8 +1466,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "onsite",
+      "evidence": "[metadata] workplaceType \"OnSite\"; \"Field Sales Assessment (On-site 50min)\"; street-sales role.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:40ecb2b2-32a1-44b2-b7bf-2a9d6d795a11",
@@ -1012,8 +1494,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"Colombia\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:47e36408-41dd-4631-af71-3630bf386f2f",
@@ -1029,8 +1520,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "onsite",
+      "evidence": "[metadata] workplaceType \"OnSite\", isRemote=false; body empty.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:6534a249-6193-479c-a60a-722a984311ef",
@@ -1048,8 +1548,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"Colombia\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:7365e947-c71f-4509-8392-9fa2cee37749",
@@ -1067,8 +1576,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"Colombia\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:7e309b42-7564-417a-9bd0-3eb6d4c26b13",
@@ -1084,8 +1602,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"Bogotá\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:b3b0f097-8961-4001-b8ba-0baacda32bb7",
@@ -1101,8 +1628,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"LatAm\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:addi:ba1672b9-622a-4ec9-8685-15b0eadd332d",
@@ -1118,8 +1652,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"LatAm\", workplaceType \"Remote\"; body adds no restriction",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:123a34d7-fe92-43f0-83e5-6eb8dc0b2090",
@@ -1137,8 +1678,17 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:2e9f600f-1344-4bab-b0e1-191a6af5465f",
@@ -1154,8 +1704,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:441bb087-c46a-4e3b-a695-bbaca433a84e",
@@ -1171,8 +1730,19 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "US",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:d45d8f01-2ba1-4cca-af69-9af3d30c8861",
@@ -1188,8 +1758,19 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US",
+        "BR",
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:d4b698c6-95f6-4d91-913e-54d0cd765c82",
@@ -1205,8 +1786,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:canals:f5be2674-0d4b-406d-bc29-be5e657b8ac5",
@@ -1226,8 +1816,19 @@
         "AR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "AR",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:decagon:16529089-a048-4bc3-8456-3f197135e00b",
@@ -1243,8 +1844,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:04d1c724-466a-4520-aea1-44aee822c14b",
@@ -1262,8 +1872,17 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:10e6475e-67ef-4621-8718-7b087c354651",
@@ -1279,8 +1898,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:2ae519e9-1068-423b-8e07-dfdebbdca7b4",
@@ -1298,8 +1926,17 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:6e1b66a8-8d2e-43b0-9076-9748b84bcfab",
@@ -1317,8 +1954,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "Account Executive in Colombia; [metadata] workplaceType \"Remote\"; no further restriction.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:813f6b98-fa14-4d8f-902d-5d09029be20a",
@@ -1334,8 +1980,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "us_only",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:c340cedd-6453-4d48-a580-359c1d7d9d49",
@@ -1354,8 +2007,18 @@
         "CL"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "AR",
+        "CL"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:c89e8bf6-6d4c-43bd-bd2a-661ae73c82bf",
@@ -1373,8 +2036,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:elevenlabs:ec04799b-6567-4032-8d6c-3c27261618e1",
@@ -1392,8 +2064,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:langchain:f7de4819-e7aa-4dfb-9acd-8b81ad8caf2c",
@@ -1409,8 +2090,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:legora:3ecb346f-1903-4d06-99ca-e28ef3806bbb",
@@ -1426,8 +2116,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "SE"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:lovable:3b6525b4-8229-4b7e-a307-a550646d0483",
@@ -1443,8 +2142,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "SE"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:perplexity:be94e89b-89d5-4f2a-a58b-7929c8d97f92",
@@ -1460,8 +2168,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "RS"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:pinecone:edf2a2a5-64e2-45b8-9f2e-4f354af350b8",
@@ -1477,8 +2194,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "us_only",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:resend:053bde8f-294e-4cce-9d62-2301282120a2",
@@ -1494,8 +2218,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:runpod:b64a3935-931a-4b7f-9899-7ebe152164c5",
@@ -1511,8 +2242,15 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "us_only",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:sierra:fd5df98a-e2c8-4d47-a803-daee5cccb36f",
@@ -1528,8 +2266,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:supabase:c16bd707-29f2-46fb-8409-7270ff00978b",
@@ -1545,8 +2292,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "ashby:wayve:6e64fd52-6f14-4d73-8d8a-0a31d7ad1f31",
@@ -1562,8 +2316,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:amplemarket:4087603101",
@@ -1579,8 +2342,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:amplemarket:4488062101",
@@ -1596,8 +2366,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:amplemarket:4782681101",
@@ -1613,8 +2390,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:3159992",
@@ -1630,8 +2414,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:3275433",
@@ -1647,8 +2438,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:3572118",
@@ -1664,8 +2462,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:3752633",
@@ -1681,8 +2486,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:3798310",
@@ -1698,8 +2510,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:4536726",
@@ -1715,8 +2534,18 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "TW",
+        "CA"
+      ],
+      "workModel": "onsite",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:4717512",
@@ -1732,8 +2561,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:5150422",
@@ -1749,8 +2585,15 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "This is a Globally remote role.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:5396437",
@@ -1766,8 +2609,18 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "TW",
+        "CN"
+      ],
+      "workModel": "onsite",
+      "evidence": "This is a role based in either our Taipei, Taiwan or Beijing, China offices.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:5572475",
@@ -1783,8 +2636,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "IN"
+      ],
+      "workModel": "remote",
+      "evidence": "This role will be based remotely in India",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:5798264",
@@ -1800,8 +2662,15 @@
       "proposedLabel": "worldwide",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:5906570",
@@ -1817,8 +2686,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "JP"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:6010955",
@@ -1834,8 +2712,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "We have home-based lead kernel engineer roles in every timezone",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:6177790",
@@ -1851,8 +2736,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CA"
+      ],
+      "workModel": "onsite",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:6177794",
@@ -1868,8 +2762,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CA"
+      ],
+      "workModel": "onsite",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:canonical:7267884",
@@ -1885,8 +2788,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "worldwide",
+      "labelStatus": "owner_reviewed",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "hiring strong regional sales team managers in Europe, Middle East, India, Asia, ANZ, Africa, Latin America, Central America and North America",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:celonis:8002490003",
@@ -1902,8 +2812,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "ES"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5204916007",
@@ -1923,8 +2842,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5204918007",
@@ -1944,8 +2874,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5205085007",
@@ -1965,8 +2906,19 @@
         "BR"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5228837007",
@@ -1985,8 +2937,18 @@
         "MX"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5234148007",
@@ -2004,8 +2966,17 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5236289007",
@@ -2024,8 +2995,18 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": true
     },
     {
       "id": "greenhouse:clara:5253325007",
@@ -2045,8 +3026,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "evidence": "This is a hybrid role: you'll split your time between the office, customers and home.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5253332007",
@@ -2066,8 +3058,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "evidence": "This is a hybrid role: you'll split your time between the office, customers and home.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5254971007",
@@ -2087,8 +3090,19 @@
         "BR"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5257408007",
@@ -2108,8 +3122,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5257427007",
@@ -2129,8 +3154,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5259834007",
@@ -2148,8 +3184,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "evidence": "This is a hybrid role: you'll split your time between the office, customers and home.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5260988007",
@@ -2167,8 +3212,17 @@
         "CO"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5265722007",
@@ -2188,8 +3242,19 @@
         "BR"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5273126007",
@@ -2207,8 +3272,17 @@
         "MX"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:clara:5280448007",
@@ -2226,8 +3300,17 @@
         "CO"
       ],
       "proposedWorkModel": "hybrid",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:gleanwork:4696752005",
@@ -2243,8 +3326,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:planetscale:4251150009",
@@ -2260,8 +3352,15 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "unclear",
+      "labelStatus": "owner_reviewed",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "Location \"Remote\" with sibling offices \"Remote - EMEA\", \"Remote - NA\"; body states no country or region.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:planetscale:4389100009",
@@ -2277,8 +3376,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "onsite",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:6066974003",
@@ -2296,8 +3404,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7116700003",
@@ -2315,8 +3432,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7559727003",
@@ -2334,8 +3460,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7906408003",
@@ -2354,8 +3489,17 @@
         "PE"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "PE"
+      ],
+      "workModel": "remote",
+      "evidence": "Location: Remote / Peru",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7906563003",
@@ -2374,8 +3518,17 @@
         "PE"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "PE"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] location \"Peru\"; Bogota office tag is on every Sezzle LatAm posting, even the Argentina-only one.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7977728003",
@@ -2393,8 +3546,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "Location \"Bogota, Colombia\"; body ends \"#Li-remote\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:7985984003",
@@ -2410,8 +3572,15 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "latam_eligible",
+      "labelStatus": "labeled",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:sezzle:8010090003",
@@ -2427,8 +3596,17 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "owner_reviewed",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "Location \"Mexico, Remote\"; \"local time (Central time zone)\"; body ends \"#Li-remote\".",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:speechmatics:5000695101",
@@ -2444,8 +3622,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "RS"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:6115695004",
@@ -2461,8 +3648,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "IN"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:6235204004",
@@ -2478,8 +3674,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "greenhouse:turing:6236429004",
@@ -2498,8 +3703,18 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:1c6b8a04-b52d-4689-9092-e76acbd1bc33",
@@ -2517,8 +3732,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a fully remote position located in Colombia.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:3132e059-c8ec-48e0-9e69-c7a382594ce3",
@@ -2536,8 +3760,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a fully remote position located in Colombia.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:42daa35b-4c79-4834-bdf3-88f9293fa79b",
@@ -2555,8 +3788,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a fully remote position located in Colombia.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:54643689-7430-4985-8c91-3a27f8b129d4",
@@ -2574,8 +3816,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a fully remote position located in Colombia.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:caseware:76d9d7a0-bb5d-463e-998e-3f0198e8cca3",
@@ -2593,8 +3844,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "This is a fully remote position located in Colombia.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:14e797b6-08d6-4ca8-ad4f-f9599e9ec7bd",
@@ -2610,8 +3870,17 @@
       "proposedLabel": "us_only",
       "proposedCountries": [],
       "proposedWorkModel": "remote",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:1b334619-f3c5-4b1f-a1a8-2a0aee627a91",
@@ -2629,8 +3898,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:35f74c50-113b-4f7b-b1fa-d92e4c4b2159",
@@ -2648,8 +3926,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:41b478c7-0579-4750-b824-78d3469adef5",
@@ -2667,8 +3954,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:4a84bde1-ae39-4d3b-9faf-1e917891aecf",
@@ -2686,8 +3982,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:c65b97b9-63d6-4827-861e-db23d86da2f9",
@@ -2705,8 +4010,17 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] title ends \", Colombia\", workplaceType \"remote\"; body silent on modality",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:ciandt:eb5ddeb6-7c22-4b35-b233-65d119a20c71",
@@ -2724,8 +4038,17 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:03223f29-f268-4150-8cff-98e2609468fa",
@@ -2744,8 +4067,18 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] workplaceType \"remote\"; body silent on modality and residency.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:194207ef-3ddf-4a7e-a9cc-3c11e2cf36a1",
@@ -2764,8 +4097,19 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] workplaceType \"remote\"; body silent on modality and residency.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:97945754-f0b0-4004-937b-1aeed5710d63",
@@ -2784,8 +4128,18 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] workplaceType \"remote\"; body silent on modality and residency.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:a1d9d480-6b02-448e-99a1-0e72e36b31d0",
@@ -2805,8 +4159,19 @@
         "AR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "onsite_or_hybrid",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX",
+        "AR"
+      ],
+      "workModel": "hybrid",
+      "evidence": "[metadata] workplaceType \"hybrid\"; body silent on modality.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:b9d34afb-e1e8-4e87-8ec7-935838eb4f26",
@@ -2824,8 +4189,17 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
@@ -2844,8 +4218,18 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] workplaceType \"remote\"; body silent on modality and residency.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:e7fa7bdc-05c1-4ae7-a772-4187e171720a",
@@ -2864,8 +4248,18 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] workplaceType \"remote\"; body silent on modality and residency.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:deuna:ec4f69ac-f28e-496e-b925-45d21c53e467",
@@ -2884,8 +4278,19 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "[metadata] workplaceType \"remote\"; body silent on modality and residency.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:a8ef2c33-95af-4859-bc0b-543d452bbfb2",
@@ -2907,8 +4312,23 @@
         "GT"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "MX",
+        "CO",
+        "GT",
+        "SV",
+        "CR",
+        "UY",
+        "BR"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:b3a94106-ff84-4314-b112-58a9eb36d69a",
@@ -2927,8 +4347,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "AR",
+        "MX",
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:cd66a853-ac1b-4740-a6b8-f6d33b13cb3c",
@@ -2947,8 +4379,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "AR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:oowlish:e7ce2491-2ec1-499e-b7f5-931bcb6f19e2",
@@ -2967,8 +4411,20 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "BR",
+        "MX",
+        "AR",
+        "CO"
+      ],
+      "workModel": "remote",
+      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "bodyChecked": true,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:palantir:373367a9-3160-49d8-b7af-2efec062fad1",
@@ -2984,8 +4440,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     },
     {
       "id": "lever:palantir:3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
@@ -3001,8 +4466,17 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": null,
-      "labelStatus": "pending"
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
+      "evidence": null,
+      "bodyChecked": false,
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-01",
+      "workModelConflict": false
     }
   ]
 }
