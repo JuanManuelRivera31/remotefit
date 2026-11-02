@@ -2,6 +2,14 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-01 · Etiquetas asistidas por LLM para los 160 casos (S7 sigue abierta)
+- Hecho: `scripts/apply-eval-labels.mjs` importa a `packages/core/evals/eligibility/cases.json` las etiquetas de Claude (`labelSource = "llm-assisted"`, `labeledAt = 2026-11-01`, con `countries`, `workModel` y `evidence`). Las 71 filas con `verificar_cuerpo = si` se contrastaron con el cuerpo completo (solo local, ADR 0002); las 89 restantes no se tocaron. 64 de las 71 cambiaron algo (casi todo `workModel`: de `unknown` a `remote`/`hybrid`/`onsite`) y 11 cambiaron de etiqueta o países.
+- Etiquetas asistidas por LLM (Claude) con reglas aprobadas por Juan Manuel. La verificación humana se limita a los 9 casos con `labelStatus = "needs_review"`. Queda anotado en el ADR 0004 (sección 6).
+- Métricas: aplicables para Colombia con estas etiquetas: **30 en desarrollo y 59 en prueba**. La prueba queda por debajo de 60, así que los informes siguen **"provisionales"** (D2).
+- Decisión técnica: cuando el cuerpo no dice la modalidad, `workModel` toma los metadatos del ATS (`workplaceType` de Ashby y Lever), como indica el ADR 0004; si tampoco hay metadatos, queda `unknown`.
+- Pendiente / problemas: faltan 1 o más aplicables en prueba para congelarla; revisar los 9 casos `needs_review`.
+- Siguiente paso: revisión humana de esos 9 casos y luego el ejecutor de `npm run eval` (S7).
+
 ## 2026-10-31 · Más candidatos en prueba (S7 sigue abierta)
 - Hecho: `scripts/build-eval-set.mjs` agrega 10 candidatos estrictos solo al split de prueba (desarrollo no cambia: 50). El conjunto queda en 160 casos (50 dev + 110 prueba, 90 candidatos). Ninguna empresa pasa de 10 candidatos, y las vacantes hermanas solo entran si todas sus hermanas ya están en prueba.
 - Métricas: con las sugerencias heurísticas, la prueba tiene **54 posibles aplicables** (antes 44), no los 75 pedidos. El techo se alcanzó: con las 13 empresas actuales y el límite de 10, ya no quedan candidatos estrictos sin usar.
