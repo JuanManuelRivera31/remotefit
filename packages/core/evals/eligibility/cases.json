@@ -6,8 +6,8 @@
   "composition": {
     "total": 160,
     "bySplit": {
-      "dev": 50,
-      "test": 110
+      "dev": 48,
+      "test": 112
     },
     "byGroup": {
       "candidate": 90,
@@ -469,7 +469,7 @@
       "board": "clara",
       "externalId": "5257213007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5257213007",
-      "split": "dev",
+      "split": "test",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|qa automation lead",
@@ -493,7 +493,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "movedFrom": "dev",
+      "movedAt": "2026-11-02"
     },
     {
       "id": "greenhouse:sezzle:6037486003",
@@ -1015,7 +1017,7 @@
       "board": "caseware",
       "externalId": "e723f716-7249-4567-8d44-46e273599ee5",
       "url": "https://jobs.lever.co/caseware/e723f716-7249-4567-8d44-46e273599ee5",
-      "split": "dev",
+      "split": "test",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|senior software developer iii",
@@ -1035,7 +1037,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "movedFrom": "dev",
+      "movedAt": "2026-11-02"
     },
     {
       "id": "lever:ciandt:4162ee2d-21be-4528-bf28-e7ac92a5cb7d",
@@ -4478,5 +4482,10 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false
     }
-  ]
+  ],
+  "testSet": {
+    "status": "frozen",
+    "frozenAt": "2026-11-02",
+    "applicableCO": 61
+  }
 }

@@ -2,6 +2,9 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-02 · Prueba de S7 congelada (61 aplicables)
+- Decisión del dueño: mover de desarrollo a prueba 2 casos aplicables sin hermanas (Clara QA Automation Lead, Caseware Senior Software Developer III), antes de cualquier evaluación o ajuste de prompt. Con `isApplicable`: **61 aplicables en prueba (112 casos) y 28 en desarrollo (48)**. `cases.json` marca `testSet.status = "frozen"`; el ADR 0004 (sección 6) lo documenta y los informes dejan de ser "provisionales".
+
 ## 2026-11-02 (2.ª corrida) · Prueba de S7 sigue sin congelar: 0 candidatos nuevos
 - Segunda corrida de `rescue-seed-offers.mjs --source=companies` el mismo día: 5 ofertas nuevas (ElevenLabs 3: "Remote" de EE. UU. y dos de Reino Unido; Caseware 2: Atlanta y Toronto). Ninguna menciona Colombia/LATAM ni en la ubicación ni en el cuerpo. La prueba sigue en **59 aplicables**; `cases.json` y el ADR 0004 no se tocaron. Con 13 empresas y 1 corrida al día no hay flujo suficiente: hace falta la ingesta diaria de S4 o ampliar el directorio (requiere tu aprobación).
 
