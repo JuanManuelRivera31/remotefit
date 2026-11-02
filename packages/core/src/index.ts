@@ -9,3 +9,10 @@ export { assignSiblingGroups, isReliableRequisitionId, normalizeTitle } from "./
 export type { SiblingInput } from "./ingest/siblings.js";
 export { reconcileBoard } from "./ingest/reconcile.js";
 export type { ReconcilePlan, StoredJobState } from "./ingest/reconcile.js";
+export {
+  PREFILTER_RULES,
+  PREFILTER_VERSION,
+  evaluatePrefilterRules,
+  prefilterJob,
+} from "./rules/prefilter.js";
+export type { PrefilterInput, PrefilterResult, PrefilterRule, RuleHit } from "./rules/prefilter.js";
