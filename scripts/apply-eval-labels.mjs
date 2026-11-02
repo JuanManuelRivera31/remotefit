@@ -10,8 +10,8 @@ const DATE = process.argv[2] ?? new Date().toISOString().slice(0, 10);
 
 const LABELS = new Set(["latam_eligible", "worldwide", "us_only", "country_specific", "onsite_or_hybrid", "unclear"]);
 const WORK_MODELS = new Set(["remote", "hybrid", "onsite", "unknown"]);
-// Cases where the rule-based call is defensible but the owner may disagree (see docs/progreso.md, 2026-11-01).
-const NEEDS_REVIEW = new Set([
+// Cases the owner reviewed on 2026-11-01 (decisions in docs/progreso.md); labels stay as set by the LLM-assisted pass.
+const OWNER_REVIEWED = new Set([
   "greenhouse:sezzle:7906408003",
   "greenhouse:sezzle:7906563003",
   "greenhouse:sezzle:8010090003",
@@ -22,6 +22,9 @@ const NEEDS_REVIEW = new Set([
   "greenhouse:clara:5236289007",
   "greenhouse:canonical:7267884",
 ]);
+
+// Remote-first body but with an in-person ramp-up stage: body and workModel disagree (ADR 0004).
+const WORK_MODEL_CONFLICT = new Set(["greenhouse:clara:5236289007"]);
 
 const [header, ...lines] = (await readFile(LABELS_TSV, "utf8")).trim().split(/\r?\n/);
 const cols = header.split("\t");
@@ -49,17 +52,21 @@ for (const c of data.cases) {
   c.bodyChecked = row[idx.verificar_cuerpo] === "si";
   c.labelSource = "llm-assisted";
   c.labeledAt = DATE;
-  c.labelStatus = NEEDS_REVIEW.has(c.id) ? "needs_review" : "labeled";
+  c.labelStatus = OWNER_REVIEWED.has(c.id) ? "owner_reviewed" : "labeled";
+  c.workModelConflict = WORK_MODEL_CONFLICT.has(c.id);
 }
 
 data.note =
   "Ids and provenance only; posting text lives in data/seed-career-ops/bodies/ (ignored by git, ADR 0002). " +
   "Labels are LLM-assisted (Claude) under rules approved by the project owner (ADR 0004); human review is limited " +
-  "to cases with labelStatus 'needs_review'. proposedLabel is the original heuristic suggestion, kept for reference.";
+  "to the 9 cases the owner reviewed (labelStatus 'owner_reviewed'). proposedLabel is the original heuristic suggestion, kept for reference.";
 await writeFile(CASES, JSON.stringify(data, null, 2) + "\n");
 
 // Colombia-applicable summary (ADR 0004): latam_eligible, worldwide, or country_specific that lists CO.
-const applicable = (c) => c.label === "latam_eligible" || c.label === "worldwide" || (c.label === "country_specific" && c.countries.includes("CO"));
+// ADR 0004 isApplicable for Colombia: workModel must be remote, then the label must allow CO.
+const applicable = (c) =>
+  c.workModel === "remote" &&
+  (c.label === "latam_eligible" || c.label === "worldwide" || (c.label === "country_specific" && c.countries.includes("CO")));
 for (const split of ["dev", "test"]) {
   const cs = data.cases.filter((c) => c.split === split);
   console.log(`${split}: ${cs.length} cases, ${cs.filter(applicable).length} applicable for Colombia`);
