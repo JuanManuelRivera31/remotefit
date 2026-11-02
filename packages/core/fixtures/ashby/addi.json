@@ -1,0 +1,97 @@
+{
+  "jobs": [
+    {
+      "id": "97f0cd1b-ccae-4b31-9878-2d90da42bae1",
+      "title": "Backend JVM Software Engineer | IC3",
+      "department": "Engineering",
+      "team": "Engineering",
+      "employmentType": "FullTime",
+      "location": "Colombia",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [],
+      "publishedAt": "2026-05-14T18:21:50.166+00:00",
+      "isListed": true,
+      "isRemote": true,
+      "workplaceType": "Remote",
+      "address": {
+        "postalAddress": {
+          "addressCountry": "Colombia",
+          "addressLocality": "Bogotá"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/addi/97f0cd1b-ccae-4b31-9878-2d90da42bae1",
+      "applyUrl": "https://jobs.ashbyhq.com/addi/97f0cd1b-ccae-4b31-9878-2d90da42bae1/application",
+      "descriptionHtml": "<p><strong>About Addi</strong></p><p>Synthetic fixture text #1. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).</p><p>What you will do: build and maintain services, review code with the team and improve reliability.</p><p>What we look for: experience with modern web stacks, clear written English and ownership of results.</p><ul><li>Ship features end to end</li><li>Write tests next to the code</li><li>Share knowledge in reviews</li></ul>",
+      "descriptionPlain": "About Addi\n\nSynthetic fixture text #2. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).\n\nWhat you will do: build and maintain services, review code with the team and improve reliability.\n\nWhat we look for: experience with modern web stacks, clear written English and ownership of results.\n\n- Ship features end to end\n- Write tests next to the code\n- Share knowledge in reviews",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    },
+    {
+      "id": "d28cab1f-fb41-42b8-af71-4c9bf1c8913d",
+      "title": "Analytics Engineer",
+      "department": "Engineering",
+      "team": "Engineering",
+      "employmentType": "FullTime",
+      "location": "Colombia",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [],
+      "publishedAt": "2026-10-09T02:05:39.168+00:00",
+      "isListed": true,
+      "isRemote": true,
+      "workplaceType": "Remote",
+      "address": {
+        "postalAddress": {
+          "addressCountry": "Colombia",
+          "addressLocality": "Bogotá"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/addi/d28cab1f-fb41-42b8-af71-4c9bf1c8913d",
+      "applyUrl": "https://jobs.ashbyhq.com/addi/d28cab1f-fb41-42b8-af71-4c9bf1c8913d/application",
+      "descriptionHtml": "<p><strong>About Addi</strong></p><p>Synthetic fixture text #3. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).</p><p>What you will do: build and maintain services, review code with the team and improve reliability.</p><p>What we look for: experience with modern web stacks, clear written English and ownership of results.</p><ul><li>Ship features end to end</li><li>Write tests next to the code</li><li>Share knowledge in reviews</li></ul>",
+      "descriptionPlain": "About Addi\n\nSynthetic fixture text #4. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).\n\nWhat you will do: build and maintain services, review code with the team and improve reliability.\n\nWhat we look for: experience with modern web stacks, clear written English and ownership of results.\n\n- Ship features end to end\n- Write tests next to the code\n- Share knowledge in reviews",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    },
+    {
+      "id": "93a91948-7393-4922-8a9e-4c406a2f4511",
+      "title": "Quality & Continuous Improvement Analyst",
+      "department": "Operations",
+      "team": "Operations",
+      "employmentType": "FullTime",
+      "location": "Bogotá",
+      "shouldDisplayCompensationOnJobPostings": false,
+      "secondaryLocations": [],
+      "publishedAt": "2026-09-17T15:33:48.769+00:00",
+      "isListed": true,
+      "isRemote": null,
+      "workplaceType": null,
+      "address": {
+        "postalAddress": {
+          "postalCode": "",
+          "addressRegion": "Bogota",
+          "addressCountry": "CO",
+          "addressLocality": "Bogotá"
+        }
+      },
+      "jobUrl": "https://jobs.ashbyhq.com/addi/93a91948-7393-4922-8a9e-4c406a2f4511",
+      "applyUrl": "https://jobs.ashbyhq.com/addi/93a91948-7393-4922-8a9e-4c406a2f4511/application",
+      "descriptionHtml": "<p><strong>About Addi</strong></p><p>Synthetic fixture text #5. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).</p><p>What you will do: build and maintain services, review code with the team and improve reliability.</p><p>What we look for: experience with modern web stacks, clear written English and ownership of results.</p><ul><li>Ship features end to end</li><li>Write tests next to the code</li><li>Share knowledge in reviews</li></ul>",
+      "descriptionPlain": "About Addi\n\nSynthetic fixture text #6. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).\n\nWhat you will do: build and maintain services, review code with the team and improve reliability.\n\nWhat we look for: experience with modern web stacks, clear written English and ownership of results.\n\n- Ship features end to end\n- Write tests next to the code\n- Share knowledge in reviews",
+      "compensation": {
+        "compensationTierSummary": null,
+        "scrapeableCompensationSalarySummary": null,
+        "compensationTiers": [],
+        "summaryComponents": []
+      }
+    }
+  ],
+  "apiVersion": "1"
+}
