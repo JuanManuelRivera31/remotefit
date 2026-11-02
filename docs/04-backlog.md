@@ -19,7 +19,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   *Hecho cuando:* `npm run lint && npm run typecheck && npm test` pasan.
   *Prompt sugerido:* `Lee docs/02-arquitectura.md y haz la sesión S1 del backlog. Planea primero y espera mi aprobación.`
 
-- [ ] **S2 · Base de datos** 🔴
+- [x] **S2 · Base de datos** 🔴
   Drizzle + esquema de `docs/03-modelo-de-datos.md`, migraciones, conexión con `DATABASE_URL`, script `db:migrate`.
   *Hecho cuando:* las migraciones corren contra tu base y hay una prueba de humo de conexión.
 

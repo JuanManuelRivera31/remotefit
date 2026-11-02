@@ -1,4 +1,4 @@
-# Opcional: PostgreSQL local con Docker Desktop. Alternativa sin Docker: una base gratuita en la nube.
+# Opcional: PostgreSQL local con Docker Desktop (puerto 5433 en el host para no chocar con otro Postgres en 5432). Alternativa sin Docker: una base gratuita en la nube.
 services:
   db:
     image: postgres:16
@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: remotefit
       POSTGRES_DB: remotefit
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - remotefit-db:/var/lib/postgresql/data
 volumes:

@@ -2,6 +2,11 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-01 · S2 hecha: migración aplicada y verificada contra PostgreSQL 16
+- Hecho: `docker compose up -d` levanta Postgres 16 con volumen persistente (`remotefit-db`); `npm run db:migrate` creó las 6 tablas y la prueba de humo de la base pasa (API: 3 pruebas; lint, typecheck y pruebas de los tres paquetes en verde).
+- Decisión técnica: el puerto 5432 del host ya lo usa otro contenedor (`postgres-dev`, pg15, ajeno a RemoteFit), así que RemoteFit expone Postgres en el **5433** (`docker-compose.yml` y `.env.example`). Ese contenedor no se tocó. Si tu `.env` aún apunta a 5432, cámbialo a `localhost:5433`.
+- Siguiente paso: S3 según `docs/04-backlog.md`.
+
 ## 2026-11-01 · Revisión del dueño de los 9 casos dudosos (S7 sigue abierta)
 - Hecho: Juan Manuel revisó los 9 casos. Aceptó 1, 2, 3, 4, 5, 8 y 9 tal cual. En el 8 (Clara Security Engineer) se registra `workModelConflict = true` por la etapa presencial inicial. En 6 y 7 (Clara Fullstack) se mantiene `workModel = remote` porque el cuerpo lo dice explícitamente ("This is a remote-first role: you'll work from home day to day"). Los 9 quedan con `labelStatus = "owner_reviewed"`. Se acepta usar los metadatos del ATS cuando el cuerpo no diga la modalidad.
 - Métricas: con la regla completa del ADR 0004 (`isApplicable`: `workModel = remote` y etiqueta válida para CO) quedan **30 aplicables en desarrollo y 59 en prueba**, igual que con el conteo anterior porque ningún caso con etiqueta válida tenía `workModel` distinto de `remote`. La prueba sigue bajo 60: informes "provisionales".
