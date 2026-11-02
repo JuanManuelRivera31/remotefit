@@ -2,6 +2,12 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-02 · S4 escrita, falta verificar contra Postgres (rama `feat/s4-ingest`, sin unir a main)
+- Hecho: `packages/core/src/ingest/{siblings,reconcile}.ts` (funciones puras) y `apps/api/src/ingest/run.ts` + `npm run ingest` (recorre `data/companies.json`, upsert por lotes, pausa de 1 s entre boards, resumen). Pruebas de core con fixture real `greenhouse/sezzle-siblings.json`: las hermanas de "Solutions Engineer" (req. 481, 6 países) quedan agrupadas y el "Solutions Engineer" de EE. UU. (req. 482) queda aparte. Lint y typecheck pasan; core: 37 pruebas en verde.
+- Decisiones técnicas: (1) grupo hermano = empresa + título normalizado + `requisition_id` solo si es fiable; "TBD", "tbc", "0000", "10000" y vacío se tratan como relleno (aprobado por el dueño) y agrupan solo por título. (2) No se cierra nada si el board falla, devuelve 404 o devuelve cero ofertas teniendo ofertas abiertas, ni si alguna oferta no se pudo leer: un glitch no debe cerrar el catálogo de una empresa. (3) Una oferta ausente solo se marca cerrada (`closed_at`, `is_active=false`), nunca se borra, y reaparece si vuelve. (4) No se re-verifica cada oferta con una petición propia: la ausencia en un listado sano basta.
+- Pendiente / problemas: **Docker Desktop no está corriendo** (sin pipe de Docker; el 5432 también rechaza) y `.env` aún apunta al 5432, no al 5433. Las 4 pruebas contra Postgres de `apps/api/src/ingest/run.db.test.ts` están escritas pero **sin ejecutar**, y `npm run ingest` no se corrió de verdad. Por eso no uní a main.
+- Siguiente paso: encender Docker, `docker compose up -d db`, poner el 5433 en `.env`, `npm run db:migrate`, `npm test` y `npm run ingest`; si pasan, unir `feat/s4-ingest` a main y marcar S4 en el backlog.
+
 ## 2026-11-02 · Prueba de S7 congelada (61 aplicables)
 - Decisión del dueño: mover de desarrollo a prueba 2 casos aplicables sin hermanas (Clara QA Automation Lead, Caseware Senior Software Developer III), antes de cualquier evaluación o ajuste de prompt. Con `isApplicable`: **61 aplicables en prueba (112 casos) y 28 en desarrollo (48)**. `cases.json` marca `testSet.status = "frozen"`; el ADR 0004 (sección 6) lo documenta y los informes dejan de ser "provisionales".
 

@@ -16,7 +16,8 @@
     "@remotefit/core": "*",
     "drizzle-orm": "^0.45.4",
     "express": "^5.0.0",
-    "pg": "^8.23.1"
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

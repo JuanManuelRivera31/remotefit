@@ -1,0 +1,521 @@
+{
+  "jobs": [
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7116700003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5469454003,
+      "location": {
+        "name": "Colombia, Remote"
+      },
+      "metadata": null,
+      "id": 7116700003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "tbc",
+      "title": "Fraud Operations Intern ",
+      "company_name": "Sezzle",
+      "first_published": "2025-09-12T17:53:12-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #1. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057985003,
+          "name": "DS-Risk & Fraud",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7116700003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849452003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815785003,
+      "location": {
+        "name": "Latin America"
+      },
+      "metadata": null,
+      "id": 7849452003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "481",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:06:58-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #2. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        },
+        {
+          "id": 4053111003,
+          "name": "Latin America [Remote]",
+          "location": null,
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849452003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849511003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815785003,
+      "location": {
+        "name": "Bogota, Colombia"
+      },
+      "metadata": null,
+      "id": 7849511003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "481",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:06:17-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #3. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        },
+        {
+          "id": 4053111003,
+          "name": "Latin America [Remote]",
+          "location": null,
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849511003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849512003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815785003,
+      "location": {
+        "name": "Argentina, Remote"
+      },
+      "metadata": null,
+      "id": 7849512003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "481",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:05:37-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #4. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        },
+        {
+          "id": 4053111003,
+          "name": "Latin America [Remote]",
+          "location": null,
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849512003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849513003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815785003,
+      "location": {
+        "name": "Brazil, Remote"
+      },
+      "metadata": null,
+      "id": 7849513003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "481",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:05:09-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #5. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        },
+        {
+          "id": 4053111003,
+          "name": "Latin America [Remote]",
+          "location": null,
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849513003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849514003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815785003,
+      "location": {
+        "name": "Mexico, Remote"
+      },
+      "metadata": null,
+      "id": 7849514003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "481",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:04:22-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #6. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        },
+        {
+          "id": 4053111003,
+          "name": "Latin America [Remote]",
+          "location": null,
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849514003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849516003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815785003,
+      "location": {
+        "name": "Chile, Remote"
+      },
+      "metadata": null,
+      "id": 7849516003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "481",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:04:23-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #7. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        },
+        {
+          "id": 4053111003,
+          "name": "Latin America [Remote]",
+          "location": null,
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849516003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/7849579003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5815853003,
+      "location": {
+        "name": "United States, Remote"
+      },
+      "metadata": null,
+      "id": 7849579003,
+      "updated_at": "2026-08-31T10:56:59-04:00",
+      "requisition_id": "482",
+      "title": "Solutions Engineer",
+      "company_name": "Sezzle",
+      "first_published": "2026-08-10T14:21:55-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #8. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057984003,
+          "name": "SL-Enterprise Sales",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4038830003,
+          "name": "US Remote",
+          "location": null,
+          "child_ids": [
+            4038837003
+          ],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": true,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/7849579003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/8009616003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5469454003,
+      "location": {
+        "name": "Peru"
+      },
+      "metadata": null,
+      "id": 8009616003,
+      "updated_at": "2026-09-30T12:55:01-04:00",
+      "requisition_id": "tbc",
+      "title": "Fraud Operations Intern ",
+      "company_name": "Sezzle",
+      "first_published": "2026-09-30T12:55:01-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #9. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057985003,
+          "name": "DS-Risk & Fraud",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": false,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/8009616003/ai_opt_out"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/sezzle/jobs/8009621003",
+      "data_compliance": [
+        {
+          "type": "gdpr",
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "demographic_data_consent_applies": false
+        }
+      ],
+      "internal_job_id": 5469454003,
+      "location": {
+        "name": "Mexico, Remote"
+      },
+      "metadata": null,
+      "id": 8009621003,
+      "updated_at": "2026-09-30T12:58:48-04:00",
+      "requisition_id": "tbc",
+      "title": "Fraud Operations Intern ",
+      "company_name": "Sezzle",
+      "first_published": "2026-09-30T12:58:48-04:00",
+      "language": "en",
+      "application_deadline": null,
+      "content": "&lt;p&gt;&lt;strong&gt;About Sezzle&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Synthetic fixture text #10. This paragraph stands in for the original posting text, which is not kept in the repository (ADR 0002).&lt;/p&gt;&lt;p&gt;What you will do: build and maintain services, review code with the team and improve reliability.&lt;/p&gt;&lt;p&gt;What we look for: experience with modern web stacks, clear written English and ownership of results.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Ship features end to end&lt;/li&gt;&lt;li&gt;Write tests next to the code&lt;/li&gt;&lt;li&gt;Share knowledge in reviews&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [
+        {
+          "id": 4057985003,
+          "name": "DS-Risk & Fraud",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "offices": [
+        {
+          "id": 4044515003,
+          "name": "Bogota, Colombia",
+          "location": "Bogotá, Bogotá, Colombia",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "ai_disclaimer": "<p>We use Greenhouse’s AI-powered Talent Matching and external tools to compare your application against our job requirements.</p>",
+      "include_ai_disclaimer": false,
+      "ai_opt_out_request_url": "http://app3.greenhouse.io/ai_opt_out_request/job_post/8009621003/ai_opt_out"
+    }
+  ],
+  "meta": {
+    "total": 10
+  }
+}
