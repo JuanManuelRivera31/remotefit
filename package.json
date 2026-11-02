@@ -14,6 +14,7 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm test --workspaces --if-present",
     "ingest": "npm run ingest -w apps/api",
+    "prefilter": "npm run prefilter -w apps/api --",
     "eval": "npm run eval -w packages/core",
     "db:generate": "npm run db:generate -w apps/api",
     "db:migrate": "npm run db:migrate -w apps/api"

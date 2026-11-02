@@ -48,6 +48,12 @@ export const jobs = pgTable(
     lastSeenAt: timestampTz("last_seen_at").notNull().defaultNow(),
     closedAt: timestampTz("closed_at"),
     isActive: boolean("is_active").notNull().default(true),
+    // Rules pre-filter (S5). Null = not evaluated yet. Kept on the job (not in eligibility_results) because the
+    // outcome depends on workplace_type, which is not part of content_hash.
+    prefilterVersion: text("prefilter_version"),
+    prefilterOutcome: text("prefilter_outcome"), // pass | discarded
+    prefilterRule: text("prefilter_rule"), // non_latam_location | onsite_or_hybrid_metadata | non_tech_role
+    prefilterMatchedText: text("prefilter_matched_text"),
   },
   (table) => [
     uniqueIndex("jobs_source_external_id_uq").on(table.source, table.externalId),
