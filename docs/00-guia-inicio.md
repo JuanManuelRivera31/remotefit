@@ -65,7 +65,7 @@ git push -u origin main
 
 Elige una:
 - **Sin instalar nada (recomendado para empezar):** crea una base PostgreSQL gratuita en la nube (Neon o Supabase) y copia su cadena de conexión.
-- **Local con Docker:** instala Docker Desktop y ejecuta `docker compose up -d` en la carpeta del proyecto.
+- **Local con Docker:** instala Docker Desktop y ejecuta `docker compose up -d db` en la carpeta del proyecto. Postgres queda en el puerto **5433** del host (no 5432, que suele estar ocupado), así que `DATABASE_URL` debe terminar en `localhost:5433/remotefit`; `.env.example` ya lo trae.
 
 Luego: copia `.env.example` como `.env` y pega tu `DATABASE_URL`. La clave del LLM la necesitarás hasta la sesión S6; cuando llegues, créala en Google AI Studio (https://aistudio.google.com) en un proyecto **sin cuenta de facturación vinculada** y pégala en `RF_LLM_API_KEY`. Sin facturación no hay cobros posibles (ADR 0005).
 
