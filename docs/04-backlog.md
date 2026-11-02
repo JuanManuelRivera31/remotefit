@@ -31,7 +31,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   Cada uno: descargar una respuesta real y guardarla en `packages/core/fixtures/<ats>/`, tipos de la respuesta, función `fetchJobs(boardToken)` y `toNormalizedJob()`, pruebas contra el fixture. Mapea `postedAt` y `requisitionId` cuando el ATS los exponga. Usa la skill `/nueva-fuente-ats <ats>`.
   *Paralelo posible:* tres worktrees (`claude -w greenhouse`, `claude -w lever`, `claude -w ashby`), pero en Pro conviene hacer uno y reutilizar el patrón para los otros dos.
 
-- [ ] **S4 · Comando de ingesta + lista de empresas** 🔴 👤
+- [x] **S4 · Comando de ingesta + lista de empresas** 🔴 👤
   `npm run ingest`: recorre `data/companies.json`, llama al conector, hace upsert, asigna `sibling_group`, re-verifica la vigencia (ADR 0002), imprime un resumen. Las ofertas con 404 o ausentes de un board que respondió bien se marcan cerradas con `closed_at` y no se borran; un error del board no cierra nada y sale en el resumen; una oferta que reaparece se reabre. Pausa entre peticiones.
   👤 `data/companies.json` ya trae 15 empresas sembradas. Verifica las marcadas como pendientes y amplíala a 20–30 con el subagente `ats-researcher`, priorizando empresas con historial de contratar en LATAM: las fuentes pesan más que el filtro. **Verifica tú cada una** abriendo su página de empleo.
   *Hecho cuando:* las vacantes hermanas reales de Sezzle quedan agrupadas y no se unen vacantes distintas con el mismo título; con fixtures, una oferta ausente se cierra sin borrarse y un fallo del board no cierra ninguna.

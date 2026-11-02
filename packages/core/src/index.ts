@@ -5,3 +5,7 @@ export type { AtsConnector, FetchJobsResult } from "./ats/index.js";
 export { htmlToText } from "./normalize/html.js";
 export { ATS_NAMES, computeContentHash } from "./normalize/job.js";
 export type { AtsName, CompanyRef, NormalizedJob, WorkplaceType } from "./normalize/job.js";
+export { assignSiblingGroups, isReliableRequisitionId, normalizeTitle } from "./ingest/siblings.js";
+export type { SiblingInput } from "./ingest/siblings.js";
+export { reconcileBoard } from "./ingest/reconcile.js";
+export type { ReconcilePlan, StoredJobState } from "./ingest/reconcile.js";

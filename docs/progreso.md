@@ -2,6 +2,14 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-02 · S4 hecha: ingesta verificada contra PostgreSQL 16
+- Hecho: `npm run ingest` (`apps/api/src/ingest/run.ts`, con funciones puras en `packages/core/src/ingest/{siblings,reconcile}.ts`) recorre `data/companies.json`, hace upsert por lotes, pausa 1 s entre boards, cierra sin borrar y reabre. Migración aplicada, `npm test` completo en verde (core 37, api 7 con las 4 pruebas nuevas contra Postgres) y lint y typecheck pasan.
+- Corrida real (13 boards activos, 6 inactivos omitidos, 0 problemas): **1282 ofertas nuevas, 0 cerradas, 0 reabiertas**. Por empresa: Canonical 314, Sezzle 273, Clara 155, CI&T 150, ElevenLabs 144, Supabase 68, Caseware 41, Turing 40, Addi 30, Canals 24, Amplemarket 17, Deuna 16, Oowlish 10. Segunda corrida: 0 nuevas, todas actualizadas (idempotente).
+- Grupos de hermanas: **61 grupos con 246 ofertas** (el mayor, 11). Sezzle 40 grupos / 200 ofertas, Canonical 6/12, Clara 4/11, CI&T 4/8, Turing 2/4, Caseware 2/4, Canals 1/3, Oowlish 1/2, Deuna 1/2. Con fixtures reales: el "Solutions Engineer" de Sezzle con req. 481 (6 países) queda agrupado y el de EE. UU. (req. 482) queda aparte.
+- Decisiones técnicas (aprobadas): `requisition_id` de relleno ("TBD", "tbc", "0000", vacío) no cuenta para agrupar; no se cierra nada si el board falla, da 404, viene vacío o alguna oferta es ilegible; no se re-verifica oferta por oferta.
+- Puerto: `.env.example`, `docker-compose.yml` y `docs/00-guia-inicio.md` ya dicen 5433. Mi `.env` local aún dice 5432: el sistema me negó editarlo (regla de no tocar `.env`). Cámbialo a mano a `localhost:5433`; mientras tanto corrí todo con `DATABASE_URL` en el entorno.
+- Siguiente paso: S5 (prefiltro por reglas). El directorio sigue en 13 empresas activas; ampliarlo queda para cuando el pipeline funcione.
+
 ## 2026-11-02 · Prueba de S7 congelada (61 aplicables)
 - Decisión del dueño: mover de desarrollo a prueba 2 casos aplicables sin hermanas (Clara QA Automation Lead, Caseware Senior Software Developer III), antes de cualquier evaluación o ajuste de prompt. Con `isApplicable`: **61 aplicables en prueba (112 casos) y 28 en desarrollo (48)**. `cases.json` marca `testSet.status = "frozen"`; el ADR 0004 (sección 6) lo documenta y los informes dejan de ser "provisionales".
 
