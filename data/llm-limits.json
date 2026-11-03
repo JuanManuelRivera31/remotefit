@@ -1,0 +1,35 @@
+{
+  "source": "Panel de Google AI Studio del dueño (https://aistudio.google.com/rate-limit), capa gratuita sin facturación",
+  "verifiedAt": "2026-11-02",
+  "safetyMargin": 0.2,
+  "models": {
+    "gemini-3.5-flash-lite": {
+      "rpm": 15,
+      "tpm": 250000,
+      "rpd": 500,
+      "thinkingLevel": "MINIMAL",
+      "notes": "Modelo por defecto del clasificador. Pensamiento mínimo (también es su valor por defecto)."
+    },
+    "gemini-3.1-flash-lite": {
+      "rpm": 15,
+      "tpm": 250000,
+      "rpd": 500,
+      "thinkingLevel": "MINIMAL",
+      "notes": "Para comparar con 3.5-flash-lite."
+    },
+    "gemini-3.6-flash": {
+      "rpm": 5,
+      "tpm": 250000,
+      "rpd": 20,
+      "thinkingLevel": "MINIMAL",
+      "notes": "20 RPD: no sirve para producción; solo comparaciones pequeñas."
+    },
+    "gemini-3.8-flash": {
+      "rpm": 5,
+      "tpm": 250000,
+      "rpd": 20,
+      "thinkingLevel": "LOW",
+      "notes": "20 RPD: no sirve para producción; su nivel mínimo de pensamiento es LOW."
+    }
+  }
+}
