@@ -153,17 +153,26 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
-      "countries": [
-        "US"
-      ],
-      "workModel": "unknown",
-      "evidence": null,
+      "label": "latam_eligible",
+      "labelStatus": "owner_rules_applied",
+      "countries": [],
+      "workModel": "remote",
+      "evidence": "Body: \"remote-first ... distributed across North and South America\"; nothing restricts it further (D5: Americas = latam_eligible). Weakest case: company-level wording, US cities in the location field.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "americas_is_latam_d5",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:claylabs:046cb127-d5fc-444f-a2a9-fb4029d6a503",
@@ -179,17 +188,28 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body is silent on work model; ATS workplaceType hybrid (ADR 0004: metadata when the body is silent).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:6a530871-b6c6-4783-ac6b-69cc3b084192",
@@ -361,17 +381,28 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"Location-based hybrid policy\" (offices at least 25% of the time).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5134418007",
@@ -389,17 +420,28 @@
         "MX"
       ],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "MX"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"This is a hybrid role\" (office, customers and home).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "MX"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5136291007",
@@ -999,17 +1041,28 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "CA"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"This is a hybrid role\" (3 days a week in the Toronto office); ATS workplaceType hybrid.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "CA"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:e723f716-7249-4567-8d44-46e273599ee5",
@@ -1444,17 +1497,28 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "FR"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body is silent on work model; ATS workplaceType hybrid (ADR 0004: metadata when the body is silent).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "FR"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:152a9e69-8f20-4097-bb07-a76a18e61ed0",
@@ -4487,5 +4551,15 @@
     "status": "frozen",
     "frozenAt": "2026-11-02",
     "applicableCO": 61
+  },
+  "devLabelRevision": {
+    "date": "2026-11-03",
+    "decidedBy": "owner",
+    "scope": "dev split only; the frozen test split is untouched",
+    "rules": [
+      "A case whose body explicitly says hybrid/onsite, or whose body is silent and whose ATS workplaceType is hybrid/onsite, gets workModel hybrid/onsite and label onsite_or_hybrid (ADR 0004 sections 3 and 6).",
+      "D5: 'Americas' counts as latam_eligible unless the body restricts the role further."
+    ],
+    "changedCases": 6
   }
 }
