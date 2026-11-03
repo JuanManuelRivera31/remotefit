@@ -814,17 +814,28 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "BR"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"This involves an office-first setup\" (São Paulo or Florianópolis hub). Found after the first v2 run, by the same owner rule.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "BR"
+        ],
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sumup:8583427002",
@@ -4560,6 +4571,6 @@
       "A case whose body explicitly says hybrid/onsite, or whose body is silent and whose ATS workplaceType is hybrid/onsite, gets workModel hybrid/onsite and label onsite_or_hybrid (ADR 0004 sections 3 and 6).",
       "D5: 'Americas' counts as latam_eligible unless the body restricts the role further."
     ],
-    "changedCases": 6
+    "changedCases": 7
   }
 }
