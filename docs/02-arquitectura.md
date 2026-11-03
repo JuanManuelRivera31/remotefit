@@ -182,6 +182,6 @@ Cada resultado se identifica por **`content_hash` + `prompt_version` + `model`**
 ## 7. Seguridad, privacidad y configuración
 
 - Variables en `.env` (nunca en git). Ver `.env.example`.
-- La clave del LLM es la de Google AI Studio, se llama `RF_LLM_API_KEY` y se pasa explícitamente al SDK. **No uses `ANTHROPIC_API_KEY` como variable global de Windows**: si existe, Claude Code la usa y te cobra por API en lugar de usar tu plan Pro.
+- La clave del LLM es la de Google AI Studio, se llama `GEMINI_API_KEY` (alias aceptado: `RF_LLM_API_KEY`) y se pasa explícitamente al proveedor (`GeminiProvider` usa la API REST con `fetch`, sin SDK, y envía la clave en la cabecera `x-goog-api-key`). **No uses `ANTHROPIC_API_KEY` como variable global de Windows**: si existe, Claude Code la usa y te cobra por API en lugar de usar tu plan Pro.
 - A la capa gratuita solo se envía **texto público de ofertas**, porque Google puede usarlo para mejorar sus productos. Nunca se envían datos personales de usuarios: perfil, CV o correo. Tampoco las evaluaciones personales de `data/seed-career-ops/reports/`.
 - Claude Code tiene prohibido leer `.env` (ver `.claude/settings.json`).

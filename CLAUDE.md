@@ -34,7 +34,7 @@ Monorepo npm workspaces en TypeScript. Detalle: `docs/02-arquitectura.md`, datos
 - Commits pequeños con Conventional Commits (`feat:`, `fix:`, `test:`, `docs:`, `chore:`).
 
 ## Lo que nunca debes hacer
-- Leer o imprimir `.env` ni claves. La clave del LLM se llama `RF_LLM_API_KEY`; nunca uses ni sugieras `ANTHROPIC_API_KEY` como variable global.
+- Leer o imprimir `.env` ni claves. La clave del LLM se llama `GEMINI_API_KEY` (`RF_LLM_API_KEY` se acepta como alias); nunca uses ni sugieras `ANTHROPIC_API_KEY` como variable global.
 - Hacer scraping de LinkedIn u otros sitios que lo prohíben. Solo APIs públicas de ATS (ADR 0002).
 - Enviar aplicaciones a empleos de forma automática.
 - Enviar datos personales de usuarios (perfil, CV, correo) a capas gratuitas de LLM. Solo se envía texto público de ofertas.
