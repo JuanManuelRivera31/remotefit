@@ -220,7 +220,7 @@ const hasBodies = existsSync(new URL("../../../data/seed-career-ops/bodies/", im
 describe.skipIf(!hasBodies)("loader (needs the local rescued postings)", () => {
   it("loads only the requested split and rebuilds the text of every development case", () => {
     const cases = loadCases("dev");
-    expect(cases.length).toBe(48);
+    expect(cases.length).toBe(160);
     expect(cases.every((item) => item.split === "dev")).toBe(true);
     for (const item of cases) {
       const job = loadJob(item);

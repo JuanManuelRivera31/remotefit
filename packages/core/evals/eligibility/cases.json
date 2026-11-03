@@ -6,8 +6,8 @@
   "composition": {
     "total": 160,
     "bySplit": {
-      "dev": 48,
-      "test": 112
+      "dev": 160,
+      "test": 0
     },
     "byGroup": {
       "candidate": 90,
@@ -503,7 +503,7 @@
       "board": "clara",
       "externalId": "5257213007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5257213007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|qa automation lead",
@@ -529,7 +529,9 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "movedFrom": "dev",
-      "movedAt": "2026-11-02"
+      "movedAt": "2026-11-02",
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6037486003",
@@ -695,17 +697,27 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
-      "countries": [
-        "MX"
-      ],
+      "label": "latam_eligible",
+      "labelStatus": "owner_rules_applied",
+      "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Location \"Mexico, Remote | Latin America [Remote]\" bundles sibling postings; neither the title nor the body restricts to Mexico, so the region wins (guide pattern 3).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "guide_p3",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7998737003",
@@ -1073,7 +1085,7 @@
       "board": "caseware",
       "externalId": "e723f716-7249-4567-8d44-46e273599ee5",
       "url": "https://jobs.lever.co/caseware/e723f716-7249-4567-8d44-46e273599ee5",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|senior software developer iii",
@@ -1095,7 +1107,9 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "movedFrom": "dev",
-      "movedAt": "2026-11-02"
+      "movedAt": "2026-11-02",
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:4162ee2d-21be-4528-bf28-e7ac92a5cb7d",
@@ -1529,7 +1543,7 @@
       "board": "addi",
       "externalId": "152a9e69-8f20-4097-bb07-a76a18e61ed0",
       "url": "https://jobs.ashbyhq.com/addi/152a9e69-8f20-4097-bb07-a76a18e61ed0",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "false_match",
       "siblingKey": "addi|field sales representative",
@@ -1547,7 +1561,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:40ecb2b2-32a1-44b2-b7bf-2a9d6d795a11",
@@ -1555,7 +1571,7 @@
       "board": "addi",
       "externalId": "40ecb2b2-32a1-44b2-b7bf-2a9d6d795a11",
       "url": "https://jobs.ashbyhq.com/addi/40ecb2b2-32a1-44b2-b7bf-2a9d6d795a11",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|success manager",
@@ -1575,7 +1591,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:47e36408-41dd-4631-af71-3630bf386f2f",
@@ -1583,7 +1601,7 @@
       "board": "addi",
       "externalId": "47e36408-41dd-4631-af71-3630bf386f2f",
       "url": "https://jobs.ashbyhq.com/addi/47e36408-41dd-4631-af71-3630bf386f2f",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|agente de servicio al cliente",
@@ -1601,7 +1619,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:6534a249-6193-479c-a60a-722a984311ef",
@@ -1609,7 +1629,7 @@
       "board": "addi",
       "externalId": "6534a249-6193-479c-a60a-722a984311ef",
       "url": "https://jobs.ashbyhq.com/addi/6534a249-6193-479c-a60a-722a984311ef",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|frontend engineer ic2",
@@ -1629,7 +1649,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:7365e947-c71f-4509-8392-9fa2cee37749",
@@ -1637,7 +1659,7 @@
       "board": "addi",
       "externalId": "7365e947-c71f-4509-8392-9fa2cee37749",
       "url": "https://jobs.ashbyhq.com/addi/7365e947-c71f-4509-8392-9fa2cee37749",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|frontend software engineer | l3",
@@ -1657,7 +1679,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:7e309b42-7564-417a-9bd0-3eb6d4c26b13",
@@ -1665,7 +1689,7 @@
       "board": "addi",
       "externalId": "7e309b42-7564-417a-9bd0-3eb6d4c26b13",
       "url": "https://jobs.ashbyhq.com/addi/7e309b42-7564-417a-9bd0-3eb6d4c26b13",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|new media lead",
@@ -1683,7 +1707,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:b3b0f097-8961-4001-b8ba-0baacda32bb7",
@@ -1691,7 +1717,7 @@
       "board": "addi",
       "externalId": "b3b0f097-8961-4001-b8ba-0baacda32bb7",
       "url": "https://jobs.ashbyhq.com/addi/b3b0f097-8961-4001-b8ba-0baacda32bb7",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|lead business analyst",
@@ -1707,7 +1733,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:ba1672b9-622a-4ec9-8685-15b0eadd332d",
@@ -1715,7 +1743,7 @@
       "board": "addi",
       "externalId": "ba1672b9-622a-4ec9-8685-15b0eadd332d",
       "url": "https://jobs.ashbyhq.com/addi/ba1672b9-622a-4ec9-8685-15b0eadd332d",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "addi|senior product manager",
@@ -1731,7 +1759,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:123a34d7-fe92-43f0-83e5-6eb8dc0b2090",
@@ -1739,7 +1769,7 @@
       "board": "canals",
       "externalId": "123a34d7-fe92-43f0-83e5-6eb8dc0b2090",
       "url": "https://jobs.ashbyhq.com/canals/123a34d7-fe92-43f0-83e5-6eb8dc0b2090",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "canals|senior software engineer",
@@ -1759,7 +1789,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:2e9f600f-1344-4bab-b0e1-191a6af5465f",
@@ -1767,7 +1799,7 @@
       "board": "canals",
       "externalId": "2e9f600f-1344-4bab-b0e1-191a6af5465f",
       "url": "https://jobs.ashbyhq.com/canals/2e9f600f-1344-4bab-b0e1-191a6af5465f",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "canals|senior software engineer",
@@ -1785,7 +1817,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:441bb087-c46a-4e3b-a695-bbaca433a84e",
@@ -1793,7 +1827,7 @@
       "board": "canals",
       "externalId": "441bb087-c46a-4e3b-a695-bbaca433a84e",
       "url": "https://jobs.ashbyhq.com/canals/441bb087-c46a-4e3b-a695-bbaca433a84e",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "canals|machine learning engineer",
@@ -1813,7 +1847,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:d45d8f01-2ba1-4cca-af69-9af3d30c8861",
@@ -1821,7 +1857,7 @@
       "board": "canals",
       "externalId": "d45d8f01-2ba1-4cca-af69-9af3d30c8861",
       "url": "https://jobs.ashbyhq.com/canals/d45d8f01-2ba1-4cca-af69-9af3d30c8861",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "canals|implementation engineer",
@@ -1841,7 +1877,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:d4b698c6-95f6-4d91-913e-54d0cd765c82",
@@ -1849,7 +1887,7 @@
       "board": "canals",
       "externalId": "d4b698c6-95f6-4d91-913e-54d0cd765c82",
       "url": "https://jobs.ashbyhq.com/canals/d4b698c6-95f6-4d91-913e-54d0cd765c82",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "false_match",
       "siblingKey": "canals|strategic sales manager",
@@ -1867,7 +1905,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:f5be2674-0d4b-406d-bc29-be5e657b8ac5",
@@ -1875,7 +1915,7 @@
       "board": "canals",
       "externalId": "f5be2674-0d4b-406d-bc29-be5e657b8ac5",
       "url": "https://jobs.ashbyhq.com/canals/f5be2674-0d4b-406d-bc29-be5e657b8ac5",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "canals|junior software engineer",
@@ -1899,7 +1939,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:decagon:16529089-a048-4bc3-8456-3f197135e00b",
@@ -1907,7 +1949,7 @@
       "board": "decagon",
       "externalId": "16529089-a048-4bc3-8456-3f197135e00b",
       "url": "https://jobs.ashbyhq.com/decagon/16529089-a048-4bc3-8456-3f197135e00b",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "decagon|engineering intern",
@@ -1915,17 +1957,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"We’re an in-office company\" (San Francisco).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:04d1c724-466a-4520-aea1-44aee822c14b",
@@ -1933,7 +1989,7 @@
       "board": "elevenlabs",
       "externalId": "04d1c724-466a-4520-aea1-44aee822c14b",
       "url": "https://jobs.ashbyhq.com/elevenlabs/04d1c724-466a-4520-aea1-44aee822c14b",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "false_match",
       "siblingKey": "elevenlabs|commercial counsel",
@@ -1953,7 +2009,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:10e6475e-67ef-4621-8718-7b087c354651",
@@ -1961,7 +2019,7 @@
       "board": "elevenlabs",
       "externalId": "10e6475e-67ef-4621-8718-7b087c354651",
       "url": "https://jobs.ashbyhq.com/elevenlabs/10e6475e-67ef-4621-8718-7b087c354651",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "elevenlabs|full-stack engineer",
@@ -1979,7 +2037,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:2ae519e9-1068-423b-8e07-dfdebbdca7b4",
@@ -1987,7 +2047,7 @@
       "board": "elevenlabs",
       "externalId": "2ae519e9-1068-423b-8e07-dfdebbdca7b4",
       "url": "https://jobs.ashbyhq.com/elevenlabs/2ae519e9-1068-423b-8e07-dfdebbdca7b4",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "elevenlabs|deployment strategist",
@@ -2007,7 +2067,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:6e1b66a8-8d2e-43b0-9076-9748b84bcfab",
@@ -2015,7 +2077,7 @@
       "board": "elevenlabs",
       "externalId": "6e1b66a8-8d2e-43b0-9076-9748b84bcfab",
       "url": "https://jobs.ashbyhq.com/elevenlabs/6e1b66a8-8d2e-43b0-9076-9748b84bcfab",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "elevenlabs|strategic account executive",
@@ -2035,7 +2097,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:813f6b98-fa14-4d8f-902d-5d09029be20a",
@@ -2043,7 +2107,7 @@
       "board": "elevenlabs",
       "externalId": "813f6b98-fa14-4d8f-902d-5d09029be20a",
       "url": "https://jobs.ashbyhq.com/elevenlabs/813f6b98-fa14-4d8f-902d-5d09029be20a",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "worldwide_doubtful",
       "siblingKey": "elevenlabs|account executive",
@@ -2059,7 +2123,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:c340cedd-6453-4d48-a580-359c1d7d9d49",
@@ -2067,7 +2133,7 @@
       "board": "elevenlabs",
       "externalId": "c340cedd-6453-4d48-a580-359c1d7d9d49",
       "url": "https://jobs.ashbyhq.com/elevenlabs/c340cedd-6453-4d48-a580-359c1d7d9d49",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "elevenlabs|b2b marketing",
@@ -2089,7 +2155,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:c89e8bf6-6d4c-43bd-bd2a-661ae73c82bf",
@@ -2097,7 +2165,7 @@
       "board": "elevenlabs",
       "externalId": "c89e8bf6-6d4c-43bd-bd2a-661ae73c82bf",
       "url": "https://jobs.ashbyhq.com/elevenlabs/c89e8bf6-6d4c-43bd-bd2a-661ae73c82bf",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "elevenlabs|deployment strategist",
@@ -2117,7 +2185,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:ec04799b-6567-4032-8d6c-3c27261618e1",
@@ -2125,7 +2195,7 @@
       "board": "elevenlabs",
       "externalId": "ec04799b-6567-4032-8d6c-3c27261618e1",
       "url": "https://jobs.ashbyhq.com/elevenlabs/ec04799b-6567-4032-8d6c-3c27261618e1",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "elevenlabs|enterprise solutions engineer",
@@ -2145,7 +2215,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:langchain:f7de4819-e7aa-4dfb-9acd-8b81ad8caf2c",
@@ -2153,7 +2225,7 @@
       "board": "langchain",
       "externalId": "f7de4819-e7aa-4dfb-9acd-8b81ad8caf2c",
       "url": "https://jobs.ashbyhq.com/langchain/f7de4819-e7aa-4dfb-9acd-8b81ad8caf2c",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "langchain|frontend engineer, ai observability & evals platform",
@@ -2161,17 +2233,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: employees within commuting distance \"work from the office five days per week\"; ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:legora:3ecb346f-1903-4d06-99ca-e28ef3806bbb",
@@ -2179,7 +2265,7 @@
       "board": "legora",
       "externalId": "3ecb346f-1903-4d06-99ca-e28ef3806bbb",
       "url": "https://jobs.ashbyhq.com/legora/3ecb346f-1903-4d06-99ca-e28ef3806bbb",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "legora|software engineer",
@@ -2187,17 +2273,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "SE"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"Stockholm-based, 5-day in-office role\"; ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "SE"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:lovable:3b6525b4-8229-4b7e-a307-a550646d0483",
@@ -2205,7 +2305,7 @@
       "board": "lovable",
       "externalId": "3b6525b4-8229-4b7e-a307-a550646d0483",
       "url": "https://jobs.ashbyhq.com/lovable/3b6525b4-8229-4b7e-a307-a550646d0483",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "lovable|software engineer",
@@ -2213,17 +2313,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "SE"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body is silent on work model; ATS workplaceType onsite (ADR 0004: metadata when the body is silent).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "SE"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:perplexity:be94e89b-89d5-4f2a-a58b-7929c8d97f92",
@@ -2231,7 +2345,7 @@
       "board": "perplexity",
       "externalId": "be94e89b-89d5-4f2a-a58b-7929c8d97f92",
       "url": "https://jobs.ashbyhq.com/perplexity/be94e89b-89d5-4f2a-a58b-7929c8d97f92",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "perplexity|internship - search backend infra engineer",
@@ -2239,17 +2353,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "RS"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: internship \"in-person in the Belgrade office\"; ATS workplaceType hybrid. Both non-remote, hybrid vs onsite is minor.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "RS"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:pinecone:edf2a2a5-64e2-45b8-9f2e-4f354af350b8",
@@ -2257,7 +2385,7 @@
       "board": "pinecone",
       "externalId": "edf2a2a5-64e2-45b8-9f2e-4f354af350b8",
       "url": "https://jobs.ashbyhq.com/pinecone/edf2a2a5-64e2-45b8-9f2e-4f354af350b8",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "pinecone|applied ai engineer",
@@ -2273,7 +2401,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:resend:053bde8f-294e-4cce-9d62-2301282120a2",
@@ -2281,7 +2411,7 @@
       "board": "resend",
       "externalId": "053bde8f-294e-4cce-9d62-2301282120a2",
       "url": "https://jobs.ashbyhq.com/resend/053bde8f-294e-4cce-9d62-2301282120a2",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "worldwide_doubtful",
       "siblingKey": "resend|backend engineer",
@@ -2297,7 +2427,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:runpod:b64a3935-931a-4b7f-9899-7ebe152164c5",
@@ -2305,7 +2437,7 @@
       "board": "runpod",
       "externalId": "b64a3935-931a-4b7f-9899-7ebe152164c5",
       "url": "https://jobs.ashbyhq.com/runpod/b64a3935-931a-4b7f-9899-7ebe152164c5",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "runpod|software engineer",
@@ -2321,7 +2453,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:sierra:fd5df98a-e2c8-4d47-a803-daee5cccb36f",
@@ -2329,7 +2463,7 @@
       "board": "sierra",
       "externalId": "fd5df98a-e2c8-4d47-a803-daee5cccb36f",
       "url": "https://jobs.ashbyhq.com/sierra/fd5df98a-e2c8-4d47-a803-daee5cccb36f",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "sierra|software engineer, agent - tech, media & telecom",
@@ -2337,17 +2471,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"primarily an in-person company based in San Francisco\"; ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:c16bd707-29f2-46fb-8409-7270ff00978b",
@@ -2355,7 +2503,7 @@
       "board": "supabase",
       "externalId": "c16bd707-29f2-46fb-8409-7270ff00978b",
       "url": "https://jobs.ashbyhq.com/supabase/c16bd707-29f2-46fb-8409-7270ff00978b",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "worldwide_doubtful",
       "siblingKey": "supabase|postgres engineer",
@@ -2371,7 +2519,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:wayve:6e64fd52-6f14-4d73-8d8a-0a31d7ad1f31",
@@ -2379,7 +2529,7 @@
       "board": "wayve",
       "externalId": "6e64fd52-6f14-4d73-8d8a-0a31d7ad1f31",
       "url": "https://jobs.ashbyhq.com/wayve/6e64fd52-6f14-4d73-8d8a-0a31d7ad1f31",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "worldwide_doubtful",
       "siblingKey": "wayve|full stack software engineer",
@@ -2387,17 +2537,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"We operate a hybrid working model\"; ATS workplaceType hybrid.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4087603101",
@@ -2405,7 +2569,7 @@
       "board": "amplemarket",
       "externalId": "4087603101",
       "url": "https://job-boards.eu.greenhouse.io/amplemarket/jobs/4087603101",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "amplemarket|engineering manager",
@@ -2421,7 +2585,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4488062101",
@@ -2429,7 +2595,7 @@
       "board": "amplemarket",
       "externalId": "4488062101",
       "url": "https://job-boards.eu.greenhouse.io/amplemarket/jobs/4488062101",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "amplemarket|frontend software engineer",
@@ -2445,7 +2611,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4782681101",
@@ -2453,7 +2621,7 @@
       "board": "amplemarket",
       "externalId": "4782681101",
       "url": "https://job-boards.eu.greenhouse.io/amplemarket/jobs/4782681101",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "amplemarket|tech lead",
@@ -2469,7 +2637,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:3159992",
@@ -2477,7 +2647,7 @@
       "board": "canonical",
       "externalId": "3159992",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/3159992",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|software engineer",
@@ -2493,7 +2663,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:3275433",
@@ -2501,7 +2673,7 @@
       "board": "canonical",
       "externalId": "3275433",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/3275433",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|community engineer",
@@ -2517,7 +2689,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:3572118",
@@ -2525,7 +2699,7 @@
       "board": "canonical",
       "externalId": "3572118",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/3572118",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|partner sales director",
@@ -2541,7 +2715,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:3752633",
@@ -2549,7 +2725,7 @@
       "board": "canonical",
       "externalId": "3752633",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/3752633",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|software engineer - python and k8s",
@@ -2565,7 +2741,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:3798310",
@@ -2573,7 +2751,7 @@
       "board": "canonical",
       "externalId": "3798310",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/3798310",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|technical author",
@@ -2589,7 +2767,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4536726",
@@ -2597,7 +2777,7 @@
       "board": "canonical",
       "externalId": "4536726",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/4536726",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "canonical|python engineer - data center hardware integration",
@@ -2616,7 +2796,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4717512",
@@ -2624,7 +2806,7 @@
       "board": "canonical",
       "externalId": "4717512",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/4717512",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|linux cryptography and security engineer",
@@ -2640,7 +2822,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5150422",
@@ -2648,7 +2832,7 @@
       "board": "canonical",
       "externalId": "5150422",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5150422",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "canonical|web frontend engineer - js, css, react",
@@ -2664,7 +2848,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5396437",
@@ -2672,7 +2858,7 @@
       "board": "canonical",
       "externalId": "5396437",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5396437",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|pc platforms kernel engineer",
@@ -2691,7 +2877,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5572475",
@@ -2699,7 +2887,7 @@
       "board": "canonical",
       "externalId": "5572475",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5572475",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|partner sales manager - hewlett packard enterprise",
@@ -2717,7 +2905,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5798264",
@@ -2725,7 +2915,7 @@
       "board": "canonical",
       "externalId": "5798264",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5798264",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|business services team manager",
@@ -2741,7 +2931,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5906570",
@@ -2749,7 +2941,7 @@
       "board": "canonical",
       "externalId": "5906570",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5906570",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "worldwide_location",
       "siblingKey": "canonical|インサイドセールス / sales development representative",
@@ -2767,7 +2959,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6010955",
@@ -2775,7 +2969,7 @@
       "board": "canonical",
       "externalId": "6010955",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6010955",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "worldwide_doubtful",
       "siblingKey": "canonical|lead linux kernel engineer",
@@ -2791,7 +2985,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6177790",
@@ -2799,7 +2995,7 @@
       "board": "canonical",
       "externalId": "6177790",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6177790",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "canonical|maas data center infrastructure engineer",
@@ -2817,7 +3013,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6177794",
@@ -2825,7 +3023,7 @@
       "board": "canonical",
       "externalId": "6177794",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6177794",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "canonical|maas systems engineer",
@@ -2843,7 +3041,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:7267884",
@@ -2851,7 +3051,7 @@
       "board": "canonical",
       "externalId": "7267884",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/7267884",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "false_match",
       "siblingKey": "canonical|manager of enterprise open source sales team",
@@ -2867,7 +3067,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:celonis:8002490003",
@@ -2875,7 +3077,7 @@
       "board": "celonis",
       "externalId": "8002490003",
       "url": "https://job-boards.greenhouse.io/celonis/jobs/8002490003?gh_jid=8002490003",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "celonis|ai product engineer",
@@ -2883,17 +3085,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "ES"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"a flexible hybrid work model that balances remote focus with vibrant office collaboration\". Company-level wording; flagged for the owner.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "ES"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5204916007",
@@ -2901,7 +3117,7 @@
       "board": "clara",
       "externalId": "5204916007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5204916007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|fullstack software engineer - [ingeniero de software fullstack]",
@@ -2925,7 +3141,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5204918007",
@@ -2933,7 +3151,7 @@
       "board": "clara",
       "externalId": "5204918007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5204918007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|fullstack software engineer - [ingeniero de software fullstack]",
@@ -2957,7 +3175,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5205085007",
@@ -2965,7 +3185,7 @@
       "board": "clara",
       "externalId": "5205085007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5205085007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|data analyst",
@@ -2989,7 +3209,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5228837007",
@@ -2997,7 +3219,7 @@
       "board": "clara",
       "externalId": "5228837007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5228837007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|head of brand & design",
@@ -3019,7 +3241,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5234148007",
@@ -3027,7 +3251,7 @@
       "board": "clara",
       "externalId": "5234148007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5234148007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "clara|people partner",
@@ -3047,7 +3271,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5236289007",
@@ -3055,7 +3281,7 @@
       "board": "clara",
       "externalId": "5236289007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5236289007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|security engineer",
@@ -3077,7 +3303,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": true
+      "workModelConflict": true,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5253325007",
@@ -3085,7 +3313,7 @@
       "board": "clara",
       "externalId": "5253325007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5253325007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|product lead, verticals -",
@@ -3109,7 +3337,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5253332007",
@@ -3117,7 +3347,7 @@
       "board": "clara",
       "externalId": "5253332007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5253332007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|product lead, cards benefits -",
@@ -3141,7 +3371,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5254971007",
@@ -3149,7 +3381,7 @@
       "board": "clara",
       "externalId": "5254971007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5254971007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|senior data scientist – risk modeling",
@@ -3173,7 +3405,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5257408007",
@@ -3181,7 +3415,7 @@
       "board": "clara",
       "externalId": "5257408007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5257408007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|software engineer in test",
@@ -3205,7 +3439,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5257427007",
@@ -3213,7 +3449,7 @@
       "board": "clara",
       "externalId": "5257427007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5257427007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|staff engineer",
@@ -3237,7 +3473,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5259834007",
@@ -3245,7 +3483,7 @@
       "board": "clara",
       "externalId": "5259834007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5259834007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "clara|people partner",
@@ -3265,7 +3503,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5260988007",
@@ -3273,7 +3513,7 @@
       "board": "clara",
       "externalId": "5260988007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5260988007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|key account manager",
@@ -3293,7 +3533,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5265722007",
@@ -3301,7 +3543,7 @@
       "board": "clara",
       "externalId": "5265722007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5265722007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|product designer, design systems",
@@ -3325,7 +3567,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5273126007",
@@ -3333,7 +3577,7 @@
       "board": "clara",
       "externalId": "5273126007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5273126007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|fraud strategist expert",
@@ -3353,7 +3597,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5280448007",
@@ -3361,7 +3607,7 @@
       "board": "clara",
       "externalId": "5280448007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5280448007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "hybrid",
       "siblingKey": "clara|gtm/ sales - enterprise account executive - medellín [hybrid]",
@@ -3381,7 +3627,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:gleanwork:4696752005",
@@ -3389,7 +3637,7 @@
       "board": "gleanwork",
       "externalId": "4696752005",
       "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4696752005",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "gleanwork|software engineer, apis & context platform",
@@ -3397,17 +3645,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"This role is hybrid (4 days a week in our Mountain View office)\".",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:planetscale:4251150009",
@@ -3415,7 +3677,7 @@
       "board": "planetscale",
       "externalId": "4251150009",
       "url": "https://job-boards.greenhouse.io/planetscale/jobs/4251150009",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "planetscale|software engineer",
@@ -3431,7 +3693,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:planetscale:4389100009",
@@ -3439,7 +3703,7 @@
       "board": "planetscale",
       "externalId": "4389100009",
       "url": "https://job-boards.greenhouse.io/planetscale/jobs/4389100009",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "planetscale|software engineer",
@@ -3457,7 +3721,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6066974003",
@@ -3465,7 +3731,7 @@
       "board": "sezzle",
       "externalId": "6066974003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/6066974003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "sezzle|it operations analyst",
@@ -3485,7 +3751,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7116700003",
@@ -3493,7 +3761,7 @@
       "board": "sezzle",
       "externalId": "7116700003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7116700003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "sezzle|fraud operations intern",
@@ -3513,7 +3781,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7559727003",
@@ -3521,7 +3791,7 @@
       "board": "sezzle",
       "externalId": "7559727003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7559727003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "sezzle|product design intern",
@@ -3541,7 +3811,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7906408003",
@@ -3549,7 +3821,7 @@
       "board": "sezzle",
       "externalId": "7906408003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7906408003",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "sezzle|software engineer intern",
@@ -3570,7 +3842,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7906563003",
@@ -3578,7 +3852,7 @@
       "board": "sezzle",
       "externalId": "7906563003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7906563003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "sezzle|ai engineering intern",
@@ -3599,7 +3873,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7977728003",
@@ -3607,7 +3883,7 @@
       "board": "sezzle",
       "externalId": "7977728003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7977728003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "sezzle|marketing growth & communications intern",
@@ -3627,7 +3903,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7985984003",
@@ -3635,7 +3913,7 @@
       "board": "sezzle",
       "externalId": "7985984003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7985984003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "sezzle|product marketing associate",
@@ -3651,7 +3929,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8010090003",
@@ -3659,7 +3939,7 @@
       "board": "sezzle",
       "externalId": "8010090003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8010090003",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "sezzle|fraud & risk operations team lead",
@@ -3677,7 +3957,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:speechmatics:5000695101",
@@ -3685,7 +3967,7 @@
       "board": "speechmatics",
       "externalId": "5000695101",
       "url": "https://job-boards.eu.greenhouse.io/speechmatics/jobs/5000695101",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "speechmatics|software engineer",
@@ -3693,17 +3975,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "RS"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"a hybrid approach that includes 2-3 designated office days each week\".",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "RS"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6115695004",
@@ -3711,7 +4007,7 @@
       "board": "turing",
       "externalId": "6115695004",
       "url": "https://job-boards.greenhouse.io/turing/jobs/6115695004",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "turing|software engineer",
@@ -3719,17 +4015,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "IN"
       ],
-      "workModel": "remote",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"Location: Bangalore, India · In-office · Hybrid\"; the ATS location also lists \"India - Remote\", so body and metadata disagree (the body wins).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": true,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "IN"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "guide_p2",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6235204004",
@@ -3737,7 +4047,7 @@
       "board": "turing",
       "externalId": "6235204004",
       "url": "https://job-boards.greenhouse.io/turing/jobs/6235204004",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "turing|marketplace operations lead",
@@ -3755,7 +4065,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6236429004",
@@ -3763,7 +4075,7 @@
       "board": "turing",
       "externalId": "6236429004",
       "url": "https://job-boards.greenhouse.io/turing/jobs/6236429004",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "turing|design manager",
@@ -3785,7 +4097,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:1c6b8a04-b52d-4689-9092-e76acbd1bc33",
@@ -3793,7 +4107,7 @@
       "board": "caseware",
       "externalId": "1c6b8a04-b52d-4689-9092-e76acbd1bc33",
       "url": "https://jobs.lever.co/caseware/1c6b8a04-b52d-4689-9092-e76acbd1bc33",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|aws backend senior software developer iii *",
@@ -3813,7 +4127,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:3132e059-c8ec-48e0-9e69-c7a382594ce3",
@@ -3821,7 +4137,7 @@
       "board": "caseware",
       "externalId": "3132e059-c8ec-48e0-9e69-c7a382594ce3",
       "url": "https://jobs.lever.co/caseware/3132e059-c8ec-48e0-9e69-c7a382594ce3",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|aws backend senior software developer iii",
@@ -3841,7 +4157,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:42daa35b-4c79-4834-bdf3-88f9293fa79b",
@@ -3849,7 +4167,7 @@
       "board": "caseware",
       "externalId": "42daa35b-4c79-4834-bdf3-88f9293fa79b",
       "url": "https://jobs.lever.co/caseware/42daa35b-4c79-4834-bdf3-88f9293fa79b",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|java staff software developer iv *",
@@ -3869,7 +4187,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:54643689-7430-4985-8c91-3a27f8b129d4",
@@ -3877,7 +4197,7 @@
       "board": "caseware",
       "externalId": "54643689-7430-4985-8c91-3a27f8b129d4",
       "url": "https://jobs.lever.co/caseware/54643689-7430-4985-8c91-3a27f8b129d4",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|java staff software developer iv",
@@ -3897,7 +4217,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:76d9d7a0-bb5d-463e-998e-3f0198e8cca3",
@@ -3905,7 +4227,7 @@
       "board": "caseware",
       "externalId": "76d9d7a0-bb5d-463e-998e-3f0198e8cca3",
       "url": "https://jobs.lever.co/caseware/76d9d7a0-bb5d-463e-998e-3f0198e8cca3",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "caseware|senior ai software engineer iii",
@@ -3925,7 +4247,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:14e797b6-08d6-4ca8-ad4f-f9599e9ec7bd",
@@ -3933,7 +4257,7 @@
       "board": "ciandt",
       "externalId": "14e797b6-08d6-4ca8-ad4f-f9599e9ec7bd",
       "url": "https://jobs.lever.co/ciandt/14e797b6-08d6-4ca8-ad4f-f9599e9ec7bd",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "us_only",
       "siblingKey": "ciandt|[job - 31834] data product manager",
@@ -3951,7 +4275,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:1b334619-f3c5-4b1f-a1a8-2a0aee627a91",
@@ -3959,7 +4285,7 @@
       "board": "ciandt",
       "externalId": "1b334619-f3c5-4b1f-a1a8-2a0aee627a91",
       "url": "https://jobs.lever.co/ciandt/1b334619-f3c5-4b1f-a1a8-2a0aee627a91",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "ciandt|[job - 30340] senior data developer",
@@ -3979,7 +4305,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:35f74c50-113b-4f7b-b1fa-d92e4c4b2159",
@@ -3987,7 +4315,7 @@
       "board": "ciandt",
       "externalId": "35f74c50-113b-4f7b-b1fa-d92e4c4b2159",
       "url": "https://jobs.lever.co/ciandt/35f74c50-113b-4f7b-b1fa-d92e4c4b2159",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "ciandt|[job-32426] data architect",
@@ -4007,7 +4335,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:41b478c7-0579-4750-b824-78d3469adef5",
@@ -4015,7 +4345,7 @@
       "board": "ciandt",
       "externalId": "41b478c7-0579-4750-b824-78d3469adef5",
       "url": "https://jobs.lever.co/ciandt/41b478c7-0579-4750-b824-78d3469adef5",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "ciandt|[job 31300] senior data developer",
@@ -4035,7 +4365,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:4a84bde1-ae39-4d3b-9faf-1e917891aecf",
@@ -4043,7 +4375,7 @@
       "board": "ciandt",
       "externalId": "4a84bde1-ae39-4d3b-9faf-1e917891aecf",
       "url": "https://jobs.lever.co/ciandt/4a84bde1-ae39-4d3b-9faf-1e917891aecf",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "ciandt|[ job - 31855] data product manager",
@@ -4063,7 +4395,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:c65b97b9-63d6-4827-861e-db23d86da2f9",
@@ -4071,7 +4405,7 @@
       "board": "ciandt",
       "externalId": "c65b97b9-63d6-4827-861e-db23d86da2f9",
       "url": "https://jobs.lever.co/ciandt/c65b97b9-63d6-4827-861e-db23d86da2f9",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "ciandt|[job-31837] master data developer - data ops",
@@ -4091,7 +4425,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:eb5ddeb6-7c22-4b35-b233-65d119a20c71",
@@ -4099,7 +4435,7 @@
       "board": "ciandt",
       "externalId": "eb5ddeb6-7c22-4b35-b233-65d119a20c71",
       "url": "https://jobs.lever.co/ciandt/eb5ddeb6-7c22-4b35-b233-65d119a20c71",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "false_match",
       "siblingKey": "ciandt|[job - 31610] master .net specialist",
@@ -4119,7 +4455,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:03223f29-f268-4150-8cff-98e2609468fa",
@@ -4127,7 +4465,7 @@
       "board": "deuna",
       "externalId": "03223f29-f268-4150-8cff-98e2609468fa",
       "url": "https://jobs.lever.co/deuna/03223f29-f268-4150-8cff-98e2609468fa",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|front end",
@@ -4149,7 +4487,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:194207ef-3ddf-4a7e-a9cc-3c11e2cf36a1",
@@ -4157,7 +4497,7 @@
       "board": "deuna",
       "externalId": "194207ef-3ddf-4a7e-a9cc-3c11e2cf36a1",
       "url": "https://jobs.lever.co/deuna/194207ef-3ddf-4a7e-a9cc-3c11e2cf36a1",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|engineering manager ai",
@@ -4180,7 +4520,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:97945754-f0b0-4004-937b-1aeed5710d63",
@@ -4188,7 +4530,7 @@
       "board": "deuna",
       "externalId": "97945754-f0b0-4004-937b-1aeed5710d63",
       "url": "https://jobs.lever.co/deuna/97945754-f0b0-4004-937b-1aeed5710d63",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|product manager",
@@ -4210,7 +4552,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:a1d9d480-6b02-448e-99a1-0e72e36b31d0",
@@ -4218,7 +4562,7 @@
       "board": "deuna",
       "externalId": "a1d9d480-6b02-448e-99a1-0e72e36b31d0",
       "url": "https://jobs.lever.co/deuna/a1d9d480-6b02-448e-99a1-0e72e36b31d0",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|backend engineer",
@@ -4242,7 +4586,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:b9d34afb-e1e8-4e87-8ec7-935838eb4f26",
@@ -4250,7 +4596,7 @@
       "board": "deuna",
       "externalId": "b9d34afb-e1e8-4e87-8ec7-935838eb4f26",
       "url": "https://jobs.lever.co/deuna/b9d34afb-e1e8-4e87-8ec7-935838eb4f26",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "deuna|engineering manager",
@@ -4270,7 +4616,9 @@
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
@@ -4278,7 +4626,7 @@
       "board": "deuna",
       "externalId": "c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
       "url": "https://jobs.lever.co/deuna/c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|product manager",
@@ -4300,7 +4648,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:e7fa7bdc-05c1-4ae7-a772-4187e171720a",
@@ -4308,7 +4658,7 @@
       "board": "deuna",
       "externalId": "e7fa7bdc-05c1-4ae7-a772-4187e171720a",
       "url": "https://jobs.lever.co/deuna/e7fa7bdc-05c1-4ae7-a772-4187e171720a",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|head of finance",
@@ -4330,7 +4680,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:ec4f69ac-f28e-496e-b925-45d21c53e467",
@@ -4338,7 +4690,7 @@
       "board": "deuna",
       "externalId": "ec4f69ac-f28e-496e-b925-45d21c53e467",
       "url": "https://jobs.lever.co/deuna/ec4f69ac-f28e-496e-b925-45d21c53e467",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "deuna|product head of ai",
@@ -4361,7 +4713,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:a8ef2c33-95af-4859-bc0b-543d452bbfb2",
@@ -4369,7 +4723,7 @@
       "board": "oowlish",
       "externalId": "a8ef2c33-95af-4859-bc0b-543d452bbfb2",
       "url": "https://jobs.lever.co/oowlish/a8ef2c33-95af-4859-bc0b-543d452bbfb2",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "country_specific",
       "siblingKey": "oowlish|video streaming & real",
@@ -4399,7 +4753,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:b3a94106-ff84-4314-b112-58a9eb36d69a",
@@ -4407,7 +4763,7 @@
       "board": "oowlish",
       "externalId": "b3a94106-ff84-4314-b112-58a9eb36d69a",
       "url": "https://jobs.lever.co/oowlish/b3a94106-ff84-4314-b112-58a9eb36d69a",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "oowlish|senior ios engineer",
@@ -4431,7 +4787,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:cd66a853-ac1b-4740-a6b8-f6d33b13cb3c",
@@ -4439,7 +4797,7 @@
       "board": "oowlish",
       "externalId": "cd66a853-ac1b-4740-a6b8-f6d33b13cb3c",
       "url": "https://jobs.lever.co/oowlish/cd66a853-ac1b-4740-a6b8-f6d33b13cb3c",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "oowlish|senior frontend engineer",
@@ -4463,7 +4821,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:e7ce2491-2ec1-499e-b7f5-931bcb6f19e2",
@@ -4471,7 +4831,7 @@
       "board": "oowlish",
       "externalId": "e7ce2491-2ec1-499e-b7f5-931bcb6f19e2",
       "url": "https://jobs.lever.co/oowlish/e7ce2491-2ec1-499e-b7f5-931bcb6f19e2",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "strict_location",
       "siblingKey": "oowlish|full stack web engineer",
@@ -4495,7 +4855,9 @@
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:palantir:373367a9-3160-49d8-b7af-2efec062fad1",
@@ -4503,7 +4865,7 @@
       "board": "palantir",
       "externalId": "373367a9-3160-49d8-b7af-2efec062fad1",
       "url": "https://jobs.lever.co/palantir/373367a9-3160-49d8-b7af-2efec062fad1",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "worldwide_doubtful",
       "siblingKey": "palantir|software engineer, internship",
@@ -4511,17 +4873,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body is generic (onsite unless the posting says otherwise); ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "lever:palantir:3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
@@ -4529,7 +4905,7 @@
       "board": "palantir",
       "externalId": "3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
       "url": "https://jobs.lever.co/palantir/3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
-      "split": "test",
+      "split": "dev",
       "group": "career_ops_discard",
       "subtype": "skipped_location",
       "siblingKey": "palantir|forward deployed infrastructure engineer, internship",
@@ -4537,23 +4913,37 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body is generic (onsite unless the posting says otherwise); ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "retiredFrom": "test-v1",
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     }
   ],
   "testSet": {
-    "status": "frozen",
-    "frozenAt": "2026-11-02",
-    "applicableCO": 61
+    "name": "test-v2",
+    "status": "building",
+    "note": "Built from postings that were never in the eval (ADR 0004, section 6). Labels by Claude reading the full body, never by Gemini. Frozen when complete."
   },
   "devLabelRevision": {
     "date": "2026-11-03",
@@ -4566,6 +4956,55 @@
     "changedCases": 6,
     "reverted": [
       "ashby:canals:195c6203-ec1d-49e5-a9d0-e17f81832b6d (D5 relabel reverted 2026-11-03)"
+    ],
+    "revisions": [
+      {
+        "date": "2026-11-03",
+        "decidedBy": "owner",
+        "scope": "development split (160 cases, including the retired test-v1)",
+        "rules": [
+          "ADR 0004 section 3: body explicitly hybrid/onsite, or silent body + ATS workplaceType hybrid/onsite => workModel hybrid/onsite and label onsite_or_hybrid.",
+          "ADR 0004 labelling guide, patterns 1-4 (team distribution, 'work from anywhere' benefit, composite locations, non-Latin titles)."
+        ],
+        "changedCases": 14
+      }
     ]
-  }
+  },
+  "retiredTestSets": [
+    {
+      "name": "test-v1",
+      "frozenAt": "2026-11-02",
+      "retiredAt": "2026-11-03",
+      "cases": 112,
+      "applicableCO": 61,
+      "acceptedRun": {
+        "date": "2026-11-03",
+        "model": "gemini-3.5-flash-lite",
+        "thinkingLevel": "MINIMAL",
+        "promptVersion": "eligibility-v3",
+        "postprocessVersion": "postprocess-v1",
+        "precision": {
+          "value": 0.922,
+          "tp": 59,
+          "fp": 5,
+          "ci95Wilson": [
+            0.83,
+            0.966
+          ]
+        },
+        "recall": {
+          "value": 0.967,
+          "tp": 59,
+          "fn": 2,
+          "ci95Wilson": [
+            0.888,
+            0.991
+          ]
+        },
+        "costPerOfferUsd": 0.001011,
+        "accepted": false
+      },
+      "reason": "The set was seen by eligibility-v3 (one approved run, precision below the 95 % goal). A test set that has already been seen cannot accept v4 without bias, so it was retired and its 112 cases moved to the development split (160 development cases in total)."
+    }
+  ]
 }
