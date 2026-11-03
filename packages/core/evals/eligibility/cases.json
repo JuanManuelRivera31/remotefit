@@ -153,26 +153,18 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "latam_eligible",
-      "labelStatus": "owner_rules_applied",
-      "countries": [],
-      "workModel": "remote",
-      "evidence": "Body: \"remote-first ... distributed across North and South America\"; nothing restricts it further (D5: Americas = latam_eligible). Weakest case: company-level wording, US cities in the location field.",
+      "label": "country_specific",
+      "labelStatus": "labeled",
+      "countries": [
+        "US"
+      ],
+      "workModel": "unknown",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "relabeledFrom": {
-        "label": "country_specific",
-        "workModel": "unknown",
-        "countries": [
-          "US"
-        ],
-        "evidence": null,
-        "labelStatus": "labeled"
-      },
-      "relabelRule": "americas_is_latam_d5",
-      "relabeledAt": "2026-11-03"
+      "relabelRevertedAt": "2026-11-03",
+      "relabelRevertedReason": "Owner decision: \"distributed across North and South America\" describes the company team, not who may apply, and the location field lists US cities. Precision first; the D5 relabel was reverted."
     },
     {
       "id": "ashby:claylabs:046cb127-d5fc-444f-a2a9-fb4029d6a503",
@@ -4571,6 +4563,9 @@
       "A case whose body explicitly says hybrid/onsite, or whose body is silent and whose ATS workplaceType is hybrid/onsite, gets workModel hybrid/onsite and label onsite_or_hybrid (ADR 0004 sections 3 and 6).",
       "D5: 'Americas' counts as latam_eligible unless the body restricts the role further."
     ],
-    "changedCases": 7
+    "changedCases": 6,
+    "reverted": [
+      "ashby:canals:195c6203-ec1d-49e5-a9d0-e17f81832b6d (D5 relabel reverted 2026-11-03)"
+    ]
   }
 }
