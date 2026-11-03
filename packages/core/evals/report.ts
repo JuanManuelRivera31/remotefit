@@ -16,12 +16,18 @@ export interface ReportContext {
   fromCache: number;
   /** Only the development split shows case-by-case failures (ADR 0004). */
   showCases: boolean;
+  /** For the owner-approved run on the frozen test split: list ONLY the false positives, with the model's evidence. */
+  listFalsePositives?: boolean;
   /** Metrics of the raw model answers, without the deterministic post-processing (ablation). */
   withoutPostprocess?: Metrics;
 }
 
 const pct = (value: number | null): string =>
   value === null ? "n/a" : `${(value * 100).toFixed(1)}%`;
+const ci = (interval: [number, number] | null): string =>
+  interval === null
+    ? ""
+    : ` · IC 95 % (Wilson) ${(interval[0] * 100).toFixed(1)}–${(interval[1] * 100).toFixed(1)}%`;
 const num = (value: number): string => (Number.isInteger(value) ? String(value) : value.toFixed(1));
 const usd = (value: number): string => `$${value.toFixed(6)}`;
 const tokenRow = (name: string, stats: TokenStats): string =>
@@ -75,8 +81,10 @@ export function formatMarkdownReport(
 
   lines.push(`## Aplicables para ${metrics.country} (cascada de elegibilidad, ADR 0004)`, "");
   lines.push("| Métrica | Valor | Meta ADR 0004 |", "|---|---|---|");
-  lines.push(`| Precisión | ${pct(a.precision)} (${a.tp}/${a.tp + a.fp}) | ≥ 95 % |`);
-  lines.push(`| Recall | ${pct(a.recall)} (${a.tp}/${a.tp + a.fn}) | ≥ 80 % |`);
+  lines.push(
+    `| Precisión | ${pct(a.precision)} (${a.tp}/${a.tp + a.fp})${ci(a.precisionCi)} | ≥ 95 % |`,
+  );
+  lines.push(`| Recall | ${pct(a.recall)} (${a.tp}/${a.tp + a.fn})${ci(a.recallCi)} | ≥ 80 % |`);
   lines.push("", "| | Predicho aplicable | Predicho no aplicable |", "|---|---|---|");
   lines.push(`| **Aplicable (etiqueta)** | TP ${a.tp} | FN ${a.fn} |`);
   lines.push(`| **No aplicable (etiqueta)** | FP ${a.fp} | TN ${a.tn} |`, "");
@@ -128,7 +136,31 @@ export function formatMarkdownReport(
   );
 
   if (!context.showCases) {
-    lines.push("## Errores", "", "Conjunto de prueba: no se listan casos (ADR 0004).", "");
+    lines.push("## Errores", "");
+    if (!context.listFalsePositives) {
+      lines.push("Conjunto de prueba: no se listan casos (ADR 0004).", "");
+      return lines.join("\n");
+    }
+    // Owner-approved acceptance run: only the false positives (the costly mistake for the user); nothing is tuned from them.
+    const falsePositives = rows.filter(
+      (row) =>
+        applicableFor(row.predicted, metrics.country) &&
+        !applicableFor(row.expected, metrics.country),
+    );
+    lines.push(
+      `Conjunto de prueba, corrida de aceptación aprobada por el dueño: solo se listan los falsos positivos (${falsePositives.length}); no se usan para ajustar nada (ADR 0004).`,
+      "",
+    );
+    if (falsePositives.length === 0) lines.push("Sin falsos positivos.", "");
+    for (const row of falsePositives) {
+      lines.push(
+        `### ${row.id} — ${cell(row.title)}`,
+        `- **Etiqueta esperada:** ${describe(row.expected)}`,
+        `- **Predicho:** ${describe(row.predicted)}${row.status === "ok" ? "" : ` · estado: ${row.status}`}`,
+        `- **Evidencia del modelo:** ${row.predicted.evidence.map((quote) => `"${cell(quote)}"`).join(" · ")}`,
+        "",
+      );
+    }
     return lines.join("\n");
   }
 

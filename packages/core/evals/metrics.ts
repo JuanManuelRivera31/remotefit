@@ -44,6 +44,9 @@ export interface ApplicableMetrics {
   /** null when undefined (no predicted positives / no actual positives). */
   precision: number | null;
   recall: number | null;
+  /** 95 % Wilson score interval of the proportions above; null when undefined. */
+  precisionCi: [number, number] | null;
+  recallCi: [number, number] | null;
 }
 
 export interface Metrics {
@@ -64,6 +67,17 @@ export interface Metrics {
 }
 
 const ratio = (part: number, whole: number): number | null => (whole === 0 ? null : part / whole);
+
+/** 95 % Wilson score interval for `successes` out of `total`; null when total is 0. */
+export function wilsonInterval(successes: number, total: number, z = 1.96): [number, number] | null {
+  if (total === 0) return null;
+  const p = successes / total;
+  const z2 = z * z;
+  const denominator = 1 + z2 / total;
+  const center = (p + z2 / (2 * total)) / denominator;
+  const half = (z * Math.sqrt((p * (1 - p)) / total + z2 / (4 * total * total))) / denominator;
+  return [Math.max(0, center - half), Math.min(1, center + half)];
+}
 
 function tokenStats(values: number[]): TokenStats {
   const total = values.reduce((sum, value) => sum + value, 0);
@@ -133,6 +147,8 @@ export function computeMetrics(rows: readonly EvalRow[], country = "CO"): Metric
       negatives: fp + tn,
       precision: ratio(tp, tp + fp),
       recall: ratio(tp, tp + fn),
+      precisionCi: wilsonInterval(tp, tp + fp),
+      recallCi: wilsonInterval(tp, tp + fn),
     },
     statusCounts,
     noteCounts,
