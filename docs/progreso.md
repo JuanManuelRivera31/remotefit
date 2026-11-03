@@ -2,6 +2,26 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-03 · S6 hecha: proveedor Gemini, clasificador y primera medición sobre desarrollo (S6b queda para la cola en base de datos)
+- Hecho: (0) las pruebas de base de datos solo usan `TEST_DATABASE_URL` y se niegan a correr si el nombre no termina en `_test` (verificado: con la base real fallan sin tocarla; las 1282 ofertas siguen intactas). (1) `packages/core/src/llm/`: `LLMProvider`, `GeminiProvider` (REST con `fetch`, clave en cabecera, mapea 429 por minuto/por día, bloqueos y truncados; la clave se redacta de los errores), `FakeLLMProvider`, `pricing.ts`, `RateLimiter`, `MeteredProvider`; límites en `data/llm-limits.json` (valores de tu panel, margen del 20 %). (2) `packages/core/src/eligibility/`: esquema Zod del ADR 0004, `isApplicable`, prompt `eligibility-v1`, `classifyJob` (un reintento con el error de validación; si falla, `unclear`; cita no verificable en el texto → `unclear`; los errores de cuota/red no generan `unclear`). (4) `npm run eval -- --split dev|test`: la prueba exige `--approved-by-owner` y no lista casos. Caché y uso diario en `packages/core/evals/cache/` (ignorado por git), informes en `packages/core/evals/reports/`. Lint, typecheck y pruebas en verde (core 186, api 17 contra `remotefit_test`).
+- Clave: el proveedor lee `GEMINI_API_KEY` (alias `RF_LLM_API_KEY`); actualicé `.env.example`, `docs/02` y la línea de `CLAUDE.md`. El `5432` que mencioné venía de una nota vieja: no hay otro `.env` ni variable de Windows con `DATABASE_URL`.
+- **Primera medición, desarrollo (48 casos, 28 aplicables y 20 no aplicables para CO), prompt `eligibility-v1`, thinking mínimo.** Informes en `packages/core/evals/reports/`.
+
+  | | gemini-3.5-flash-lite | gemini-3.1-flash-lite |
+  |---|---|---|
+  | Precisión de aplicables (meta ≥ 95 %) | 83,9 % (26/31) | 84,4 % (27/32) |
+  | Recall (meta ≥ 80 %) | 92,9 % (26/28) | 96,4 % (27/28) |
+  | TP / FP / FN / TN | 26 / 5 / 2 / 15 | 27 / 5 / 1 / 15 |
+  | Exactitud etiqueta de 6 clases / workModel | 64,6 % / 72,9 % | 50,0 % / 77,1 % |
+  | Salida degradada a `unclear` tras el reintento | 2 | 3 |
+  | Tokens por oferta: entrada / salida / thinking (promedio) | 1945 / 160 / 0 | 2017 / 165 / 0 |
+  | Salida visible máxima (suma de intentos) | 371 | 372 |
+  | Costo equivalente por oferta | $0,00098 | $0,00075 |
+  | Solicitudes usadas (de 400/día) | 51 | 55 |
+
+- Lectura (sin cambiar el prompt, como acordamos): **la precisión no llega al 95 %** con ninguno de los dos modelos; el recall sí. Los 5 falsos positivos son iguales en ambos: el modelo generaliza una lista de países de LATAM a `latam_eligible`, o ignora que el título nombra un país (Sezzle "Argentina", Deuna "México"), o toma "distributed across North and South America" (Canals) y "globally" (ElevenLabs) como señal amplia. Las 2–3 salidas degradadas vienen de las listas largas de ubicaciones de Oowlish: el modelo cita más de 160 caracteres y no valida; cuesta falsos negativos. Los 18 errores "misma aplicabilidad" son sobre todo ofertas híbridas (Clara, Anthropic, Caseware, ClayLabs, Pigment) que el modelo marca `onsite_or_hybrid` y la etiqueta de desarrollo dice `country_specific` con `workModel = unknown`: conviene que revises esas etiquetas contra el cuerpo (no cambié ninguna). La salida visible cumple la meta de < 300 tokens por respuesta (el máximo de 371 es la suma de dos intentos). Thinking: 0 tokens.
+- Siguiente paso: iterar el prompt solo sobre desarrollo (pedir citas cortas, regla de "el título con país manda", "lista de países ≠ región"), con el subagente `llm-evaluator`; luego S6b. La prueba congelada no se tocó.
+
 ## 2026-11-02 · S5 hecha: prefiltro por reglas (rama `feat/s5-prefilter`, unida a main)
 - Hecho: `packages/core/src/rules/{prefilter,places}.ts` (puro, `PREFILTER_VERSION = prefilter-v1`), migraciones `0001` y `0002` con `prefilter_version/outcome/rule/rule_kind/matched_text` en `jobs`, `npm run prefilter` (idempotente; `--report` / `--report-only`). Fixtures reales: 455 pares ubicación + metadato y 1076 títulos distintos, con snapshots de lo descartado revisados a mano. Lint, typecheck y pruebas en verde (core 119, api 9 contra una base aparte `remotefit_test`).
 - Tipos de regla (decisión del dueño): **elegibilidad** (`non_latam_location`, `onsite_or_hybrid_metadata`; meta de 0 aplicables perdidos) y **alcance** (`non_tech_role`). El alcance de rol es un **filtro de producto** (el MVP es para desarrolladores), revisable si algún día se amplía a roles no técnicos; no afecta la métrica del ADR 0004 porque el eval mide al clasificador sobre todos los casos sin pasar por el prefiltro. No se tocaron el eval ni el ADR 0004.

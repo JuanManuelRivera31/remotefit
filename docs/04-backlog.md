@@ -43,12 +43,13 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   `packages/core/src/rules/`: lista de patrones con su efecto (`us_only`, `onsite_or_hybrid`, `positive_signal`) y función pura `applyRules(job)`. Las reglas solo descartan casos seguros; nunca marcan una oferta como aplicable. Si la ubicación y el cuerpo se contradicen, pasa al LLM.
   Pruebas con frases reales de los fixtures y con las **164 ubicaciones reales** de `data/seed-career-ops/scan-history.tsv` como tabla de pruebas. Como el seed está fuera de git, copia solo las cadenas de ubicación, sin duplicados, a `packages/core/fixtures/locations/`. El `status` de career-ops es una pista, no la verdad: dejó pasar errores.
 
-- [ ] **S6 · Proveedor LLM + clasificador de elegibilidad** 🟢 👤
+- [x] **S6 · Proveedor LLM + clasificador de elegibilidad** 🟢 👤 *(hecha el 2026-11-03: proveedor, esquema, prompt v1, clasificador, runner de evaluación en desarrollo y primera medición; la caché en base de datos y el comando `classify` pasaron a S6b)*
   Interfaz `LLMProvider` y contrato de la sección 5 de la arquitectura (ADR 0004 y 0005), `GeminiProvider`, `FakeLLMProvider`, `pricing.ts` para el costo equivalente, esquema Zod, `isApplicable`, `LATAM_COUNTRIES`, prompt `v1`, caché por `(content_hash, prompt_version, model)`, reintento si el JSON no valida. Salida con meta de menos de 300 tokens. Comando `npm run classify`, por ahora con un límite manual de ofertas por ejecución.
   👤 Crea la clave en Google AI Studio **sin cuenta de facturación vinculada** y anota los límites del modelo. Claude nunca la lee.
   Usa el subagente `llm-evaluator` para revisar el prompt.
 
 - [ ] **S6b · Cola con control de ritmo** 🔴
+  **Ya hecho en S6:** `RateLimiter` (RPM, RPD por día del Pacífico, aviso al 80 %), `MeteredProvider`, límites en `data/llm-limits.json` (con margen) y caché/uso diario **en archivo** para el runner del eval. **Falta:** caché en `eligibility_results`, cola con `prefilter_outcome = 'pass'`, tabla `llm_usage_daily`, espera exponencial ante 429 dentro de la cola, `npm run classify`.
   `packages/core/src/queue/` y tabla `llm_usage_daily`: respeta RPM, TPM y RPD de la capa gratuita leídos de `data/llm-limits.json`; reintentos con espera exponencial ante 429; pausa al agotar la cuota diaria y retoma en la siguiente ejecución; orden de nuevas a cambiadas; aviso al superar el 80 % del RPD. Pruebas con reloj y proveedor falsos, sin red.
   *Hecho cuando:* con un `FakeLLMProvider` que devuelve 429 y luego cuota agotada, `npm run classify` termina sin perder ofertas e informa cuántas quedan pendientes.
 
