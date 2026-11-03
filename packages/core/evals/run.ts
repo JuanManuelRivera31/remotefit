@@ -240,6 +240,7 @@ async function main(): Promise<void> {
     callsMade,
     fromCache: cases.length - pending.length,
     showCases: split === "dev",
+    listFalsePositives: split === "test",
     withoutPostprocess: computeMetrics(rawRows, "CO"),
   });
   mkdirSync(REPORTS_URL, { recursive: true });

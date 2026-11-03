@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Eligibility } from "../src/index.js";
 import { loadCases, loadJob } from "./loader.js";
-import { computeMetrics, type EvalRow, type ExpectedLabel } from "./metrics.js";
+import { computeMetrics, wilsonInterval, type EvalRow, type ExpectedLabel } from "./metrics.js";
 import { formatMarkdownReport, type ReportContext } from "./report.js";
 
 const predicted = (overrides: Partial<Eligibility> = {}): Eligibility => ({
@@ -126,6 +126,31 @@ describe("computeMetrics", () => {
   });
 });
 
+describe("wilsonInterval", () => {
+  it("matches known values", () => {
+    const [lo0, hi0] = wilsonInterval(0, 10) ?? [-1, -1];
+    expect(lo0).toBe(0);
+    expect(hi0).toBeCloseTo(3.8416 / 13.8416, 3); // 0.2775
+    const [lo, hi] = wilsonInterval(5, 10) ?? [-1, -1];
+    expect(lo).toBeCloseTo(0.2366, 3);
+    expect(hi).toBeCloseTo(0.7634, 3);
+    const [lo30, hi30] = wilsonInterval(29, 30) ?? [-1, -1];
+    expect(lo30).toBeCloseTo(0.8332, 3);
+    expect(hi30).toBeCloseTo(0.9944, 3);
+  });
+  it("is undefined for an empty denominator and stays inside [0, 1]", () => {
+    expect(wilsonInterval(0, 0)).toBeNull();
+    const [lo, hi] = wilsonInterval(10, 10) ?? [-1, -1];
+    expect(lo).toBeGreaterThan(0.6);
+    expect(hi).toBeLessThanOrEqual(1);
+  });
+  it("is reported next to precision and recall", () => {
+    const m = computeMetrics(rows, "CO");
+    expect(m.applicable.precisionCi).not.toBeNull();
+    expect(m.applicable.recallCi).not.toBeNull();
+  });
+});
+
 describe("formatMarkdownReport", () => {
   const context: ReportContext = {
     date: "2026-11-02",
@@ -159,6 +184,23 @@ describe("formatMarkdownReport", () => {
     expect(report).toContain("FALSO NEGATIVO");
     expect(report).toContain("Evidencia del modelo");
     expect(report).toContain("owner evidence");
+    expect(report).not.toContain("### tp1");
+  });
+
+  it("shows the Wilson interval in the report", () => {
+    expect(formatMarkdownReport(metrics, rows, context)).toContain("IC 95 % (Wilson)");
+  });
+
+  it("on the approved test run lists only the false positives, with the model evidence", () => {
+    const report = formatMarkdownReport(metrics, rows, {
+      ...context,
+      split: "test",
+      showCases: false,
+      listFalsePositives: true,
+    });
+    expect(report).toContain("### fp1");
+    expect(report).toContain("Evidencia del modelo");
+    expect(report).not.toContain("### fn1");
     expect(report).not.toContain("### tp1");
   });
 
