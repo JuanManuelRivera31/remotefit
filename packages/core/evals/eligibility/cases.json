@@ -515,23 +515,37 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "CO",
         "MX",
         "BR"
       ],
-      "workModel": "remote",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Title \"Remote First\" vs \"Clara is committed to hybrid work\"; the role has assigned cities (Bogota, Mexico City, Sao Paulo) so the conservative rule gives onsite_or_hybrid.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false,
+      "workModelConflict": true,
       "movedFrom": "dev",
       "movedAt": "2026-11-02",
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "CO",
+          "MX",
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "rule5_remote_first_vs_hybrid_city",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6037486003",
@@ -1212,16 +1226,28 @@
       ],
       "proposedWorkModel": "unknown",
       "label": "country_specific",
-      "labelStatus": "labeled",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "BR"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "Title and location say Brazil; ATS workplaceType remote; the Campinas presence rule applies only to residents of that metro area.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "metadata_when_body_silent",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:b51b1a14-b9cd-4f45-b732-595936ed8a61",
@@ -2394,16 +2420,26 @@
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
       "label": "us_only",
-      "labelStatus": "labeled",
+      "labelStatus": "owner_rules_applied",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Location \"New York City | US Remote\" (US-only) while the ATS workplaceType says hybrid.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false,
+      "workModelConflict": true,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "us_only",
+        "workModel": "remote",
+        "countries": [],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "owner_decision_conflict",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:resend:053bde8f-294e-4cce-9d62-2301282120a2",
@@ -3129,21 +3165,35 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "owner_reviewed",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "CO",
         "MX",
         "BR"
       ],
-      "workModel": "remote",
-      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "workModel": "hybrid",
+      "evidence": "\"remote-first role\" vs company \"committed to hybrid work\"; the role has an assigned city (Mexico City) so the conservative rule gives onsite_or_hybrid.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false,
+      "workModelConflict": true,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "CO",
+          "MX",
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": "This is a remote-first role: you'll work from home day to day.",
+        "labelStatus": "owner_reviewed"
+      },
+      "relabelRule": "rule5_remote_first_vs_hybrid_city",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5204918007",
@@ -3163,21 +3213,35 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "owner_reviewed",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "CO",
         "MX",
         "BR"
       ],
-      "workModel": "remote",
-      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "workModel": "hybrid",
+      "evidence": "\"remote-first role\" vs \"Clara is committed to hybrid work\"; the role has an assigned city (Sao Paulo) so the conservative rule gives onsite_or_hybrid.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false,
+      "workModelConflict": true,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "CO",
+          "MX",
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": "This is a remote-first role: you'll work from home day to day.",
+        "labelStatus": "owner_reviewed"
+      },
+      "relabelRule": "rule5_remote_first_vs_hybrid_city",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5205085007",
@@ -3864,18 +3928,31 @@
       ],
       "proposedWorkModel": "unknown",
       "label": "country_specific",
-      "labelStatus": "owner_reviewed",
+      "labelStatus": "owner_rules_applied",
       "countries": [
-        "PE"
+        "PE",
+        "CO"
       ],
       "workModel": "remote",
-      "evidence": "[metadata] location \"Peru\"; Bogota office tag is on every Sezzle LatAm posting, even the Argentina-only one.",
+      "evidence": "Location \"Peru | Bogota, Colombia\" bundles two sibling postings; title and body name no country as a requirement; a country list is not a region, so both countries stay.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "PE"
+        ],
+        "workModelConflict": false,
+        "evidence": "[metadata] location \"Peru\"; Bogota office tag is on every Sezzle LatAm posting, even the Argentina-only one.",
+        "labelStatus": "owner_reviewed"
+      },
+      "relabelRule": "guide_p3_country_list",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7977728003",
@@ -3947,19 +4024,29 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "owner_reviewed",
-      "countries": [
-        "MX"
-      ],
+      "label": "latam_eligible",
+      "labelStatus": "owner_rules_applied",
+      "countries": [],
       "workModel": "remote",
-      "evidence": "Location \"Mexico, Remote\"; \"local time (Central time zone)\"; body ends \"#Li-remote\".",
+      "evidence": "Location \"Mexico, Remote | Latin America [Remote] | US Remote\"; \"Central time zone\" alone does not restrict to Mexico (D5); neither title nor body names Mexico as a requirement.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": "Location \"Mexico, Remote\"; \"local time (Central time zone)\"; body ends \"#Li-remote\".",
+        "labelStatus": "owner_reviewed"
+      },
+      "relabelRule": "guide_p3_timezone_not_country",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:speechmatics:5000695101",
@@ -4950,9 +5037,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|graduate software engineer, open source and linux",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This is a Globally remote role.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit global remote"
     },
     {
       "id": "greenhouse:canonical:6950222",
@@ -4965,9 +5061,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|ibm global alliance director",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This role will be based remotely in AMER regions.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "AMER counts as region (D5); sibling vacancies for APAC/EMEA in metadata"
     },
     {
       "id": "greenhouse:sezzle:7611783003",
@@ -4980,9 +5085,22 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|senior site reliability engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO",
+        "IN",
+        "TR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Bogota, Colombia | India | Turkey; body tag #Li-remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Country list including CO; remote only via #Li-remote tag."
     },
     {
       "id": "greenhouse:canonical:2166631",
@@ -4995,9 +5113,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|software developer in observability",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This role will be based remotely in the EMEA and Americas regions",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Americas region (D5) plus Worldwide in header; both readings applicable"
     },
     {
       "id": "ashby:supabase:f18b1173-51c3-4ff6-bcda-89f8111931f4",
@@ -5010,9 +5137,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|database support engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Required residence in North or South American time zones",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "AMER region by title and location; time zone only, no country named."
     },
     {
       "id": "greenhouse:clara:5208457007",
@@ -5025,9 +5161,20 @@
       "subtype": "candidate",
       "siblingKey": "clara|tech lead — users & auth",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: Tech Lead - Users & Auth ... - Hybrid; LOCATION: Bogota / CUN / Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title"
     },
     {
       "id": "greenhouse:sezzle:7695762003",
@@ -5040,9 +5187,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|product intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Compensation : The salary for the Product Intern is $2.800.000 COP monthly.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location Bogota, Colombia only; #Li-remote."
     },
     {
       "id": "greenhouse:sezzle:7527790003",
@@ -5055,9 +5213,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|senior software engineer with accounting experience",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Türkiye, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3 (no title or body restriction) gives the region; the conservative rule would give TR. Single posting lists Bogota and LATAM explicitly."
     },
     {
       "id": "greenhouse:sezzle:7537957003",
@@ -5070,9 +5237,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|product management intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia, Remote | Bogota, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only Colombia in location; salary in COP; #Li-remote."
     },
     {
       "id": "ashby:supabase:62dfb104-ae18-46ce-a9ef-836f024c3d6d",
@@ -5085,9 +5263,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|head of new media",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, AMER",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "AMER counts as region (D5); nothing in body restricts a country."
     },
     {
       "id": "greenhouse:sezzle:8040759003",
@@ -5100,9 +5287,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|multi media design intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "PE"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Sezzle is seeking a talented and motivated Multi Media Design Intern in Peru",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: body restricts to Peru, so Peru rules over the compound location."
     },
     {
       "id": "lever:ciandt:e285e7e1-7a48-42c0-8fe4-4014a5a85ae3",
@@ -5115,9 +5313,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job- 32405] senior back end developer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job- 32405] Senior Back End Developer (Python/Golang & SAP), Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
     },
     {
       "id": "greenhouse:canonical:7086483",
@@ -5130,9 +5339,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|senior partner sales manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Home based - Worldwide | Home Based - Americas",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Composite worldwide/Americas, body silent on location; narrower reading chosen, applicable either way; remote per #LI-remote"
     },
     {
       "id": "greenhouse:clara:5225033007",
@@ -5145,9 +5363,23 @@
       "subtype": "candidate",
       "siblingKey": "clara|ai growth automation engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "AR",
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "AI Growth Automation Engineer - Buenos Aires (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:canonical:6397940",
@@ -5160,9 +5392,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|software alliance ecosystem manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This role will be based remotely in the Americas or EMEA region.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Americas region open; EMEA alternative does not restrict Americas (D5)"
     },
     {
       "id": "greenhouse:sezzle:7694916003",
@@ -5175,9 +5416,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|security infrastructure engineer intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia, Remote | Bogota, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only Colombia; salary in COP."
     },
     {
       "id": "greenhouse:sezzle:7907182003",
@@ -5190,9 +5442,21 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|it operations intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "PE",
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Peru | Bogota, Colombia; body tag #Li-remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Country list including CO; remote only via #Li-remote tag."
     },
     {
       "id": "greenhouse:canonical:4181031",
@@ -5205,9 +5469,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|financial analyst",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This is a remote role in Americas time zones.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Americas time zones count as region (D5)"
     },
     {
       "id": "greenhouse:canonical:7911753",
@@ -5220,9 +5493,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|embedded devices software solution sales account manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "We are growing our sales reach with remote roles in all regions - EMEA, APAC, and Americas",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote in all regions; only the Taipei roles are office based"
     },
     {
       "id": "greenhouse:sezzle:8011532003",
@@ -5235,9 +5517,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|fraud & disputes intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Brazil, Remote | Bogota, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Conservative rule: only Brazil is marked Remote; Bogota listed without remote and no remote tag in body."
     },
     {
       "id": "greenhouse:sezzle:7725280003",
@@ -5250,9 +5543,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|senior database reliability engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Argentina, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: composite location; nothing restricts to one country so the region applies."
     },
     {
       "id": "greenhouse:canonical:6587365",
@@ -5265,9 +5567,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|iot solutions architecture manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "IoT Solutions Architecture Manager (Americas only)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title Americas only; body: remote role located in one of three Geos (Americas); D5 region"
     },
     {
       "id": "greenhouse:canonical:5643282",
@@ -5280,9 +5591,17 @@
       "subtype": "candidate",
       "siblingKey": "canonical|ubuntu sales engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "We are growing teams in EMEA, Americas and APAC time zones, so can accommodate candidates from almost any country.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true
     },
     {
       "id": "ashby:supabase:621516b5-4d8f-4ee9-8287-2da12e63d023",
@@ -5295,9 +5614,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|orioledb developer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role requires strong working overlap with Americas time zones due to production support and on-call responsibilities.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title (AMER) and location Remote, AMER; Americas time zone overlap is a region, not a country."
     },
     {
       "id": "greenhouse:canonical:7334725",
@@ -5310,9 +5638,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|kernel build automation engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: Home-based in the Europe, Middle East, or Africa regions.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body restricts to EMEA region, outside LATAM, no countries; wins over Worldwide metadata"
     },
     {
       "id": "ashby:supabase:f0f277ac-b96c-478a-81ca-7bd80612533f",
@@ -5325,9 +5662,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|partnerships manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, AMER",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "AMER region; body says 100% remote, no location-based salary adjustments."
     },
     {
       "id": "greenhouse:sezzle:8012020003",
@@ -5340,9 +5686,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|fraud & disputes intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Compensation : The salary for the Fraud & Disputes Intern is $2.800.000 COP monthly.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location Colombia, Remote; salary in COP."
     },
     {
       "id": "greenhouse:sezzle:8044474003",
@@ -5355,9 +5712,21 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|product manager intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR",
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Brazil, Remote | Bogota, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "List of countries only, no region; #Li-remote in body; includes CO."
     },
     {
       "id": "greenhouse:clara:5223308007",
@@ -5370,9 +5739,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|ai business operations expert",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO",
+        "BR",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "AI Business Operations Expert - Bogotá (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:sezzle:7779220003",
@@ -5385,9 +5767,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|senior payments engineer — acquiring & payment processing",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Argentina, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: composite location; no body restriction so region applies."
     },
     {
       "id": "greenhouse:sezzle:8012084003",
@@ -5400,9 +5791,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|product operations intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Chile, Remote | Bogota, Colombia | Latin America [Remote]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: region. Salary in COP hints at Colombia but is not an explicit restriction; applicable either way."
     },
     {
       "id": "ashby:addi:97f0cd1b-ccae-4b31-9878-2d90da42bae1",
@@ -5415,9 +5815,20 @@
       "subtype": "candidate",
       "siblingKey": "addi|backend jvm software engineer | ic3",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "'Meet onsite with one of our founders' refers to an interview step, not the work model."
     },
     {
       "id": "greenhouse:canonical:2456563",
@@ -5430,9 +5841,17 @@
       "subtype": "candidate",
       "siblingKey": "canonical|cloud support engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This is a globally remote role.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true
     },
     {
       "id": "greenhouse:canonical:6994398",
@@ -5445,9 +5864,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|embedded linux field engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This role will be based remotely in the APAC region, except in locations where we have an office, such as Taipei and Beijing",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body restricts to APAC region, outside LATAM, no concrete countries; body wins over Worldwide metadata"
     },
     {
       "id": "greenhouse:canonical:6635681",
@@ -5460,9 +5888,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|software maintenance engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This is a remote role, we have teams in all time zones.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote with teams in all time zones; metadata Worldwide"
     },
     {
       "id": "greenhouse:clara:5208456007",
@@ -5475,9 +5912,20 @@
       "subtype": "candidate",
       "siblingKey": "clara|tech lead — users & auth",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: Tech Lead - Users & Auth ... - Mexico City (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title"
     },
     {
       "id": "greenhouse:canonical:5191982",
@@ -5490,9 +5938,17 @@
       "subtype": "candidate",
       "siblingKey": "canonical|microservices engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location : we have microservices teams with open roles in every time zone.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true
     },
     {
       "id": "greenhouse:canonical:6485081",
@@ -5505,9 +5961,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|staff security operations engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Home based - Worldwide",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Metadata Worldwide, body gives no restriction; #LI-remote, distributed company"
     },
     {
       "id": "greenhouse:sezzle:6668068003",
@@ -5520,9 +5985,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|junior software engineer with accounting experience",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Junior Software Engineer with Accounting Experience (LATAM)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: title says LATAM, no single-country restriction; location lists Colombia, Remote and Latin America [Remote]."
     },
     {
       "id": "greenhouse:canonical:4394058",
@@ -5535,9 +6009,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|linux devices software engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location : This role will be based remotely in the EMEA or Americas regions",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Americas region (D5)"
     },
     {
       "id": "greenhouse:sezzle:8055939003",
@@ -5550,9 +6033,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|senior data engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Brazil | Bogota, Colombia | Latin America [Remote]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: nothing in title or body restricts to a country, so the region; #Li-remote."
     },
     {
       "id": "greenhouse:canonical:2925180",
@@ -5565,9 +6057,17 @@
       "subtype": "candidate",
       "siblingKey": "canonical|ubuntu security engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: Worldwide, this is a globally remote role",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true
     },
     {
       "id": "greenhouse:sezzle:8012067003",
@@ -5580,9 +6080,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|marketplace operations & experimentation specialist",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Mexico, Remote | Bogota, Colombia | Latin America [Remote] | Peru",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: compound location, nothing in title or body restricts to a country, so the region. Body has #Li-remote."
     },
     {
       "id": "ashby:addi:b8ee072b-66e3-43d2-851e-6ed6179928ee",
@@ -5595,9 +6104,18 @@
       "subtype": "candidate",
       "siblingKey": "addi|staff product manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: LatAm; Native fluency in Colombian Spanish to judge tone and local nuances accurately",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Language skill (Colombian Spanish) is not a residence requirement; header says LatAm. Applicable for CO under either reading."
     },
     {
       "id": "greenhouse:sezzle:6668067003",
@@ -5610,9 +6128,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|junior software engineer with accounting experience",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CL"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Junior Software Engineer with Accounting Experience (Chile)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: title restricts to Chile over the composite location; remote from location text and #Li-remote."
     },
     {
       "id": "greenhouse:sezzle:7849512003",
@@ -5625,9 +6154,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|solutions engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Argentina, Remote | Bogota, Colombia | Latin America [Remote]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: no body or header restriction to a country."
     },
     {
       "id": "greenhouse:canonical:5151903",
@@ -5640,9 +6178,17 @@
       "subtype": "candidate",
       "siblingKey": "canonical|linux kernel engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: Working from home, worldwide.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true
     },
     {
       "id": "greenhouse:sezzle:7849514003",
@@ -5655,9 +6201,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|solutions engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Mexico, Remote | Bogota, Colombia | Latin America [Remote]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: no body or header restriction to a country."
     },
     {
       "id": "greenhouse:clara:5208458007",
@@ -5670,9 +6225,20 @@
       "subtype": "candidate",
       "siblingKey": "clara|tech lead — users & auth",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: Tech Lead - Users & Auth ... - Sao Paulo (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title"
     },
     {
       "id": "lever:ciandt:2fee42ea-7501-4f7f-bb44-779b0e92f072",
@@ -5685,9 +6251,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31343] data product manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job - 31343] Data Product Manager, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
     },
     {
       "id": "greenhouse:canonical:6132532",
@@ -5700,9 +6277,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|cloud field engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This role will be home based.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Header Home based - Worldwide, #LI-Remote, work from home"
     },
     {
       "id": "greenhouse:sezzle:8054164003",
@@ -5715,9 +6301,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|data engineer ii",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Latin America | Bogota, Colombia | Latin America [Remote]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Region listed and tagged Remote; #Li-remote."
     },
     {
       "id": "greenhouse:canonical:5143011",
@@ -5730,9 +6325,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|developer relations engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location : we are building our initial DevRel team in Europe, Middle East, African and American time zones",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Header also lists Worldwide; American time zones count as region (D5); both readings applicable"
     },
     {
       "id": "lever:ciandt:33fec9ed-cca7-42f5-8601-09b5bd472a59",
@@ -5745,9 +6349,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31873] data architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job -  31873] Data Architect (Boomi), Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
     },
     {
       "id": "greenhouse:canonical:4209375",
@@ -5760,9 +6375,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|head of security operations",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Home based - Worldwide | Home Based - Worldwide",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body silent on location; header Worldwide home based"
     },
     {
       "id": "greenhouse:canonical:4541445",
@@ -5775,9 +6399,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|technical manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This is a Globally remote role",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body says globally remote despite EMEA in header"
     },
     {
       "id": "greenhouse:sezzle:8011711003",
@@ -5790,9 +6423,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|chargeback operations intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "AR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Argentina, Remote | Bogota, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Conservative rule: only Argentina is marked Remote; Bogota listed without remote and no remote tag in body."
     },
     {
       "id": "greenhouse:sezzle:7861216003",
@@ -5805,9 +6449,18 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|senior technical product manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Chile, Remote | Bogota, Colombia | Latin America [Remote]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Pattern 3: no body or header restriction to a country."
     },
     {
       "id": "greenhouse:clara:5222085007",
@@ -5820,9 +6473,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|ai business operations analyst",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO",
+        "BR",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "This is a hybrid role: you'll split your time between the office, customers and home.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:canonical:1747487",
@@ -5835,9 +6501,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|site reliability / gitops engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location : This role is available remotely in any timezone.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location 'Home based - Worldwide'."
     },
     {
       "id": "greenhouse:sezzle:8012023003",
@@ -5850,9 +6525,21 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|risk & disputes intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "needs_owner",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [
+        "MX",
+        "CO"
+      ],
+      "workModel": "unknown",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Mexico, Remote | Bogota, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only Mexico is marked Remote; no remote tag in body and Bogota not marked remote; conservative rule gives unclear. Sibling Sezzle postings are remote contractors, so owner may prefer country_specific MX,CO remote."
     },
     {
       "id": "greenhouse:sezzle:7504352003",
@@ -5865,9 +6552,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|it operations intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Based in Bogotá, Colombia; able to work both remotely and onsite when required.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Intern based in Bogota with onsite when required is hybrid; the #Li-remote tag does not override it."
     },
     {
       "id": "greenhouse:canonical:2808065",
@@ -5880,9 +6578,18 @@
       "subtype": "candidate",
       "siblingKey": "canonical|project manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: This role will be based remotely in the AMERICAs and/or EMEA regions.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Americas region (D5)"
     },
     {
       "id": "greenhouse:clara:5256932007",
@@ -5895,9 +6602,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|staff devops engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Verified on full body: no hybrid text; titled Remote. Replaces subagent's hybrid reading."
     },
     {
       "id": "greenhouse:sezzle:7638791003",
@@ -5910,9 +6630,20 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|multi media design intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Sezzle is seeking a talented and motivated Multi Media Design Intern in Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body and location restrict to Colombia; #Li-remote."
     },
     {
       "id": "greenhouse:canonical:5143074",
@@ -5925,9 +6656,17 @@
       "subtype": "candidate",
       "siblingKey": "canonical|python engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location: we have remote Python engineering roles in every time zone.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true
     },
     {
       "id": "ashby:addi:45374a51-9194-4deb-a861-6b4a30cd0af3",
@@ -5940,9 +6679,18 @@
       "subtype": "candidate",
       "siblingKey": "addi|fraud prevention analyst",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "unknown",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Bogotá",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only a city, no metadata and body silent on remote/onsite; workModel unknown so never applicable."
     },
     {
       "id": "greenhouse:clara:5219620007",
@@ -5955,9 +6703,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|growth designer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX",
+        "CO",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Growth Designer (AI Focused) - Mexico City (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:clara:5177057007",
@@ -5970,9 +6731,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|senior fullstack engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Verified on full body: no hybrid text; titled Remote. Replaces subagent's hybrid reading (it inferred a shared paragraph)."
     },
     {
       "id": "greenhouse:clara:5224993007",
@@ -5985,9 +6759,23 @@
       "subtype": "candidate",
       "siblingKey": "clara|ai growth automation engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX",
+        "AR",
+        "CO",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "AI Growth Automation Engineer - Mexico City (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "ashby:supabase:282d1dfb-b162-4ce4-a938-c4b2173230e0",
@@ -6000,9 +6788,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|partner solutions architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, AMER",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "D5: AMER counts as region; nothing in body restricts."
     },
     {
       "id": "greenhouse:clara:5219624007",
@@ -6015,9 +6812,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|growth designer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Growth Designer (AI Focused) - Bogotá (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "lever:ciandt:49eebff4-cd0e-4b59-8b11-f59bd28e50df",
@@ -6030,9 +6840,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job-31996] senior business analyst",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job-31996] Senior Business Analyst (Microsoft Dynamics 365 Customer Service), Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
     },
     {
       "id": "greenhouse:clara:5225034007",
@@ -6045,9 +6866,23 @@
       "subtype": "candidate",
       "siblingKey": "clara|ai growth automation engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR",
+        "AR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "AI Growth Automation Engineer - São Paulo (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:clara:5169725007",
@@ -6060,9 +6895,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|paid media specialist",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO",
+        "AR",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: Paid Media Specialist - Hybrid",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title"
     },
     {
       "id": "greenhouse:clara:5230243007",
@@ -6075,9 +6923,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|product designer associate",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX",
+        "CO",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Product Designer Associate (Diseñador asociado de Producto) - México City (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:clara:5219625007",
@@ -6090,9 +6951,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|growth designer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Growth Designer (AI Focused) - São Paulo (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:clara:5218831007",
@@ -6105,9 +6979,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|credit risk expert",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO",
+        "BR",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "São Paulo, CDMX, Bogotá | Hybrid",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid explicit in title and body."
     },
     {
       "id": "greenhouse:clara:5169731007",
@@ -6120,9 +7007,20 @@
       "subtype": "candidate",
       "siblingKey": "clara|paid media specialist",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "AR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: Paid Media Specialist - Argentina (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title"
     },
     {
       "id": "ashby:supabase:344787f2-d115-4056-87ca-7668fc14be3d",
@@ -6135,9 +7033,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|aws gaming gtm segment lead",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, AMER",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "D5: AMER counts as region; nothing in body restricts."
     },
     {
       "id": "greenhouse:clara:5235807007",
@@ -6150,9 +7057,18 @@
       "subtype": "candidate",
       "siblingKey": "clara|senior auth engineer — users & auth",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Verified on full body: no hybrid text; location lists Latin America plus 4 cities, title Remote First; pattern 3 region."
     },
     {
       "id": "ashby:addi:9438857e-28ed-41b7-848f-ad092ca63c5b",
@@ -6165,9 +7081,20 @@
       "subtype": "candidate",
       "siblingKey": "addi|addi gateway program | class of 2027",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "needs_owner",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Location: Remote-first, with in-person weeks in Bogotá, fully paid by Addi",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Metadata remote and Colombia, but body adds in-person weeks in Bogota. Conservative rule: onsite_or_hybrid. Owner could rule it remote (country_specific CO)."
     },
     {
       "id": "lever:ciandt:e37ecafd-65b1-46d5-abee-e8e75a1a59ad",
@@ -6180,9 +7107,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31429] data engineer lead",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "TITLE: [Job - 31429] Data Engineer Lead, Brasil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title names Brasil; location list adds Colombia but title country wins (conservative); not applicable for CO"
     },
     {
       "id": "ashby:supabase:c9f78e74-fb9d-4cd0-af0b-b1cec4632331",
@@ -6195,9 +7133,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|orioledb deployment engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "TITLE: OrioleDB Deployment Engineer (AMER)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title and location AMER; nothing restricts a country."
     },
     {
       "id": "ashby:supabase:66bab062-b769-43cf-ac3c-a2630257624c",
@@ -6210,9 +7157,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|customer solution architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "needs_owner",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role will support the East Coast region across the Americas.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote, AMER but \"East Coast region\" may imply US East Coast; conservative rule gives unclear. Under D5 reading (timezone/region only) it would be latam_eligible."
     },
     {
       "id": "ashby:addi:b32ab3e6-5782-4935-8c92-33cc77013659",
@@ -6225,9 +7181,20 @@
       "subtype": "candidate",
       "siblingKey": "addi|acquisition and onboarding lead marketplace",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Latin America mention is about a contacts network, not eligibility."
     },
     {
       "id": "greenhouse:clara:5230221007",
@@ -6240,9 +7207,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|product designer associate - são paulo [hybrid]",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Product Designer Associate (Designer de Produto Associado) - São Paulo [Hybrid]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "greenhouse:clara:5230220007",
@@ -6255,9 +7235,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|product designer associate - bogotá [hybrid]",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "CO",
+        "MX",
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Product Designer Associate (Diseñador asociado de Producto) - Bogotá [Hybrid]",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid in title and company paragraph."
     },
     {
       "id": "lever:ciandt:63412816-4b82-454e-ba60-9e25fb9673b9",
@@ -6270,9 +7263,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job-32448] master data developer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job-32448] Master Data Developer (Databricks), Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
     },
     {
       "id": "ashby:addi:92b68b7e-ae93-4313-aa53-7bd0f814d407",
@@ -6285,9 +7289,18 @@
       "subtype": "candidate",
       "siblingKey": "addi|bank fraud operations lead",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: LatAm; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Region LatAm, remote, nothing in body restricts to a country."
     },
     {
       "id": "lever:ciandt:230aa5d6-c194-49e8-a40d-255a5fd0ea61",
@@ -6300,9 +7313,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31833] data manager",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job - 31833]  Data Manager (Data Governance), Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, benefits cite Colombian Holidays; ATS remote."
     },
     {
       "id": "greenhouse:clara:5218842007",
@@ -6315,9 +7339,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|especialista em risco de crédito",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR",
+        "CO",
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "São Paulo, CDMX, Bogotá | Hybrid",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid explicit in title (Híbrido) and body."
     },
     {
       "id": "greenhouse:clara:5218829007",
@@ -6330,9 +7367,22 @@
       "subtype": "candidate",
       "siblingKey": "clara|credit risk expert",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR",
+        "MX",
+        "CO"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "São Paulo, CDMX, Bogotá | Hybrid",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title and body"
     },
     {
       "id": "lever:ciandt:b5dd4a1a-98a2-4b9c-b5af-45558db62f09",
@@ -6345,9 +7395,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31832] principal data architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job - 31832] Principal Data Architect, Colombia",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote. \"hybrid architect\" is a skill profile, not workplace."
     },
     {
       "id": "ashby:addi:93a91948-7393-4922-8a9e-4c406a2f4511",
@@ -6360,9 +7421,18 @@
       "subtype": "candidate",
       "siblingKey": "addi|quality & continuous improvement analyst",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "unknown",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Bogotá",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only a city, no metadata and body silent on remote/onsite."
     },
     {
       "id": "ashby:addi:d28cab1f-fb41-42b8-af71-4c9bf1c8913d",
@@ -6375,9 +7445,20 @@
       "subtype": "candidate",
       "siblingKey": "addi|analytics engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location Colombia, remote metadata."
     },
     {
       "id": "lever:ciandt:eabc58c4-1067-4c68-8741-689e00f41074",
@@ -6390,9 +7471,20 @@
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 32043] senior data architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "TITLE: [Job -  32043] Senior Data Architect, Colombia | Colombian Holidays",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Colombia only, remote metadata; the Campinas office note applies only to residents there"
     },
     {
       "id": "ashby:addi:924d8e8b-d0f7-47b9-8445-7dbc2941a8af",
@@ -6405,9 +7497,20 @@
       "subtype": "candidate",
       "siblingKey": "addi|financial systems controls lead",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location Colombia, remote metadata, body does not contradict."
     },
     {
       "id": "ashby:supabase:d5573afa-636c-4219-832f-386f498243bf",
@@ -6420,9 +7523,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|customer solution architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "latam_eligible",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "TITLE: Customer Solution Architect (AMER)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "AMER region, no restricting text in body."
     },
     {
       "id": "ashby:addi:f4cf39f2-43c5-44f7-aa25-37d726748967",
@@ -6435,9 +7547,20 @@
       "subtype": "candidate",
       "siblingKey": "addi|backend engineer | ic2",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CO"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Colombia; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "'On-site Interview' is a hiring step, not the work model."
     },
     {
       "id": "ashby:supabase:cb04ae3a-3a47-4e21-928f-c2456b7b214e",
@@ -6450,9 +7573,18 @@
       "subtype": "candidate",
       "siblingKey": "supabase|member of technical staff",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Location - San Francisco Bay Area (required)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Required Bay Area location overrides the AMER entry in the multi-location list."
     },
     {
       "id": "ashby:addi:d0def55f-3044-4c37-ae5d-af44aec732c2",
@@ -6465,9 +7597,18 @@
       "subtype": "candidate",
       "siblingKey": "addi|senior/staff platform engineer",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "unknown",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Bogotá | Colombia | LatAm",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Compound location lists a city but no remote statement in body or metadata; workModel unknown so not applicable."
     },
     {
       "id": "greenhouse:turing:6225409004",
@@ -6480,9 +7621,18 @@
       "subtype": "negative_us",
       "siblingKey": "turing|senior software engineer, ai evaluation infrastructure",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "needs_owner",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: United States | Global - Remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Compound location; body silent on eligibility. Pattern 3 would give worldwide, rule 5 gives non-applicable; chose unclear"
     },
     {
       "id": "greenhouse:clara:5215613007",
@@ -6495,9 +7645,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "clara|ai-native engineer, new grad",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: AI-Native Engineer, New Grad ... - Mexico City (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title"
     },
     {
       "id": "lever:deuna:b0e25a9f-96b0-40b1-b805-eae80e4e6cd7",
@@ -6510,9 +7671,20 @@
       "subtype": "negative_hybrid",
       "siblingKey": "deuna|senior fullstack engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_hybrid)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "US"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "ATS_WORKPLACE_TYPE: hybrid; LOCATION: San Francisco",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body silent on model; metadata hybrid; country US inferred from San Francisco city."
     },
     {
       "id": "ashby:supabase:3b5d54ca-741b-45ac-bd3f-31605a0d3541",
@@ -6525,9 +7697,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|ai platform engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote, Fully Remote; ATS workplace type absent but body says Fully Remote."
     },
     {
       "id": "ashby:elevenlabs:8e1735ec-c5e2-4292-adbd-764a58e7ce17",
@@ -6540,9 +7721,18 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|model partnerships",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote. The team operates across US and European time zones",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote with no country or region of eligibility; only timezone overlap and metadata Europe/New York; conservative rule."
     },
     {
       "id": "lever:ciandt:4a072a28-9261-483c-912e-1ca53fdee0f0",
@@ -6555,9 +7745,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32250]senior ios developer",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job-32250]Senior IOS Developer, Brasil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title and location Brazil; ATS remote."
     },
     {
       "id": "lever:deuna:18182756-f5ff-4494-a5a7-f86f1bdb65ef",
@@ -6570,9 +7771,20 @@
       "subtype": "negative_hybrid",
       "siblingKey": "deuna|partnerships manager",
       "selectionReason": "test-v2 selection (seed 11, negative_hybrid)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "ATS_WORKPLACE_TYPE: hybrid; LOCATION: Ciudad de México, Mexico",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body silent on model; \"Remote work from anywhere\" is only a benefit (pattern 2)."
     },
     {
       "id": "lever:caseware:b9b85703-d97a-43eb-ae90-958083780094",
@@ -6585,9 +7797,20 @@
       "subtype": "negative_other",
       "siblingKey": "caseware|devops developer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CA"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This is a remote location open to candidates legally authorized to work in Canada.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote restricted to Canada"
     },
     {
       "id": "ashby:elevenlabs:a787e8ee-f1c4-422d-95f8-61ffd4eefb95",
@@ -6600,9 +7823,24 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|safety engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "GB",
+        "IE",
+        "JP",
+        "US",
+        "PL"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: United Kingdom | Dublin | Tokyo | United States | New York | Los Angeles | Poland | London | Boston",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body location section empty; only the ATS list of countries (a list is not a region); workplace remote from metadata."
     },
     {
       "id": "greenhouse:amplemarket:5017308101",
@@ -6615,9 +7853,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "amplemarket|operations specialist",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "PT"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Portugal",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote restricted to Portugal; body silent."
     },
     {
       "id": "ashby:elevenlabs:24710bb7-62de-48d4-82c5-748c0d8aade2",
@@ -6630,9 +7879,18 @@
       "subtype": "negative_other",
       "siblingKey": "elevenlabs|gtm enablement - global onboarding & operations",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote-first and ideally based on the East Coast of the US.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Eastern timezone required and East Coast US preferred; no explicit country requirement; conservative rule 5."
     },
     {
       "id": "ashby:elevenlabs:b92059ea-d71f-4eef-a184-8510265752fb",
@@ -6645,9 +7903,18 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|systems architect",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: San Francisco (ATS_WORKPLACE_TYPE: remote)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "City-only location with remote metadata and body silent: no stated country restriction; conservative rule."
     },
     {
       "id": "lever:ciandt:39be8f9e-c2c0-44df-a20d-946550918c37",
@@ -6660,9 +7927,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job - 31250] senior developer",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only location is Brazil; body silent on workplace, ATS remote; benefits are Brazilian (PLR)."
     },
     {
       "id": "ashby:canals:d77f2d3e-67f9-4bbe-9e70-3278139e5b56",
@@ -6675,9 +7953,20 @@
       "subtype": "negative_other",
       "siblingKey": "canals|technical support agent - brazil, 9 - 6pm brt",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Technical Support Agent - Brazil, 9 - 6pm BRT",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title names Brazil and Brazilian cities; 'distributed across North and South America' describes the company (pattern 1)."
     },
     {
       "id": "ashby:elevenlabs:a89a7892-3d9d-40ab-a3f1-1c6ed1f7b84f",
@@ -6690,9 +7979,23 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|research engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "GB",
+        "US",
+        "PL",
+        "BG"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: United Kingdom | United States | Poland | Bulgaria",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body silent on location; only the ATS country list; workplace remote from metadata."
     },
     {
       "id": "lever:ciandt:9be4a9ed-3d23-4ffc-88f7-7dae953767a5",
@@ -6705,9 +8008,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job - 32323] mid ios mobile developer",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "we are seeking a highly skilled and motivated Mid iOS Mobile Developer to join our team in Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body and location say Brazil; ATS remote."
     },
     {
       "id": "ashby:supabase:9a4c9984-07c7-4b47-982f-371de3f6ff50",
@@ -6720,9 +8034,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|product manager",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote; Supabase is fully remote, no country restriction."
     },
     {
       "id": "ashby:elevenlabs:3b57cc5c-f019-4a0b-a5ff-e1046e4f1fa1",
@@ -6735,9 +8058,24 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|safety engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "GB",
+        "IE",
+        "JP",
+        "US",
+        "PL"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: United Kingdom | Dublin | Tokyo | United States | New York | Los Angeles | Poland | London | Boston",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location list of countries; body only has #LI-remote."
     },
     {
       "id": "lever:ciandt:79485904-1730-4a7a-a670-99d795acfa31",
@@ -6750,9 +8088,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32372] mid level angular developer, vaga para pessoas pcd",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job-32372] Mid level Angular Developer, vaga para pessoas PCD, Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Brazil; ATS remote."
     },
     {
       "id": "ashby:supabase:f52fd120-5fbe-4e0d-949d-01e217ec77d6",
@@ -6765,9 +8114,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|technical account management leader",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote; APAC mention is coverage gap context, not a restriction."
     },
     {
       "id": "ashby:elevenlabs:4389da7f-b5c9-4660-aaf2-d097f4caba07",
@@ -6780,9 +8138,22 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|audio engineering",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "GB",
+        "US",
+        "PL"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote and can be executed globally",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Rule 5: ATS lists London/New York/Poland only. Was worldwide."
     },
     {
       "id": "lever:ciandt:fa720e93-a0b1-41b6-abbc-4b83d8e9dc7b",
@@ -6795,9 +8166,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32277] senior fullstack developer",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Brazil; ATS_WORKPLACE_TYPE: remote",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Brazil only"
     },
     {
       "id": "ashby:supabase:48950725-e0d9-4025-92d9-f75e1b60ce45",
@@ -6810,9 +8192,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|postgres deployment engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote, Fully Remote."
     },
     {
       "id": "ashby:elevenlabs:a3097257-a07a-4a7e-b9fe-b8555c1a0fa7",
@@ -6825,9 +8216,27 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|engineering - internal ai transformation",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "GB",
+        "IE",
+        "US",
+        "DE",
+        "PL",
+        "SE",
+        "IT",
+        "CA"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote and can be executed globally.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Rule 5: ATS lists countries without CO. Was worldwide."
     },
     {
       "id": "greenhouse:clara:5270628007",
@@ -6840,9 +8249,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "clara|credit analysis lead",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Credit Analysis Lead - São Paulo (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title says Hybrid; shared body also says hybrid."
     },
     {
       "id": "lever:caseware:9c815487-984d-49a9-9ca6-359e962440f5",
@@ -6855,9 +8275,18 @@
       "subtype": "negative_other",
       "siblingKey": "caseware|senior product manager — us tax",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "A US CPA in good standing is a hard requirement.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "US CPA and US tax focus; ATS metadata remote, Atlanta location; body silent on remote"
     },
     {
       "id": "ashby:elevenlabs:6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6",
@@ -6870,9 +8299,18 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|forward deployed engineer - software engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote-first, so it can be executed from anywhere in the United States.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title says USA and body restricts to the United States."
     },
     {
       "id": "lever:ciandt:22c6a7e1-9986-4b64-8d36-58320e8e9263",
@@ -6885,9 +8323,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32264] solutions architect",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job-32264] Solutions Architect , Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title and location name Brazil; body silent on workplace, ATS metadata remote."
     },
     {
       "id": "ashby:supabase:6f7656fc-9983-48be-bbd3-8b40e0e3027a",
@@ -6900,9 +8349,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|container engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body says Fully Remote; ATS workplace type absent; no country restriction."
     },
     {
       "id": "ashby:elevenlabs:203ef08b-7bb0-42b7-8099-d3d770fe3615",
@@ -6915,9 +8373,18 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|deployment strategist lead",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Deployment Strategist Lead - USA",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title names USA; locations New York and San Francisco."
     },
     {
       "id": "lever:ciandt:6d00e007-c786-4f28-a616-f389e66dece4",
@@ -6930,9 +8397,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-31573] ai engineer master",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only location is Brazil; body silent on workplace; ATS remote."
     },
     {
       "id": "lever:caseware:60add20a-e16a-4848-827c-03f680b3c80a",
@@ -6945,9 +8423,18 @@
       "subtype": "negative_other",
       "siblingKey": "caseware|manager, marketing operations, campaigns & emails",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This is a remote position and is available to all applicants residing and eligible to work in US.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote but US residents only"
     },
     {
       "id": "ashby:supabase:a1320bbf-bfae-49a8-a1b7-12eeccaf39ca",
@@ -6960,9 +8447,18 @@
       "subtype": "negative_us",
       "siblingKey": "supabase|developer relations engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is based in San Francisco to support regular in-person devrel video shoots",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body requires San Francisco base; location Remote, San Francisco, CA."
     },
     {
       "id": "greenhouse:clara:5161494007",
@@ -6975,9 +8471,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "clara|ai business operations analyst",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "MX"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "TITLE: AI Business Operations Analyst - Mexico City (Hybrid)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Explicit hybrid in title and body"
     },
     {
       "id": "ashby:supabase:13478d3f-0093-458f-9f84-af71e66db03f",
@@ -6990,9 +8497,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|grc analyst",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote, Fully Remote."
     },
     {
       "id": "ashby:elevenlabs:3e9f8e45-cd55-4fb9-9452-0ebbd6e15de6",
@@ -7005,9 +8521,23 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|equity administrator",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "US",
+        "IE",
+        "GB",
+        "PL"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "it can be executed from anywhere in Central Europe or Eastern US.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Regional restriction to Central Europe or Eastern US; offices London, New York, Warsaw."
     },
     {
       "id": "lever:ciandt:9ac4a93e-bf58-481c-a7dc-040ce7f6b728",
@@ -7020,9 +8550,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32371] senior angular developer",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "[Job-32371] Senior Angular Developer, Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title/location Brazil; ATS remote."
     },
     {
       "id": "greenhouse:turing:6218247004",
@@ -7035,9 +8576,20 @@
       "subtype": "negative_other",
       "siblingKey": "turing|senior devops & infrastructure engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Work Model: Remote within Brazil, with regular working-hour overlap with U.S. Pacific Time",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Body restricts to Brazil; header Global - Remote is overridden (pattern 3)"
     },
     {
       "id": "ashby:elevenlabs:36b52143-1ed2-4e60-89c4-84e09d856658",
@@ -7050,9 +8602,21 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|partnerships strategy & operations",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: United States | United Kingdom",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Only countries listed; body silent on eligibility; global team line describes company."
     },
     {
       "id": "lever:ciandt:e9455389-8286-4c95-aa4c-d028498bbc18",
@@ -7065,9 +8629,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-31520]software architect .net",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "TITLE: [Job-31520]Software Architect .Net, Brasil | LOCATION: Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Brazil only"
     },
     {
       "id": "lever:caseware:528ac6dc-dd08-4853-adc1-99d8b1776486",
@@ -7080,9 +8655,20 @@
       "subtype": "negative_other",
       "siblingKey": "caseware|staff site reliability engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "CA"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This is a remote location open to candidates legally authorized to work in Canada.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote restricted to Canada"
     },
     {
       "id": "lever:deuna:2bb6b2dc-5641-43ce-8065-21db8a82b8ac",
@@ -7095,9 +8681,18 @@
       "subtype": "negative_us",
       "siblingKey": "deuna|head of implementation",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "unclear",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: San Francisco (ATS_WORKPLACE_TYPE: remote)",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Remote with no stated country or restriction; team distributed in LATAM describes company (pattern 1)."
     },
     {
       "id": "ashby:elevenlabs:ed5d50eb-e41a-48e4-bea0-3686176f0461",
@@ -7110,9 +8705,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "elevenlabs|public sector partnerships lead",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "FR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is located in France.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title and body restrict to France; remote from ATS metadata (body silent on remote)."
     },
     {
       "id": "ashby:supabase:5d09daeb-2d7e-42de-9151-81a1341195c4",
@@ -7125,9 +8731,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|cloud platform engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote, Fully Remote; ATS workplace type absent but body says Fully Remote."
     },
     {
       "id": "ashby:elevenlabs:13fcee94-512f-4229-b7ab-f91d3fdd24e3",
@@ -7140,9 +8755,27 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|elevenmusic - content creator & strategist",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "US",
+        "IE",
+        "JP",
+        "MX",
+        "IT",
+        "PL",
+        "GB",
+        "CA"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote and can be executed globally.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Rule 5: ATS lists countries without CO; 'can be executed globally' alone is not enough (dev precedent). Was worldwide."
     },
     {
       "id": "greenhouse:turing:6192729004",
@@ -7155,9 +8788,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "turing|forward",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "onsite_or_hybrid",
+      "countries": [
+        "IN"
+      ],
+      "workModel": "hybrid",
+      "workModelConflict": false,
+      "evidence": "Work Model: Hybrid, 3 days per week in office",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Hybrid explicit in body; Bengaluru/Hyderabad; location also lists Bengaluru - Remote but body governs"
     },
     {
       "id": "ashby:supabase:9c04bc60-78a1-4529-950d-4704ab475764",
@@ -7170,9 +8814,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|head of ai native operations",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote, no restriction in body."
     },
     {
       "id": "ashby:elevenlabs:ef0a1e14-40ee-43d2-aab9-59fc9f6a4b8c",
@@ -7185,9 +8838,35 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|transcription / subtitling specialist",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "DE",
+        "ES",
+        "KR",
+        "US",
+        "JP",
+        "BR",
+        "DK",
+        "PT",
+        "MX",
+        "SE",
+        "PL",
+        "GB",
+        "NL",
+        "FR",
+        "IN",
+        "BG"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote and can be executed globally.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Rule 5: ATS lists countries without CO. Was worldwide."
     },
     {
       "id": "ashby:elevenlabs:1b43cf6f-bc1f-4241-b8a2-5f85fb4ea028",
@@ -7200,9 +8879,20 @@
       "subtype": "negative_other_country",
       "siblingKey": "elevenlabs|revenue partnerships",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "AR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "Based in Buenos Aires",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Location Argentina and Buenos Aires base; remote only via #LI-remote."
     },
     {
       "id": "ashby:supabase:85f4d148-4602-4139-802a-962705133892",
@@ -7215,9 +8905,18 @@
       "subtype": "negative_other",
       "siblingKey": "supabase|product manager",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "worldwide",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "LOCATION: Remote, Global",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Global remote, no restriction in body."
     },
     {
       "id": "ashby:supabase:98ae5c78-eab7-4879-b143-96b98e4d0dbb",
@@ -7230,9 +8929,18 @@
       "subtype": "negative_us",
       "siblingKey": "supabase|developer relations engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is based in New York to support regular in-person DevRel video shoots, attend local events",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Title and body require New York base; location Remote, New York, US."
     },
     {
       "id": "ashby:elevenlabs:e53c5be6-5c1a-4870-ad85-8397a1f201de",
@@ -7245,9 +8953,27 @@
       "subtype": "negative_other_country",
       "siblingKey": "elevenlabs|data engineer",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "GB",
+        "ES",
+        "HU",
+        "BG",
+        "PL",
+        "IT",
+        "NL",
+        "FR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote and can be executed globally.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Rule 5: ATS lists European countries only. Was worldwide."
     },
     {
       "id": "ashby:elevenlabs:2c9dfcd0-0aa3-466a-8a5a-2b2351afbf81",
@@ -7260,9 +8986,18 @@
       "subtype": "negative_other",
       "siblingKey": "elevenlabs|public sector partnerships lead",
       "selectionReason": "test-v2 selection (seed 11, negative_other)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is located in Europe.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Region outside LATAM (Europe) with no concrete countries."
     },
     {
       "id": "ashby:elevenlabs:19b21930-d142-4dae-be23-751f5425b0af",
@@ -7275,9 +9010,18 @@
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|privacy program manager",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "us_only",
+      "countries": [],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "This role is remote and can be executed in the United States.",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Restricted to United States."
     },
     {
       "id": "lever:ciandt:f02ce66f-6980-471f-960f-772b74929d0f",
@@ -7290,21 +9034,85 @@
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32244] senior java developer - aws",
       "selectionReason": "test-v2 selection (seed 11, negative_other_country)",
-      "labelStatus": "pending",
+      "labelStatus": "labeled",
       "testSetName": "test-v2",
-      "addedAt": "2026-11-03"
+      "addedAt": "2026-11-03",
+      "label": "country_specific",
+      "countries": [
+        "BR"
+      ],
+      "workModel": "remote",
+      "workModelConflict": false,
+      "evidence": "TITLE: [Job-32244] Senior Java Developer - AWS, Brazil",
+      "labelSource": "llm-assisted",
+      "labeledAt": "2026-11-03",
+      "bodyChecked": true,
+      "labelNote": "Brazil only"
     }
   ],
   "testSet": {
     "name": "test-v2",
-    "status": "building",
+    "status": "frozen",
     "note": "Built from postings that were never in the eval (ADR 0004, section 6). Labels by Claude reading the full body, never by Gemini. Frozen when complete.",
     "seed": 11,
     "maxPerCompany": 25,
     "maxPerGroup": 3,
     "builtAt": "2026-11-03",
     "selected": 157,
-    "leftOut": 119
+    "leftOut": 119,
+    "frozenAt": "2026-11-03",
+    "applicableCO": 77,
+    "cases": 157,
+    "perCompany": {
+      "canonical": {
+        "n": 25,
+        "applicable": 23
+      },
+      "sezzle": {
+        "n": 25,
+        "applicable": 19
+      },
+      "supabase": {
+        "n": 21,
+        "applicable": 17
+      },
+      "clara": {
+        "n": 25,
+        "applicable": 3
+      },
+      "ciandt": {
+        "n": 19,
+        "applicable": 8
+      },
+      "addi": {
+        "n": 11,
+        "applicable": 7
+      },
+      "turing": {
+        "n": 3,
+        "applicable": 0
+      },
+      "deuna": {
+        "n": 3,
+        "applicable": 0
+      },
+      "elevenlabs": {
+        "n": 19,
+        "applicable": 0
+      },
+      "caseware": {
+        "n": 4,
+        "applicable": 0
+      },
+      "amplemarket": {
+        "n": 1,
+        "applicable": 0
+      },
+      "canals": {
+        "n": 1,
+        "applicable": 0
+      }
+    }
   },
   "devLabelRevision": {
     "date": "2026-11-03",
@@ -7328,6 +9136,23 @@
           "ADR 0004 labelling guide, patterns 1-4 (team distribution, 'work from anywhere' benefit, composite locations, non-Latin titles)."
         ],
         "changedCases": 14
+      },
+      {
+        "date": "2026-11-03",
+        "decidedBy": "owner",
+        "scope": "development split (160 cases); test-v2 untouched",
+        "rules": [
+          "ADR 0004 guide rule 5: on doubt or contradiction the conservative (non-applicable) label wins.",
+          "A time zone alone (\"Central time zone\") does not restrict to a country (D5).",
+          "\"remote-first\" vs \"committed to hybrid work\": onsite_or_hybrid if the role has an assigned city/office, otherwise unclear. Never applicable."
+        ],
+        "changedCases": 7,
+        "keptAsIs": [
+          "greenhouse:wizeline:7264950 (unclear)",
+          "greenhouse:celonis:8002490003 (onsite_or_hybrid)",
+          "ashby:perplexity:be94e89b-89d5-4f2a-a58b-7929c8d97f92 (onsite_or_hybrid)",
+          "greenhouse:sezzle:7984978003 (latam_eligible by pattern 3, accepted by the owner)"
+        ]
       }
     ]
   },
