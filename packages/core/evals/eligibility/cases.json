@@ -5394,7 +5394,7 @@
       "board": "canonical",
       "externalId": "8249005",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/8249005",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|graduate software engineer, open source and linux",
@@ -5410,7 +5410,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit global remote"
+      "labelNote": "Explicit global remote",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6950222",
@@ -5418,7 +5420,7 @@
       "board": "canonical",
       "externalId": "6950222",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6950222",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|ibm global alliance director",
@@ -5434,7 +5436,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "AMER counts as region (D5); sibling vacancies for APAC/EMEA in metadata"
+      "labelNote": "AMER counts as region (D5); sibling vacancies for APAC/EMEA in metadata",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7611783003",
@@ -5442,7 +5446,7 @@
       "board": "sezzle",
       "externalId": "7611783003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7611783003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|senior site reliability engineer",
@@ -5462,7 +5466,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Country list including CO; remote only via #Li-remote tag."
+      "labelNote": "Country list including CO; remote only via #Li-remote tag.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:2166631",
@@ -5470,7 +5476,7 @@
       "board": "canonical",
       "externalId": "2166631",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/2166631",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|software developer in observability",
@@ -5486,7 +5492,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Americas region (D5) plus Worldwide in header; both readings applicable"
+      "labelNote": "Americas region (D5) plus Worldwide in header; both readings applicable",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:f18b1173-51c3-4ff6-bcda-89f8111931f4",
@@ -5494,7 +5502,7 @@
       "board": "supabase",
       "externalId": "f18b1173-51c3-4ff6-bcda-89f8111931f4",
       "url": "https://jobs.ashbyhq.com/supabase/f18b1173-51c3-4ff6-bcda-89f8111931f4",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|database support engineer",
@@ -5510,7 +5518,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "AMER region by title and location; time zone only, no country named."
+      "labelNote": "AMER region by title and location; time zone only, no country named.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5208457007",
@@ -5518,7 +5528,7 @@
       "board": "clara",
       "externalId": "5208457007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5208457007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|tech lead — users & auth",
@@ -5537,7 +5547,9 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Explicit hybrid in title",
-      "evidenceFixedAt": "2026-11-03"
+      "evidenceFixedAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7695762003",
@@ -5545,7 +5557,7 @@
       "board": "sezzle",
       "externalId": "7695762003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7695762003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|product intern",
@@ -5563,7 +5575,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location Bogota, Colombia only; #Li-remote."
+      "labelNote": "Location Bogota, Colombia only; #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7527790003",
@@ -5571,7 +5585,7 @@
       "board": "sezzle",
       "externalId": "7527790003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7527790003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|senior software engineer with accounting experience",
@@ -5587,7 +5601,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3 (no title or body restriction) gives the region; the conservative rule would give TR. Single posting lists Bogota and LATAM explicitly."
+      "labelNote": "Pattern 3 (no title or body restriction) gives the region; the conservative rule would give TR. Single posting lists Bogota and LATAM explicitly.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7537957003",
@@ -5595,7 +5611,7 @@
       "board": "sezzle",
       "externalId": "7537957003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7537957003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|product management intern",
@@ -5613,7 +5629,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only Colombia in location; salary in COP; #Li-remote."
+      "labelNote": "Only Colombia in location; salary in COP; #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:62dfb104-ae18-46ce-a9ef-836f024c3d6d",
@@ -5621,7 +5639,7 @@
       "board": "supabase",
       "externalId": "62dfb104-ae18-46ce-a9ef-836f024c3d6d",
       "url": "https://jobs.ashbyhq.com/supabase/62dfb104-ae18-46ce-a9ef-836f024c3d6d",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|head of new media",
@@ -5637,7 +5655,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "AMER counts as region (D5); nothing in body restricts a country."
+      "labelNote": "AMER counts as region (D5); nothing in body restricts a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8040759003",
@@ -5645,7 +5665,7 @@
       "board": "sezzle",
       "externalId": "8040759003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8040759003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|multi media design intern",
@@ -5663,7 +5683,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: body restricts to Peru, so Peru rules over the compound location."
+      "labelNote": "Pattern 3: body restricts to Peru, so Peru rules over the compound location.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:e285e7e1-7a48-42c0-8fe4-4014a5a85ae3",
@@ -5671,7 +5693,7 @@
       "board": "ciandt",
       "externalId": "e285e7e1-7a48-42c0-8fe4-4014a5a85ae3",
       "url": "https://jobs.lever.co/ciandt/e285e7e1-7a48-42c0-8fe4-4014a5a85ae3",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job- 32405] senior back end developer",
@@ -5689,7 +5711,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:7086483",
@@ -5697,7 +5721,7 @@
       "board": "canonical",
       "externalId": "7086483",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/7086483",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|senior partner sales manager",
@@ -5713,7 +5737,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Composite worldwide/Americas, body silent on location; narrower reading chosen, applicable either way; remote per #LI-remote"
+      "labelNote": "Composite worldwide/Americas, body silent on location; narrower reading chosen, applicable either way; remote per #LI-remote",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5225033007",
@@ -5721,7 +5747,7 @@
       "board": "clara",
       "externalId": "5225033007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5225033007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|ai growth automation engineer",
@@ -5742,7 +5768,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6397940",
@@ -5750,7 +5778,7 @@
       "board": "canonical",
       "externalId": "6397940",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6397940",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|software alliance ecosystem manager",
@@ -5766,7 +5794,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Americas region open; EMEA alternative does not restrict Americas (D5)"
+      "labelNote": "Americas region open; EMEA alternative does not restrict Americas (D5)",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7694916003",
@@ -5774,7 +5804,7 @@
       "board": "sezzle",
       "externalId": "7694916003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7694916003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|security infrastructure engineer intern",
@@ -5792,7 +5822,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only Colombia; salary in COP."
+      "labelNote": "Only Colombia; salary in COP.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7907182003",
@@ -5800,7 +5832,7 @@
       "board": "sezzle",
       "externalId": "7907182003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7907182003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|it operations intern",
@@ -5819,7 +5851,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Country list including CO; remote only via #Li-remote tag."
+      "labelNote": "Country list including CO; remote only via #Li-remote tag.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4181031",
@@ -5827,7 +5861,7 @@
       "board": "canonical",
       "externalId": "4181031",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/4181031",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|financial analyst",
@@ -5843,7 +5877,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Americas time zones count as region (D5)"
+      "labelNote": "Americas time zones count as region (D5)",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:7911753",
@@ -5851,7 +5887,7 @@
       "board": "canonical",
       "externalId": "7911753",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/7911753",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|embedded devices software solution sales account manager",
@@ -5867,7 +5903,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote in all regions; only the Taipei roles are office based"
+      "labelNote": "Remote in all regions; only the Taipei roles are office based",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8011532003",
@@ -5875,7 +5913,7 @@
       "board": "sezzle",
       "externalId": "8011532003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8011532003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|fraud & disputes intern",
@@ -5893,7 +5931,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Conservative rule: only Brazil is marked Remote; Bogota listed without remote and no remote tag in body."
+      "labelNote": "Conservative rule: only Brazil is marked Remote; Bogota listed without remote and no remote tag in body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7725280003",
@@ -5901,7 +5941,7 @@
       "board": "sezzle",
       "externalId": "7725280003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7725280003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|senior database reliability engineer",
@@ -5917,7 +5957,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: composite location; nothing restricts to one country so the region applies."
+      "labelNote": "Pattern 3: composite location; nothing restricts to one country so the region applies.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6587365",
@@ -5925,7 +5967,7 @@
       "board": "canonical",
       "externalId": "6587365",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6587365",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|iot solutions architecture manager",
@@ -5941,7 +5983,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title Americas only; body: remote role located in one of three Geos (Americas); D5 region"
+      "labelNote": "Title Americas only; body: remote role located in one of three Geos (Americas); D5 region",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5643282",
@@ -5949,7 +5993,7 @@
       "board": "canonical",
       "externalId": "5643282",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5643282",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|ubuntu sales engineer",
@@ -5964,7 +6008,9 @@
       "evidence": "We are growing teams in EMEA, Americas and APAC time zones, so can accommodate candidates from almost any country.",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
-      "bodyChecked": true
+      "bodyChecked": true,
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:621516b5-4d8f-4ee9-8287-2da12e63d023",
@@ -5972,7 +6018,7 @@
       "board": "supabase",
       "externalId": "621516b5-4d8f-4ee9-8287-2da12e63d023",
       "url": "https://jobs.ashbyhq.com/supabase/621516b5-4d8f-4ee9-8287-2da12e63d023",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|orioledb developer",
@@ -5988,7 +6034,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title (AMER) and location Remote, AMER; Americas time zone overlap is a region, not a country."
+      "labelNote": "Title (AMER) and location Remote, AMER; Americas time zone overlap is a region, not a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:7334725",
@@ -5996,7 +6044,7 @@
       "board": "canonical",
       "externalId": "7334725",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/7334725",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|kernel build automation engineer",
@@ -6012,7 +6060,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body restricts to EMEA region, outside LATAM, no countries; wins over Worldwide metadata"
+      "labelNote": "Body restricts to EMEA region, outside LATAM, no countries; wins over Worldwide metadata",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:f0f277ac-b96c-478a-81ca-7bd80612533f",
@@ -6020,7 +6070,7 @@
       "board": "supabase",
       "externalId": "f0f277ac-b96c-478a-81ca-7bd80612533f",
       "url": "https://jobs.ashbyhq.com/supabase/f0f277ac-b96c-478a-81ca-7bd80612533f",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|partnerships manager",
@@ -6036,7 +6086,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "AMER region; body says 100% remote, no location-based salary adjustments."
+      "labelNote": "AMER region; body says 100% remote, no location-based salary adjustments.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8012020003",
@@ -6044,7 +6096,7 @@
       "board": "sezzle",
       "externalId": "8012020003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8012020003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|fraud & disputes intern",
@@ -6062,7 +6114,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location Colombia, Remote; salary in COP."
+      "labelNote": "Location Colombia, Remote; salary in COP.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8044474003",
@@ -6070,7 +6124,7 @@
       "board": "sezzle",
       "externalId": "8044474003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8044474003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|product manager intern",
@@ -6089,7 +6143,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "List of countries only, no region; #Li-remote in body; includes CO."
+      "labelNote": "List of countries only, no region; #Li-remote in body; includes CO.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5223308007",
@@ -6097,7 +6153,7 @@
       "board": "clara",
       "externalId": "5223308007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5223308007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|ai business operations expert",
@@ -6117,7 +6173,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7779220003",
@@ -6125,7 +6183,7 @@
       "board": "sezzle",
       "externalId": "7779220003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7779220003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|senior payments engineer — acquiring & payment processing",
@@ -6141,7 +6199,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: composite location; no body restriction so region applies."
+      "labelNote": "Pattern 3: composite location; no body restriction so region applies.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8012084003",
@@ -6149,7 +6209,7 @@
       "board": "sezzle",
       "externalId": "8012084003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8012084003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|product operations intern",
@@ -6165,7 +6225,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: region. Salary in COP hints at Colombia but is not an explicit restriction; applicable either way."
+      "labelNote": "Pattern 3: region. Salary in COP hints at Colombia but is not an explicit restriction; applicable either way.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:97f0cd1b-ccae-4b31-9878-2d90da42bae1",
@@ -6173,7 +6235,7 @@
       "board": "addi",
       "externalId": "97f0cd1b-ccae-4b31-9878-2d90da42bae1",
       "url": "https://jobs.ashbyhq.com/addi/97f0cd1b-ccae-4b31-9878-2d90da42bae1",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|backend jvm software engineer | ic3",
@@ -6191,7 +6253,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "'Meet onsite with one of our founders' refers to an interview step, not the work model."
+      "labelNote": "'Meet onsite with one of our founders' refers to an interview step, not the work model.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:2456563",
@@ -6199,7 +6263,7 @@
       "board": "canonical",
       "externalId": "2456563",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/2456563",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|cloud support engineer",
@@ -6214,7 +6278,9 @@
       "evidence": "Location: This is a globally remote role.",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
-      "bodyChecked": true
+      "bodyChecked": true,
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6994398",
@@ -6222,7 +6288,7 @@
       "board": "canonical",
       "externalId": "6994398",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6994398",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|embedded linux field engineer",
@@ -6238,7 +6304,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body restricts to APAC region, outside LATAM, no concrete countries; body wins over Worldwide metadata"
+      "labelNote": "Body restricts to APAC region, outside LATAM, no concrete countries; body wins over Worldwide metadata",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6635681",
@@ -6246,7 +6314,7 @@
       "board": "canonical",
       "externalId": "6635681",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6635681",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|software maintenance engineer",
@@ -6262,7 +6330,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote with teams in all time zones; metadata Worldwide"
+      "labelNote": "Remote with teams in all time zones; metadata Worldwide",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5208456007",
@@ -6270,7 +6340,7 @@
       "board": "clara",
       "externalId": "5208456007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5208456007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|tech lead — users & auth",
@@ -6289,7 +6359,9 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Explicit hybrid in title",
-      "evidenceFixedAt": "2026-11-03"
+      "evidenceFixedAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5191982",
@@ -6297,7 +6369,7 @@
       "board": "canonical",
       "externalId": "5191982",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5191982",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|microservices engineer",
@@ -6312,7 +6384,9 @@
       "evidence": "Location : we have microservices teams with open roles in every time zone.",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
-      "bodyChecked": true
+      "bodyChecked": true,
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6485081",
@@ -6320,7 +6394,7 @@
       "board": "canonical",
       "externalId": "6485081",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6485081",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|staff security operations engineer",
@@ -6336,7 +6410,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Metadata Worldwide, body gives no restriction; #LI-remote, distributed company"
+      "labelNote": "Metadata Worldwide, body gives no restriction; #LI-remote, distributed company",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6668068003",
@@ -6344,7 +6420,7 @@
       "board": "sezzle",
       "externalId": "6668068003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/6668068003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|junior software engineer with accounting experience",
@@ -6360,7 +6436,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: title says LATAM, no single-country restriction; location lists Colombia, Remote and Latin America [Remote]."
+      "labelNote": "Pattern 3: title says LATAM, no single-country restriction; location lists Colombia, Remote and Latin America [Remote].",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4394058",
@@ -6368,7 +6446,7 @@
       "board": "canonical",
       "externalId": "4394058",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/4394058",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|linux devices software engineer",
@@ -6384,7 +6462,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Americas region (D5)"
+      "labelNote": "Americas region (D5)",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8055939003",
@@ -6392,7 +6472,7 @@
       "board": "sezzle",
       "externalId": "8055939003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8055939003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|senior data engineer",
@@ -6408,7 +6488,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: nothing in title or body restricts to a country, so the region; #Li-remote."
+      "labelNote": "Pattern 3: nothing in title or body restricts to a country, so the region; #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:2925180",
@@ -6416,7 +6498,7 @@
       "board": "canonical",
       "externalId": "2925180",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/2925180",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|ubuntu security engineer",
@@ -6431,7 +6513,9 @@
       "evidence": "Location: Worldwide, this is a globally remote role",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
-      "bodyChecked": true
+      "bodyChecked": true,
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8012067003",
@@ -6439,7 +6523,7 @@
       "board": "sezzle",
       "externalId": "8012067003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8012067003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|marketplace operations & experimentation specialist",
@@ -6455,7 +6539,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: compound location, nothing in title or body restricts to a country, so the region. Body has #Li-remote."
+      "labelNote": "Pattern 3: compound location, nothing in title or body restricts to a country, so the region. Body has #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:b8ee072b-66e3-43d2-851e-6ed6179928ee",
@@ -6463,7 +6549,7 @@
       "board": "addi",
       "externalId": "b8ee072b-66e3-43d2-851e-6ed6179928ee",
       "url": "https://jobs.ashbyhq.com/addi/b8ee072b-66e3-43d2-851e-6ed6179928ee",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|staff product manager",
@@ -6479,7 +6565,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Language skill (Colombian Spanish) is not a residence requirement; header says LatAm. Applicable for CO under either reading."
+      "labelNote": "Language skill (Colombian Spanish) is not a residence requirement; header says LatAm. Applicable for CO under either reading.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6668067003",
@@ -6487,7 +6575,7 @@
       "board": "sezzle",
       "externalId": "6668067003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/6668067003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|junior software engineer with accounting experience",
@@ -6505,7 +6593,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: title restricts to Chile over the composite location; remote from location text and #Li-remote."
+      "labelNote": "Pattern 3: title restricts to Chile over the composite location; remote from location text and #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7849512003",
@@ -6513,7 +6603,7 @@
       "board": "sezzle",
       "externalId": "7849512003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7849512003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|solutions engineer",
@@ -6529,7 +6619,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: no body or header restriction to a country."
+      "labelNote": "Pattern 3: no body or header restriction to a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5151903",
@@ -6537,7 +6629,7 @@
       "board": "canonical",
       "externalId": "5151903",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5151903",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|linux kernel engineer",
@@ -6552,7 +6644,9 @@
       "evidence": "Location: Working from home, worldwide.",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
-      "bodyChecked": true
+      "bodyChecked": true,
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7849514003",
@@ -6560,7 +6654,7 @@
       "board": "sezzle",
       "externalId": "7849514003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7849514003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|solutions engineer",
@@ -6576,7 +6670,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: no body or header restriction to a country."
+      "labelNote": "Pattern 3: no body or header restriction to a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5208458007",
@@ -6584,7 +6680,7 @@
       "board": "clara",
       "externalId": "5208458007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5208458007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|tech lead — users & auth",
@@ -6603,7 +6699,9 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Explicit hybrid in title",
-      "evidenceFixedAt": "2026-11-03"
+      "evidenceFixedAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:2fee42ea-7501-4f7f-bb44-779b0e92f072",
@@ -6611,7 +6709,7 @@
       "board": "ciandt",
       "externalId": "2fee42ea-7501-4f7f-bb44-779b0e92f072",
       "url": "https://jobs.lever.co/ciandt/2fee42ea-7501-4f7f-bb44-779b0e92f072",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31343] data product manager",
@@ -6629,7 +6727,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6132532",
@@ -6637,7 +6737,7 @@
       "board": "canonical",
       "externalId": "6132532",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/6132532",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|cloud field engineer",
@@ -6653,7 +6753,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Header Home based - Worldwide, #LI-Remote, work from home"
+      "labelNote": "Header Home based - Worldwide, #LI-Remote, work from home",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8054164003",
@@ -6661,7 +6763,7 @@
       "board": "sezzle",
       "externalId": "8054164003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8054164003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|data engineer ii",
@@ -6677,7 +6779,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Region listed and tagged Remote; #Li-remote."
+      "labelNote": "Region listed and tagged Remote; #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5143011",
@@ -6685,7 +6789,7 @@
       "board": "canonical",
       "externalId": "5143011",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5143011",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|developer relations engineer",
@@ -6701,7 +6805,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Header also lists Worldwide; American time zones count as region (D5); both readings applicable"
+      "labelNote": "Header also lists Worldwide; American time zones count as region (D5); both readings applicable",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:33fec9ed-cca7-42f5-8601-09b5bd472a59",
@@ -6709,7 +6815,7 @@
       "board": "ciandt",
       "externalId": "33fec9ed-cca7-42f5-8601-09b5bd472a59",
       "url": "https://jobs.lever.co/ciandt/33fec9ed-cca7-42f5-8601-09b5bd472a59",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31873] data architect",
@@ -6727,7 +6833,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4209375",
@@ -6735,7 +6843,7 @@
       "board": "canonical",
       "externalId": "4209375",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/4209375",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|head of security operations",
@@ -6751,7 +6859,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body silent on location; header Worldwide home based"
+      "labelNote": "Body silent on location; header Worldwide home based",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4541445",
@@ -6759,7 +6869,7 @@
       "board": "canonical",
       "externalId": "4541445",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/4541445",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|technical manager",
@@ -6775,7 +6885,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body says globally remote despite EMEA in header"
+      "labelNote": "Body says globally remote despite EMEA in header",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8011711003",
@@ -6783,7 +6895,7 @@
       "board": "sezzle",
       "externalId": "8011711003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8011711003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|chargeback operations intern",
@@ -6801,7 +6913,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Conservative rule: only Argentina is marked Remote; Bogota listed without remote and no remote tag in body."
+      "labelNote": "Conservative rule: only Argentina is marked Remote; Bogota listed without remote and no remote tag in body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7861216003",
@@ -6809,7 +6923,7 @@
       "board": "sezzle",
       "externalId": "7861216003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7861216003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|senior technical product manager",
@@ -6825,7 +6939,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Pattern 3: no body or header restriction to a country."
+      "labelNote": "Pattern 3: no body or header restriction to a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5222085007",
@@ -6833,7 +6949,7 @@
       "board": "clara",
       "externalId": "5222085007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5222085007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|ai business operations analyst",
@@ -6853,7 +6969,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:1747487",
@@ -6861,7 +6979,7 @@
       "board": "canonical",
       "externalId": "1747487",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/1747487",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|site reliability / gitops engineer",
@@ -6877,7 +6995,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location 'Home based - Worldwide'."
+      "labelNote": "Location 'Home based - Worldwide'.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8012023003",
@@ -6885,7 +7005,7 @@
       "board": "sezzle",
       "externalId": "8012023003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/8012023003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|risk & disputes intern",
@@ -6905,7 +7025,9 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Only Mexico is marked Remote; no remote tag in body and Bogota not marked remote; conservative rule gives unclear. Sibling Sezzle postings are remote contractors, so owner may prefer country_specific MX,CO remote.",
-      "ownerConfirmedAt": "2026-11-03"
+      "ownerConfirmedAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7504352003",
@@ -6913,7 +7035,7 @@
       "board": "sezzle",
       "externalId": "7504352003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7504352003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|it operations intern",
@@ -6945,7 +7067,9 @@
       },
       "travelRequirement": "Onsite in Bogota when required",
       "relabelRule": "rule6_onsite_when_required_is_not_weekly",
-      "relabeledAt": "2026-11-03"
+      "relabeledAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:2808065",
@@ -6953,7 +7077,7 @@
       "board": "canonical",
       "externalId": "2808065",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/2808065",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|project manager",
@@ -6969,7 +7093,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Americas region (D5)"
+      "labelNote": "Americas region (D5)",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5256932007",
@@ -6977,7 +7103,7 @@
       "board": "clara",
       "externalId": "5256932007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5256932007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|staff devops engineer",
@@ -6997,7 +7123,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Verified on full body: no hybrid text; titled Remote. Replaces subagent's hybrid reading."
+      "labelNote": "Verified on full body: no hybrid text; titled Remote. Replaces subagent's hybrid reading.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7638791003",
@@ -7005,7 +7133,7 @@
       "board": "sezzle",
       "externalId": "7638791003",
       "url": "https://job-boards.greenhouse.io/sezzle/jobs/7638791003",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "sezzle|multi media design intern",
@@ -7023,7 +7151,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body and location restrict to Colombia; #Li-remote."
+      "labelNote": "Body and location restrict to Colombia; #Li-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5143074",
@@ -7031,7 +7161,7 @@
       "board": "canonical",
       "externalId": "5143074",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/5143074",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "canonical|python engineer",
@@ -7046,7 +7176,9 @@
       "evidence": "Location: we have remote Python engineering roles in every time zone.",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
-      "bodyChecked": true
+      "bodyChecked": true,
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:45374a51-9194-4deb-a861-6b4a30cd0af3",
@@ -7054,7 +7186,7 @@
       "board": "addi",
       "externalId": "45374a51-9194-4deb-a861-6b4a30cd0af3",
       "url": "https://jobs.ashbyhq.com/addi/45374a51-9194-4deb-a861-6b4a30cd0af3",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|fraud prevention analyst",
@@ -7070,7 +7202,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only a city, no metadata and body silent on remote/onsite; workModel unknown so never applicable."
+      "labelNote": "Only a city, no metadata and body silent on remote/onsite; workModel unknown so never applicable.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5219620007",
@@ -7078,7 +7212,7 @@
       "board": "clara",
       "externalId": "5219620007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5219620007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|growth designer",
@@ -7098,7 +7232,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5177057007",
@@ -7106,7 +7242,7 @@
       "board": "clara",
       "externalId": "5177057007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5177057007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|senior fullstack engineer",
@@ -7126,7 +7262,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Verified on full body: no hybrid text; titled Remote. Replaces subagent's hybrid reading (it inferred a shared paragraph)."
+      "labelNote": "Verified on full body: no hybrid text; titled Remote. Replaces subagent's hybrid reading (it inferred a shared paragraph).",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5224993007",
@@ -7134,7 +7272,7 @@
       "board": "clara",
       "externalId": "5224993007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5224993007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|ai growth automation engineer",
@@ -7155,7 +7293,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:282d1dfb-b162-4ce4-a938-c4b2173230e0",
@@ -7163,7 +7303,7 @@
       "board": "supabase",
       "externalId": "282d1dfb-b162-4ce4-a938-c4b2173230e0",
       "url": "https://jobs.ashbyhq.com/supabase/282d1dfb-b162-4ce4-a938-c4b2173230e0",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|partner solutions architect",
@@ -7179,7 +7319,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "D5: AMER counts as region; nothing in body restricts."
+      "labelNote": "D5: AMER counts as region; nothing in body restricts.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5219624007",
@@ -7187,7 +7329,7 @@
       "board": "clara",
       "externalId": "5219624007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5219624007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|growth designer",
@@ -7207,7 +7349,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:49eebff4-cd0e-4b59-8b11-f59bd28e50df",
@@ -7215,7 +7359,7 @@
       "board": "ciandt",
       "externalId": "49eebff4-cd0e-4b59-8b11-f59bd28e50df",
       "url": "https://jobs.lever.co/ciandt/49eebff4-cd0e-4b59-8b11-f59bd28e50df",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job-31996] senior business analyst",
@@ -7233,7 +7377,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5225034007",
@@ -7241,7 +7387,7 @@
       "board": "clara",
       "externalId": "5225034007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5225034007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|ai growth automation engineer",
@@ -7262,7 +7408,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5169725007",
@@ -7270,7 +7418,7 @@
       "board": "clara",
       "externalId": "5169725007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5169725007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|paid media specialist",
@@ -7290,7 +7438,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title"
+      "labelNote": "Explicit hybrid in title",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5230243007",
@@ -7298,7 +7448,7 @@
       "board": "clara",
       "externalId": "5230243007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5230243007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|product designer associate",
@@ -7318,7 +7468,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5219625007",
@@ -7326,7 +7478,7 @@
       "board": "clara",
       "externalId": "5219625007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5219625007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|growth designer",
@@ -7346,7 +7498,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5218831007",
@@ -7354,7 +7508,7 @@
       "board": "clara",
       "externalId": "5218831007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5218831007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|credit risk expert",
@@ -7374,7 +7528,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid explicit in title and body."
+      "labelNote": "Hybrid explicit in title and body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5169731007",
@@ -7382,7 +7538,7 @@
       "board": "clara",
       "externalId": "5169731007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5169731007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|paid media specialist",
@@ -7400,7 +7556,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title"
+      "labelNote": "Explicit hybrid in title",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:344787f2-d115-4056-87ca-7668fc14be3d",
@@ -7408,7 +7566,7 @@
       "board": "supabase",
       "externalId": "344787f2-d115-4056-87ca-7668fc14be3d",
       "url": "https://jobs.ashbyhq.com/supabase/344787f2-d115-4056-87ca-7668fc14be3d",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|aws gaming gtm segment lead",
@@ -7424,7 +7582,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "D5: AMER counts as region; nothing in body restricts."
+      "labelNote": "D5: AMER counts as region; nothing in body restricts.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5235807007",
@@ -7432,7 +7592,7 @@
       "board": "clara",
       "externalId": "5235807007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5235807007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|senior auth engineer — users & auth",
@@ -7448,7 +7608,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Verified on full body: no hybrid text; location lists Latin America plus 4 cities, title Remote First; pattern 3 region."
+      "labelNote": "Verified on full body: no hybrid text; location lists Latin America plus 4 cities, title Remote First; pattern 3 region.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:9438857e-28ed-41b7-848f-ad092ca63c5b",
@@ -7456,7 +7618,7 @@
       "board": "addi",
       "externalId": "9438857e-28ed-41b7-848f-ad092ca63c5b",
       "url": "https://jobs.ashbyhq.com/addi/9438857e-28ed-41b7-848f-ad092ca63c5b",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|addi gateway program | class of 2027",
@@ -7488,7 +7650,9 @@
       },
       "travelRequirement": "In-person weeks in Bogota, paid by the company",
       "relabelRule": "owner_rule6_travel_is_remote",
-      "relabeledAt": "2026-11-03"
+      "relabeledAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:e37ecafd-65b1-46d5-abee-e8e75a1a59ad",
@@ -7496,7 +7660,7 @@
       "board": "ciandt",
       "externalId": "e37ecafd-65b1-46d5-abee-e8e75a1a59ad",
       "url": "https://jobs.lever.co/ciandt/e37ecafd-65b1-46d5-abee-e8e75a1a59ad",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31429] data engineer lead",
@@ -7514,7 +7678,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title names Brasil; location list adds Colombia but title country wins (conservative); not applicable for CO"
+      "labelNote": "Title names Brasil; location list adds Colombia but title country wins (conservative); not applicable for CO",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:c9f78e74-fb9d-4cd0-af0b-b1cec4632331",
@@ -7522,7 +7688,7 @@
       "board": "supabase",
       "externalId": "c9f78e74-fb9d-4cd0-af0b-b1cec4632331",
       "url": "https://jobs.ashbyhq.com/supabase/c9f78e74-fb9d-4cd0-af0b-b1cec4632331",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|orioledb deployment engineer",
@@ -7538,7 +7704,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title and location AMER; nothing restricts a country."
+      "labelNote": "Title and location AMER; nothing restricts a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:66bab062-b769-43cf-ac3c-a2630257624c",
@@ -7546,7 +7714,7 @@
       "board": "supabase",
       "externalId": "66bab062-b769-43cf-ac3c-a2630257624c",
       "url": "https://jobs.ashbyhq.com/supabase/66bab062-b769-43cf-ac3c-a2630257624c",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|customer solution architect",
@@ -7573,7 +7741,9 @@
         "labelStatus": "needs_owner"
       },
       "relabelRule": "owner_d5_americas_region",
-      "relabeledAt": "2026-11-03"
+      "relabeledAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:b32ab3e6-5782-4935-8c92-33cc77013659",
@@ -7581,7 +7751,7 @@
       "board": "addi",
       "externalId": "b32ab3e6-5782-4935-8c92-33cc77013659",
       "url": "https://jobs.ashbyhq.com/addi/b32ab3e6-5782-4935-8c92-33cc77013659",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|acquisition and onboarding lead marketplace",
@@ -7599,7 +7769,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Latin America mention is about a contacts network, not eligibility."
+      "labelNote": "Latin America mention is about a contacts network, not eligibility.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5230221007",
@@ -7607,7 +7779,7 @@
       "board": "clara",
       "externalId": "5230221007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5230221007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|product designer associate - são paulo [hybrid]",
@@ -7627,7 +7799,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5230220007",
@@ -7635,7 +7809,7 @@
       "board": "clara",
       "externalId": "5230220007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5230220007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|product designer associate - bogotá [hybrid]",
@@ -7655,7 +7829,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid in title and company paragraph."
+      "labelNote": "Hybrid in title and company paragraph.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:63412816-4b82-454e-ba60-9e25fb9673b9",
@@ -7663,7 +7839,7 @@
       "board": "ciandt",
       "externalId": "63412816-4b82-454e-ba60-9e25fb9673b9",
       "url": "https://jobs.lever.co/ciandt/63412816-4b82-454e-ba60-9e25fb9673b9",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job-32448] master data developer",
@@ -7681,7 +7857,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote."
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:92b68b7e-ae93-4313-aa53-7bd0f814d407",
@@ -7689,7 +7867,7 @@
       "board": "addi",
       "externalId": "92b68b7e-ae93-4313-aa53-7bd0f814d407",
       "url": "https://jobs.ashbyhq.com/addi/92b68b7e-ae93-4313-aa53-7bd0f814d407",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|bank fraud operations lead",
@@ -7705,7 +7883,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Region LatAm, remote, nothing in body restricts to a country."
+      "labelNote": "Region LatAm, remote, nothing in body restricts to a country.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:230aa5d6-c194-49e8-a40d-255a5fd0ea61",
@@ -7713,7 +7893,7 @@
       "board": "ciandt",
       "externalId": "230aa5d6-c194-49e8-a40d-255a5fd0ea61",
       "url": "https://jobs.lever.co/ciandt/230aa5d6-c194-49e8-a40d-255a5fd0ea61",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31833] data manager",
@@ -7731,7 +7911,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, benefits cite Colombian Holidays; ATS remote."
+      "labelNote": "Title/location Colombia, benefits cite Colombian Holidays; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5218842007",
@@ -7739,7 +7921,7 @@
       "board": "clara",
       "externalId": "5218842007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5218842007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|especialista em risco de crédito",
@@ -7759,7 +7941,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid explicit in title (Híbrido) and body."
+      "labelNote": "Hybrid explicit in title (Híbrido) and body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5218829007",
@@ -7767,7 +7951,7 @@
       "board": "clara",
       "externalId": "5218829007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5218829007",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "clara|credit risk expert",
@@ -7787,7 +7971,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title and body"
+      "labelNote": "Explicit hybrid in title and body",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:b5dd4a1a-98a2-4b9c-b5af-45558db62f09",
@@ -7795,7 +7981,7 @@
       "board": "ciandt",
       "externalId": "b5dd4a1a-98a2-4b9c-b5af-45558db62f09",
       "url": "https://jobs.lever.co/ciandt/b5dd4a1a-98a2-4b9c-b5af-45558db62f09",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 31832] principal data architect",
@@ -7813,7 +7999,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote. \"hybrid architect\" is a skill profile, not workplace."
+      "labelNote": "Title/location Colombia, Colombian Holidays; ATS remote. \"hybrid architect\" is a skill profile, not workplace.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:93a91948-7393-4922-8a9e-4c406a2f4511",
@@ -7821,7 +8009,7 @@
       "board": "addi",
       "externalId": "93a91948-7393-4922-8a9e-4c406a2f4511",
       "url": "https://jobs.ashbyhq.com/addi/93a91948-7393-4922-8a9e-4c406a2f4511",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|quality & continuous improvement analyst",
@@ -7837,7 +8025,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only a city, no metadata and body silent on remote/onsite."
+      "labelNote": "Only a city, no metadata and body silent on remote/onsite.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:d28cab1f-fb41-42b8-af71-4c9bf1c8913d",
@@ -7845,7 +8035,7 @@
       "board": "addi",
       "externalId": "d28cab1f-fb41-42b8-af71-4c9bf1c8913d",
       "url": "https://jobs.ashbyhq.com/addi/d28cab1f-fb41-42b8-af71-4c9bf1c8913d",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|analytics engineer",
@@ -7863,7 +8053,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location Colombia, remote metadata."
+      "labelNote": "Location Colombia, remote metadata.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:eabc58c4-1067-4c68-8741-689e00f41074",
@@ -7871,7 +8063,7 @@
       "board": "ciandt",
       "externalId": "eabc58c4-1067-4c68-8741-689e00f41074",
       "url": "https://jobs.lever.co/ciandt/eabc58c4-1067-4c68-8741-689e00f41074",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "ciandt|[job - 32043] senior data architect",
@@ -7889,7 +8081,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Colombia only, remote metadata; the Campinas office note applies only to residents there"
+      "labelNote": "Colombia only, remote metadata; the Campinas office note applies only to residents there",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:924d8e8b-d0f7-47b9-8445-7dbc2941a8af",
@@ -7897,7 +8091,7 @@
       "board": "addi",
       "externalId": "924d8e8b-d0f7-47b9-8445-7dbc2941a8af",
       "url": "https://jobs.ashbyhq.com/addi/924d8e8b-d0f7-47b9-8445-7dbc2941a8af",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|financial systems controls lead",
@@ -7915,7 +8109,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location Colombia, remote metadata, body does not contradict."
+      "labelNote": "Location Colombia, remote metadata, body does not contradict.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:d5573afa-636c-4219-832f-386f498243bf",
@@ -7923,7 +8119,7 @@
       "board": "supabase",
       "externalId": "d5573afa-636c-4219-832f-386f498243bf",
       "url": "https://jobs.ashbyhq.com/supabase/d5573afa-636c-4219-832f-386f498243bf",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|customer solution architect",
@@ -7939,7 +8135,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "AMER region, no restricting text in body."
+      "labelNote": "AMER region, no restricting text in body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:f4cf39f2-43c5-44f7-aa25-37d726748967",
@@ -7947,7 +8145,7 @@
       "board": "addi",
       "externalId": "f4cf39f2-43c5-44f7-aa25-37d726748967",
       "url": "https://jobs.ashbyhq.com/addi/f4cf39f2-43c5-44f7-aa25-37d726748967",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|backend engineer | ic2",
@@ -7965,7 +8163,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "'On-site Interview' is a hiring step, not the work model."
+      "labelNote": "'On-site Interview' is a hiring step, not the work model.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:cb04ae3a-3a47-4e21-928f-c2456b7b214e",
@@ -7973,7 +8173,7 @@
       "board": "supabase",
       "externalId": "cb04ae3a-3a47-4e21-928f-c2456b7b214e",
       "url": "https://jobs.ashbyhq.com/supabase/cb04ae3a-3a47-4e21-928f-c2456b7b214e",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "supabase|member of technical staff",
@@ -7989,7 +8189,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Required Bay Area location overrides the AMER entry in the multi-location list."
+      "labelNote": "Required Bay Area location overrides the AMER entry in the multi-location list.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:d0def55f-3044-4c37-ae5d-af44aec732c2",
@@ -7997,7 +8199,7 @@
       "board": "addi",
       "externalId": "d0def55f-3044-4c37-ae5d-af44aec732c2",
       "url": "https://jobs.ashbyhq.com/addi/d0def55f-3044-4c37-ae5d-af44aec732c2",
-      "split": "test",
+      "split": "dev",
       "group": "candidate",
       "subtype": "candidate",
       "siblingKey": "addi|senior/staff platform engineer",
@@ -8013,7 +8215,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Compound location lists a city but no remote statement in body or metadata; workModel unknown so not applicable."
+      "labelNote": "Compound location lists a city but no remote statement in body or metadata; workModel unknown so not applicable.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6225409004",
@@ -8021,7 +8225,7 @@
       "board": "turing",
       "externalId": "6225409004",
       "url": "https://job-boards.greenhouse.io/turing/jobs/6225409004",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "turing|senior software engineer, ai evaluation infrastructure",
@@ -8048,7 +8252,9 @@
         "labelStatus": "needs_owner"
       },
       "relabelRule": "owner_pattern3_global_remote",
-      "relabeledAt": "2026-11-03"
+      "relabeledAt": "2026-11-03",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5215613007",
@@ -8056,7 +8262,7 @@
       "board": "clara",
       "externalId": "5215613007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5215613007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "clara|ai-native engineer, new grad",
@@ -8074,7 +8280,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title"
+      "labelNote": "Explicit hybrid in title",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:b0e25a9f-96b0-40b1-b805-eae80e4e6cd7",
@@ -8082,7 +8290,7 @@
       "board": "deuna",
       "externalId": "b0e25a9f-96b0-40b1-b805-eae80e4e6cd7",
       "url": "https://jobs.lever.co/deuna/b0e25a9f-96b0-40b1-b805-eae80e4e6cd7",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_hybrid",
       "siblingKey": "deuna|senior fullstack engineer",
@@ -8100,7 +8308,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body silent on model; metadata hybrid; country US inferred from San Francisco city."
+      "labelNote": "Body silent on model; metadata hybrid; country US inferred from San Francisco city.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:3b5d54ca-741b-45ac-bd3f-31605a0d3541",
@@ -8108,7 +8318,7 @@
       "board": "supabase",
       "externalId": "3b5d54ca-741b-45ac-bd3f-31605a0d3541",
       "url": "https://jobs.ashbyhq.com/supabase/3b5d54ca-741b-45ac-bd3f-31605a0d3541",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|ai platform engineer",
@@ -8124,7 +8334,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote, Fully Remote; ATS workplace type absent but body says Fully Remote."
+      "labelNote": "Global remote, Fully Remote; ATS workplace type absent but body says Fully Remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:8e1735ec-c5e2-4292-adbd-764a58e7ce17",
@@ -8132,7 +8344,7 @@
       "board": "elevenlabs",
       "externalId": "8e1735ec-c5e2-4292-adbd-764a58e7ce17",
       "url": "https://jobs.ashbyhq.com/elevenlabs/8e1735ec-c5e2-4292-adbd-764a58e7ce17",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|model partnerships",
@@ -8148,7 +8360,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote with no country or region of eligibility; only timezone overlap and metadata Europe/New York; conservative rule."
+      "labelNote": "Remote with no country or region of eligibility; only timezone overlap and metadata Europe/New York; conservative rule.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:4a072a28-9261-483c-912e-1ca53fdee0f0",
@@ -8156,7 +8370,7 @@
       "board": "ciandt",
       "externalId": "4a072a28-9261-483c-912e-1ca53fdee0f0",
       "url": "https://jobs.lever.co/ciandt/4a072a28-9261-483c-912e-1ca53fdee0f0",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32250]senior ios developer",
@@ -8174,7 +8388,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title and location Brazil; ATS remote."
+      "labelNote": "Title and location Brazil; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:18182756-f5ff-4494-a5a7-f86f1bdb65ef",
@@ -8182,7 +8398,7 @@
       "board": "deuna",
       "externalId": "18182756-f5ff-4494-a5a7-f86f1bdb65ef",
       "url": "https://jobs.lever.co/deuna/18182756-f5ff-4494-a5a7-f86f1bdb65ef",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_hybrid",
       "siblingKey": "deuna|partnerships manager",
@@ -8200,7 +8416,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body silent on model; \"Remote work from anywhere\" is only a benefit (pattern 2)."
+      "labelNote": "Body silent on model; \"Remote work from anywhere\" is only a benefit (pattern 2).",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:b9b85703-d97a-43eb-ae90-958083780094",
@@ -8208,7 +8426,7 @@
       "board": "caseware",
       "externalId": "b9b85703-d97a-43eb-ae90-958083780094",
       "url": "https://jobs.lever.co/caseware/b9b85703-d97a-43eb-ae90-958083780094",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "caseware|devops developer",
@@ -8226,7 +8444,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote restricted to Canada"
+      "labelNote": "Remote restricted to Canada",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:a787e8ee-f1c4-422d-95f8-61ffd4eefb95",
@@ -8234,7 +8454,7 @@
       "board": "elevenlabs",
       "externalId": "a787e8ee-f1c4-422d-95f8-61ffd4eefb95",
       "url": "https://jobs.ashbyhq.com/elevenlabs/a787e8ee-f1c4-422d-95f8-61ffd4eefb95",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|safety engineer",
@@ -8256,7 +8476,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body location section empty; only the ATS list of countries (a list is not a region); workplace remote from metadata."
+      "labelNote": "Body location section empty; only the ATS list of countries (a list is not a region); workplace remote from metadata.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:5017308101",
@@ -8264,7 +8486,7 @@
       "board": "amplemarket",
       "externalId": "5017308101",
       "url": "https://job-boards.eu.greenhouse.io/amplemarket/jobs/5017308101",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "amplemarket|operations specialist",
@@ -8282,7 +8504,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote restricted to Portugal; body silent."
+      "labelNote": "Remote restricted to Portugal; body silent.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:24710bb7-62de-48d4-82c5-748c0d8aade2",
@@ -8290,7 +8514,7 @@
       "board": "elevenlabs",
       "externalId": "24710bb7-62de-48d4-82c5-748c0d8aade2",
       "url": "https://jobs.ashbyhq.com/elevenlabs/24710bb7-62de-48d4-82c5-748c0d8aade2",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "elevenlabs|gtm enablement - global onboarding & operations",
@@ -8306,7 +8530,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Eastern timezone required and East Coast US preferred; no explicit country requirement; conservative rule 5."
+      "labelNote": "Eastern timezone required and East Coast US preferred; no explicit country requirement; conservative rule 5.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:b92059ea-d71f-4eef-a184-8510265752fb",
@@ -8314,7 +8540,7 @@
       "board": "elevenlabs",
       "externalId": "b92059ea-d71f-4eef-a184-8510265752fb",
       "url": "https://jobs.ashbyhq.com/elevenlabs/b92059ea-d71f-4eef-a184-8510265752fb",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|systems architect",
@@ -8330,7 +8556,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "City-only location with remote metadata and body silent: no stated country restriction; conservative rule."
+      "labelNote": "City-only location with remote metadata and body silent: no stated country restriction; conservative rule.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:39be8f9e-c2c0-44df-a20d-946550918c37",
@@ -8338,7 +8566,7 @@
       "board": "ciandt",
       "externalId": "39be8f9e-c2c0-44df-a20d-946550918c37",
       "url": "https://jobs.lever.co/ciandt/39be8f9e-c2c0-44df-a20d-946550918c37",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job - 31250] senior developer",
@@ -8356,7 +8584,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only location is Brazil; body silent on workplace, ATS remote; benefits are Brazilian (PLR)."
+      "labelNote": "Only location is Brazil; body silent on workplace, ATS remote; benefits are Brazilian (PLR).",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:d77f2d3e-67f9-4bbe-9e70-3278139e5b56",
@@ -8364,7 +8594,7 @@
       "board": "canals",
       "externalId": "d77f2d3e-67f9-4bbe-9e70-3278139e5b56",
       "url": "https://jobs.ashbyhq.com/canals/d77f2d3e-67f9-4bbe-9e70-3278139e5b56",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "canals|technical support agent - brazil, 9 - 6pm brt",
@@ -8382,7 +8612,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title names Brazil and Brazilian cities; 'distributed across North and South America' describes the company (pattern 1)."
+      "labelNote": "Title names Brazil and Brazilian cities; 'distributed across North and South America' describes the company (pattern 1).",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:a89a7892-3d9d-40ab-a3f1-1c6ed1f7b84f",
@@ -8390,7 +8622,7 @@
       "board": "elevenlabs",
       "externalId": "a89a7892-3d9d-40ab-a3f1-1c6ed1f7b84f",
       "url": "https://jobs.ashbyhq.com/elevenlabs/a89a7892-3d9d-40ab-a3f1-1c6ed1f7b84f",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|research engineer",
@@ -8411,7 +8643,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body silent on location; only the ATS country list; workplace remote from metadata."
+      "labelNote": "Body silent on location; only the ATS country list; workplace remote from metadata.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:9be4a9ed-3d23-4ffc-88f7-7dae953767a5",
@@ -8419,7 +8653,7 @@
       "board": "ciandt",
       "externalId": "9be4a9ed-3d23-4ffc-88f7-7dae953767a5",
       "url": "https://jobs.lever.co/ciandt/9be4a9ed-3d23-4ffc-88f7-7dae953767a5",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job - 32323] mid ios mobile developer",
@@ -8437,7 +8671,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body and location say Brazil; ATS remote."
+      "labelNote": "Body and location say Brazil; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:9a4c9984-07c7-4b47-982f-371de3f6ff50",
@@ -8445,7 +8681,7 @@
       "board": "supabase",
       "externalId": "9a4c9984-07c7-4b47-982f-371de3f6ff50",
       "url": "https://jobs.ashbyhq.com/supabase/9a4c9984-07c7-4b47-982f-371de3f6ff50",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|product manager",
@@ -8461,7 +8697,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote; Supabase is fully remote, no country restriction."
+      "labelNote": "Global remote; Supabase is fully remote, no country restriction.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:3b57cc5c-f019-4a0b-a5ff-e1046e4f1fa1",
@@ -8469,7 +8707,7 @@
       "board": "elevenlabs",
       "externalId": "3b57cc5c-f019-4a0b-a5ff-e1046e4f1fa1",
       "url": "https://jobs.ashbyhq.com/elevenlabs/3b57cc5c-f019-4a0b-a5ff-e1046e4f1fa1",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|safety engineer",
@@ -8491,7 +8729,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location list of countries; body only has #LI-remote."
+      "labelNote": "Location list of countries; body only has #LI-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:79485904-1730-4a7a-a670-99d795acfa31",
@@ -8499,7 +8739,7 @@
       "board": "ciandt",
       "externalId": "79485904-1730-4a7a-a670-99d795acfa31",
       "url": "https://jobs.lever.co/ciandt/79485904-1730-4a7a-a670-99d795acfa31",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32372] mid level angular developer, vaga para pessoas pcd",
@@ -8517,7 +8757,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Brazil; ATS remote."
+      "labelNote": "Title/location Brazil; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:f52fd120-5fbe-4e0d-949d-01e217ec77d6",
@@ -8525,7 +8767,7 @@
       "board": "supabase",
       "externalId": "f52fd120-5fbe-4e0d-949d-01e217ec77d6",
       "url": "https://jobs.ashbyhq.com/supabase/f52fd120-5fbe-4e0d-949d-01e217ec77d6",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|technical account management leader",
@@ -8541,7 +8783,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote; APAC mention is coverage gap context, not a restriction."
+      "labelNote": "Global remote; APAC mention is coverage gap context, not a restriction.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:4389da7f-b5c9-4660-aaf2-d097f4caba07",
@@ -8549,7 +8793,7 @@
       "board": "elevenlabs",
       "externalId": "4389da7f-b5c9-4660-aaf2-d097f4caba07",
       "url": "https://jobs.ashbyhq.com/elevenlabs/4389da7f-b5c9-4660-aaf2-d097f4caba07",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|audio engineering",
@@ -8569,7 +8813,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Rule 5: ATS lists London/New York/Poland only. Was worldwide."
+      "labelNote": "Rule 5: ATS lists London/New York/Poland only. Was worldwide.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:fa720e93-a0b1-41b6-abbc-4b83d8e9dc7b",
@@ -8577,7 +8823,7 @@
       "board": "ciandt",
       "externalId": "fa720e93-a0b1-41b6-abbc-4b83d8e9dc7b",
       "url": "https://jobs.lever.co/ciandt/fa720e93-a0b1-41b6-abbc-4b83d8e9dc7b",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32277] senior fullstack developer",
@@ -8595,7 +8841,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Brazil only"
+      "labelNote": "Brazil only",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:48950725-e0d9-4025-92d9-f75e1b60ce45",
@@ -8603,7 +8851,7 @@
       "board": "supabase",
       "externalId": "48950725-e0d9-4025-92d9-f75e1b60ce45",
       "url": "https://jobs.ashbyhq.com/supabase/48950725-e0d9-4025-92d9-f75e1b60ce45",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|postgres deployment engineer",
@@ -8619,7 +8867,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote, Fully Remote."
+      "labelNote": "Global remote, Fully Remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:a3097257-a07a-4a7e-b9fe-b8555c1a0fa7",
@@ -8627,7 +8877,7 @@
       "board": "elevenlabs",
       "externalId": "a3097257-a07a-4a7e-b9fe-b8555c1a0fa7",
       "url": "https://jobs.ashbyhq.com/elevenlabs/a3097257-a07a-4a7e-b9fe-b8555c1a0fa7",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|engineering - internal ai transformation",
@@ -8652,7 +8902,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Rule 5: ATS lists countries without CO. Was worldwide."
+      "labelNote": "Rule 5: ATS lists countries without CO. Was worldwide.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5270628007",
@@ -8660,7 +8912,7 @@
       "board": "clara",
       "externalId": "5270628007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5270628007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "clara|credit analysis lead",
@@ -8678,7 +8930,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title says Hybrid; shared body also says hybrid."
+      "labelNote": "Title says Hybrid; shared body also says hybrid.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:9c815487-984d-49a9-9ca6-359e962440f5",
@@ -8686,7 +8940,7 @@
       "board": "caseware",
       "externalId": "9c815487-984d-49a9-9ca6-359e962440f5",
       "url": "https://jobs.lever.co/caseware/9c815487-984d-49a9-9ca6-359e962440f5",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "caseware|senior product manager — us tax",
@@ -8702,7 +8956,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "US CPA and US tax focus; ATS metadata remote, Atlanta location; body silent on remote"
+      "labelNote": "US CPA and US tax focus; ATS metadata remote, Atlanta location; body silent on remote",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6",
@@ -8710,7 +8966,7 @@
       "board": "elevenlabs",
       "externalId": "6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6",
       "url": "https://jobs.ashbyhq.com/elevenlabs/6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|forward deployed engineer - software engineer",
@@ -8726,7 +8982,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title says USA and body restricts to the United States."
+      "labelNote": "Title says USA and body restricts to the United States.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:22c6a7e1-9986-4b64-8d36-58320e8e9263",
@@ -8734,7 +8992,7 @@
       "board": "ciandt",
       "externalId": "22c6a7e1-9986-4b64-8d36-58320e8e9263",
       "url": "https://jobs.lever.co/ciandt/22c6a7e1-9986-4b64-8d36-58320e8e9263",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32264] solutions architect",
@@ -8752,7 +9010,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title and location name Brazil; body silent on workplace, ATS metadata remote."
+      "labelNote": "Title and location name Brazil; body silent on workplace, ATS metadata remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:6f7656fc-9983-48be-bbd3-8b40e0e3027a",
@@ -8760,7 +9020,7 @@
       "board": "supabase",
       "externalId": "6f7656fc-9983-48be-bbd3-8b40e0e3027a",
       "url": "https://jobs.ashbyhq.com/supabase/6f7656fc-9983-48be-bbd3-8b40e0e3027a",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|container engineer",
@@ -8776,7 +9036,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body says Fully Remote; ATS workplace type absent; no country restriction."
+      "labelNote": "Body says Fully Remote; ATS workplace type absent; no country restriction.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:203ef08b-7bb0-42b7-8099-d3d770fe3615",
@@ -8784,7 +9046,7 @@
       "board": "elevenlabs",
       "externalId": "203ef08b-7bb0-42b7-8099-d3d770fe3615",
       "url": "https://jobs.ashbyhq.com/elevenlabs/203ef08b-7bb0-42b7-8099-d3d770fe3615",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|deployment strategist lead",
@@ -8800,7 +9062,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title names USA; locations New York and San Francisco."
+      "labelNote": "Title names USA; locations New York and San Francisco.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:6d00e007-c786-4f28-a616-f389e66dece4",
@@ -8808,7 +9072,7 @@
       "board": "ciandt",
       "externalId": "6d00e007-c786-4f28-a616-f389e66dece4",
       "url": "https://jobs.lever.co/ciandt/6d00e007-c786-4f28-a616-f389e66dece4",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-31573] ai engineer master",
@@ -8826,7 +9090,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only location is Brazil; body silent on workplace; ATS remote."
+      "labelNote": "Only location is Brazil; body silent on workplace; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:60add20a-e16a-4848-827c-03f680b3c80a",
@@ -8834,7 +9100,7 @@
       "board": "caseware",
       "externalId": "60add20a-e16a-4848-827c-03f680b3c80a",
       "url": "https://jobs.lever.co/caseware/60add20a-e16a-4848-827c-03f680b3c80a",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "caseware|manager, marketing operations, campaigns & emails",
@@ -8850,7 +9116,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote but US residents only"
+      "labelNote": "Remote but US residents only",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:a1320bbf-bfae-49a8-a1b7-12eeccaf39ca",
@@ -8858,7 +9126,7 @@
       "board": "supabase",
       "externalId": "a1320bbf-bfae-49a8-a1b7-12eeccaf39ca",
       "url": "https://jobs.ashbyhq.com/supabase/a1320bbf-bfae-49a8-a1b7-12eeccaf39ca",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "supabase|developer relations engineer",
@@ -8874,7 +9142,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body requires San Francisco base; location Remote, San Francisco, CA."
+      "labelNote": "Body requires San Francisco base; location Remote, San Francisco, CA.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5161494007",
@@ -8882,7 +9152,7 @@
       "board": "clara",
       "externalId": "5161494007",
       "url": "https://job-boards.greenhouse.io/clara/jobs/5161494007",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "clara|ai business operations analyst",
@@ -8900,7 +9170,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title and body"
+      "labelNote": "Explicit hybrid in title and body",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:13478d3f-0093-458f-9f84-af71e66db03f",
@@ -8908,7 +9180,7 @@
       "board": "supabase",
       "externalId": "13478d3f-0093-458f-9f84-af71e66db03f",
       "url": "https://jobs.ashbyhq.com/supabase/13478d3f-0093-458f-9f84-af71e66db03f",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|grc analyst",
@@ -8924,7 +9196,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote, Fully Remote."
+      "labelNote": "Global remote, Fully Remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:3e9f8e45-cd55-4fb9-9452-0ebbd6e15de6",
@@ -8932,7 +9206,7 @@
       "board": "elevenlabs",
       "externalId": "3e9f8e45-cd55-4fb9-9452-0ebbd6e15de6",
       "url": "https://jobs.ashbyhq.com/elevenlabs/3e9f8e45-cd55-4fb9-9452-0ebbd6e15de6",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|equity administrator",
@@ -8953,7 +9227,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Regional restriction to Central Europe or Eastern US; offices London, New York, Warsaw."
+      "labelNote": "Regional restriction to Central Europe or Eastern US; offices London, New York, Warsaw.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:9ac4a93e-bf58-481c-a7dc-040ce7f6b728",
@@ -8961,7 +9237,7 @@
       "board": "ciandt",
       "externalId": "9ac4a93e-bf58-481c-a7dc-040ce7f6b728",
       "url": "https://jobs.lever.co/ciandt/9ac4a93e-bf58-481c-a7dc-040ce7f6b728",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32371] senior angular developer",
@@ -8979,7 +9255,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title/location Brazil; ATS remote."
+      "labelNote": "Title/location Brazil; ATS remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6218247004",
@@ -8987,7 +9265,7 @@
       "board": "turing",
       "externalId": "6218247004",
       "url": "https://job-boards.greenhouse.io/turing/jobs/6218247004",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "turing|senior devops & infrastructure engineer",
@@ -9005,7 +9283,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Body restricts to Brazil; header Global - Remote is overridden (pattern 3)"
+      "labelNote": "Body restricts to Brazil; header Global - Remote is overridden (pattern 3)",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:36b52143-1ed2-4e60-89c4-84e09d856658",
@@ -9013,7 +9293,7 @@
       "board": "elevenlabs",
       "externalId": "36b52143-1ed2-4e60-89c4-84e09d856658",
       "url": "https://jobs.ashbyhq.com/elevenlabs/36b52143-1ed2-4e60-89c4-84e09d856658",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|partnerships strategy & operations",
@@ -9032,7 +9312,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only countries listed; body silent on eligibility; global team line describes company."
+      "labelNote": "Only countries listed; body silent on eligibility; global team line describes company.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:e9455389-8286-4c95-aa4c-d028498bbc18",
@@ -9040,7 +9322,7 @@
       "board": "ciandt",
       "externalId": "e9455389-8286-4c95-aa4c-d028498bbc18",
       "url": "https://jobs.lever.co/ciandt/e9455389-8286-4c95-aa4c-d028498bbc18",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-31520]software architect .net",
@@ -9058,7 +9340,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Brazil only"
+      "labelNote": "Brazil only",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:528ac6dc-dd08-4853-adc1-99d8b1776486",
@@ -9066,7 +9350,7 @@
       "board": "caseware",
       "externalId": "528ac6dc-dd08-4853-adc1-99d8b1776486",
       "url": "https://jobs.lever.co/caseware/528ac6dc-dd08-4853-adc1-99d8b1776486",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "caseware|staff site reliability engineer",
@@ -9084,7 +9368,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote restricted to Canada"
+      "labelNote": "Remote restricted to Canada",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:2bb6b2dc-5641-43ce-8065-21db8a82b8ac",
@@ -9092,7 +9378,7 @@
       "board": "deuna",
       "externalId": "2bb6b2dc-5641-43ce-8065-21db8a82b8ac",
       "url": "https://jobs.lever.co/deuna/2bb6b2dc-5641-43ce-8065-21db8a82b8ac",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "deuna|head of implementation",
@@ -9108,7 +9394,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote with no stated country or restriction; team distributed in LATAM describes company (pattern 1)."
+      "labelNote": "Remote with no stated country or restriction; team distributed in LATAM describes company (pattern 1).",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:ed5d50eb-e41a-48e4-bea0-3686176f0461",
@@ -9116,7 +9404,7 @@
       "board": "elevenlabs",
       "externalId": "ed5d50eb-e41a-48e4-bea0-3686176f0461",
       "url": "https://jobs.ashbyhq.com/elevenlabs/ed5d50eb-e41a-48e4-bea0-3686176f0461",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "elevenlabs|public sector partnerships lead",
@@ -9134,7 +9422,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title and body restrict to France; remote from ATS metadata (body silent on remote)."
+      "labelNote": "Title and body restrict to France; remote from ATS metadata (body silent on remote).",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:5d09daeb-2d7e-42de-9151-81a1341195c4",
@@ -9142,7 +9432,7 @@
       "board": "supabase",
       "externalId": "5d09daeb-2d7e-42de-9151-81a1341195c4",
       "url": "https://jobs.ashbyhq.com/supabase/5d09daeb-2d7e-42de-9151-81a1341195c4",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|cloud platform engineer",
@@ -9158,7 +9448,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote, Fully Remote; ATS workplace type absent but body says Fully Remote."
+      "labelNote": "Global remote, Fully Remote; ATS workplace type absent but body says Fully Remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:13fcee94-512f-4229-b7ab-f91d3fdd24e3",
@@ -9166,7 +9458,7 @@
       "board": "elevenlabs",
       "externalId": "13fcee94-512f-4229-b7ab-f91d3fdd24e3",
       "url": "https://jobs.ashbyhq.com/elevenlabs/13fcee94-512f-4229-b7ab-f91d3fdd24e3",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|elevenmusic - content creator & strategist",
@@ -9191,7 +9483,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Rule 5: ATS lists countries without CO; 'can be executed globally' alone is not enough (dev precedent). Was worldwide."
+      "labelNote": "Rule 5: ATS lists countries without CO; 'can be executed globally' alone is not enough (dev precedent). Was worldwide.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6192729004",
@@ -9199,7 +9493,7 @@
       "board": "turing",
       "externalId": "6192729004",
       "url": "https://job-boards.greenhouse.io/turing/jobs/6192729004",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "turing|forward",
@@ -9217,7 +9511,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Hybrid explicit in body; Bengaluru/Hyderabad; location also lists Bengaluru - Remote but body governs"
+      "labelNote": "Hybrid explicit in body; Bengaluru/Hyderabad; location also lists Bengaluru - Remote but body governs",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:9c04bc60-78a1-4529-950d-4704ab475764",
@@ -9225,7 +9521,7 @@
       "board": "supabase",
       "externalId": "9c04bc60-78a1-4529-950d-4704ab475764",
       "url": "https://jobs.ashbyhq.com/supabase/9c04bc60-78a1-4529-950d-4704ab475764",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|head of ai native operations",
@@ -9241,7 +9537,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote, no restriction in body."
+      "labelNote": "Global remote, no restriction in body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:ef0a1e14-40ee-43d2-aab9-59fc9f6a4b8c",
@@ -9249,7 +9547,7 @@
       "board": "elevenlabs",
       "externalId": "ef0a1e14-40ee-43d2-aab9-59fc9f6a4b8c",
       "url": "https://jobs.ashbyhq.com/elevenlabs/ef0a1e14-40ee-43d2-aab9-59fc9f6a4b8c",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|transcription / subtitling specialist",
@@ -9282,7 +9580,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Rule 5: ATS lists countries without CO. Was worldwide."
+      "labelNote": "Rule 5: ATS lists countries without CO. Was worldwide.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:1b43cf6f-bc1f-4241-b8a2-5f85fb4ea028",
@@ -9290,7 +9590,7 @@
       "board": "elevenlabs",
       "externalId": "1b43cf6f-bc1f-4241-b8a2-5f85fb4ea028",
       "url": "https://jobs.ashbyhq.com/elevenlabs/1b43cf6f-bc1f-4241-b8a2-5f85fb4ea028",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "elevenlabs|revenue partnerships",
@@ -9308,7 +9608,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Location Argentina and Buenos Aires base; remote only via #LI-remote."
+      "labelNote": "Location Argentina and Buenos Aires base; remote only via #LI-remote.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:85f4d148-4602-4139-802a-962705133892",
@@ -9316,7 +9618,7 @@
       "board": "supabase",
       "externalId": "85f4d148-4602-4139-802a-962705133892",
       "url": "https://jobs.ashbyhq.com/supabase/85f4d148-4602-4139-802a-962705133892",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "supabase|product manager",
@@ -9332,7 +9634,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Global remote, no restriction in body."
+      "labelNote": "Global remote, no restriction in body.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:98ae5c78-eab7-4879-b143-96b98e4d0dbb",
@@ -9340,7 +9644,7 @@
       "board": "supabase",
       "externalId": "98ae5c78-eab7-4879-b143-96b98e4d0dbb",
       "url": "https://jobs.ashbyhq.com/supabase/98ae5c78-eab7-4879-b143-96b98e4d0dbb",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "supabase|developer relations engineer",
@@ -9356,7 +9660,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Title and body require New York base; location Remote, New York, US."
+      "labelNote": "Title and body require New York base; location Remote, New York, US.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:e53c5be6-5c1a-4870-ad85-8397a1f201de",
@@ -9364,7 +9670,7 @@
       "board": "elevenlabs",
       "externalId": "e53c5be6-5c1a-4870-ad85-8397a1f201de",
       "url": "https://jobs.ashbyhq.com/elevenlabs/e53c5be6-5c1a-4870-ad85-8397a1f201de",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "elevenlabs|data engineer",
@@ -9389,7 +9695,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Rule 5: ATS lists European countries only. Was worldwide."
+      "labelNote": "Rule 5: ATS lists European countries only. Was worldwide.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:2c9dfcd0-0aa3-466a-8a5a-2b2351afbf81",
@@ -9397,7 +9705,7 @@
       "board": "elevenlabs",
       "externalId": "2c9dfcd0-0aa3-466a-8a5a-2b2351afbf81",
       "url": "https://jobs.ashbyhq.com/elevenlabs/2c9dfcd0-0aa3-466a-8a5a-2b2351afbf81",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other",
       "siblingKey": "elevenlabs|public sector partnerships lead",
@@ -9413,7 +9721,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Region outside LATAM (Europe) with no concrete countries."
+      "labelNote": "Region outside LATAM (Europe) with no concrete countries.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:19b21930-d142-4dae-be23-751f5425b0af",
@@ -9421,7 +9731,7 @@
       "board": "elevenlabs",
       "externalId": "19b21930-d142-4dae-be23-751f5425b0af",
       "url": "https://jobs.ashbyhq.com/elevenlabs/19b21930-d142-4dae-be23-751f5425b0af",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_us",
       "siblingKey": "elevenlabs|privacy program manager",
@@ -9437,7 +9747,9 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Restricted to United States."
+      "labelNote": "Restricted to United States.",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:f02ce66f-6980-471f-960f-772b74929d0f",
@@ -9445,7 +9757,7 @@
       "board": "ciandt",
       "externalId": "f02ce66f-6980-471f-960f-772b74929d0f",
       "url": "https://jobs.lever.co/ciandt/f02ce66f-6980-471f-960f-772b74929d0f",
-      "split": "test",
+      "split": "dev",
       "group": "hard_negative",
       "subtype": "negative_other_country",
       "siblingKey": "ciandt|[job-32244] senior java developer - aws",
@@ -9463,116 +9775,15 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Brazil only"
+      "labelNote": "Brazil only",
+      "retiredFrom": "test-v2",
+      "movedToDevAt": "2026-11-03"
     }
   ],
   "testSet": {
-    "name": "test-v2",
-    "status": "frozen",
-    "note": "Built from postings that were never in the eval (ADR 0004, section 6). Labels by Claude reading the full body, never by Gemini. Frozen when complete.",
-    "seed": 11,
-    "maxPerCompany": 25,
-    "maxPerGroup": 3,
-    "builtAt": "2026-11-03",
-    "selected": 157,
-    "leftOut": 119,
-    "frozenAt": "2026-11-03",
-    "applicableCO": 81,
-    "cases": 157,
-    "perCompany": {
-      "canonical": {
-        "n": 25,
-        "applicable": 23
-      },
-      "sezzle": {
-        "n": 25,
-        "applicable": 20
-      },
-      "supabase": {
-        "n": 21,
-        "applicable": 18
-      },
-      "clara": {
-        "n": 25,
-        "applicable": 3
-      },
-      "ciandt": {
-        "n": 19,
-        "applicable": 8
-      },
-      "addi": {
-        "n": 11,
-        "applicable": 8
-      },
-      "turing": {
-        "n": 3,
-        "applicable": 1
-      },
-      "deuna": {
-        "n": 3,
-        "applicable": 0
-      },
-      "elevenlabs": {
-        "n": 19,
-        "applicable": 0
-      },
-      "caseware": {
-        "n": 4,
-        "applicable": 0
-      },
-      "amplemarket": {
-        "n": 1,
-        "applicable": 0
-      },
-      "canals": {
-        "n": 1,
-        "applicable": 0
-      }
-    },
-    "preRunChanges": {
-      "date": "2026-11-03",
-      "note": "Made before any model run on test-v2 (owner decisions and rule 6 of the ADR 0004 labelling guide); each case keeps relabeledFrom.",
-      "changed": [
-        "ashby:addi:9438857e-28ed-41b7-848f-ad092ca63c5b",
-        "ashby:supabase:66bab062-b769-43cf-ac3c-a2630257624c",
-        "greenhouse:turing:6225409004",
-        "greenhouse:sezzle:7504352003"
-      ],
-      "confirmedUnchanged": [
-        "greenhouse:sezzle:8012023003"
-      ]
-    },
-    "runs": [
-      {
-        "date": "2026-11-03",
-        "model": "gemini-3.5-flash-lite",
-        "promptVersion": "eligibility-v4",
-        "postprocessVersion": "postprocess-v2",
-        "cases": 157,
-        "applicable": 81,
-        "precision": {
-          "value": 0.907,
-          "tp": 78,
-          "fp": 8,
-          "wilson95": [
-            0.827,
-            0.952
-          ]
-        },
-        "recall": {
-          "value": 0.963,
-          "tp": 78,
-          "fn": 3,
-          "wilson95": [
-            0.897,
-            0.987
-          ]
-        },
-        "criterion": "precision>=0.95 and recall>=0.80 (point value, fixed before the run)",
-        "accepted": false,
-        "note": "Nothing was tuned from these results. The owner decides whether test-v2 is retired (ADR 0004 section 6)."
-      }
-    ]
+    "name": "test-v3",
+    "status": "to_build",
+    "note": "Fresh postings never in the eval (including Nortal, Praxent, Able, ThriveCart and the daily ingests). Same sampling rules as test-v2 (<= 25 per company, <= 3 per vacancy). Last cycle (ADR 0004): if it does not meet the criterion nothing is iterated again; it is accepted with the documented gap (ADR 0005)."
   },
   "devLabelRevision": {
     "date": "2026-11-03",
@@ -9662,6 +9873,105 @@
         "accepted": false
       },
       "reason": "The set was seen by eligibility-v3 (one approved run, precision below the 95 % goal). A test set that has already been seen cannot accept v4 without bias, so it was retired and its 112 cases moved to the development split (160 development cases in total)."
+    },
+    {
+      "name": "test-v2",
+      "frozenAt": "2026-11-03",
+      "retiredAt": "2026-11-03",
+      "cases": 157,
+      "applicableCO": 81,
+      "perCompany": {
+        "canonical": {
+          "n": 25,
+          "applicable": 23
+        },
+        "sezzle": {
+          "n": 25,
+          "applicable": 20
+        },
+        "supabase": {
+          "n": 21,
+          "applicable": 18
+        },
+        "clara": {
+          "n": 25,
+          "applicable": 3
+        },
+        "ciandt": {
+          "n": 19,
+          "applicable": 8
+        },
+        "addi": {
+          "n": 11,
+          "applicable": 8
+        },
+        "turing": {
+          "n": 3,
+          "applicable": 1
+        },
+        "deuna": {
+          "n": 3,
+          "applicable": 0
+        },
+        "elevenlabs": {
+          "n": 19,
+          "applicable": 0
+        },
+        "caseware": {
+          "n": 4,
+          "applicable": 0
+        },
+        "amplemarket": {
+          "n": 1,
+          "applicable": 0
+        },
+        "canals": {
+          "n": 1,
+          "applicable": 0
+        }
+      },
+      "preRunChanges": {
+        "date": "2026-11-03",
+        "note": "Made before any model run on test-v2 (owner decisions and rule 6 of the ADR 0004 labelling guide); each case keeps relabeledFrom.",
+        "changed": [
+          "ashby:addi:9438857e-28ed-41b7-848f-ad092ca63c5b",
+          "ashby:supabase:66bab062-b769-43cf-ac3c-a2630257624c",
+          "greenhouse:turing:6225409004",
+          "greenhouse:sezzle:7504352003"
+        ],
+        "confirmedUnchanged": [
+          "greenhouse:sezzle:8012023003"
+        ]
+      },
+      "acceptedRun": {
+        "date": "2026-11-03",
+        "model": "gemini-3.5-flash-lite",
+        "thinkingLevel": "MINIMAL",
+        "promptVersion": "eligibility-v4",
+        "postprocessVersion": "postprocess-v2",
+        "precision": {
+          "value": 0.907,
+          "tp": 78,
+          "fp": 8,
+          "ci95Wilson": [
+            0.827,
+            0.952
+          ]
+        },
+        "recall": {
+          "value": 0.963,
+          "tp": 78,
+          "fn": 3,
+          "ci95Wilson": [
+            0.897,
+            0.987
+          ]
+        },
+        "costPerOfferUsd": 0.001062,
+        "accepted": false
+      },
+      "jointReading": "test-v1 (v3 + postprocess-v1) and test-v2 (v4 + postprocess-v2), two independent tests, give about 91 % precision and 96 % recall for gemini-3.5-flash-lite. Tuning the prompt raised development but not the test sets.",
+      "reason": "The set was seen by eligibility-v4 (one approved run, precision 90.7 % below the 95 % goal). A set that has already been seen cannot accept a later version without bias, so it was retired and its 157 cases moved to development (317 in total)."
     }
   ],
   "excludedFromEval": [
