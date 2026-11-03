@@ -55,6 +55,19 @@ No hay campo `confidence`: si el modelo duda, la etiqueta es `unclear` (ADR 0005
 - "Americas", "North and South America" o "AMER" cuentan como región (`latam_eligible`) si nada más en el cuerpo restringe el puesto (D5). Una lista de países no es una región: es `country_specific` con esos países.
 - Un país nombrado en el **título** manda sobre una lista larga de ubicaciones (suele agrupar vacantes hermanas): `country_specific` con ese país, salvo que el título diga también LATAM, Americas o global. Se aplica con código determinista, no con el prompt (ver sección 7).
 
+#### Guía de etiquetado (2026-11-03, decisión del dueño; vale para desarrollo y prueba)
+
+Patrones que provocaron errores de etiqueta o de predicción. Quien etiquete (persona o Claude; nunca un modelo que luego se mida contra esas etiquetas) los aplica así:
+
+1. **La distribución del equipo no es elegibilidad.** Frases como "distributed across North and South America" o "talent equally distributed across the globe" describen a la empresa. Manda la ubicación o la restricción explícita del puesto; la D5 ("Americas" = `latam_eligible`) solo aplica cuando la región dice quién puede postular.
+2. **"Remote work from anywhere" como beneficio temporal no cambia un `workModel` híbrido.** Si el puesto es híbrido (cuerpo o metadato), la etiqueta es `onsite_or_hybrid` aunque la lista de beneficios mencione trabajo remoto.
+3. **Una ubicación compuesta que une varias vacantes** (p. ej. Sezzle: "Mexico, Remote | Latin America [Remote]") se lee así: si el cuerpo o la cabecera (título, restricción explícita) restringen a un país, manda ese país; si no, la región.
+4. **Un título en el idioma o alfabeto de otro país** (p. ej. japonés) indica ese país, salvo que la oferta diga lo contrario.
+
+Las reglas de la sección 3 sobre `workModel` siguen vigentes: hybrid/onsite explícito en el cuerpo, o cuerpo callado y metadato del ATS hybrid/onsite, dan `onsite_or_hybrid`.
+
+**Reaplicación a los 160 casos de desarrollo (2026-11-03).** Detección determinista de cada patrón, lectura del caso y decisión; 14 cambios, todos con `relabeledFrom`, `relabelRule` y `relabeledAt` en `cases.json`: 13 ofertas pasaron a `onsite_or_hybrid` (Decagon, LangChain, Legora, Lovable, Perplexity, Sierra, Wayve, Celonis, Glean, Speechmatics, Palantir ×2 y Turing `6115695004`, esta última por el patrón 2 porque su cuerpo dice "In-office · Hybrid" aunque la ubicación diga "India - Remote"), y Sezzle `7984978003` pasó de `country_specific` [MX] a `latam_eligible` por el patrón 3 (ni el título ni el cuerpo restringen a México). Patrón 1: sin cambios (el único caso, Canals, ya estaba revertido). Patrón 4: sin cambios (Canonical, título en japonés, ya es `country_specific` [JP]). Casos que la guía no resuelve y quedan para tu criterio: ver `docs/progreso.md`.
+
 ### 4. "Aplicable" se calcula por país del usuario
 
 La calcula código puro, sin LLM, a partir del resultado ya guardado. Así una misma clasificación sirve a usuarios de cualquier país (ADR 0005).

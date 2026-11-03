@@ -697,17 +697,27 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
-      "countries": [
-        "MX"
-      ],
+      "label": "latam_eligible",
+      "labelStatus": "owner_rules_applied",
+      "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Location \"Mexico, Remote | Latin America [Remote]\" bundles sibling postings; neither the title nor the body restricts to Mexico, so the region wins (guide pattern 3).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "guide_p3",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7998737003",
@@ -1947,19 +1957,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"We’re an in-office company\" (San Francisco).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:04d1c724-466a-4520-aea1-44aee822c14b",
@@ -2211,19 +2233,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: employees within commuting distance \"work from the office five days per week\"; ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:legora:3ecb346f-1903-4d06-99ca-e28ef3806bbb",
@@ -2239,19 +2273,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "SE"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"Stockholm-based, 5-day in-office role\"; ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "SE"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:lovable:3b6525b4-8229-4b7e-a307-a550646d0483",
@@ -2267,19 +2313,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "SE"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body is silent on work model; ATS workplaceType onsite (ADR 0004: metadata when the body is silent).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "SE"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:perplexity:be94e89b-89d5-4f2a-a58b-7929c8d97f92",
@@ -2295,19 +2353,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "RS"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: internship \"in-person in the Belgrade office\"; ATS workplaceType hybrid. Both non-remote, hybrid vs onsite is minor.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "RS"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:pinecone:edf2a2a5-64e2-45b8-9f2e-4f354af350b8",
@@ -2401,19 +2471,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body: \"primarily an in-person company based in San Francisco\"; ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:c16bd707-29f2-46fb-8409-7270ff00978b",
@@ -2455,19 +2537,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"We operate a hybrid working model\"; ATS workplaceType hybrid.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4087603101",
@@ -2991,19 +3085,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "ES"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"a flexible hybrid work model that balances remote focus with vibrant office collaboration\". Company-level wording; flagged for the owner.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "ES"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5204916007",
@@ -3539,19 +3645,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"This role is hybrid (4 days a week in our Mountain View office)\".",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:planetscale:4251150009",
@@ -3857,19 +3975,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "RS"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"a hybrid approach that includes 2-3 designated office days each week\".",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "RS"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6115695004",
@@ -3885,19 +4015,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "IN"
       ],
-      "workModel": "remote",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "Body: \"Location: Bangalore, India · In-office · Hybrid\"; the ATS location also lists \"India - Remote\", so body and metadata disagree (the body wins).",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false,
+      "workModelConflict": true,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "IN"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "guide_p2",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6235204004",
@@ -4731,19 +4873,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body is generic (onsite unless the posting says otherwise); ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "lever:palantir:3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
@@ -4759,19 +4913,31 @@
       "proposedLabel": "unclear",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
-      "labelStatus": "labeled",
+      "label": "onsite_or_hybrid",
+      "labelStatus": "owner_rules_applied",
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Body is generic (onsite unless the posting says otherwise); ATS workplaceType onsite.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "body_or_metadata_hybrid_onsite",
+      "relabeledAt": "2026-11-03"
     }
   ],
   "testSet": {
@@ -4790,6 +4956,18 @@
     "changedCases": 6,
     "reverted": [
       "ashby:canals:195c6203-ec1d-49e5-a9d0-e17f81832b6d (D5 relabel reverted 2026-11-03)"
+    ],
+    "revisions": [
+      {
+        "date": "2026-11-03",
+        "decidedBy": "owner",
+        "scope": "development split (160 cases, including the retired test-v1)",
+        "rules": [
+          "ADR 0004 section 3: body explicitly hybrid/onsite, or silent body + ATS workplaceType hybrid/onsite => workModel hybrid/onsite and label onsite_or_hybrid.",
+          "ADR 0004 labelling guide, patterns 1-4 (team distribution, 'work from anywhere' benefit, composite locations, non-Latin titles)."
+        ],
+        "changedCases": 14
+      }
     ]
   },
   "retiredTestSets": [
