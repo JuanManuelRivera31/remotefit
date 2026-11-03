@@ -32,6 +32,6 @@ if (freeze) {
     perCompany: summary.perCompany,
     ...(summary.status === "provisional" ? { missingForTarget: summary.missingForTarget } : {}),
   };
-  console.log(`test-v2 ${summary.status}: ${summary.applicableCO} applicable for CO`);
+  console.log(`${(data.testSet as { name?: string }).name ?? "test set"} ${summary.status}: ${summary.applicableCO} applicable for CO`);
 }
 writeFileSync(CASES, JSON.stringify(data, null, 2).replace(/\n/g, "\r\n") + "\r\n");
