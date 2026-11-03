@@ -198,8 +198,8 @@ describe("raw answers and finalization", () => {
   });
 
   it("puts the post-processing version in the stored-result key", () => {
-    const parts = { contentHash: "abc", promptVersion: "eligibility-v2", model: "m" };
-    expect(resultCacheKey(parts)).toBe(`abc|eligibility-v2|m|${POSTPROCESS_VERSION}`);
+    const parts = { contentHash: "abc", promptVersion: "eligibility-v3", model: "m" };
+    expect(resultCacheKey(parts)).toBe(`abc|eligibility-v3|m|${POSTPROCESS_VERSION}`);
     expect(resultCacheKey({ ...parts, postprocessVersion: "postprocess-v2" })).not.toBe(
       resultCacheKey(parts),
     );

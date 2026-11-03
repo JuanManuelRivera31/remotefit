@@ -65,7 +65,7 @@ async function withRetries(run: () => Promise<RawOutcome>): Promise<RawOutcome> 
         const wait = Math.max(waitMs, error.retryAfterMs ?? 0);
         console.log(`  429 (per minute): waiting ${Math.round(wait / 1000)} s`);
         await sleep(wait);
-      } else if (error instanceof ProviderError && error.retryable && attempt < 2) {
+      } else if (error instanceof ProviderError && error.retryable && attempt < 4) {
         console.log(
           `  transient provider error (${error.status ?? "network"}): retrying in ${waitMs / 1000} s`,
         );

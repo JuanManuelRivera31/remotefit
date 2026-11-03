@@ -162,7 +162,7 @@ La cola solo conoce estos dos errores: el proveedor traduce sus respuestas 429 a
 
 ### Clave de caché
 
-Cada resultado se identifica por **`content_hash` + `prompt_version` + `model`**. Una oferta se clasifica una sola vez y el resultado se comparte entre todos los usuarios y entre ofertas con contenido idéntico. Cambiar el texto, el prompt o el modelo genera una clave nueva y, por tanto, una reclasificación.
+Cada resultado se identifica por **`content_hash` + `prompt_version` + `model` + `postprocess_version`** (S6: las reglas deterministas de `eligibility/postprocess.ts`). La **respuesta cruda del modelo**, que es lo que cuesta cuota, se cachea solo por `content_hash` + `prompt_version` + `model`: cambiar una regla determinista recalcula el resultado sin llamar al LLM. Una oferta se clasifica una sola vez y el resultado se comparte entre todos los usuarios y entre ofertas con contenido idéntico. Cambiar el texto, el prompt o el modelo genera una clave nueva y, por tanto, una reclasificación.
 
 ## 6. Costos y cuotas
 

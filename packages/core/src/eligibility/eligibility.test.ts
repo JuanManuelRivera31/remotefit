@@ -125,7 +125,7 @@ describe("isApplicable — reference cases of ADR 0004 (user in Colombia)", () =
 
 describe("prompt", () => {
   it("is versioned and names every label and the evidence rule", () => {
-    expect(ELIGIBILITY_PROMPT_VERSION).toBe("eligibility-v2");
+    expect(ELIGIBILITY_PROMPT_VERSION).toBe("eligibility-v3");
     for (const label of ELIGIBILITY_LABELS) expect(ELIGIBILITY_SYSTEM_PROMPT).toContain(label);
     expect(ELIGIBILITY_SYSTEM_PROMPT).toContain("VERBATIM");
   });
@@ -163,7 +163,7 @@ describe("classifyJob", () => {
     expect(outcome).toMatchObject({
       status: "ok",
       attempts: 1,
-      promptVersion: "eligibility-v2",
+      promptVersion: "eligibility-v3",
       postprocessVersion: "postprocess-v1",
     });
     expect(outcome.result.label).toBe("country_specific");

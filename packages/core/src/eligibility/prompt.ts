@@ -1,7 +1,7 @@
 import type { WorkplaceType } from "../normalize/job.js";
 
 /** Bump whenever the text below (or the way the posting is rendered) changes: it is part of the cache key. */
-export const ELIGIBILITY_PROMPT_VERSION = "eligibility-v2";
+export const ELIGIBILITY_PROMPT_VERSION = "eligibility-v3";
 
 /** Postings can be very long; the eligibility signals are almost always near the top or in a short "location" paragraph. */
 export const MAX_DESCRIPTION_CHARS = 20_000;
@@ -9,8 +9,8 @@ export const MAX_DESCRIPTION_CHARS = 20_000;
 export const ELIGIBILITY_SYSTEM_PROMPT = `You classify job postings by WHERE the candidate may live and work from. You will be given the title, the location field, the ATS workplace metadata and the description of ONE public job posting. Answer with a single JSON object that follows the provided schema, and nothing else.
 
 LABEL (exactly one):
-- latam_eligible: open to the WHOLE Latin America region. The posting must use a REGION word to say who can apply: "LATAM", "Latin America", "Americas", "AMER", "North and South America", or an Americas-wide time zone. A list of countries is NOT a region (rule 4). If a few countries are excluded, list them in excludedCountries.
-- worldwide: remote with NO country restriction, stated explicitly ("work from anywhere", "anywhere in the world", "worldwide"). Vague words such as "global team", "executed globally", "distributed" or "remote-first" are NOT enough (rule 5).
+- latam_eligible: open to the WHOLE Latin America region. The posting must use a REGION word to say who can apply: "LATAM", "Latin America", "Americas", "AMER", "North and South America", or an Americas-wide time zone. A list of countries is NOT a region (rule 4). If the posting names several regions and Latin America is one of them (e.g. "EMEA, LATAM or North America"), it is still latam_eligible. If a few countries are excluded, list them in excludedCountries.
+- worldwide: remote with NO country restriction, stated explicitly ("work from anywhere", "anywhere in the world", "worldwide"). Vague words such as "global team", "can be executed globally", "distributed" or "remote-first" describe the team or the work, not who may apply, and are NOT enough (rule 5).
 - us_only: requires living in the United States or US work authorization, or the only location is a US place.
 - country_specific: limited to specific countries, inside or outside LATAM; list their ISO codes in countries. A list of countries ("Mexico, Brazil, Argentina") is country_specific with ALL of them, even if every one is in Latin America. If the restriction is a region outside LATAM (e.g. "Europe", "EMEA only") with no named countries, use this label with countries = [].
 - onsite_or_hybrid: requires physical presence at an office, including hybrid schedules (office days per week or month).
@@ -21,7 +21,7 @@ RULES:
 2. The posting body wins over the ATS metadata when they disagree: set workModelConflict = true and follow the body.
 3. If the title names a country (e.g. "Engineer (Colombia)"), that country wins over a long location list: such lists usually bundle sibling postings for other countries. Answer country_specific with that country, unless the title also says LATAM, Americas or global.
 4. A list of countries is not a region. Use latam_eligible only when the posting itself uses a region word for who may apply, not when you merely notice that several listed countries are in Latin America.
-5. "Globally", "distributed", "global team" or "remote-first" without naming countries or a region is not enough to choose worldwide or latam_eligible. Use the location field and the rest of the posting; if they do not settle it, answer unclear.
+5. "Globally", "distributed", "global team" or "remote-first" without naming countries or a region is not enough to choose worldwide or latam_eligible. Use the location field and the rest of the posting; if the location field lists specific countries, answer country_specific with them; if nothing settles it, answer unclear.
 6. If you hesitate between a specific label and unclear, answer unclear.
 7. latam_eligible and worldwide require workModel = "remote".
 8. workModel comes from the body; if the body is silent, use the ATS workplace metadata; otherwise "unknown". If workModel is hybrid or onsite, the label is onsite_or_hybrid.
