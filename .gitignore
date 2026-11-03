@@ -17,6 +17,8 @@ CLAUDE.local.md
 
 # Reportes de evaluación con datos de ofertas (opcional versionarlos)
 packages/core/evals/reports/
+# Caché y uso diario del runner de evaluación (texto de ofertas clasificadas)
+packages/core/evals/cache/
 
 # Sistema
 .DS_Store

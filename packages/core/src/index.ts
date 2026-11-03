@@ -48,3 +48,4 @@ export {
 export type { PromptJob } from "./eligibility/prompt.js";
 export { classifyJob, isQuoteInSource } from "./eligibility/classify.js";
 export type { ClassifyOptions, ClassifyOutcome, ClassifyStatus } from "./eligibility/classify.js";
+export { MeteredProvider } from "./llm/metered.js";
