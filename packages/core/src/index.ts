@@ -57,3 +57,14 @@ export {
 } from "./eligibility/postprocess.js";
 export type { ClassifyStatus, PostprocessOutcome } from "./eligibility/postprocess.js";
 export { MeteredProvider } from "./llm/metered.js";
+export { runClassifyQueue } from "./queue/classify-queue.js";
+export type {
+  QueueEvent,
+  QueueJob,
+  QueueModel,
+  QueueOptions,
+  QueueStopReason,
+  QueueStore,
+  QueueSummary,
+  UsageDelta,
+} from "./queue/classify-queue.js";

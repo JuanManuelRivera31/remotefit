@@ -22,6 +22,13 @@
       "when": 1793641551905,
       "tag": "0002_smooth_matthew_murdock",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793721022125,
+      "tag": "0003_rapid_doctor_octopus",
+      "breakpoints": true
     }
   ]
 }
