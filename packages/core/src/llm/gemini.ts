@@ -22,6 +22,8 @@ export interface GeminiProviderOptions {
   fetch?: typeof fetch;
   baseUrl?: string;
   now?: () => Date;
+  /** Per-request timeout; the larger preview models answer slowly. Default 60 s. */
+  timeoutMs?: number;
 }
 
 // Only the fields we use; everything else passes through untouched.
@@ -149,6 +151,7 @@ export class GeminiProvider implements LLMProvider {
   private readonly fetchFn: typeof fetch;
   private readonly baseUrl: string;
   private readonly now: () => Date;
+  private readonly timeoutMs: number;
 
   constructor(options: GeminiProviderOptions) {
     if (!options.apiKey) throw new Error("GeminiProvider needs an API key.");
@@ -156,6 +159,7 @@ export class GeminiProvider implements LLMProvider {
     this.fetchFn = options.fetch ?? fetch;
     this.baseUrl = options.baseUrl ?? DEFAULT_BASE_URL;
     this.now = options.now ?? (() => new Date());
+    this.timeoutMs = options.timeoutMs ?? REQUEST_TIMEOUT_MS;
   }
 
   async generateStructured<T>(
@@ -184,7 +188,7 @@ export class GeminiProvider implements LLMProvider {
           method: "POST",
           headers: { "content-type": "application/json", "x-goog-api-key": this.apiKey },
           body: JSON.stringify(body),
-          signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+          signal: AbortSignal.timeout(this.timeoutMs),
         },
       );
     } catch (error) {
