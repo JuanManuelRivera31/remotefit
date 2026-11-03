@@ -17,14 +17,24 @@ const caseSchema = z.looseObject({
   labelStatus: z.string(),
   countries: z.array(z.string()).default([]),
   workModel: z.enum(["remote", "hybrid", "onsite", "unknown"]),
-  evidence: z.string().nullish().transform((value) => value ?? "(sin evidencia anotada)"),
+  evidence: z
+    .string()
+    .nullish()
+    .transform((value) => value ?? "(sin evidencia anotada)"),
 });
 export type EvalCase = z.infer<typeof caseSchema>;
 
 const casesFileSchema = z.looseObject({
   cases: z.array(caseSchema),
   testSet: z.looseObject({ status: z.string() }).optional(),
+  devLabelRevision: z.looseObject({ date: z.string() }).optional(),
 });
+
+/** Date of the last owner revision of the development labels (cases.json `devLabelRevision`), for report headers. */
+export function loadDevLabelRevision(): string | null {
+  const file = casesFileSchema.parse(JSON.parse(readFileSync(CASES_URL, "utf8")) as unknown);
+  return file.devLabelRevision?.date ?? null;
+}
 
 /** Cases of ONE split that have a confirmed label. Filtering happens before anything else touches the data. */
 export function loadCases(split: "dev" | "test"): EvalCase[] {

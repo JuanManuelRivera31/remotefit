@@ -6,6 +6,9 @@ export interface ReportContext {
   split: "dev" | "test";
   model: string;
   promptVersion: string;
+  postprocessVersion: string;
+  /** Date of the last owner revision of the development labels. */
+  labelRevision: string | null;
   thinkingLevel: string;
   /** Limits actually respected (after the safety margin). */
   limits: { rpm: number; rpd: number; verifiedAt: string | null };
@@ -13,6 +16,8 @@ export interface ReportContext {
   fromCache: number;
   /** Only the development split shows case-by-case failures (ADR 0004). */
   showCases: boolean;
+  /** Metrics of the raw model answers, without the deterministic post-processing (ablation). */
+  withoutPostprocess?: Metrics;
 }
 
 const pct = (value: number | null): string =>
@@ -57,7 +62,8 @@ export function formatMarkdownReport(
   lines.push(
     `- **Fecha:** ${context.date}`,
     `- **Modelo:** ${context.model} (thinking: ${context.thinkingLevel})`,
-    `- **Versión del prompt:** ${context.promptVersion}`,
+    `- **Versión del prompt:** ${context.promptVersion} · **postproceso:** ${context.postprocessVersion}`,
+    `- **Etiquetas de ${context.split}:** revisión del dueño ${context.labelRevision ?? "ninguna"}`,
     `- **Conjunto:** ${context.split} (${metrics.n} casos; ${a.positives} aplicables y ${a.negatives} no aplicables para ${metrics.country})`,
     `- **Llamadas:** ${context.callsMade} nuevas + ${context.fromCache} casos desde la caché · ${metrics.attempts} intentos en total (los reintentos cuentan)`,
     `- **Límites respetados:** ${context.limits.rpm} RPM, ${context.limits.rpd} RPD (con margen; verificados ${context.limits.verifiedAt ?? "nunca"})`,
@@ -74,7 +80,21 @@ export function formatMarkdownReport(
   lines.push("", "| | Predicho aplicable | Predicho no aplicable |", "|---|---|---|");
   lines.push(`| **Aplicable (etiqueta)** | TP ${a.tp} | FN ${a.fn} |`);
   lines.push(`| **No aplicable (etiqueta)** | FP ${a.fp} | TN ${a.tn} |`, "");
+  if (context.withoutPostprocess) {
+    const raw = context.withoutPostprocess.applicable;
+    lines.push(
+      "| Solo el modelo (sin postproceso) | Precisión | Recall |",
+      "|---|---|---|",
+      `| ${context.promptVersion} crudo | ${pct(raw.precision)} (${raw.tp}/${raw.tp + raw.fp}) | ${pct(raw.recall)} (${raw.tp}/${raw.tp + raw.fn}) |`,
+      `| con ${context.postprocessVersion} | ${pct(a.precision)} (${a.tp}/${a.tp + a.fp}) | ${pct(a.recall)} (${a.tp}/${a.tp + a.fn}) |`,
+      "",
+    );
+  }
+  const noteSummary = Object.entries(metrics.noteCounts)
+    .map(([name, count]) => `${name} ${count}`)
+    .join(" · ");
   lines.push(
+    `Reglas del postproceso aplicadas: ${noteSummary || "ninguna"}`,
     `Exactitud de la etiqueta de 6 clases: ${pct(metrics.labelAccuracy)} · exactitud de workModel: ${pct(metrics.workModelAccuracy)}`,
     `Resultados degradados: ${metrics.statusCounts.evidence_unverified} por evidencia no verificable · ${metrics.statusCounts.fallback_unclear} por salida inválida tras el reintento`,
     "",

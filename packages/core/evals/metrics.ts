@@ -22,6 +22,8 @@ export interface EvalRow {
   expectedEvidence: string;
   predicted: Eligibility;
   status: ClassifyStatus;
+  /** What the deterministic post-processing did, e.g. "title_country:CO". */
+  notes: string[];
   usage: LLMUsage;
   attempts: number;
 }
@@ -52,6 +54,8 @@ export interface Metrics {
   workModelAccuracy: number;
   applicable: ApplicableMetrics;
   statusCounts: Record<ClassifyStatus, number>;
+  /** How many times each post-processing rule fired ("title_country", "evidence_trimmed", ...). */
+  noteCounts: Record<string, number>;
   attempts: number;
   inputTokens: TokenStats;
   outputTokens: TokenStats;
@@ -86,6 +90,7 @@ export function computeMetrics(rows: readonly EvalRow[], country = "CO"): Metric
     evidence_unverified: 0,
     fallback_unclear: 0,
   };
+  const noteCounts: Record<string, number> = {};
   let tp = 0;
   let fp = 0;
   let fn = 0;
@@ -97,6 +102,10 @@ export function computeMetrics(rows: readonly EvalRow[], country = "CO"): Metric
   for (const row of rows) {
     confusion[row.expected.label][row.predicted.label] += 1;
     statusCounts[row.status] += 1;
+    for (const note of row.notes) {
+      const key = note.split(":")[0] ?? note;
+      noteCounts[key] = (noteCounts[key] ?? 0) + 1;
+    }
     attempts += row.attempts;
     if (row.expected.label === row.predicted.label) labelHits += 1;
     if (row.expected.workModel === row.predicted.workModel) workModelHits += 1;
@@ -126,6 +135,7 @@ export function computeMetrics(rows: readonly EvalRow[], country = "CO"): Metric
       recall: ratio(tp, tp + fn),
     },
     statusCounts,
+    noteCounts,
     attempts,
     inputTokens: tokenStats(rows.map((row) => row.usage.inputTokens)),
     outputTokens: tokenStats(rows.map((row) => row.usage.outputTokens)),
