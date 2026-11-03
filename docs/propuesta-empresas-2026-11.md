@@ -52,6 +52,6 @@ Criterio: Lever en pausa (ADR 0006); las demás solo si una revisión rápida de
 | Engine | No entró | Sus términos (§XVIII) prohíben "any robot, spider, scraper or other automated means to access the Site" (el board vive en Greenhouse, pero el texto es explícito) y solo aporta 1 oferta LATAM |
 | Empirical | No entró | No se encontró dominio oficial: no hay términos que revisar; además, mayoría de roles freelance |
 | Puzzle Consulting | No entró | Identidad del dueño del board sin confirmar (el dominio hallado es de una consultora de marketing); 3 ofertas |
-| Yuno, Coderio, Bluelight | En pausa | Lever, ADR 0006 |
+| Yuno, Coderio, Bluelight | Pendientes de revisión de términos | Pausa de Lever levantada el mismo día (ADR 0006); falta revisar sus términos y la página de empleo como a las demás antes de agregarlas |
 
 Pendiente: correr `npm run ingest` y `npm run prefilter` para traer sus ofertas (no se ha hecho).

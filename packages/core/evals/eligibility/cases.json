@@ -9541,7 +9541,38 @@
       "confirmedUnchanged": [
         "greenhouse:sezzle:8012023003"
       ]
-    }
+    },
+    "runs": [
+      {
+        "date": "2026-11-03",
+        "model": "gemini-3.5-flash-lite",
+        "promptVersion": "eligibility-v4",
+        "postprocessVersion": "postprocess-v2",
+        "cases": 157,
+        "applicable": 81,
+        "precision": {
+          "value": 0.907,
+          "tp": 78,
+          "fp": 8,
+          "wilson95": [
+            0.827,
+            0.952
+          ]
+        },
+        "recall": {
+          "value": 0.963,
+          "tp": 78,
+          "fn": 3,
+          "wilson95": [
+            0.897,
+            0.987
+          ]
+        },
+        "criterion": "precision>=0.95 and recall>=0.80 (point value, fixed before the run)",
+        "accepted": false,
+        "note": "Nothing was tuned from these results. The owner decides whether test-v2 is retired (ADR 0004 section 6)."
+      }
+    ]
   },
   "devLabelRevision": {
     "date": "2026-11-03",
