@@ -1,4 +1,4 @@
-// One-off, 2026-11-04. Owner decisions made BEFORE any model run on test-v2, plus rule 6 of the ADR 0004 labelling guide
+// One-off, 2026-11-03. Owner decisions made BEFORE any model run on test-v2, plus rule 6 of the ADR 0004 labelling guide
 // ("remote-first" with periodic travel is remote; hybrid = regular weekly presence). Every change keeps the previous state
 // (relabeledFrom for the first change, relabelHistory for later ones).
 import { readFileSync, writeFileSync } from "node:fs";
@@ -6,7 +6,7 @@ const P = "packages/core/evals/eligibility/cases.json";
 const raw = readFileSync(P, "utf8");
 const crlf = raw.includes("\r\n");
 const data = JSON.parse(raw);
-const date = "2026-11-04";
+const date = "2026-11-03";
 const snap = (c) => ({ label: c.label, workModel: c.workModel, countries: c.countries, workModelConflict: c.workModelConflict ?? false, evidence: c.evidence ?? null, travelRequirement: c.travelRequirement ?? null, labelStatus: c.labelStatus });
 
 const REMOTE_FIRST = "This is a remote-first role: you'll work from home day to day.";

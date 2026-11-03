@@ -1,7 +1,7 @@
-# ADR 0006 — Lever: pausa del 2026-11-03 y levantamiento del 2026-11-04
+# ADR 0006 — Lever: pausa del 2026-11-03 y levantamiento del 2026-11-03
 
-- **Estado:** Aceptado. La pausa se **levantó** el 2026-11-04; se revisa si Lever cambia sus términos o su API (ver "Condiciones de revisión").
-- **Fecha:** 2026-11-03 (pausa) · 2026-11-04 (levantamiento)
+- **Estado:** Aceptado. La pausa se **levantó** el 2026-11-03; se revisa si Lever cambia sus términos o su API (ver "Condiciones de revisión").
+- **Fecha:** 2026-11-03 (pausa y levantamiento, el mismo día)
 - **Decisión de:** el dueño
 - **Relacionado con:** ADR 0002 (fuentes), ADR 0003/0005 (solo capa gratuita de Gemini)
 
@@ -15,13 +15,13 @@ RemoteFit clasifica el texto público de las ofertas con la capa gratuita de la 
 
 El 2026-11-03 el dueño pausó las empresas de Lever por prudencia: el `Content-Signal` de `jobs.lever.co` pide no entrenar, y la capa gratuita de Gemini puede usar el contenido para entrenar.
 
-## Decisión (2026-11-04): se levanta la pausa
+## Decisión (2026-11-03): se levanta la pausa
 
 Razones del dueño, verificadas:
 
 1. **Usamos `api.lever.co`, que no declara `ai-train=no`.** La señal está en el sitio de empleo (`jobs.lever.co`), no en la API que consumimos.
 2. **Solo clasificamos; no entrenamos.** El `Content-Signal` regula el entrenamiento de modelos (`ai-train`); el uso para inferencia no está declarado como restringido.
-3. **Son ofertas públicas.** La documentación de la API de postings de Lever (README de `github.com/lever/postings-api`, revisado el 2026-11-04) dice: "all job postings in the `published` state are publicly viewable. These jobs may be scraped by third parties". **No restringe el uso por terceros**; su único límite concreto es el de 2 solicitudes POST por segundo para *crear postulaciones*, que no usamos (solo hacemos GET, con pausa de 1 s entre boards y `Crawl-delay: 1` respetado). No hay archivo de licencia en ese repositorio.
+3. **Son ofertas públicas.** La documentación de la API de postings de Lever (README de `github.com/lever/postings-api`, revisado el 2026-11-03) dice: "all job postings in the `published` state are publicly viewable. These jobs may be scraped by third parties". **No restringe el uso por terceros**; su único límite concreto es el de 2 solicitudes POST por segundo para *crear postulaciones*, que no usamos (solo hacemos GET, con pausa de 1 s entre boards y `Crawl-delay: 1` respetado). No hay archivo de licencia en ese repositorio.
 
 Consecuencias de la decisión:
 

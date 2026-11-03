@@ -166,7 +166,7 @@
       "relabelRevertedAt": "2026-11-03",
       "relabelRevertedReason": "Owner decision: \"distributed across North and South America\" describes the company team, not who may apply, and the location field lists US cities. Precision first; the D5 relabel was reverted.",
       "evidence": "LOCATION: Lehi | Austin | New York | San Francisco | Omaha | Denver | Seattle | Chicago; ATS_WORKPLACE_TYPE: remote",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:claylabs:046cb127-d5fc-444f-a2a9-fb4029d6a503",
@@ -256,9 +256,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "workModel unknown -> remote: the body says the role is remote. Label stays country_specific by rule 5 (global phrase vs a list of countries); not applicable for CO either way.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:supabase:dcf09dfe-55bc-44ba-b5db-1a2de7f33216",
@@ -283,7 +283,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:workos:ffba59a1-cead-4231-bd2d-a24649c6a3b9",
@@ -311,7 +311,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4066888101",
@@ -346,9 +346,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Remote EMEA/LATAM but body requires GMT-3 to GMT+2, which excludes Colombia (GMT-5) and most of LATAM; conflict between readings, rule 5 picks the non-applicable one. Spontaneous application, not an active opening.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4066899101",
@@ -373,7 +373,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4066973101",
@@ -398,7 +398,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:anthropic:5238637008",
@@ -537,7 +537,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5257213007",
@@ -587,7 +587,7 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "rule6_remote_first_periodic_in_person",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelHistory": [
         {
           "label": "onsite_or_hybrid",
@@ -680,7 +680,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6503000003",
@@ -707,7 +707,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7712191003",
@@ -758,7 +758,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7984978003",
@@ -823,7 +823,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8039614003",
@@ -879,7 +879,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sumup:7475989002",
@@ -948,7 +948,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:5819904004",
@@ -978,7 +978,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:5819908004",
@@ -1007,7 +1007,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6209679004",
@@ -1039,7 +1039,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:turing:6216854004",
@@ -1070,7 +1070,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:vercel:6181759004",
@@ -1097,7 +1097,7 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:wizeline:7264950",
@@ -1415,9 +1415,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "workModel unknown to remote: body does not say hybrid or onsite and lists Remote work from anywhere as a benefit; ATS metadata is remote. Label stays country_specific MX (location only; team distributed in LATAM describes the company, pattern 1). Not applicable for CO.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:17dc9523-7f32-47b5-8d41-d27bb3d99032",
@@ -1456,7 +1456,7 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:240424ff-5a04-44df-b9bf-5530bccf7727",
@@ -1497,9 +1497,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "workModel unknown -> remote: ATS metadata remote, company text offers remote work and sibling postings are remote. Label unchanged (Brazil only).",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:96cd75f8-f887-4c7e-8a6c-ddb33d7d9cda",
@@ -1533,7 +1533,7 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:9c0d5139-e494-41c2-891a-d63102d57a97",
@@ -1567,7 +1567,7 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:d56664b8-6091-4614-91d6-0f59b276c24d",
@@ -1601,7 +1601,7 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:f57a8278-e116-4259-9062-c2c20d3a2000",
@@ -1635,7 +1635,7 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:pigment:dad6777e-77e7-4885-b8cc-751ad141df6a",
@@ -1941,9 +1941,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Label and country OK (title). workModel unknown -> remote: body silent on the role, ATS metadata says remote and company is remote-first.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:2e9f600f-1344-4bab-b0e1-191a6af5465f",
@@ -1973,7 +1973,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:441bb087-c46a-4e3b-a695-bbaca433a84e",
@@ -2005,7 +2005,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:d45d8f01-2ba1-4cca-af69-9af3d30c8861",
@@ -2037,7 +2037,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:d4b698c6-95f6-4d91-913e-54d0cd765c82",
@@ -2066,7 +2066,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:canals:f5be2674-0d4b-406d-bc29-be5e657b8ac5",
@@ -2102,7 +2102,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:decagon:16529089-a048-4bc3-8456-3f197135e00b",
@@ -2185,9 +2185,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "workModel unknown to remote: the body says the role is remote (and ATS metadata is remote). Label unchanged: restricted to Brazil.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:10e6475e-67ef-4621-8718-7b087c354651",
@@ -2216,7 +2216,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:2ae519e9-1068-423b-8e07-dfdebbdca7b4",
@@ -2247,7 +2247,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "regular travel for customer onsite"
     },
     {
@@ -2305,7 +2305,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:c340cedd-6453-4d48-a580-359c1d7d9d49",
@@ -2338,7 +2338,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:elevenlabs:c89e8bf6-6d4c-43bd-bd2a-661ae73c82bf",
@@ -2369,7 +2369,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "regular travel for customer onsite"
     },
     {
@@ -2411,9 +2411,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Contradiction: title and Location section say anywhere in Colombia, but the body says the candidate should be based in Brazil (preferably Sao Paulo) and requires Portuguese. Rule 5: the non-applicable reading wins; unclear since the text supports two countries.",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "regular travel for customer onsites"
     },
     {
@@ -2637,7 +2637,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "team off-sites, conferences, meetups"
     },
     {
@@ -2665,7 +2665,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:sierra:fd5df98a-e2c8-4d47-a803-daee5cccb36f",
@@ -2732,7 +2732,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "ashby:wayve:6e64fd52-6f14-4d73-8d8a-0a31d7ad1f31",
@@ -2799,7 +2799,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4488062101",
@@ -2826,7 +2826,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:amplemarket:4782681101",
@@ -2853,7 +2853,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:3159992",
@@ -2880,7 +2880,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "2 to 4 weeks global travel for internal and external events"
     },
     {
@@ -2908,7 +2908,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "global travel 2 to 4 weeks for internal and external events"
     },
     {
@@ -2936,7 +2936,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "up to 40% of the time"
     },
     {
@@ -2964,7 +2964,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "global travel once or twice a year for up to 2 weeks for events"
     },
     {
@@ -2992,7 +2992,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "twice a year for up to two weeks for events"
     },
     {
@@ -3035,9 +3035,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Label right; countries should be TW only: title says Taipei and body says Xizhi District; Toronto comes from a sibling location.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:4717512",
@@ -3064,7 +3064,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5150422",
@@ -3174,7 +3174,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "up to four times a year for company events up to two weeks"
     },
     {
@@ -3204,7 +3204,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6010955",
@@ -3271,9 +3271,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Label unchanged; workModel hybrid per body tag #LI-hybrid (not onsite); still not applicable.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:6177794",
@@ -3314,9 +3314,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Label unchanged; workModel hybrid per body tag #LI-hybrid (not onsite); still not applicable.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:7267884",
@@ -3344,7 +3344,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "hiring strong regional sales team managers in Europe, Middle East, India, Asia, ANZ, Africa, Latin America, Central America and North America",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "internationally for company events twice a year"
     },
     {
@@ -3433,7 +3433,7 @@
         "labelStatus": "owner_reviewed"
       },
       "relabelRule": "rule6_remote_first_periodic_in_person",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelHistory": [
         {
           "label": "onsite_or_hybrid",
@@ -3499,7 +3499,7 @@
         "labelStatus": "owner_reviewed"
       },
       "relabelRule": "rule6_remote_first_periodic_in_person",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelHistory": [
         {
           "label": "onsite_or_hybrid",
@@ -3552,7 +3552,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5228837007",
@@ -3597,9 +3597,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Title declares Hybrid (rule 6). Countries narrowed from CO,MX to CO because the title names Bogotá; label unchanged.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5234148007",
@@ -3630,7 +3630,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5236289007",
@@ -3765,7 +3765,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5257408007",
@@ -3800,7 +3800,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "in-person ramp-up, team events and customer visits"
     },
     {
@@ -3836,7 +3836,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "in-person ramp-up, team events and customer visits"
     },
     {
@@ -3898,7 +3898,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5265722007",
@@ -3933,7 +3933,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5273126007",
@@ -3964,7 +3964,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5280448007",
@@ -3995,7 +3995,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:gleanwork:4696752005",
@@ -4090,7 +4090,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:6066974003",
@@ -4121,7 +4121,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7116700003",
@@ -4152,7 +4152,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7559727003",
@@ -4183,7 +4183,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7906408003",
@@ -4315,7 +4315,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:8010090003",
@@ -4474,9 +4474,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Label stays; workModel unknown -> onsite because body says Onsite",
-      "evidenceCheckedAt": "2026-11-04",
+      "evidenceCheckedAt": "2026-11-03",
       "travelRequirement": "occasional travel"
     },
     {
@@ -4510,7 +4510,7 @@
       "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:caseware:1c6b8a04-b52d-4689-9092-e76acbd1bc33",
@@ -4881,9 +4881,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "Body silent on work model so ATS metadata remote applies (was unknown); title and location say Brazil; team spread across countries is not eligibility.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:03223f29-f268-4150-8cff-98e2609468fa",
@@ -5057,9 +5057,9 @@
         "labelStatus": "labeled"
       },
       "relabelRule": "evidence_qc",
-      "relabeledAt": "2026-11-04",
+      "relabeledAt": "2026-11-03",
       "relabelNote": "workModel unknown to remote: ATS metadata remote and body silent except the Remote work from anywhere benefit. Label stays country_specific MX per the location (pattern 1, regla 5). Not applicable for CO.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:deuna:c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
@@ -5198,7 +5198,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:b3a94106-ff84-4314-b112-58a9eb36d69a",
@@ -5234,7 +5234,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:cd66a853-ac1b-4740-a6b8-f6d33b13cb3c",
@@ -5270,7 +5270,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:oowlish:e7ce2491-2ec1-499e-b7f5-931bcb6f19e2",
@@ -5306,7 +5306,7 @@
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
-      "evidenceCheckedAt": "2026-11-04"
+      "evidenceCheckedAt": "2026-11-03"
     },
     {
       "id": "lever:palantir:373367a9-3160-49d8-b7af-2efec062fad1",
@@ -5537,7 +5537,7 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Explicit hybrid in title",
-      "evidenceFixedAt": "2026-11-04"
+      "evidenceFixedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7695762003",
@@ -6289,7 +6289,7 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Explicit hybrid in title",
-      "evidenceFixedAt": "2026-11-04"
+      "evidenceFixedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:5191982",
@@ -6603,7 +6603,7 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Explicit hybrid in title",
-      "evidenceFixedAt": "2026-11-04"
+      "evidenceFixedAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:2fee42ea-7501-4f7f-bb44-779b0e92f072",
@@ -6905,7 +6905,7 @@
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
       "labelNote": "Only Mexico is marked Remote; no remote tag in body and Bogota not marked remote; conservative rule gives unclear. Sibling Sezzle postings are remote contractors, so owner may prefer country_specific MX,CO remote.",
-      "ownerConfirmedAt": "2026-11-04"
+      "ownerConfirmedAt": "2026-11-03"
     },
     {
       "id": "greenhouse:sezzle:7504352003",
@@ -6945,7 +6945,7 @@
       },
       "travelRequirement": "Onsite in Bogota when required",
       "relabelRule": "rule6_onsite_when_required_is_not_weekly",
-      "relabeledAt": "2026-11-04"
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:canonical:2808065",
@@ -7488,7 +7488,7 @@
       },
       "travelRequirement": "In-person weeks in Bogota, paid by the company",
       "relabelRule": "owner_rule6_travel_is_remote",
-      "relabeledAt": "2026-11-04"
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "lever:ciandt:e37ecafd-65b1-46d5-abee-e8e75a1a59ad",
@@ -7573,7 +7573,7 @@
         "labelStatus": "needs_owner"
       },
       "relabelRule": "owner_d5_americas_region",
-      "relabeledAt": "2026-11-04"
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "ashby:addi:b32ab3e6-5782-4935-8c92-33cc77013659",
@@ -8048,7 +8048,7 @@
         "labelStatus": "needs_owner"
       },
       "relabelRule": "owner_pattern3_global_remote",
-      "relabeledAt": "2026-11-04"
+      "relabeledAt": "2026-11-03"
     },
     {
       "id": "greenhouse:clara:5215613007",
@@ -9530,7 +9530,7 @@
       }
     },
     "preRunChanges": {
-      "date": "2026-11-04",
+      "date": "2026-11-03",
       "note": "Made before any model run on test-v2 (owner decisions and rule 6 of the ADR 0004 labelling guide); each case keeps relabeledFrom.",
       "changed": [
         "ashby:addi:9438857e-28ed-41b7-848f-ad092ca63c5b",
@@ -9584,7 +9584,7 @@
         ]
       },
       {
-        "date": "2026-11-04",
+        "date": "2026-11-03",
         "decidedBy": "owner (rule) + Claude (reading each body)",
         "scope": "development split: evidence QC (cases whose evidence was missing or not literal in the posting)",
         "rules": [

@@ -7,7 +7,7 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const P = "packages/core/evals/eligibility/cases.json";
 const DIR = "data/eval-qc-batches";
-const date = "2026-11-04";
+const date = "2026-11-03";
 const dry = process.argv.includes("--dry-run");
 const raw = readFileSync(P, "utf8");
 const crlf = raw.includes("\r\n");
