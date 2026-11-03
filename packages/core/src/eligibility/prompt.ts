@@ -1,7 +1,7 @@
 import type { WorkplaceType } from "../normalize/job.js";
 
 /** Bump whenever the text below (or the way the posting is rendered) changes: it is part of the cache key. */
-export const ELIGIBILITY_PROMPT_VERSION = "eligibility-v3";
+export const ELIGIBILITY_PROMPT_VERSION = "eligibility-v4";
 
 /** Postings can be very long; the eligibility signals are almost always near the top or in a short "location" paragraph. */
 export const MAX_DESCRIPTION_CHARS = 20_000;
@@ -25,6 +25,8 @@ RULES:
 6. If you hesitate between a specific label and unclear, answer unclear.
 7. latam_eligible and worldwide require workModel = "remote".
 8. workModel comes from the body; if the body is silent, use the ATS workplace metadata; otherwise "unknown". If workModel is hybrid or onsite, the label is onsite_or_hybrid.
+8b. Hybrid beats remote-sounding phrases. If the ATS metadata says hybrid, or the body says the company is "committed to hybrid work" or describes a hybrid policy, and the role has an assigned city or office, the label is onsite_or_hybrid even when the same posting also says "remote-first" or lists "remote work from anywhere" among the benefits (a benefit is not the work model of this role). Set workModelConflict = true when the metadata and the body disagree.
+8c. Where the company's TEAM lives is not who may apply. "We are distributed across North and South America", "our team is global" or "remote-first" describe the company. If the location field lists only places in one country (for example US cities), the label is country_specific with that country, not latam_eligible.
 9. countries and excludedCountries contain ISO 3166-1 alpha-2 codes (e.g. CO, MX, BR) and only countries named in the posting.
 10. hiringModel: employee, contractor, eor (employer of record) or unknown. requiresUsWorkAuthorization: true / false only if the posting says so, otherwise null. timezoneRequirement: a short phrase such as "Chile hours" or null.
 11. seniority and minYearsExperience describe the role; they do not affect eligibility. minYearsExperience is null unless the posting states a number.

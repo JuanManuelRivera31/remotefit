@@ -12,7 +12,7 @@ import {
  * (content_hash + prompt_version + model + postprocess_version, see `resultCacheKey`), but NOT of the key of the raw
  * model answer: changing a rule here recomputes results for free, without new LLM calls.
  */
-export const POSTPROCESS_VERSION = "postprocess-v1";
+export const POSTPROCESS_VERSION = "postprocess-v2";
 
 /**
  * ok: valid answer with verified evidence (possibly adjusted by the title rule or by trimming a long quote).
@@ -62,10 +62,22 @@ const NAME_REGEX = new RegExp(
   "gu",
 );
 
-/** ISO codes of the countries a job title names, in order; empty when it also names a region or says "global". */
+/** Scripts that identify one country by themselves (ADR 0004 labelling guide, pattern 4). Kanji alone is NOT listed: it is also Chinese. */
+const TITLE_SCRIPT_COUNTRY: readonly { regex: RegExp; iso: string }[] = [
+  { regex: /[぀-ヿ]/u, iso: "JP" },
+  { regex: /[가-힯]/u, iso: "KR" },
+];
+
+/**
+ * ISO codes of the countries a job title names, in order; empty when it also names a region or says "global".
+ * A title written in kana or hangul and naming no country points to Japan or South Korea (guide pattern 4).
+ */
 export function countriesNamedInTitle(title: string): string[] {
   if (REGION_OR_GLOBAL_IN_TITLE.test(normalizeText(title))) return [];
-  return countriesMentioned(title);
+  const named = countriesMentioned(title);
+  if (named.length > 0) return named;
+  const byScript = TITLE_SCRIPT_COUNTRY.find(({ regex }) => regex.test(title));
+  return byScript ? [byScript.iso] : [];
 }
 
 /** ISO codes of every country named in a text (title, location...), in order, without any region/global check. */
@@ -165,7 +177,7 @@ export function unclearResult(job: PromptJob, base?: RawEligibility | Eligibilit
 /**
  * Deterministic rules applied after the model (more reliable than asking the prompt):
  * 1. a country named in the title wins (country_specific with that country), unless the title also names a region or
- *    says global; it only reshapes answers that claimed remote eligibility, never us_only/onsite/unclear;
+ *    says global (a title in kana or hangul counts as naming Japan or South Korea); it only reshapes answers that claimed remote eligibility, never us_only/onsite/unclear;
  * 2. quotes longer than 160 characters are cut to a literal fragment; no literal fragment -> the quote is dropped;
  * 3. an applicable-capable label with no quote found in the posting becomes unclear (never applicable without evidence).
  * `sentText` is exactly the text that was sent to the model, so quotes can be verified against it.
