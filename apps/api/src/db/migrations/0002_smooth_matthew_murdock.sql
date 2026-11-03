@@ -1,0 +1,1 @@
+ALTER TABLE "jobs" ADD COLUMN "prefilter_rule_kind" text;

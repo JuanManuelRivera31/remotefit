@@ -36,6 +36,11 @@ erDiagram
         timestamptz last_seen_at
         timestamptz closed_at "null si sigue abierta"
         boolean is_active
+        text prefilter_version "PREFILTER_VERSION; null si aún no se evalúa"
+        text prefilter_outcome "pass | discarded"
+        text prefilter_rule "non_latam_location | onsite_or_hybrid_metadata | non_tech_role"
+        text prefilter_rule_kind "eligibility | scope"
+        text prefilter_matched_text "texto que disparó la regla"
     }
     eligibility_results {
         serial id PK
@@ -102,6 +107,8 @@ erDiagram
 - `llm_usage_daily`: clave primaria `(usage_date, provider, model)`. Se incrementa en cada llamada, incluidos los reintentos. Va por modelo porque el RPD es por modelo; el costo diario por proveedor se obtiene sumando.
 
 ## Notas
+
+- **Prefiltro (S5):** su resultado vive en `jobs.prefilter_*` y no en `eligibility_results` (`RULES_VERSION` y `model = 'rules'` quedan sin uso). Razón: depende de `workplace_type`, que no entra en `content_hash`, y "descartada" no es una etiqueta de la taxonomía. `npm run prefilter` lo recalcula entero (idempotente) después de cada ingesta.
 
 - **`sibling_group`:** se calcula en la ingesta con `company_id + requisition_id`, o con `company_id + título normalizado` sin sufijos de región como "(LATAM)" o "(Colombia)" si no hay `requisition_id`. Solo 144 de las 671 ofertas del seed lo traen. El respaldo por título puede unir vacantes distintas con el mismo nombre: verificarlo con datos reales en S4.
 - **`llm_usage_daily.usage_date`:** usa el día de cuota del proveedor, no el día local. Según recuerdo, Gemini lo renueva a medianoche hora del Pacífico; confirmarlo en S6b.

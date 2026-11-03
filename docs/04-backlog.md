@@ -38,7 +38,8 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
 
 ## Fase 3 — La parte de IA (el corazón del proyecto)
 
-- [ ] **S5 · Prefiltro por reglas** 🟢
+- [x] **S5 · Prefiltro por reglas** 🟢 *(hecha el 2026-11-02)*
+  **Alcance real (2026-11-02):** tres reglas de descarte con `PREFILTER_VERSION`: dos de **elegibilidad** (`non_latam_location`, `onsite_or_hybrid_metadata`) y una de **alcance** (`non_tech_role`), guardia de cuerpo y resultado guardado en columnas `prefilter_*` de `jobs`. Se dejaron fuera las reglas `us_only` por frases del cuerpo y `positive_signal` descritas abajo: el cuerpo lo decide el clasificador. Las pruebas usan las 455 ubicaciones reales de la base (no las 164 del seed).
   `packages/core/src/rules/`: lista de patrones con su efecto (`us_only`, `onsite_or_hybrid`, `positive_signal`) y función pura `applyRules(job)`. Las reglas solo descartan casos seguros; nunca marcan una oferta como aplicable. Si la ubicación y el cuerpo se contradicen, pasa al LLM.
   Pruebas con frases reales de los fixtures y con las **164 ubicaciones reales** de `data/seed-career-ops/scan-history.tsv` como tabla de pruebas. Como el seed está fuera de git, copia solo las cadenas de ubicación, sin duplicados, a `packages/core/fixtures/locations/`. El `status` de career-ops es una pista, no la verdad: dejó pasar errores.
 

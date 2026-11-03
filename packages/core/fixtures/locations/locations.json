@@ -1,0 +1,1822 @@
+[
+ {
+  "locationRaw": "Aguascalientes / AGU / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Apeldoorn, Netherlands",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Aracaju / SE / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina | Chile",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Bogota, Colombia | Latin America [Remote] | Peru",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Argentina, Remote | Latin America [Remote] | US Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Atlanta, Georgia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Australia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Belem / PA / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Belgium",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Belo Horizonte / MG / Brasil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Belo Horizonte / MG / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bengaluru, Karnataka, India | Bengaluru - Remote | Hyderabad, India",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bengaluru, Karnataka, India | India - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogotá",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Bogotá",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Bogotá",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Bogotá",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota | Cali",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogotá, Colombia | Ciudad de México, Mexico | Argentina",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota, Colombia | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogotá | Colombia | LatAm",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogotá, Colombia | Medellin",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia; Bogota D.C. / DC / Colombia | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia; Bogota D.C. / DC / Colombia | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia; Bogota D.C. / DC / Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia; Bogota D.C. / DC / Colombia; Mexico City / CDMX / Mexico; Sao Paulo / SP / Brazil | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogotá / CUN / Colombia | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia | Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogotá / CUN / Colombia | Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota / CUN / Colombia; Mexico City / CDMX / Mexico; Sao Paulo / SP / Brazil | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia | Bogota ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia | Bogota  | CDMX | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia | Brasil  | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia; Buenos Aires / C / Argentina; Latin America; Mexico City / CDMX / Mexico; Sao Paulo / SP / Brazil | Latin America ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia; Buenos Aires / C / Argentina; Mexico City / CDMX / Mexico | Argentina | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia | Buenos Aires | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia | Latin America ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia; Mexico City / CDMX / Mexico | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia; Mexico City / CDMX / Mexico; Sao Paulo / SP / Brazil | Bogota  | CDMX | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia; Mexico City / CDMX / Mexico; Sao Paulo / SP / Brazil | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota D.C. / DC / Colombia; Mexico City / CDMX / Mexico; Sao Paulo / SP / Brazil | Latin America ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bogota | New York | Sao Paulo | San Francisco | Denver",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brasilia / DF / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brasília, Federal District, Brazil | Buenos Aires Province | Bogota,D.C., Capital District | Rio de Janeiro, Rio de Janeiro, Brazil | Recife, Pernambuco, Brazil | Mexico City",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brasília, Federal District, Brazil | Greater Porto Alegre | Greater Curitiba | Salvador, Bahia | Recife, Pernambuco, Brazil | Belo Horizonte, Minas Gerais, Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brasília, Federal District, Brazil | São Paulo | Buenos Aires Province | Bogota,D.C., Capital District | Mexico City | Rio de Janeiro | Recife, Pernambuco, Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brasília, Federal District, Brazil | São Paulo | Buenos Aires Province | Bogota,D.C., Capital District | Mexico City | Rio de Janeiro, Rio de Janeiro, Brazil | Recife, Pernambuco, Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brasília, Federal District, Brazil | São Paulo | Buenos Aires Province | Mexico City | Bogota,D.C., Capital District | Recife, Pernambuco, Brazil | Rio de Janeiro, Rio de Janeiro, Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brazil",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brazil | Argentina",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brazil | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil | Brazil - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil | Colombia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Brazil; Colombia, Huila, Colombia | Brazil - Remote | Colombia - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil | India - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Bogota, Colombia | Latin America [Remote] | Peru",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Brazil, Remote | Latin America [Remote] | US Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Bucharest,Romania | Cluj, Romania",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Buenaventura",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Buenos Aires",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Buenos Aires / Argentina | Argentina",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Buenos Aires / C / Argentina | Argentina | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Buenos Aires / C / Argentina | Buenos Aires | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Buenos Aires / C / Argentina | Latin America ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Cali",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Cali / VAC / Colombia | Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Campina Grande/ PB / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Campinas, SP",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Campinas, SP",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Campinas / SP / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Campinas, SP | São Paulo, SP",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Campo Grande / MS / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Canada, Remote | Canada Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Cascavel / PR / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chicago | Austin | Vancouver | New York | San Francisco | Raleigh | Lehi | Denver | Seattle",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Chihuahua / CHH / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile | Argentina",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Chile | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | Bogota, Colombia | Latin America [Remote] | Peru",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Chile, Remote | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Ciudad de México, Mexico",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Ciudad de México, Mexico",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Ciudad de México, Mexico | Bogotá, Colombia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Colombia",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Colombia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Colombia | Argentina | Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Colombia | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Huila, Colombia | Colombia - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Huila, Colombia; São Paulo, Brazil | Brazil - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Huila, Colombia; São Paulo, Brazil | Brazil - Remote | Colombia - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Remote | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Remote | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Remote | Bogota, Colombia | Latin America [Remote] | Peru",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Colombia, Remote | Latin America [Remote] | US Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Copenhagen, Denmark",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Curitiba / PR / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Dallas, Texas, United States; Plano, Texas, United States | Dallas",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Denver | Austin | New York | San Francisco | Omaha | Seattle | Chicago",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Denver | New York | San Francisco | Seattle",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Düsseldorf, Germany",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Düsseldorf, Germany | Stuttgart, Germany",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Europe",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Europe | Paris | London",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Fortaleza / CE / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "France",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "France, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Germany",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Germany | France",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Germany, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Germany | Switzerland",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Germany | Tokyo | Spain | Korea | United States | Japan | Brazil | Denmark | Portugal | Mexico | Sweden | Poland | United Kingdom | Netherlands | France | India | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Global - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Goiania / GO / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Guadalajara / JAL / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Guanajuato / GUA / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Hermosillo / SON / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home Based - APAC | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home Based - APAC; Home based - EMEA | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home Based - APAC; Home based - EMEA; Home based - Worldwide | Home Based - Worldwide | Office Based - London, UK | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home Based - APAC; Office Based - Beijing, China; Office Based - Taipei, Taiwan | Home Based - Americas | Home Based - Asia Pacific | Office Based - Beijing, China | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA | Home Based - Americas",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA | Home Based - Americas | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA | Home Based - Americas | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA; Home based - Worldwide | Home Based - Americas | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA; Office Based - London, UK | Home Based - Americas | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA; Office Based - London, UK | Home Based - Americas | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas; Home based - EMEA | Remote Based",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Americas | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Americas",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Asia Pacific",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Asia Pacific | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC; Home based - EMEA | Home Based - Asia Pacific",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC; Home based - EMEA | Home Based - Asia Pacific | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC; Home based - EMEA | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC; Office Based - Beijing, China; Office Based - Taipei, Taiwan | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - APAC | Remote Based",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - Americas",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - Americas | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - EMEA | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA; Office Based - London, UK | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA; Office Based - London, UK | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - EMEA | Remote Based",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home Based - Shenzhen, China",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Americas",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - Beijing, China | Office Based - London, UK | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA | Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Americas | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Home Based - Worldwide | Office Based - London, UK | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide; Office Based - Taipei, Taiwan | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Home based - Worldwide | Remote Based",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Hyderabad, Telangana, India | Bengaluru - Remote | Hyderabad, India",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "India",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "India - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "India, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "India, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "India, Remote | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Italy",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Italy | Milan",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Japan",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Japan | Tokyo",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Joinville / SC / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Korea",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "LatAm",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Latin America | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Latin America | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Latin America | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Latin America | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Latin America | Bogota, Colombia | Latin America [Remote] | Peru",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Latin America | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Latin America | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Lehi | Austin | New York | San Francisco | Omaha | Denver | Seattle | Chicago",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Lehi, Utah",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Leon / GUA / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "London",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "London | Dublin",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "London | Dublin | New York | Germany | Poland | Sweden | Italy | United Kingdom | Canada | Berlin",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "London | New York | Poland",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "London | United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Los Angeles",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Los Angeles, California, United States | New York",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Maidstone, United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Manaus / AM / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Maringa / PR / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Medellín",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Medellin / ANT / Colombia | Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Medellin | Bogotá, Colombia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Melbourne, Australia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Mexico",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Mexico | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico | Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Mexico City",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Mexico City | Bogota,D.C., Capital District | Guatemala | San Salvador | Costa Rica | Montevideo, Montevideo, Uruguay | Medellin, Antioquia | São Paulo",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Mexico City | Bogota,D.C., Capital District | Guatemala | San Salvador | Costa Rica | Montevideo, Montevideo, Uruguay | Medellin, Antioquia | São Paulo | Recife, Pernambuco, Brazil",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | Bogota  | CDMX | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | Brasil  | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | Buenos Aires | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | CDMX",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | CDMX | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CDMX / Mexico; Toluca / MEX / Mexico | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CMX / Mexico | CDMX",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico City / CMX / Mexico | Latin America ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Bogota, Colombia | Latin America [Remote] | Peru",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mexico, Remote | Latin America [Remote] | US Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Minneapolis, United States | US Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Monterrey / NLE / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Mumbai, Maharashtra, India | Mumbai, India",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Natal / RN / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Netherlands, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "New York",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "New York",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York | Austin | San Francisco | Denver | Seattle",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "New York | Dublin | London",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "New York, New York, United States | Dallas | New York",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York, New York, United States | New York",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York, New York, United States | New York | United States",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York, New York, United States; San Francisco, California, United States; Seattle, Washington, United States | New York | San Francisco Bay Area | Seattle",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York, New York, United States; San Francisco, California, United States; Seattle, Washington, United States | United States",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York | San Francisco",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "New York | Sao Paulo | Cali | Bogota | Porto Alegre | Joinville",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "New York | United States | San Francisco",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York | United States | United Kingdom | London",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "New York | Warsaw",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Office Based - Beijing, China",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Beijing, China | Home Based - EMEA | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Beijing, China; Office Based - Shanghai, China | Home Based - Americas | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Beijing, China | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Beijing, China; Office Based - Taipei, Taiwan | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Beijing, China | Office Based - Taipei, Taiwan | Office Based - Tokyo, Japan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - London, UK",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - London, UK | Home Based - Americas | Home Based - Asia Pacific | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - London, UK | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Home Based - Americas | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Home Based - Asia Pacific",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Home Based - EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Home Based - EMEA | Office Based - Beijing, China",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Home Based - Worldwide",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Office Based - Beijing, China",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Office Based - Beijing, China | Office Based - Tokyo, Japan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Taipei, Taiwan | Office Based - Toronto, Canada",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Tokyo, Japan | Office Based - Beijing, China | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Office Based - Toronto, Canada | Office Based - Taipei, Taiwan",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Palo Alto, California, United States; San Francisco, California, United States | Palo Alto | San Francisco Bay Area",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Peru | Bogota, Colombia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Peru | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Peru | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Poland",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Poland",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Poland, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Poland, Remote | Poland Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Poland | United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Poland | United States | Germany | United Kingdom | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Porto Alegre / RS / Brazil | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Porto Alegre | Sao Paulo | Rio De Janeiro | Curitiba | Joinville",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Portugal | Remote, Europe | Remote, USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Puebla / PUE / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Querétaro / QUE / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Quezon City, Metro Manila",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Recife / PE / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, AMER",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, APAC",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, APAC",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, Bay Area, CA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, Bay Area, CA | Remote, San Francisco, CA | Remote, AMER",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | Croatia | Hungary | Poland | Sweden | United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | Croatia | Poland | Sweden | United Kingdom | Amsterdam",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, EMEA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, EMEA | Europe",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, EMEA/LATAM/North America | Remote, EMEA | Remote, Europe | Remote, LATAM | Remote, USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, EMEA/LATAM/North America | Remote, EMEA | Remote, LATAM",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, EMEA/LATAM | Remote, EMEA | Remote, LATAM",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, EMEA/LATAM | Remote, EMEA | Remote, LATAM | Remote, USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, Europe",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | Europe | New York",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | Europe | United States | New York",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | Europe | United States | New York | United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, Europe/US | Remote, Europe | Remote, USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, Global",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, Global",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | Hungary | Poland | Sweden | United Kingdom | Netherlands",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | India",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, London UK",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, New York, US",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | New York | Washington, D.C.",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, Portugal",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, San Francisco, CA",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | Singapore",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | Switzerland | Poland | Sweden | United Kingdom | Amsterdam",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | United Kingdom",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | United States",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | United States | New York",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | United States | New York | San Francisco",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | United States | New York | San Francisco",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote | United States | Poland | United Kingdom | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote | United States | Poland | United Kingdom | Netherlands",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Remote, US/Europe | Remote, Europe | Remote, USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Remote, US | Remote, USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Rio de Janeiro / RJ / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Rio de Janeiro / RJ / Brazil | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Rondonopolis / MT / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Salvador / BA / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "San Francisco",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "San Francisco",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "San Francisco | Austin | New York | Miami  | Denver",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "San Francisco | Bogotá, Colombia | Ciudad de México, Mexico",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "San Francisco, California, United States | San Francisco Bay Area",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "San Francisco | New York",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "San Francisco | United States",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "San Francisco | United States | New York",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Santiago",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Sao Jose do Rio Preto / SP / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Luis / MA / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "São Paulo | Greater Fortaleza | Rio de Janeiro, Rio de Janeiro, Brazil | Florianópolis, Santa Catarina, Brazil | Buenos Aires Province | Bogota,D.C., Capital District | Mexico City",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "São Paulo | Greater Fortaleza | Rio de Janeiro, Rio de Janeiro, Brazil | Florianópolis, Santa Catarina, Brazil | Mexico City | Buenos Aires Province | Bogota,D.C., Capital District",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Sao Paulo | Porto Alegre",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "São Paulo, SP",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "São Paulo / SP / Brasil | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "São Paulo / SP / Brasil | Brasil  | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "São Paulo / SP / Brasil | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Bogota  | CDMX | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Brasil ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Brasil  | Colombia | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Brasil  | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Buenos Aires | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | CDMX | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Colombia | Mexico | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | Latin America ",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Sao Paulo / SP / Brazil | São Paulo",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Saudi Arabia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Saudi Arabia",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Seattle | Austin | New York | San Francisco | Omaha | Denver | Chicago",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Serbia | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Singapore",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Singapore",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Spain | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Spain | Italy",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Sweden",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Sweden | Denmark | Stockholm",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Switzerland | Zurich",
+  "workplaceType": "onsite"
+ },
+ {
+  "locationRaw": "Sydney | Brisbane",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Tijuana / BCN / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Toluca / MEX / Mexico | Mexico",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Toronto, ON",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Toronto, ON",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Toronto | Vancouver",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Türkiye | Bogota, Colombia | Latin America [Remote]",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Türkiye, Remote | Bogota, Colombia | France | Germany | Latin America [Remote] | Netherlands | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Türkiye, Remote | Bogota, Colombia | India | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Türkiye, Remote | Bogota, Colombia | Latin America [Remote] | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Türkiye, Remote | India | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Türkiye, Remote | Turkey",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "UAE ",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "UAE  | Saudi Arabia",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Belgium | Poland | France",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Dublin | Poland | London | San Francisco",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Dublin | Spain | Hungary | Bulgaria | Germany | Poland | Italy | Netherlands | France",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Dublin | Spain | United States | New York | Sofia | Germany | Poland | Boston | Amsterdam | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Dublin | Tokyo | United States | New York | Los Angeles | Poland | London | Boston | San Francisco | Washington, D.C.",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Dublin | United States | New York | Sofia | Germany | Portugal | Poland | Madrid | Boston | Amsterdam | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Ireland",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Ireland | Dublin | Croatia | Hungary | Bulgaria | Sofia | Belgium | Denmark | Portugal | Poland | Sweden | Italy | Madrid | London | Czechia | Amsterdam",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | London",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Spain | Germany | Brazil | Portugal | Mexico | France | India",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Spain | Hungary | Bulgaria | Poland | Italy | Netherlands | France",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | Spain | United States | Germany | Italy | Poland | France | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | United States | New York | Poland | London | San Francisco | Canada",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United Kingdom | United States | Poland | Bulgaria",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "United States",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | Bogotá, Colombia | Ciudad de México, Mexico",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | Dublin | Europe | Japan | Mexico | Italy | Poland | United Kingdom | Canada",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | Europe",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | Global - Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "United States | Ireland | Spain | Europe | Germany | Belgium | Switzerland | Denmark | Portugal | Poland | United Kingdom | Netherlands | France",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | New York",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "United States | New York | Los Angeles | Boston | San Francisco | Washington, D.C.",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | New York | San Francisco",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "United States | Palo Alto | San Francisco Bay Area | Seattle",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "United States, Remote | Sezzle Inc., USA",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "United States, Remote | US Remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "United States | San Francisco Bay Area",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "United States | United Kingdom",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Venezuela, Remote | Venezuela remote",
+  "workplaceType": null
+ },
+ {
+  "locationRaw": "Washington, DC",
+  "workplaceType": "hybrid"
+ },
+ {
+  "locationRaw": "Washington, D.C. | United States",
+  "workplaceType": "remote"
+ },
+ {
+  "locationRaw": "Xalapa / VER / Mexico | Mexico",
+  "workplaceType": null
+ }
+]
