@@ -1,0 +1,87 @@
+// npm run classify [-- --limit N] [--model m] [--allow-fallback] [--dry-run]
+// Classifies pending postings with the free Gemini tier. The key comes from GEMINI_API_KEY (alias RF_LLM_API_KEY).
+import { readFileSync } from "node:fs";
+import { ELIGIBILITY_PROMPT_VERSION, GeminiProvider, parseLimits } from "@remotefit/core";
+import { createDb } from "../db/client.js";
+import { loadEnv } from "../db/env.js";
+import { runClassify } from "../classify/run.js";
+import { selectPendingJobs } from "../classify/store.js";
+
+const DEFAULT_MODEL = "gemini-3.5-flash-lite";
+const FALLBACK_MODEL = "gemini-3.1-flash-lite";
+const LIMITS_URL = new URL("../../../../data/llm-limits.json", import.meta.url);
+
+function readArgs(argv: string[]) {
+  const args = {
+    limit: undefined as number | undefined,
+    model: "",
+    allowFallback: false,
+    dryRun: false,
+  };
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+    if (arg === "--limit") args.limit = Number(argv[(i += 1)]);
+    else if (arg === "--model") args.model = argv[(i += 1)] ?? "";
+    else if (arg === "--allow-fallback") args.allowFallback = true;
+    else if (arg === "--dry-run") args.dryRun = true;
+    else if (arg === "--") continue;
+    else throw new Error(`Unknown argument: ${arg}`);
+  }
+  if (args.limit !== undefined && !(args.limit > 0))
+    throw new Error("--limit must be a positive number");
+  return args;
+}
+
+loadEnv();
+const args = readArgs(process.argv.slice(2));
+const model = args.model || process.env["RF_LLM_MODEL_CLASSIFY"] || DEFAULT_MODEL;
+const limits = parseLimits(JSON.parse(readFileSync(LIMITS_URL, "utf8")) as unknown);
+const { db, pool } = createDb();
+try {
+  const key = { promptVersion: ELIGIBILITY_PROMPT_VERSION, model };
+  const pending = await selectPendingJobs(db, key, args.limit);
+  console.log(
+    `Prompt ${key.promptVersion} · model ${model} · ${pending.length} postings to classify`,
+  );
+  if (args.dryRun || pending.length === 0) {
+    if (args.dryRun) console.log("Dry run: nothing was sent.");
+  } else {
+    const apiKey = process.env["GEMINI_API_KEY"] ?? process.env["RF_LLM_API_KEY"];
+    if (!apiKey)
+      throw new Error(
+        "GEMINI_API_KEY is not set (put it in .env or the environment). Nothing was sent.",
+      );
+    if (args.allowFallback) {
+      console.log(
+        `Warning: fallback ${FALLBACK_MODEL} enabled. It has no accepted measurement; its results are stored under its own model key.`,
+      );
+    }
+    const summary = await runClassify(db, {
+      model,
+      ...(args.allowFallback ? { fallbackModel: FALLBACK_MODEL } : {}),
+      providerFor: () => new GeminiProvider({ apiKey }),
+      limits,
+      ...(args.limit !== undefined ? { limit: args.limit } : {}),
+      sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+      onEvent: (event) => {
+        if (event.kind === "retry") {
+          console.log(
+            `  job ${event.jobId}: ${event.why} on ${event.model}, waiting ${Math.round(event.waitMs / 1000)} s`,
+          );
+        } else if (event.kind === "switched_to_fallback") {
+          console.log(`  switching ${event.from} -> ${event.to} (${event.why})`);
+        } else if (event.kind === "stopped") {
+          console.log(`  stopped: ${event.reason} (${event.message})`);
+        }
+      },
+      onWarn: (message) => console.log(`  warning: ${message}`),
+    });
+    console.log(
+      `Classified ${summary.classified} of ${summary.total} · ${summary.rateLimitedResponses} rate-limited responses · ` +
+        `${summary.pendingAfter} still pending for ${summary.model}` +
+        (summary.stopped ? ` · stopped early: ${summary.stopped.reason}` : ""),
+    );
+  }
+} finally {
+  await pool.end();
+}

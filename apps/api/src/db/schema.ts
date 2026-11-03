@@ -89,6 +89,10 @@ export const eligibilityResults = pgTable(
     tokensIn: integer("tokens_in"),
     tokensOut: integer("tokens_out"),
     equivalentCostUsd: numeric("equivalent_cost_usd"),
+    // S6b: the deterministic post-processing is versioned and re-runnable for free from the model's raw answer.
+    postprocessVersion: text("postprocess_version"),
+    status: text("status"), // ok | evidence_unverified | fallback_unclear
+    rawOutput: jsonb("raw_output").$type<unknown>(), // the model's validated answer before post-processing; null when it never validated
     createdAt: timestampTz("created_at").notNull().defaultNow(),
   },
   (table) => [

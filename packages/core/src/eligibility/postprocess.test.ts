@@ -59,6 +59,8 @@ describe("countriesNamedInTitle", () => {
     ["Engineer, Brasil", ["BR"]],
     ["Sales Lead (Costa Rica and Panama)", ["CR", "PA"]],
     ["[Job-31838] Senior Data Analyst, Colombia", ["CO"]],
+    ["インサイドセールス (リモート)/ Sales Development Representative (Remote)", ["JP"]],
+    ["시니어 백엔드 엔지니어", ["KR"]],
   ])("%s -> %j", (title, expected) => {
     expect(countriesNamedInTitle(title)).toEqual(expected);
   });
@@ -66,6 +68,7 @@ describe("countriesNamedInTitle", () => {
   it.each([
     "Software Engineer",
     "Engineer, LATAM",
+    "シニアエンジニア (LATAM)",
     "Engineer (Colombia or anywhere)",
     "Global Support Engineer, Mexico",
     "Backend Engineer - Americas",
@@ -200,7 +203,7 @@ describe("raw answers and finalization", () => {
   it("puts the post-processing version in the stored-result key", () => {
     const parts = { contentHash: "abc", promptVersion: "eligibility-v3", model: "m" };
     expect(resultCacheKey(parts)).toBe(`abc|eligibility-v3|m|${POSTPROCESS_VERSION}`);
-    expect(resultCacheKey({ ...parts, postprocessVersion: "postprocess-v2" })).not.toBe(
+    expect(resultCacheKey({ ...parts, postprocessVersion: "postprocess-v-other" })).not.toBe(
       resultCacheKey(parts),
     );
   });

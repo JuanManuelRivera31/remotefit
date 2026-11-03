@@ -38,3 +38,20 @@ Notas: Lever con `mode=json` devuelve 5,4 MB para Bluelight (paginar o usar `ski
 ## Qué necesito de ti
 
 Aprobar (o recortar) la lista y confirmar el punto de Lever. Con eso agrego las empresas a `data/companies.json`, corro la ingesta y el prefiltro, y quedan disponibles para cobertura y para test-v3.
+
+## Resolución (2026-11-03, decisión del dueño)
+
+Criterio: Lever en pausa (ADR 0006); las demás solo si una revisión rápida de la página de empleo, los términos y el `robots.txt` no encuentra prohibición de acceso automatizado. Los cuatro tokens se verificaron contra la API de Greenhouse (26, 12, 8 y 6 ofertas).
+
+| Empresa | Resultado | Motivo |
+|---|---|---|
+| Nortal | **Entró** | Sin términos de uso publicados; `robots.txt` solo bloquea rutas de HubSpot |
+| Praxent | **Entró** | Sin términos encontrados; `robots.txt` bloquea solo bots de SEO |
+| Able | **Entró** | `robots.txt` permite todo salvo `/api`; sin términos de uso (la identidad coincide: able.co enlaza al board) |
+| ThriveCart | **Entró** | `robots.txt` solo rutas privadas; `/terms` y `/legal` sin cláusula de scraping |
+| Engine | No entró | Sus términos (§XVIII) prohíben "any robot, spider, scraper or other automated means to access the Site" (el board vive en Greenhouse, pero el texto es explícito) y solo aporta 1 oferta LATAM |
+| Empirical | No entró | No se encontró dominio oficial: no hay términos que revisar; además, mayoría de roles freelance |
+| Puzzle Consulting | No entró | Identidad del dueño del board sin confirmar (el dominio hallado es de una consultora de marketing); 3 ofertas |
+| Yuno, Coderio, Bluelight | En pausa | Lever, ADR 0006 |
+
+Pendiente: correr `npm run ingest` y `npm run prefilter` para traer sus ofertas (no se ha hecho).

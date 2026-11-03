@@ -133,6 +133,34 @@
       "boardToken": "canonical",
       "active": true,
       "notes": "Aprobado 2026-10-31. Greenhouse: Home based Worldwide/Americas; roles junior (Associate Linux Support Engineer)."
+    },
+    {
+      "name": "Nortal",
+      "ats": "greenhouse",
+      "boardToken": "nortal",
+      "active": true,
+      "notes": "Aprobada 2026-11-03. Consultora; 26 ofertas, ~10 con ubicacion Latin America (Remote). Sin clausula de terminos sobre acceso automatizado (nortal.com no publica terminos de uso; robots.txt solo bloquea rutas de HubSpot)."
+    },
+    {
+      "name": "Praxent",
+      "ats": "greenhouse",
+      "boardToken": "praxent",
+      "active": true,
+      "notes": "Aprobada 2026-11-03. 12 ofertas; roles LATAM con ubicacion Remote - International (ambigua: filtrar). Sin terminos publicados que prohiban acceso automatizado (praxent.ai/robots.txt solo bloquea bots de SEO)."
+    },
+    {
+      "name": "Able",
+      "ats": "greenhouse",
+      "boardToken": "able",
+      "active": true,
+      "notes": "Aprobada 2026-11-03. 8 ofertas; Remote, LATAM en IA y full-stack. able.co/robots.txt permite todo salvo /api; sin terminos de uso publicados."
+    },
+    {
+      "name": "ThriveCart",
+      "ats": "greenhouse",
+      "boardToken": "thrivecart",
+      "active": true,
+      "notes": "Aprobada 2026-11-03. 6 ofertas; 2 de QA Remote - LATAM. robots.txt solo bloquea rutas privadas; /terms y /legal revisados sin clausula de scraping."
     }
   ]
 }
