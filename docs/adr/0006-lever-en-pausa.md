@@ -1,4 +1,4 @@
-# ADR 0006 — Lever: pausa del 2026-11-03 y levantamiento del 2026-11-03
+# ADR 0006 — Lever: pausa y levantamiento (2026-11-03)
 
 - **Estado:** Aceptado. La pausa se **levantó** el 2026-11-03; se revisa si Lever cambia sus términos o su API (ver "Condiciones de revisión").
 - **Fecha:** 2026-11-03 (pausa y levantamiento, el mismo día)
