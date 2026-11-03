@@ -10,7 +10,8 @@ import {
 } from "../packages/core/evals/labels-v2.js";
 
 const CASES = "packages/core/evals/eligibility/cases.json";
-const LABELS = "data/eval-v2-labels-claude.tsv";
+const labelsArg = process.argv.indexOf("--labels");
+const LABELS = labelsArg > 0 ? (process.argv[labelsArg + 1] as string) : "data/eval-v2-labels-claude.tsv";
 const freeze = process.argv.includes("--freeze");
 const date = process.argv.find((arg) => /^\d{4}-\d{2}-\d{2}$/.test(arg)) ?? new Date().toISOString().slice(0, 10);
 

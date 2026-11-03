@@ -10,6 +10,8 @@ export interface LabelRow {
   needsOwner: boolean;
   evidence: string;
   note: string;
+  /** Optional 9th column (rule 6 of the labelling guide): travel or periodic in-person weeks of a remote role. */
+  travelRequirement?: string;
 }
 
 export const LABEL_COLUMNS = [
@@ -29,8 +31,11 @@ const WORK_MODELS = new Set(["remote", "hybrid", "onsite", "unknown"]);
 export function parseLabelRows(tsv: string): LabelRow[] {
   const lines = tsv.split(/\r?\n/).filter((line) => line.trim() !== "");
   const header = (lines[0] ?? "").split("\t");
-  if (header.join(",") !== LABEL_COLUMNS.join(",")) {
-    throw new Error(`Unexpected header. Expected: ${LABEL_COLUMNS.join("\\t")}`);
+  const withTravel = [...LABEL_COLUMNS, "travelRequirement"].join(",");
+  if (header.join(",") !== LABEL_COLUMNS.join(",") && header.join(",") !== withTravel) {
+    throw new Error(
+      `Unexpected header. Expected: ${LABEL_COLUMNS.join("\\t")} (optionally followed by travelRequirement)`,
+    );
   }
   const problems: string[] = [];
   const rows: LabelRow[] = [];
@@ -47,6 +52,7 @@ export function parseLabelRows(tsv: string): LabelRow[] {
       needs = "",
       evidence = "",
       note = "",
+      travel = "",
     ] = cells;
     if (cells.length < 7)
       problems.push(`${where}: expected ${LABEL_COLUMNS.length} columns, got ${cells.length}`);
@@ -78,6 +84,7 @@ export function parseLabelRows(tsv: string): LabelRow[] {
       needsOwner: needs === "yes",
       evidence: evidence.trim(),
       note: note.trim(),
+      ...(travel.trim() ? { travelRequirement: travel.trim() } : {}),
     });
   }
   if (problems.length > 0) throw new Error(problems.join("\n"));
@@ -118,6 +125,7 @@ export function applyLabelRows(
     item["bodyChecked"] = true;
     item["labelStatus"] = row.needsOwner ? "needs_owner" : "labeled";
     if (row.note) item["labelNote"] = row.note;
+    if (row.travelRequirement) item["travelRequirement"] = row.travelRequirement;
   }
   return rows.length;
 }

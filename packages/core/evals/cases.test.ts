@@ -53,10 +53,11 @@ describe("cases.json invariants", () => {
     expect(file.cases.filter((item) => item.split === "dev")).toHaveLength(317);
   });
 
-  it("describes the current test set as test-v3 (empty until it is built)", () => {
+  it("describes the current test set as test-v3", () => {
     expect(file.testSet.name).toBe("test-v3");
     const testCases = file.cases.filter((item) => item.split === "test");
     if (file.testSet.status === "to_build") expect(testCases).toHaveLength(0);
+    if (file.testSet.status === "building") expect(testCases.length).toBeGreaterThan(0);
   });
 
   it("records where every relabel came from", () => {
@@ -66,11 +67,14 @@ describe("cases.json invariants", () => {
   });
 });
 
-// The construction rules hold for the retired test-v2 and must hold for test-v3 when it exists.
-describe("test set construction rules (ADR 0004)", () => {
-  const testCases = file.cases.filter(
-    (item) => item.split === "test" || item.retiredFrom === "test-v2",
-  );
+// The construction rules hold for the live test split and for the retired test-v2 (checked separately).
+const testSets: { name: string; pick: (item: CaseRecord) => boolean }[] = [
+  { name: "live test split", pick: (item) => item.split === "test" },
+  { name: "retired test-v2", pick: (item) => item.retiredFrom === "test-v2" },
+];
+
+describe.each(testSets)("test set construction rules (ADR 0004): $name", ({ pick }) => {
+  const testCases = file.cases.filter(pick);
 
   it("keeps at most 25 cases per company", () => {
     const perBoard = new Map<string, number>();
@@ -85,14 +89,16 @@ describe("test set construction rules (ADR 0004)", () => {
     }
     for (const [key, count] of perKey) expect(count, key).toBeLessThanOrEqual(3);
   });
+});
 
-  it("never shares a vacancy (sibling key) between development and a live test split", () => {
+describe("test set separation (ADR 0004)", () => {
+  it("never shares a vacancy (sibling key) between the live test split and any development case", () => {
     const devKeys = new Set(
-      file.cases
-        .filter((item) => item.split === "dev" && item.retiredFrom !== "test-v2" && item.siblingKey)
-        .map((item) => item.siblingKey),
+      file.cases.filter((item) => item.split === "dev" && item.siblingKey).map((item) => item.siblingKey),
     );
-    for (const item of testCases) expect(devKeys.has(item.siblingKey), item.id).toBe(false);
+    for (const item of file.cases.filter((c) => c.split === "test")) {
+      expect(devKeys.has(item.siblingKey), item.id).toBe(false);
+    }
   });
 
   it("keeps the left-out siblings out of every split", () => {
