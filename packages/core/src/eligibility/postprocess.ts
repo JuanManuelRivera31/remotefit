@@ -65,6 +65,11 @@ const NAME_REGEX = new RegExp(
 /** ISO codes of the countries a job title names, in order; empty when it also names a region or says "global". */
 export function countriesNamedInTitle(title: string): string[] {
   if (REGION_OR_GLOBAL_IN_TITLE.test(normalizeText(title))) return [];
+  return countriesMentioned(title);
+}
+
+/** ISO codes of every country named in a text (title, location...), in order, without any region/global check. */
+export function countriesMentioned(title: string): string[] {
   // Match on a lowercase copy but keep the original to check capitalization of abbreviations.
   const normalized = normalizeText(title);
   const found: string[] = [];
