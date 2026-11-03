@@ -24,8 +24,10 @@ const caseSchema = z.looseObject({
 });
 export type EvalCase = z.infer<typeof caseSchema>;
 
+// Pending cases (test-v2 while it is being labelled) carry no label yet: only the labelled ones are validated strictly.
+const caseEnvelopeSchema = z.looseObject({ id: z.string(), split: z.enum(["dev", "test"]), labelStatus: z.string() });
 const casesFileSchema = z.looseObject({
-  cases: z.array(caseSchema),
+  cases: z.array(caseEnvelopeSchema),
   testSet: z.looseObject({ status: z.string() }).optional(),
   devLabelRevision: z.looseObject({ date: z.string() }).optional(),
 });
@@ -39,7 +41,9 @@ export function loadDevLabelRevision(): string | null {
 /** Cases of ONE split that have a confirmed label. Filtering happens before anything else touches the data. */
 export function loadCases(split: "dev" | "test"): EvalCase[] {
   const file = casesFileSchema.parse(JSON.parse(readFileSync(CASES_URL, "utf8")) as unknown);
-  return file.cases.filter((item) => item.split === split && item.labelStatus !== "pending");
+  return file.cases
+    .filter((item) => item.split === split && item.labelStatus !== "pending")
+    .map((item) => caseSchema.parse(item));
 }
 
 /**

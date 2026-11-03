@@ -5,6 +5,7 @@ interface CaseRecord {
   id: string;
   split: string;
   board: string;
+  siblingKey?: string;
   label: string;
   labelStatus: string;
   retiredFrom?: string;
@@ -15,6 +16,7 @@ interface CaseRecord {
 interface CasesFile {
   cases: CaseRecord[];
   testSet: { name: string; status: string };
+  excludedFromEval?: { id: string }[];
   retiredTestSets?: { name: string; cases: number; acceptedRun: { accepted: boolean } }[];
 }
 
@@ -51,5 +53,35 @@ describe("cases.json invariants", () => {
     for (const item of file.cases) {
       if (item.relabelRule) expect(item.relabeledFrom, item.id).toBeDefined();
     }
+  });
+});
+
+describe("test-v2 construction rules (ADR 0004)", () => {
+  const testCases = file.cases.filter((item) => item.split === "test");
+
+  it("keeps at most 25 cases per company", () => {
+    const perBoard = new Map<string, number>();
+    for (const item of testCases) perBoard.set(item.board, (perBoard.get(item.board) ?? 0) + 1);
+    for (const [board, count] of perBoard) expect(count, board).toBeLessThanOrEqual(25);
+  });
+
+  it("keeps at most 3 variants of the same vacancy (sibling key)", () => {
+    const perKey = new Map<string, number>();
+    for (const item of testCases) {
+      if (item.siblingKey) perKey.set(item.siblingKey, (perKey.get(item.siblingKey) ?? 0) + 1);
+    }
+    for (const [key, count] of perKey) expect(count, key).toBeLessThanOrEqual(3);
+  });
+
+  it("never shares a vacancy (sibling key) between development and test", () => {
+    const devKeys = new Set(
+      file.cases.filter((item) => item.split === "dev" && item.siblingKey).map((item) => item.siblingKey),
+    );
+    for (const item of testCases) expect(devKeys.has(item.siblingKey), item.id).toBe(false);
+  });
+
+  it("keeps the left-out siblings out of every split", () => {
+    const ids = new Set(file.cases.map((item) => item.id));
+    for (const item of file.excludedFromEval ?? []) expect(ids.has(item.id), item.id).toBe(false);
   });
 });
