@@ -68,3 +68,11 @@ export type {
   QueueSummary,
   UsageDelta,
 } from "./queue/classify-queue.js";
+export {
+  VERIFIER_PROMPT_VERSION,
+  VERIFIER_SYSTEM_PROMPT,
+  VerifierSchema,
+  buildVerifierMessage,
+  verifyPositive,
+} from "./eligibility/verifier.js";
+export type { VerifierAnswer, VerifierOptions, VerifierOutcome } from "./eligibility/verifier.js";

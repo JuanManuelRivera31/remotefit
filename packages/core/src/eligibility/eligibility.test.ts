@@ -164,7 +164,7 @@ describe("classifyJob", () => {
       status: "ok",
       attempts: 1,
       promptVersion: "eligibility-v4",
-      postprocessVersion: "postprocess-v2",
+      postprocessVersion: "postprocess-v3",
     });
     expect(outcome.result.label).toBe("country_specific");
     // The title names Colombia, so the deterministic rule fixes the country and cites the title.

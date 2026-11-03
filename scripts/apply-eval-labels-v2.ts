@@ -10,7 +10,8 @@ import {
 } from "../packages/core/evals/labels-v2.js";
 
 const CASES = "packages/core/evals/eligibility/cases.json";
-const LABELS = "data/eval-v2-labels-claude.tsv";
+const labelsArg = process.argv.indexOf("--labels");
+const LABELS = labelsArg > 0 ? (process.argv[labelsArg + 1] as string) : "data/eval-v2-labels-claude.tsv";
 const freeze = process.argv.includes("--freeze");
 const date = process.argv.find((arg) => /^\d{4}-\d{2}-\d{2}$/.test(arg)) ?? new Date().toISOString().slice(0, 10);
 
@@ -31,6 +32,6 @@ if (freeze) {
     perCompany: summary.perCompany,
     ...(summary.status === "provisional" ? { missingForTarget: summary.missingForTarget } : {}),
   };
-  console.log(`test-v2 ${summary.status}: ${summary.applicableCO} applicable for CO`);
+  console.log(`${(data.testSet as { name?: string }).name ?? "test set"} ${summary.status}: ${summary.applicableCO} applicable for CO`);
 }
 writeFileSync(CASES, JSON.stringify(data, null, 2).replace(/\n/g, "\r\n") + "\r\n");

@@ -1,4 +1,5 @@
 import { COUNTRY_ISO_BY_NAME, normalizeText } from "../rules/places.js";
+import { atsCountryList, remoteSegmentCountries } from "./location-rules.js";
 import type { PromptJob } from "./prompt.js";
 import {
   EVIDENCE_MAX_CHARS,
@@ -12,7 +13,7 @@ import {
  * (content_hash + prompt_version + model + postprocess_version, see `resultCacheKey`), but NOT of the key of the raw
  * model answer: changing a rule here recomputes results for free, without new LLM calls.
  */
-export const POSTPROCESS_VERSION = "postprocess-v2";
+export const POSTPROCESS_VERSION = "postprocess-v3";
 
 /**
  * ok: valid answer with verified evidence (possibly adjusted by the title rule or by trimming a long quote).
@@ -179,7 +180,9 @@ export function unclearResult(job: PromptJob, base?: RawEligibility | Eligibilit
  * 1. a country named in the title wins (country_specific with that country), unless the title also names a region or
  *    says global (a title in kana or hangul counts as naming Japan or South Korea); it only reshapes answers that claimed remote eligibility, never us_only/onsite/unclear;
  * 2. quotes longer than 160 characters are cut to a literal fragment; no literal fragment -> the quote is dropped;
- * 3. an applicable-capable label with no quote found in the posting becomes unclear (never applicable without evidence).
+ * 3. an applicable-capable label with no quote found in the posting becomes unclear (never applicable without evidence);
+ * 4. (v3) a plain list of places in the ATS location beats worldwide / latam_eligible: country_specific with its countries;
+ * 5. (v3) in a compound location a country is remote only if its own segment says Remote or the ATS metadata does.
  * `sentText` is exactly the text that was sent to the model, so quotes can be verified against it.
  */
 export function postprocess(
@@ -204,6 +207,37 @@ export function postprocess(
         evidence: [job.title.trim().slice(0, EVIDENCE_MAX_CHARS)],
       });
       return { result, status: "ok", notes };
+    }
+  }
+
+  // Rule 4 (structural): a plain list of places in the ATS location beats a generic "worldwide" / region claim.
+  if (raw.label === "worldwide" || raw.label === "latam_eligible") {
+    const list = atsCountryList(job.locationRaw);
+    if (list) {
+      notes.push(`ats_country_list:${list.countries.join(",")}`);
+      const result = EligibilitySchema.parse({
+        ...raw,
+        label: "country_specific",
+        countries: list.countries,
+        excludedCountries: [],
+        evidence: [fallbackEvidence(job)],
+      });
+      return { result, status: "ok", notes };
+    }
+  }
+
+  // Rule 5 (structural): in a compound location a country is remote only if its own segment says Remote (or the ATS does).
+  if (raw.label === "country_specific" && raw.countries.length > 0) {
+    const kept = remoteSegmentCountries(
+      job.locationRaw,
+      job.workplaceType,
+      raw.countries,
+      job.descriptionText,
+    );
+    if (kept !== null) {
+      notes.push(`segment_remote:${raw.countries.filter((c) => !kept.includes(c)).join(",")}`);
+      if (kept.length === 0) return { result: unclearResult(job, raw), status: "ok", notes };
+      raw = { ...raw, countries: kept };
     }
   }
 

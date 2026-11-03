@@ -157,7 +157,7 @@ describe("formatMarkdownReport", () => {
     split: "dev",
     model: "gemini-3.5-flash-lite",
     promptVersion: "eligibility-v4",
-    postprocessVersion: "postprocess-v2",
+    postprocessVersion: "postprocess-v3",
     labelRevision: "2026-11-03",
     thinkingLevel: "MINIMAL",
     limits: { rpm: 12, rpd: 400, verifiedAt: "2026-11-02" },
@@ -171,7 +171,7 @@ describe("formatMarkdownReport", () => {
     const report = formatMarkdownReport(metrics, rows, context);
     expect(report).toContain("gemini-3.5-flash-lite");
     expect(report).toContain("eligibility-v4");
-    expect(report).toContain("postprocess-v2");
+    expect(report).toContain("postprocess-v3");
     expect(report).toContain("revisión del dueño 2026-11-03");
     expect(report).toContain("Matriz de confusión");
     expect(report).toContain("75.0% (3/4)");
@@ -220,7 +220,7 @@ const hasBodies = existsSync(new URL("../../../data/seed-career-ops/bodies/", im
 describe.skipIf(!hasBodies)("loader (needs the local rescued postings)", () => {
   it("loads only the requested split and rebuilds the text of every development case", () => {
     const cases = loadCases("dev");
-    expect(cases.length).toBe(160);
+    expect(cases.length).toBe(317);
     expect(cases.every((item) => item.split === "dev")).toBe(true);
     for (const item of cases) {
       const job = loadJob(item);
