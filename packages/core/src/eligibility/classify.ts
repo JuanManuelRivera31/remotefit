@@ -4,6 +4,7 @@ import {
   type LLMUsage,
   type ThinkingLevel,
 } from "../llm/types.js";
+import { postprocess, POSTPROCESS_VERSION, type ClassifyStatus } from "./postprocess.js";
 import {
   ELIGIBILITY_PROMPT_VERSION,
   ELIGIBILITY_SYSTEM_PROMPT,
@@ -11,19 +12,19 @@ import {
   buildUserMessage,
   type PromptJob,
 } from "./prompt.js";
-import { EligibilitySchema, type Eligibility } from "./schema.js";
+import { RawEligibilitySchema, type Eligibility, type RawEligibility } from "./schema.js";
+
+export type { ClassifyStatus } from "./postprocess.js";
 
 /**
- * ok: valid answer with verified evidence.
- * evidence_unverified: the model picked an applicable-capable label but none of its quotes appears in the posting,
- *   so the result was downgraded to unclear (never applicable without evidence).
- * fallback_unclear: the answer did not validate (after one retry) or was blocked; the result is unclear.
+ * What the model said, before any deterministic rule. `raw` is null when no valid answer was obtained (after one
+ * retry, or a blocked prompt). This is the expensive part and the one worth caching by
+ * content_hash + prompt_version + model.
  */
-export type ClassifyStatus = "ok" | "evidence_unverified" | "fallback_unclear";
-
-export interface ClassifyOutcome {
-  result: Eligibility;
-  status: ClassifyStatus;
+export interface RawOutcome {
+  raw: RawEligibility | null;
+  /** The exact text sent to the model; quotes are verified against it. */
+  sentText: string;
   /** Tokens and cost summed over every attempt (retries consume quota too). */
   usage: LLMUsage;
   attempts: number;
@@ -32,32 +33,22 @@ export interface ClassifyOutcome {
   promptVersion: string;
 }
 
+export interface ClassifyOutcome {
+  result: Eligibility;
+  status: ClassifyStatus;
+  /** What the deterministic rules did ("title_country:CO", "evidence_trimmed"...). */
+  notes: string[];
+  usage: LLMUsage;
+  attempts: number;
+  problems: string[];
+  promptVersion: string;
+  postprocessVersion: string;
+}
+
 export interface ClassifyOptions {
   model: string;
   thinkingLevel?: ThinkingLevel;
   maxTokens?: number;
-}
-
-const APPLICABLE_CAPABLE = new Set(["latam_eligible", "worldwide", "country_specific"]);
-const MIN_FRAGMENT_CHARS = 6;
-
-const normalizeForQuote = (text: string): string =>
-  text
-    .normalize("NFKC")
-    .toLowerCase()
-    .replace(/[‘’“”"']/g, "'")
-    .replace(/[‐-―]/g, "-")
-    .replace(/\s+/g, " ")
-    .trim();
-
-/** A quote is verified when every fragment (split at "..." or "…") appears verbatim in the posting text. */
-export function isQuoteInSource(quote: string, source: string): boolean {
-  const haystack = normalizeForQuote(source);
-  const fragments = quote
-    .split(/\.{3}|…/)
-    .map(normalizeForQuote)
-    .filter((fragment) => fragment.length >= MIN_FRAGMENT_CHARS);
-  return fragments.length > 0 && fragments.every((fragment) => haystack.includes(fragment));
 }
 
 const sumUsage = (a: LLMUsage, b: LLMUsage | undefined): LLMUsage =>
@@ -77,39 +68,16 @@ const ZERO_USAGE: LLMUsage = {
   equivalentCostUsd: 0,
 };
 
-/** A verifiable quote for results that did not come from a valid model answer: the location, else the title. */
-function fallbackEvidence(job: PromptJob): string {
-  const source = job.locationRaw.trim() || job.title.trim() || "(no text)";
-  return source.slice(0, 160);
-}
-
-function unclearResult(job: PromptJob, base?: Eligibility): Eligibility {
-  return {
-    label: "unclear",
-    countries: [],
-    excludedCountries: [],
-    workModel: base?.workModel ?? "unknown",
-    workModelConflict: base?.workModelConflict ?? false,
-    seniority: base?.seniority ?? "unknown",
-    minYearsExperience: base?.minYearsExperience ?? null,
-    hiringModel: base?.hiringModel ?? "unknown",
-    timezoneRequirement: base?.timezoneRequirement ?? null,
-    requiresUsWorkAuthorization: base?.requiresUsWorkAuthorization ?? null,
-    postingLanguage: base?.postingLanguage ?? "other",
-    evidence: [fallbackEvidence(job)],
-  };
-}
-
 /**
- * Classifies one posting. An invalid answer gets ONE retry that includes the validation error; a second failure
- * becomes `unclear`. Quota and network errors (RateLimitError, QuotaExhaustedError, ProviderError) are NOT turned
- * into `unclear`: they propagate so the posting stays pending.
+ * Asks the model once, with ONE retry that includes the validation error. Quota and network errors
+ * (RateLimitError, QuotaExhaustedError, ProviderError) are NOT turned into anything: they propagate so the posting
+ * stays pending. Nothing deterministic happens here, see `finalizeOutcome`.
  */
-export async function classifyJob(
+export async function classifyRaw(
   provider: LLMProvider,
   job: PromptJob,
   options: ClassifyOptions,
-): Promise<ClassifyOutcome> {
+): Promise<RawOutcome> {
   const userMessage = buildUserMessage(job);
   const problems: string[] = [];
   let usage = ZERO_USAGE;
@@ -121,13 +89,20 @@ export async function classifyJob(
         model: options.model,
         system: ELIGIBILITY_SYSTEM_PROMPT,
         user,
-        schema: EligibilitySchema,
+        schema: RawEligibilitySchema,
         schemaName: "eligibility",
         ...(options.maxTokens !== undefined ? { maxTokens: options.maxTokens } : {}),
         ...(options.thinkingLevel !== undefined ? { thinkingLevel: options.thinkingLevel } : {}),
       });
       usage = sumUsage(usage, response.usage);
-      return finish(job, userMessage, response.data, usage, attempt, problems);
+      return {
+        raw: response.data,
+        sentText: userMessage,
+        usage,
+        attempts: attempt,
+        problems,
+        promptVersion: ELIGIBILITY_PROMPT_VERSION,
+      };
     } catch (error) {
       if (!(error instanceof OutputValidationError)) throw error;
       usage = sumUsage(usage, error.usage);
@@ -135,8 +110,8 @@ export async function classifyJob(
       // A blocked prompt will not change on retry.
       if (error.kind === "blocked" || attempt === 2) {
         return {
-          result: unclearResult(job),
-          status: "fallback_unclear",
+          raw: null,
+          sentText: userMessage,
           usage,
           attempts: attempt,
           problems,
@@ -150,32 +125,33 @@ export async function classifyJob(
   throw new Error("unreachable");
 }
 
-function finish(
-  job: PromptJob,
-  sentText: string,
-  data: Eligibility,
-  usage: LLMUsage,
-  attempts: number,
-  problems: string[],
-): ClassifyOutcome {
-  const verified = data.evidence.some((quote) => isQuoteInSource(quote, sentText));
-  if (APPLICABLE_CAPABLE.has(data.label) && !verified) {
-    problems.push(`evidence not found in the posting: ${JSON.stringify(data.evidence)}`);
-    return {
-      result: unclearResult(job, data),
-      status: "evidence_unverified",
-      usage,
-      attempts,
-      problems,
-      promptVersion: ELIGIBILITY_PROMPT_VERSION,
-    };
-  }
+/** Applies the deterministic post-processing to a raw outcome. Pure and free: safe to rerun when a rule changes. */
+export function finalizeOutcome(rawOutcome: RawOutcome, job: PromptJob): ClassifyOutcome {
+  const processed = postprocess(rawOutcome.raw, job, rawOutcome.sentText);
+  const problems =
+    processed.status === "evidence_unverified"
+      ? [
+          ...rawOutcome.problems,
+          `evidence not found in the posting: ${JSON.stringify(rawOutcome.raw?.evidence ?? [])}`,
+        ]
+      : rawOutcome.problems;
   return {
-    result: data,
-    status: "ok",
-    usage,
-    attempts,
+    result: processed.result,
+    status: processed.status,
+    notes: processed.notes,
+    usage: rawOutcome.usage,
+    attempts: rawOutcome.attempts,
     problems,
-    promptVersion: ELIGIBILITY_PROMPT_VERSION,
+    promptVersion: rawOutcome.promptVersion,
+    postprocessVersion: POSTPROCESS_VERSION,
   };
+}
+
+/** Classifies one posting: the model's answer plus the deterministic rules. */
+export async function classifyJob(
+  provider: LLMProvider,
+  job: PromptJob,
+  options: ClassifyOptions,
+): Promise<ClassifyOutcome> {
+  return finalizeOutcome(await classifyRaw(provider, job, options), job);
 }

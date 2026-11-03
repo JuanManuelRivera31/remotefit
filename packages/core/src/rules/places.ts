@@ -98,3 +98,35 @@ export const LATAM_TERMS: readonly string[] = list(
   la paz, santo domingo, managua, guatemala city, ciudad de guatemala, caribbean, central america, south america,
   centroamerica, sudamerica, latinoamerica, latam, latin america, americas, amer`,
 );
+
+/**
+ * Country names and aliases (normalized, same vocabulary as NON_LATAM_COUNTRIES plus the LATAM countries) -> ISO
+ * 3166-1 alpha-2. Used by the eligibility post-processing to read a country named in a job title.
+ * Entries: "ISO: alias, alias; ISO: ...".
+ */
+const COUNTRY_ISO_SPEC = `
+AR: argentina; BO: bolivia; BR: brazil, brasil; BZ: belize; CL: chile; CO: colombia; CR: costa rica; CU: cuba;
+DO: dominican republic, republica dominicana; EC: ecuador; GT: guatemala; GY: guyana; HN: honduras; HT: haiti;
+MX: mexico; NI: nicaragua; PA: panama; PY: paraguay; PE: peru; SR: suriname; SV: el salvador; UY: uruguay; VE: venezuela;
+US: united states, united states of america, usa, us; GB: united kingdom, uk, great britain, england, scotland, wales, northern ireland;
+IE: ireland; CA: canada; AU: australia; NZ: new zealand; IN: india; CN: china; JP: japan; KR: korea, south korea; TW: taiwan;
+SG: singapore; HK: hong kong; MY: malaysia; ID: indonesia; PH: philippines; TH: thailand; VN: vietnam; PK: pakistan;
+BD: bangladesh; LK: sri lanka; NP: nepal; AE: uae, united arab emirates; SA: saudi arabia; QA: qatar; KW: kuwait;
+BH: bahrain; OM: oman; IL: israel; JO: jordan; LB: lebanon; EG: egypt; TR: turkey, turkiye; DE: germany; FR: france;
+ES: spain; PT: portugal; IT: italy; NL: netherlands; BE: belgium; LU: luxembourg; CH: switzerland; AT: austria;
+SE: sweden; NO: norway; DK: denmark; FI: finland; IS: iceland; PL: poland; CZ: czechia, czech republic; SK: slovakia;
+HU: hungary; RO: romania; BG: bulgaria; HR: croatia; SI: slovenia; RS: serbia; BA: bosnia and herzegovina; GR: greece;
+CY: cyprus; MT: malta; EE: estonia; LV: latvia; LT: lithuania; UA: ukraine; GE: georgia; AM: armenia; KZ: kazakhstan;
+MA: morocco; TN: tunisia; DZ: algeria; NG: nigeria; KE: kenya; GH: ghana; ZA: south africa; ET: ethiopia; UG: uganda;
+TZ: tanzania; SN: senegal
+`;
+
+export const COUNTRY_ISO_BY_NAME: ReadonlyMap<string, string> = new Map(
+  COUNTRY_ISO_SPEC.split(";").flatMap((entry) => {
+    const [iso, names] = entry.split(":");
+    return (names ?? "")
+      .split(",")
+      .map((name) => [normalizeText(name), (iso ?? "").trim()] as const)
+      .filter(([name, code]) => name !== "" && code !== "");
+  }),
+);

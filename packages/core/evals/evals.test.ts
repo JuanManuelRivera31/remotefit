@@ -53,6 +53,7 @@ const row = (
   expectedEvidence: "owner evidence",
   predicted: predicted(p),
   status: "ok",
+  notes: [],
   usage: u,
   attempts: 1,
 });
@@ -130,7 +131,9 @@ describe("formatMarkdownReport", () => {
     date: "2026-11-02",
     split: "dev",
     model: "gemini-3.5-flash-lite",
-    promptVersion: "eligibility-v1",
+    promptVersion: "eligibility-v3",
+    postprocessVersion: "postprocess-v1",
+    labelRevision: "2026-11-03",
     thinkingLevel: "MINIMAL",
     limits: { rpm: 12, rpd: 400, verifiedAt: "2026-11-02" },
     callsMade: 7,
@@ -142,7 +145,9 @@ describe("formatMarkdownReport", () => {
   it("includes the model, prompt version, matrix, precision, recall, tokens, cost and the failures with evidence", () => {
     const report = formatMarkdownReport(metrics, rows, context);
     expect(report).toContain("gemini-3.5-flash-lite");
-    expect(report).toContain("eligibility-v1");
+    expect(report).toContain("eligibility-v3");
+    expect(report).toContain("postprocess-v1");
+    expect(report).toContain("revisión del dueño 2026-11-03");
     expect(report).toContain("Matriz de confusión");
     expect(report).toContain("75.0% (3/4)");
     expect(report).toContain("Salida visible");

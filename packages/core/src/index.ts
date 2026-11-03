@@ -37,8 +37,8 @@ export { equivalentCostUsd, priceFor, PRICING_SOURCE } from "./llm/pricing.js";
 export { effectiveLimits, llmLimitsSchema, parseLimits } from "./llm/limits.js";
 export type { EffectiveLimits, LlmLimitsConfig, ModelLimits } from "./llm/limits.js";
 export { RateLimiter, quotaDay } from "./llm/rate-limiter.js";
-export { ELIGIBILITY_LABELS, EligibilitySchema } from "./eligibility/schema.js";
-export type { Eligibility, EligibilityLabel } from "./eligibility/schema.js";
+export { ELIGIBILITY_LABELS, EligibilitySchema, RawEligibilitySchema } from "./eligibility/schema.js";
+export type { Eligibility, EligibilityLabel, RawEligibility } from "./eligibility/schema.js";
 export { LATAM_COUNTRIES, isApplicable } from "./eligibility/applicable.js";
 export {
   ELIGIBILITY_PROMPT_VERSION,
@@ -46,6 +46,14 @@ export {
   buildUserMessage,
 } from "./eligibility/prompt.js";
 export type { PromptJob } from "./eligibility/prompt.js";
-export { classifyJob, isQuoteInSource } from "./eligibility/classify.js";
-export type { ClassifyOptions, ClassifyOutcome, ClassifyStatus } from "./eligibility/classify.js";
+export { classifyJob, classifyRaw, finalizeOutcome } from "./eligibility/classify.js";
+export type { ClassifyOptions, ClassifyOutcome, RawOutcome } from "./eligibility/classify.js";
+export {
+  POSTPROCESS_VERSION,
+  countriesNamedInTitle,
+  isQuoteInSource,
+  postprocess,
+  resultCacheKey,
+} from "./eligibility/postprocess.js";
+export type { ClassifyStatus, PostprocessOutcome } from "./eligibility/postprocess.js";
 export { MeteredProvider } from "./llm/metered.js";

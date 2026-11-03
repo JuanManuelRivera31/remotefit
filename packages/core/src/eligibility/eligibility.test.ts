@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import { FakeLLMProvider } from "../llm/fake.js";
 import { ProviderError, QuotaExhaustedError, RateLimitError } from "../llm/types.js";
 import { isApplicable, LATAM_COUNTRIES } from "./applicable.js";
-import { classifyJob, isQuoteInSource } from "./classify.js";
+import { classifyJob } from "./classify.js";
+import { isQuoteInSource } from "./postprocess.js";
 import {
   ELIGIBILITY_PROMPT_VERSION,
   ELIGIBILITY_SYSTEM_PROMPT,
@@ -33,6 +34,7 @@ const job = {
   workplaceType: null,
   descriptionText: "We are hiring in Colombia. This role is fully remote.",
 };
+const noCountryTitle = { ...job, title: "Software Engineer II" };
 const options = { model: "gemini-3.5-flash-lite", thinkingLevel: "MINIMAL" as const };
 
 describe("EligibilitySchema", () => {
@@ -123,7 +125,7 @@ describe("isApplicable — reference cases of ADR 0004 (user in Colombia)", () =
 
 describe("prompt", () => {
   it("is versioned and names every label and the evidence rule", () => {
-    expect(ELIGIBILITY_PROMPT_VERSION).toBe("eligibility-v1");
+    expect(ELIGIBILITY_PROMPT_VERSION).toBe("eligibility-v3");
     for (const label of ELIGIBILITY_LABELS) expect(ELIGIBILITY_SYSTEM_PROMPT).toContain(label);
     expect(ELIGIBILITY_SYSTEM_PROMPT).toContain("VERBATIM");
   });
@@ -158,8 +160,16 @@ describe("classifyJob", () => {
   it("returns a valid, evidenced answer as ok with the usage", async () => {
     const fake = new FakeLLMProvider([{ data: valid() }]);
     const outcome = await classifyJob(fake, job, options);
-    expect(outcome).toMatchObject({ status: "ok", attempts: 1, promptVersion: "eligibility-v1" });
+    expect(outcome).toMatchObject({
+      status: "ok",
+      attempts: 1,
+      promptVersion: "eligibility-v3",
+      postprocessVersion: "postprocess-v1",
+    });
     expect(outcome.result.label).toBe("country_specific");
+    // The title names Colombia, so the deterministic rule fixes the country and cites the title.
+    expect(outcome.notes).toEqual(["title_country:CO"]);
+    expect(outcome.result.evidence).toEqual(["Software Engineer II (Colombia)"]);
     expect(outcome.usage.inputTokens).toBe(1000);
     expect(fake.calls[0]).toMatchObject({
       model: "gemini-3.5-flash-lite",
@@ -192,7 +202,7 @@ describe("classifyJob", () => {
       countries: [],
       evidence: ["Open to all of Latin America"],
     });
-    const outcome = await classifyJob(new FakeLLMProvider([{ data: invented }]), job, options);
+    const outcome = await classifyJob(new FakeLLMProvider([{ data: invented }]), noCountryTitle, options);
     expect(outcome.status).toBe("evidence_unverified");
     expect(outcome.result).toMatchObject({ label: "unclear", countries: [], workModel: "remote" });
     expect(isApplicable(outcome.result, "CO")).toBe(false);

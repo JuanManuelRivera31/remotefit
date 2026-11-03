@@ -51,6 +51,9 @@ No hay campo `confidence`: si el modelo duda, la etiqueta es `unclear` (ADR 0005
 - Nunca se infiere país o permiso sin texto que lo respalde. "Remote" sin país y "San Francisco or Remote" son `unclear`, aunque normalmente signifiquen EE. UU.
 - Toda etiqueta lleva evidencia, incluida `unclear`: en ese caso se cita la ubicación o el texto ambiguo.
 - `latam_eligible` y `worldwide` implican `workModel = remote`.
+- Si `workModel` es `hybrid` u `onsite`, la etiqueta es `onsite_or_hybrid`. Vale tanto cuando el cuerpo lo dice explícitamente como cuando el cuerpo calla y el metadato del ATS (`workplaceType`) dice `hybrid` u `onsite` (decisión del dueño, 2026-11-03).
+- "Americas", "North and South America" o "AMER" cuentan como región (`latam_eligible`) si nada más en el cuerpo restringe el puesto (D5). Una lista de países no es una región: es `country_specific` con esos países.
+- Un país nombrado en el **título** manda sobre una lista larga de ubicaciones (suele agrupar vacantes hermanas): `country_specific` con ese país, salvo que el título diga también LATAM, Americas o global. Se aplica con código determinista, no con el prompt (ver sección 7).
 
 ### 4. "Aplicable" se calcula por país del usuario
 
@@ -91,6 +94,7 @@ Se mide sobre la cascada completa (reglas + LLM), comparando `isApplicable(predi
 - **Primer hito:** 150 casos, sembrados desde `data/seed-career-ops/` e incluyendo la tabla de casos difíciles del docs/07. Se reparten 50 en desarrollo y 100 en prueba.
 - **Conjunto de prueba fijo:** se congela al tener **≥ 60 aplicables para Colombia**. Hasta entonces solo se le agregan casos y todo informe sale marcado **"provisional"**.
 - **Congelado el 2026-11-02 (`testSet.status = "frozen"` en `cases.json`):** la prueba tenía 59 aplicables y la ingesta de las 13 empresas no aportó candidatos nuevos con Colombia/LATAM. Por decisión del dueño se movieron de desarrollo a prueba 2 casos aplicables sin hermanas (`greenhouse:clara:5257213007` y `lever:caseware:e723f716-7249-4567-8d44-46e273599ee5`; empresas distintas, ninguna pasa de 10 candidatos en prueba; campos `movedFrom`/`movedAt`). Se hizo **antes de cualquier evaluación o ajuste de prompt**, así que ningún resultado sobre desarrollo pudo influir en la elección y la prueba no se contamina. Resultado: **61 aplicables en prueba (112 casos) y 28 en desarrollo (48 casos)**. Desde ahora no se agregan ni se mueven casos en prueba; los informes ya no son "provisionales".
+- **Revisión de etiquetas de desarrollo, 2026-11-03 (decisión del dueño, solo el conjunto de desarrollo):** se aplicaron las dos reglas anteriores sobre `workModel` y la D5. Cambiaron 7 de 48 casos, con `relabeledFrom` y `relabelRule` en `cases.json` (`labelStatus = "owner_rules_applied"`): Clara (`5134418007`), Anthropic (`5238637008`), Caseware (`d59a9355…`), ClayLabs (`046cb127…`) y Pigment (`dad6777e…`) pasaron a `onsite_or_hybrid` / `hybrid` (los dos últimos por el metadato del ATS, porque el cuerpo calla), y Canals (`195c6203…`) pasó a `latam_eligible` / `remote` por la D5. Un séptimo caso, SumUp (`7475989002`, "office-first setup" en el cuerpo), se encontró después de la primera corrida de v2 y se corrigió con la misma regla (`onsite_or_hybrid` / `onsite`). Este último es el caso más débil: la frase "distributed across North and South America" describe al equipo de la empresa y el campo de ubicación lista ciudades de EE. UU.; se dejó así por instrucción del dueño y es fácil de revertir. **No se tocó el conjunto de prueba congelado.** Su exactitud de 6 clases puede tener el mismo sesgo (ofertas híbridas con `workModel = unknown` y etiqueta `country_specific`); la métrica principal (aplicabilidad para CO) no se afecta, porque `workModel = unknown` ya no cuenta como aplicable y `hybrid` tampoco.
 - **Desarrollo frente a prueba:** los prompts se iteran y los fallos se analizan solo sobre desarrollo. El informe sobre prueba se corre únicamente para aceptar una versión candidata de prompt o modelo, y sus fallos no se usan para ajustar nada.
 - **Mezcla:** la precisión depende de cuántos negativos haya. Los negativos incluyen casos difíciles, no solo obvios, y el informe declara la composición del conjunto.
 
@@ -99,6 +103,10 @@ El seed no alcanza por sí solo: de las 75 ofertas que pasaron el filtro de care
 ### 7. Salida corta
 
 La salida del clasificador es un JSON con meta de **menos de 300 tokens**, nunca un informe. El informe de evaluación reporta el promedio y el máximo de tokens de salida.
+
+### 8. Post-proceso determinista (S6, 2026-11-03)
+
+Después del modelo se aplican reglas de código, versionadas con `POSTPROCESS_VERSION` (`postprocess-v1`), porque son más fiables que pedírselas al prompt: (1) un país nombrado en el título manda (sección 3); (2) una cita de más de 160 caracteres se recorta a un fragmento literal del texto en vez de degradar la oferta a `unclear`, y si no hay fragmento literal se descarta; (3) una etiqueta aplicable cuya cita no aparece en la oferta pasa a `unclear`. La clave de un resultado guardado es `content_hash + prompt_version + model + postprocess_version`; la **respuesta cruda** del modelo se cachea solo por `content_hash + prompt_version + model`, así que cambiar una regla recalcula sin gastar cuota. Los informes muestran la precisión y el recall del modelo solo y con el post-proceso.
 
 ## Casos de referencia
 
