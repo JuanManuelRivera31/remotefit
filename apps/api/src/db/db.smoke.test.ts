@@ -1,17 +1,16 @@
 import { sql } from "drizzle-orm";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { createDb } from "./client.js";
-import { loadEnv } from "./env.js";
+import type { createDb } from "./client.js";
+import { getTestDatabaseUrl, openTestDatabase } from "./test-db.js";
 
-loadEnv();
-const hasDatabase = Boolean(process.env["DATABASE_URL"]);
+const testDatabaseUrl = getTestDatabaseUrl();
 
-// Needs a migrated database (npm run db:migrate). Skipped when DATABASE_URL is not set.
-describe.skipIf(!hasDatabase)("database smoke test", () => {
+// Needs a migrated database whose name ends in _test. Skipped when TEST_DATABASE_URL is not set.
+describe.skipIf(!testDatabaseUrl)("database smoke test", () => {
   let connection: ReturnType<typeof createDb>;
 
-  beforeAll(() => {
-    connection = createDb();
+  beforeAll(async () => {
+    connection = await openTestDatabase(testDatabaseUrl ?? "");
   });
   afterAll(async () => {
     await connection.pool.end();

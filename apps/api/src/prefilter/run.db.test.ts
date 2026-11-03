@@ -1,13 +1,12 @@
 import { eq, sql } from "drizzle-orm";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { PREFILTER_VERSION } from "@remotefit/core";
-import { createDb } from "../db/client.js";
-import { loadEnv } from "../db/env.js";
+import type { createDb } from "../db/client.js";
+import { getTestDatabaseUrl, openTestDatabase } from "../db/test-db.js";
 import { companies, jobs } from "../db/schema.js";
 import { runPrefilter } from "./run.js";
 
-loadEnv();
-const hasDatabase = Boolean(process.env["DATABASE_URL"]);
+const testDatabaseUrl = getTestDatabaseUrl();
 
 interface SeedJob {
   externalId: string;
@@ -19,14 +18,14 @@ interface SeedJob {
   descriptionText?: string;
 }
 
-// Needs a migrated database (npm run db:migrate). Skipped when DATABASE_URL is not set.
-// WARNING: truncates jobs and companies, so never point DATABASE_URL at a database holding real ingested data.
-describe.skipIf(!hasDatabase)("runPrefilter against PostgreSQL", () => {
+// Needs a migrated database whose name ends in _test (it truncates jobs and companies).
+// Skipped when TEST_DATABASE_URL is not set.
+describe.skipIf(!testDatabaseUrl)("runPrefilter against PostgreSQL", () => {
   let connection: ReturnType<typeof createDb>;
   let companyId = 0;
 
-  beforeAll(() => {
-    connection = createDb();
+  beforeAll(async () => {
+    connection = await openTestDatabase(testDatabaseUrl ?? "");
   });
   beforeEach(async () => {
     await connection.db.execute(

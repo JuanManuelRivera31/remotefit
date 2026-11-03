@@ -7,13 +7,12 @@ import {
   type FetchJobsResult,
   type NormalizedJob,
 } from "@remotefit/core";
-import { createDb } from "../db/client.js";
-import { loadEnv } from "../db/env.js";
+import type { createDb } from "../db/client.js";
+import { getTestDatabaseUrl, openTestDatabase } from "../db/test-db.js";
 import { companies, jobs } from "../db/schema.js";
 import { runIngest, type CompanyEntry } from "./run.js";
 
-loadEnv();
-const hasDatabase = Boolean(process.env["DATABASE_URL"]);
+const testDatabaseUrl = getTestDatabaseUrl();
 
 interface FakeRaw {
   id: string;
@@ -57,12 +56,12 @@ const a: FakeRaw = { id: "a", title: "Solutions Engineer", requisitionId: "481" 
 const b: FakeRaw = { id: "b", title: "Solutions Engineer", requisitionId: "481" };
 const c: FakeRaw = { id: "c", title: "Solutions Engineer", requisitionId: "482" };
 
-// Needs a migrated database (npm run db:migrate). Skipped when DATABASE_URL is not set.
-describe.skipIf(!hasDatabase)("runIngest against PostgreSQL", () => {
+// Needs a migrated database whose name ends in _test. Skipped when TEST_DATABASE_URL is not set.
+describe.skipIf(!testDatabaseUrl)("runIngest against PostgreSQL", () => {
   let connection: ReturnType<typeof createDb>;
 
-  beforeAll(() => {
-    connection = createDb();
+  beforeAll(async () => {
+    connection = await openTestDatabase(testDatabaseUrl ?? "");
   });
   beforeEach(async () => {
     await connection.db.execute(
