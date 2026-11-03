@@ -216,6 +216,8 @@ async function main(): Promise<void> {
       expectedEvidence: item.evidence,
       usage: final.usage,
       attempts: final.attempts,
+      board: item.board,
+      ats: item.ats,
     };
     rows.push({ ...base, predicted: final.result, status: final.status, notes: final.notes });
     // Ablation: the model's own answer, as if no deterministic rule existed.
@@ -241,6 +243,7 @@ async function main(): Promise<void> {
     fromCache: cases.length - pending.length,
     showCases: split === "dev",
     listFalsePositives: split === "test",
+    acceptance: split === "test",
     withoutPostprocess: computeMetrics(rawRows, "CO"),
   });
   mkdirSync(REPORTS_URL, { recursive: true });

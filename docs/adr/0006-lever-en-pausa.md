@@ -1,28 +1,44 @@
-# ADR 0006 — Lever en pausa: `ai-train=no` frente a la capa gratuita de Gemini
+# ADR 0006 — Lever: pausa del 2026-11-03 y levantamiento del 2026-11-04
 
-- **Estado:** Aceptado (pausa; revisable)
-- **Fecha:** 2026-11-03
+- **Estado:** Aceptado. La pausa se **levantó** el 2026-11-04; se revisa si Lever cambia sus términos o su API (ver "Condiciones de revisión").
+- **Fecha:** 2026-11-03 (pausa) · 2026-11-04 (levantamiento)
 - **Decisión de:** el dueño
 - **Relacionado con:** ADR 0002 (fuentes), ADR 0003/0005 (solo capa gratuita de Gemini)
 
 ## Contexto
 
-RemoteFit clasifica el texto público de las ofertas con la capa gratuita de la API de Gemini, cuyos términos permiten usar el contenido enviado para mejorar los modelos (es decir, para entrenar). Verificado con `curl` el 2026-11-03:
+RemoteFit clasifica el texto público de las ofertas con la capa gratuita de la API de Gemini, cuyos términos permiten usar el contenido enviado para mejorar los modelos. Verificado con `curl` el 2026-11-03:
 
-- `https://jobs.lever.co/robots.txt` (páginas públicas de empleo de Lever) declara `Content-Signal: search=yes,ai-train=no,use=reference`.
-- `https://api.lever.co/robots.txt` (la API de postings que consumimos) dice solo `User-agent: *` / `Allow: /`, sin `Content-Signal`. El README de la API de Lever dice que los puestos "may be scraped by third parties".
+- `https://jobs.lever.co/robots.txt` (las páginas públicas de empleo de Lever) declara `Content-Signal: search=yes,ai-train=no,use=reference`.
+- `https://api.lever.co/robots.txt` (la API de postings que consumimos) dice solo `User-agent: *` / `Allow: /`, sin `Content-Signal`.
 - Greenhouse (`boards-api.greenhouse.io`: solo `Disallow: /embed/`) y Ashby (`jobs.ashbyhq.com`: solo `/meeting/`, `/b/`, `/api/`; `api.ashbyhq.com/robots.txt` responde 401) no declaran `ai-train`.
 
-El `Content-Signal` es una preferencia, no un contrato, y la API de Lever no lo repite. Aun así, enviar a una capa que puede entrenar con el contenido ofertas cuyo operador pidió `ai-train=no` va contra el espíritu de esa señal.
+El 2026-11-03 el dueño pausó las empresas de Lever por prudencia: el `Content-Signal` de `jobs.lever.co` pide no entrenar, y la capa gratuita de Gemini puede usar el contenido para entrenar.
 
-## Decisión
+## Decisión (2026-11-04): se levanta la pausa
 
-1. **No se incorporan empresas nuevas que publiquen en Lever** mientras el clasificador dependa de la capa gratuita de Gemini. Quedan en pausa las candidatas Yuno, Coderio y Bluelight Consulting (y las de reserva TalentusGlobal y Jeeves).
-2. **No se quitan todavía** las empresas de Lever que ya están en `data/companies.json` ni sus casos del conjunto de evaluación: es una decisión pendiente del dueño (ver "Seguimiento").
-3. Se revisa si cambia alguna de estas condiciones: (a) el clasificador pasa a un proveedor que no entrene con el contenido (requiere otro ADR, porque hoy está prohibido salir de la capa gratuita de Gemini); (b) Lever declara permiso explícito en la API; (c) el dueño decide que la señal de `jobs.lever.co` no aplica a la API.
+Razones del dueño, verificadas:
+
+1. **Usamos `api.lever.co`, que no declara `ai-train=no`.** La señal está en el sitio de empleo (`jobs.lever.co`), no en la API que consumimos.
+2. **Solo clasificamos; no entrenamos.** El `Content-Signal` regula el entrenamiento de modelos (`ai-train`); el uso para inferencia no está declarado como restringido.
+3. **Son ofertas públicas.** La documentación de la API de postings de Lever (README de `github.com/lever/postings-api`, revisado el 2026-11-04) dice: "all job postings in the `published` state are publicly viewable. These jobs may be scraped by third parties". **No restringe el uso por terceros**; su único límite concreto es el de 2 solicitudes POST por segundo para *crear postulaciones*, que no usamos (solo hacemos GET, con pausa de 1 s entre boards y `Crawl-delay: 1` respetado). No hay archivo de licencia en ese repositorio.
+
+Consecuencias de la decisión:
+
+- Las empresas de Lever vuelven a tratarse como cualquier otra fuente: Deuna, CI&T, Oowlish y Caseware siguen activas, y los **26 casos de Lever se quedan en test-v2** (CI&T 19, Caseware 4, Deuna 3). Las candidatas Yuno, Coderio y Bluelight Consulting (y TalentusGlobal y Jeeves, en reserva) vuelven a la cola de revisión de términos de `docs/propuesta-empresas-2026-11.md`; no se agregan al directorio sin esa revisión.
+- Se sigue enviando al LLM **solo texto público de la oferta**, nunca datos personales (regla del proyecto).
+
+## Condiciones de revisión
+
+Este ADR se reabre si ocurre cualquiera de estas:
+
+- Lever cambia sus términos de uso, la documentación de la API de postings o su `robots.txt` (por ejemplo, un `Content-Signal` o un `Disallow` en `api.lever.co`, o una cláusula contra el uso por terceros).
+- Lever, o una empresa cliente, pide que se deje de usar su contenido.
+- El clasificador cambia de proveedor o de capa (hoy está prohibido salir de la capa gratuita de Gemini sin otro ADR).
+
+Revisión periódica: al incorporar una empresa nueva de Lever y, como mínimo, cada trimestre, volver a leer el `robots.txt` de `api.lever.co` y el README de la API.
 
 ## Consecuencias
 
-- **Positivas:** coherencia entre lo que declaran los operadores y lo que hacemos con su texto; sin riesgo de reputación en un repo público.
-- **Negativas:** se pierde cobertura de empresas nearshore que usan Lever.
-- **Seguimiento (existente):** hoy el directorio activo tiene 4 empresas de Lever: Deuna, CI&T, Oowlish y Caseware (Koombea, inactiva, también figura como Lever). Sus ofertas ya se enviaron a Gemini en las evaluaciones: el conjunto de evaluación tiene **68 casos de Lever de 317** (42 en desarrollo, 26 en test-v2: CI&T 19, Caseware 4, Deuna 3), incluidos Pigment y Palantir. Quitarlas del directorio y del eval cambiaría las métricas y es decisión del dueño.
+- **Positivas:** se conserva la cobertura de empresas nearshore que publican en Lever y no cambian las métricas del eval.
+- **Negativas:** persiste el riesgo, asumido por el dueño, de que alguna empresa de Lever prefiera que su texto no pase por una capa que puede entrenar; se mitiga con la condición de revisión de arriba.

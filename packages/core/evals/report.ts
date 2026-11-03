@@ -1,4 +1,5 @@
 import { ELIGIBILITY_LABELS } from "../src/index.js";
+import { formatAcceptanceSections } from "./acceptance.js";
 import { applicableFor, type EvalRow, type Metrics, type TokenStats } from "./metrics.js";
 
 export interface ReportContext {
@@ -18,6 +19,8 @@ export interface ReportContext {
   showCases: boolean;
   /** For the owner-approved run on the frozen test split: list ONLY the false positives, with the model's evidence. */
   listFalsePositives?: boolean;
+  /** Owner-approved acceptance run on the frozen test split: criterion verdict, breakdown, false positives AND negatives. */
+  acceptance?: boolean;
   /** Metrics of the raw model answers, without the deterministic post-processing (ablation). */
   withoutPostprocess?: Metrics;
 }
@@ -137,6 +140,10 @@ export function formatMarkdownReport(
 
   if (!context.showCases) {
     lines.push("## Errores", "");
+    if (context.acceptance) {
+      lines.push(...formatAcceptanceSections(rows, metrics.country));
+      return lines.join("\n");
+    }
     if (!context.listFalsePositives) {
       lines.push("Conjunto de prueba: no se listan casos (ADR 0004).", "");
       return lines.join("\n");

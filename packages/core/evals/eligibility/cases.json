@@ -164,7 +164,9 @@
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "relabelRevertedAt": "2026-11-03",
-      "relabelRevertedReason": "Owner decision: \"distributed across North and South America\" describes the company team, not who may apply, and the location field lists US cities. Precision first; the D5 relabel was reverted."
+      "relabelRevertedReason": "Owner decision: \"distributed across North and South America\" describes the company team, not who may apply, and the location field lists US cities. Precision first; the D5 relabel was reverted.",
+      "evidence": "LOCATION: Lehi | Austin | New York | San Francisco | Omaha | Denver | Seattle | Chicago; ATS_WORKPLACE_TYPE: remote",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:claylabs:046cb127-d5fc-444f-a2a9-fb4029d6a503",
@@ -229,12 +231,34 @@
         "PL",
         "NL"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "This role is remote and can be executed globally.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "GB",
+          "IE",
+          "ES",
+          "US",
+          "BG",
+          "DE",
+          "PL",
+          "NL"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "workModel unknown -> remote: the body says the role is remote. Label stays country_specific by rule 5 (global phrase vs a list of countries); not applicable for CO either way.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:supabase:dcf09dfe-55bc-44ba-b5db-1a2de7f33216",
@@ -254,11 +278,12 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "We are primarily looking for someone in North or South America timezones for this shift.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:workos:ffba59a1-cead-4231-bd2d-a24649c6a3b9",
@@ -281,11 +306,12 @@
         "CA"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "LOCATION: United States & Canada; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:amplemarket:4066888101",
@@ -301,15 +327,28 @@
       "proposedLabel": "latam_eligible",
       "proposedCountries": [],
       "proposedWorkModel": "unknown",
-      "label": "latam_eligible",
+      "label": "unclear",
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "You are based somewhere between the GMT-3 and GMT+2 timezones",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "latam_eligible",
+        "workModel": "remote",
+        "countries": [],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Remote EMEA/LATAM but body requires GMT-3 to GMT+2, which excludes Colombia (GMT-5) and most of LATAM; conflict between readings, rule 5 picks the non-applicable one. Spontaneous application, not an active opening.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:amplemarket:4066899101",
@@ -329,11 +368,12 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Remote, EMEA/LATAM/North America | Remote, EMEA | Remote, LATAM",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:amplemarket:4066973101",
@@ -353,11 +393,12 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Remote, EMEA/LATAM | Remote, EMEA | Remote, LATAM",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:anthropic:5238637008",
@@ -491,11 +532,12 @@
         "MX"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Sales Development Representative (AI & Automation) - Bogotá (Hybrid)",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5257213007",
@@ -515,19 +557,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "onsite_or_hybrid",
+      "label": "country_specific",
       "labelStatus": "owner_rules_applied",
       "countries": [
         "CO",
         "MX",
         "BR"
       ],
-      "workModel": "hybrid",
-      "evidence": "Title \"Remote First\" vs \"Clara is committed to hybrid work\"; the role has assigned cities (Bogota, Mexico City, Sao Paulo) so the conservative rule gives onsite_or_hybrid.",
+      "workModel": "remote",
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": true,
+      "workModelConflict": false,
       "movedFrom": "dev",
       "movedAt": "2026-11-02",
       "retiredFrom": "test-v1",
@@ -544,8 +586,26 @@
         "evidence": null,
         "labelStatus": "labeled"
       },
-      "relabelRule": "rule5_remote_first_vs_hybrid_city",
-      "relabeledAt": "2026-11-03"
+      "relabelRule": "rule6_remote_first_periodic_in_person",
+      "relabeledAt": "2026-11-04",
+      "relabelHistory": [
+        {
+          "label": "onsite_or_hybrid",
+          "workModel": "hybrid",
+          "countries": [
+            "CO",
+            "MX",
+            "BR"
+          ],
+          "workModelConflict": true,
+          "evidence": "Title \"Remote First\" vs \"Clara is committed to hybrid work\"; the role has assigned cities (Bogota, Mexico City, Sao Paulo) so the conservative rule gives onsite_or_hybrid.",
+          "travelRequirement": null,
+          "labelStatus": "owner_rules_applied",
+          "relabelRule": "rule5_remote_first_vs_hybrid_city",
+          "relabeledAt": "2026-11-03"
+        }
+      ],
+      "travelRequirement": "In-person ramp-up, team moments, events and customer visits through the year"
     },
     {
       "id": "greenhouse:sezzle:6037486003",
@@ -615,11 +675,12 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Software Engineer II (LATAM)",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:6503000003",
@@ -641,11 +702,12 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Software Engineer II (Colombia)",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7712191003",
@@ -691,11 +753,12 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Latin America | Latin America [Remote]",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7984978003",
@@ -755,11 +818,12 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Compensation : The salary for the Product Intern is $2.800.000 COP monthly.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:8039614003",
@@ -810,11 +874,12 @@
         "LT"
       ],
       "workModel": "unknown",
-      "evidence": null,
+      "evidence": "Sofia, Bulgaria | Berlin | Cologne | London | Sofia | Vilnius",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sumup:7475989002",
@@ -878,11 +943,12 @@
         "LT"
       ],
       "workModel": "onsite",
-      "evidence": null,
+      "evidence": "from our modern Sofia office. This involves an office-first setup",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:turing:5819904004",
@@ -907,11 +973,12 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This is a remote role and can be performed anywhere in Brazil/Colombia",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:turing:5819908004",
@@ -935,11 +1002,12 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This is a remote role and can be performed anywhere in Colombia.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:turing:6209679004",
@@ -966,11 +1034,12 @@
         "AR"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Location: Remote, Brazil, Colombia, Argentina",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:turing:6216854004",
@@ -996,11 +1065,12 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This is a full-time remote role based in Brazil or Colombia.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:vercel:6181759004",
@@ -1022,11 +1092,12 @@
         "US"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "This is a hybrid role based in San Francisco, in the office on Monday, Tuesday, and Friday.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:wizeline:7264950",
@@ -1326,12 +1397,27 @@
       "countries": [
         "MX"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "LOCATION: Ciudad de México, Mexico; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "workModel unknown to remote: body does not say hybrid or onsite and lists Remote work from anywhere as a benefit; ATS metadata is remote. Label stays country_specific MX (location only; team distributed in LATAM describes the company, pattern 1). Not applicable for CO.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:17dc9523-7f32-47b5-8d41-d27bb3d99032",
@@ -1364,11 +1450,13 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: Guatemala | San Salvador | Costa Rica | Montevideo, Montevideo, Uruguay; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:240424ff-5a04-44df-b9bf-5530bccf7727",
@@ -1391,12 +1479,27 @@
       "countries": [
         "BR"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "LOCATION: Brasília, Federal District, Brazil | Greater Porto Alegre | Greater Curitiba; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "workModel unknown -> remote: ATS metadata remote, company text offers remote work and sibling postings are remote. Label unchanged (Brazil only).",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:96cd75f8-f887-4c7e-8a6c-ddb33d7d9cda",
@@ -1424,11 +1527,13 @@
         "MX"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: São Paulo | Buenos Aires Province | Bogota,D.C., Capital District | Mexico City; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:9c0d5139-e494-41c2-891a-d63102d57a97",
@@ -1456,11 +1561,13 @@
         "MX"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: Brasília, Federal District, Brazil | Buenos Aires Province | Bogota,D.C., Capital District; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:d56664b8-6091-4614-91d6-0f59b276c24d",
@@ -1488,11 +1595,13 @@
         "MX"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: Buenos Aires Province | Bogota,D.C., Capital District | Mexico City; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:f57a8278-e116-4259-9062-c2c20d3a2000",
@@ -1520,11 +1629,13 @@
         "MX"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "Brasília, Federal District, Brazil | São Paulo | Buenos Aires Province | Bogota,D.C., Capital District | Mexico City",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": false
+      "workModelConflict": false,
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:pigment:dad6777e-77e7-4885-b8cc-751ad141df6a",
@@ -1810,14 +1921,29 @@
       "countries": [
         "MX"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "Senior Software Engineer - Mexico",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Label and country OK (title). workModel unknown -> remote: body silent on the role, ATS metadata says remote and company is remote-first.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:canals:2e9f600f-1344-4bab-b0e1-191a6af5465f",
@@ -1839,13 +1965,15 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidence": "Senior Software Engineer - Colombia",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:canals:441bb087-c46a-4e3b-a695-bbaca433a84e",
@@ -1869,13 +1997,15 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidence": "LOCATION: Bogota | New York | Sao Paulo | San Francisco | Denver; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:canals:d45d8f01-2ba1-4cca-af69-9af3d30c8861",
@@ -1899,13 +2029,15 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidence": "Comfort working in a fast-moving, fully remote environment with high ownership",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:canals:d4b698c6-95f6-4d91-913e-54d0cd765c82",
@@ -1927,13 +2059,14 @@
         "US"
       ],
       "workModel": "unknown",
-      "evidence": null,
+      "evidence": "LOCATION: Lehi | Austin | New York | San Francisco | Omaha | Denver | Seattle | Chicago; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:canals:f5be2674-0d4b-406d-bc29-be5e657b8ac5",
@@ -1961,13 +2094,15 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidence": "Colombia | Argentina | Brazil",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We're remote-first, flexible, and distributed across North and South America.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:decagon:16529089-a048-4bc3-8456-3f197135e00b",
@@ -2030,14 +2165,29 @@
       "countries": [
         "BR"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "This role is remote, so it can be executed from anywhere in Brazil.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "workModel unknown to remote: the body says the role is remote (and ATS metadata is remote). Label unchanged: restricted to Brazil.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:elevenlabs:10e6475e-67ef-4621-8718-7b087c354651",
@@ -2059,13 +2209,14 @@
         "US"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "it can be executed from anywhere in Europe and the US East Coast",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:elevenlabs:2ae519e9-1068-423b-8e07-dfdebbdca7b4",
@@ -2089,13 +2240,15 @@
         "MX"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This role is remote-first, so it can be executed from anywhere in Mexico, with a preference of Mexico City.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "regular travel for customer onsite"
     },
     {
       "id": "ashby:elevenlabs:6e1b66a8-8d2e-43b0-9076-9748b84bcfab",
@@ -2145,13 +2298,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "it can be executed from anywhere in the United States",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:elevenlabs:c340cedd-6453-4d48-a580-359c1d7d9d49",
@@ -2177,13 +2331,14 @@
         "CL"
       ],
       "workModel": "unknown",
-      "evidence": null,
+      "evidence": "LOCATION: Argentina | Chile; TITLE: B2B Marketing - LATAM Southern Cone",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:elevenlabs:c89e8bf6-6d4c-43bd-bd2a-661ae73c82bf",
@@ -2207,13 +2362,15 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This role is remote-first, so it can be executed from anywhere in Colombia, with a preference of Bogota.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "regular travel for customer onsite"
     },
     {
       "id": "ashby:elevenlabs:ec04799b-6567-4032-8d6c-3c27261618e1",
@@ -2231,19 +2388,33 @@
         "CO"
       ],
       "proposedWorkModel": "unknown",
-      "label": "country_specific",
+      "label": "unclear",
       "labelStatus": "labeled",
-      "countries": [
-        "CO"
-      ],
+      "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This role is remote but the successful candidate should be based in Brazil.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "remote",
+        "countries": [
+          "CO"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Contradiction: title and Location section say anywhere in Colombia, but the body says the candidate should be based in Brazil (preferably Sao Paulo) and requires Portuguese. Rule 5: the non-applicable reading wins; unclear since the text supports two countries.",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "regular travel for customer onsites"
     },
     {
       "id": "ashby:langchain:f7de4819-e7aa-4dfb-9acd-8b81ad8caf2c",
@@ -2459,13 +2630,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "This role is fully remote-based in Americas or European time zones",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "team off-sites, conferences, meetups"
     },
     {
       "id": "ashby:runpod:b64a3935-931a-4b7f-9899-7ebe152164c5",
@@ -2485,13 +2658,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "We welcome every qualified candidate eligible to work in the United States",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:sierra:fd5df98a-e2c8-4d47-a803-daee5cccb36f",
@@ -2551,13 +2725,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "LOCATION: Remote, AMER; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "ashby:wayve:6e64fd52-6f14-4d73-8d8a-0a31d7ad1f31",
@@ -2617,13 +2792,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Remote, EMEA/LATAM/North America | Remote, EMEA | Remote, LATAM",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:amplemarket:4488062101",
@@ -2643,13 +2819,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Remote, EMEA/LATAM | Remote, EMEA | Remote, LATAM | Remote, USA",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:amplemarket:4782681101",
@@ -2669,13 +2846,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Remote, EMEA/LATAM/North America | Remote, EMEA | Remote, Europe | Remote, LATAM | Remote, USA",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:3159992",
@@ -2695,13 +2873,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Home based - Worldwide",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "2 to 4 weeks global travel for internal and external events"
     },
     {
       "id": "greenhouse:canonical:3275433",
@@ -2721,13 +2901,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "These are fully remote roles, open to candidates across the globe.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "global travel 2 to 4 weeks for internal and external events"
     },
     {
       "id": "greenhouse:canonical:3572118",
@@ -2747,13 +2929,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Home based - Worldwide | Home Based - Americas",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "up to 40% of the time"
     },
     {
       "id": "greenhouse:canonical:3752633",
@@ -2773,13 +2957,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Home based - Worldwide | Home Based - Worldwide",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "global travel once or twice a year for up to 2 weeks for events"
     },
     {
       "id": "greenhouse:canonical:3798310",
@@ -2799,13 +2985,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Location: These are fully remote roles, open to candidates across the globe.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "twice a year for up to two weeks for events"
     },
     {
       "id": "greenhouse:canonical:4536726",
@@ -2824,17 +3012,32 @@
       "label": "onsite_or_hybrid",
       "labelStatus": "labeled",
       "countries": [
-        "TW",
-        "CA"
+        "TW"
       ],
       "workModel": "onsite",
-      "evidence": null,
+      "evidence": "This is an office based role.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "onsite",
+        "countries": [
+          "TW",
+          "CA"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Label right; countries should be TW only: title says Taipei and body says Xizhi District; Toronto comes from a sibling location.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:4717512",
@@ -2854,13 +3057,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Home based - Worldwide | Home Based - Worldwide",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:5150422",
@@ -2963,13 +3167,15 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Location: Worldwide, home based, except in locations where we have an office, such as London, Taipei and Beijing",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "up to four times a year for company events up to two weeks"
     },
     {
       "id": "greenhouse:canonical:5906570",
@@ -2991,13 +3197,14 @@
         "JP"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "日本語および英語での優れたコミュニケーション能力",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:6010955",
@@ -3044,14 +3251,29 @@
       "countries": [
         "CA"
       ],
-      "workModel": "onsite",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "#LI-hybrid",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "onsite",
+        "countries": [
+          "CA"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Label unchanged; workModel hybrid per body tag #LI-hybrid (not onsite); still not applicable.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:6177794",
@@ -3072,14 +3294,29 @@
       "countries": [
         "CA"
       ],
-      "workModel": "onsite",
-      "evidence": null,
+      "workModel": "hybrid",
+      "evidence": "#LI-hybrid",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "onsite",
+        "countries": [
+          "CA"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Label unchanged; workModel hybrid per body tag #LI-hybrid (not onsite); still not applicable.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:7267884",
@@ -3099,13 +3336,16 @@
       "labelStatus": "owner_reviewed",
       "countries": [],
       "workModel": "remote",
-      "evidence": "hiring strong regional sales team managers in Europe, Middle East, India, Asia, ANZ, Africa, Latin America, Central America and North America",
+      "evidence": "Location: We are expanding our sales organisation globally and have open sales team manager roles in every region.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "hiring strong regional sales team managers in Europe, Middle East, India, Asia, ANZ, Africa, Latin America, Central America and North America",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "internationally for company events twice a year"
     },
     {
       "id": "greenhouse:celonis:8002490003",
@@ -3165,19 +3405,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "onsite_or_hybrid",
+      "label": "country_specific",
       "labelStatus": "owner_rules_applied",
       "countries": [
         "CO",
         "MX",
         "BR"
       ],
-      "workModel": "hybrid",
-      "evidence": "\"remote-first role\" vs company \"committed to hybrid work\"; the role has an assigned city (Mexico City) so the conservative rule gives onsite_or_hybrid.",
+      "workModel": "remote",
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": true,
+      "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "relabeledFrom": {
@@ -3192,8 +3432,26 @@
         "evidence": "This is a remote-first role: you'll work from home day to day.",
         "labelStatus": "owner_reviewed"
       },
-      "relabelRule": "rule5_remote_first_vs_hybrid_city",
-      "relabeledAt": "2026-11-03"
+      "relabelRule": "rule6_remote_first_periodic_in_person",
+      "relabeledAt": "2026-11-04",
+      "relabelHistory": [
+        {
+          "label": "onsite_or_hybrid",
+          "workModel": "hybrid",
+          "countries": [
+            "CO",
+            "MX",
+            "BR"
+          ],
+          "workModelConflict": true,
+          "evidence": "\"remote-first role\" vs company \"committed to hybrid work\"; the role has an assigned city (Mexico City) so the conservative rule gives onsite_or_hybrid.",
+          "travelRequirement": null,
+          "labelStatus": "owner_rules_applied",
+          "relabelRule": "rule5_remote_first_vs_hybrid_city",
+          "relabeledAt": "2026-11-03"
+        }
+      ],
+      "travelRequirement": "In-person ramp-up, team moments, events and customer visits through the year"
     },
     {
       "id": "greenhouse:clara:5204918007",
@@ -3213,19 +3471,19 @@
         "BR"
       ],
       "proposedWorkModel": "unknown",
-      "label": "onsite_or_hybrid",
+      "label": "country_specific",
       "labelStatus": "owner_rules_applied",
       "countries": [
         "CO",
         "MX",
         "BR"
       ],
-      "workModel": "hybrid",
-      "evidence": "\"remote-first role\" vs \"Clara is committed to hybrid work\"; the role has an assigned city (Sao Paulo) so the conservative rule gives onsite_or_hybrid.",
+      "workModel": "remote",
+      "evidence": "This is a remote-first role: you'll work from home day to day.",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
-      "workModelConflict": true,
+      "workModelConflict": false,
       "retiredFrom": "test-v1",
       "movedToDevAt": "2026-11-03",
       "relabeledFrom": {
@@ -3240,8 +3498,26 @@
         "evidence": "This is a remote-first role: you'll work from home day to day.",
         "labelStatus": "owner_reviewed"
       },
-      "relabelRule": "rule5_remote_first_vs_hybrid_city",
-      "relabeledAt": "2026-11-03"
+      "relabelRule": "rule6_remote_first_periodic_in_person",
+      "relabeledAt": "2026-11-04",
+      "relabelHistory": [
+        {
+          "label": "onsite_or_hybrid",
+          "workModel": "hybrid",
+          "countries": [
+            "CO",
+            "MX",
+            "BR"
+          ],
+          "workModelConflict": true,
+          "evidence": "\"remote-first role\" vs \"Clara is committed to hybrid work\"; the role has an assigned city (Sao Paulo) so the conservative rule gives onsite_or_hybrid.",
+          "travelRequirement": null,
+          "labelStatus": "owner_rules_applied",
+          "relabelRule": "rule5_remote_first_vs_hybrid_city",
+          "relabeledAt": "2026-11-03"
+        }
+      ],
+      "travelRequirement": "In-person ramp-up, team moments, events and customer visits through the year"
     },
     {
       "id": "greenhouse:clara:5205085007",
@@ -3269,13 +3545,14 @@
         "BR"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Data Analyst (Analista de Datos) - Hybrid",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5228837007",
@@ -3297,17 +3574,32 @@
       "label": "onsite_or_hybrid",
       "labelStatus": "labeled",
       "countries": [
-        "CO",
-        "MX"
+        "CO"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Head of Brand & Design - Bogotá (Hybrid)",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "hybrid",
+        "countries": [
+          "CO",
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Title declares Hybrid (rule 6). Countries narrowed from CO,MX to CO because the title names Bogotá; label unchanged.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5234148007",
@@ -3331,13 +3623,14 @@
         "MX"
       ],
       "workModel": "unknown",
-      "evidence": null,
+      "evidence": "People Partner (HRBP) - Mexico City",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5236289007",
@@ -3465,13 +3758,14 @@
         "BR"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Senior Data Scientist – Risk Modeling (Senior Data Scientist – Modelado de Riesgos) - Hybrid",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5257408007",
@@ -3499,13 +3793,15 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Software Engineer in Test (SDET) (Ingeniero de Software en Pruebas) - Remote First",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "in-person ramp-up, team events and customer visits"
     },
     {
       "id": "greenhouse:clara:5257427007",
@@ -3533,13 +3829,15 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Staff Engineer (Ingeniero Staff) - Remote First",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "in-person ramp-up, team events and customer visits"
     },
     {
       "id": "greenhouse:clara:5259834007",
@@ -3593,13 +3891,14 @@
         "CO"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Key Account Manager (Ejecutivo de Cuentas Clave) – Bogotá (Hybrid)",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5265722007",
@@ -3627,13 +3926,14 @@
         "BR"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Product Designer, Design Systems (Diseñador de Producto, Sistemas de Diseño) - Hybrid",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5273126007",
@@ -3657,13 +3957,14 @@
         "MX"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Fraud Strategist Expert - Mexico City (Hybrid)",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5280448007",
@@ -3687,13 +3988,14 @@
         "CO"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Enterprise Account Executive (Ejecutivo de Cuentas Enterprise) - Medellín [Hybrid]",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:gleanwork:4696752005",
@@ -3781,13 +4083,14 @@
         "US"
       ],
       "workModel": "onsite",
-      "evidence": null,
+      "evidence": "This role is in-office only at our San Francisco headquarters.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:6066974003",
@@ -3811,13 +4114,14 @@
         "CO"
       ],
       "workModel": "hybrid",
-      "evidence": null,
+      "evidence": "Location: Bogota, hybrid",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7116700003",
@@ -3841,13 +4145,14 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "The salary for the Fraud Operations Intern is $2.800.000 COP monthly.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7559727003",
@@ -3871,13 +4176,14 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Compensation : The salary for the Product Marketing Operations Intern is $2.800.000 COP monthly.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7906408003",
@@ -4002,13 +4308,14 @@
       "labelStatus": "labeled",
       "countries": [],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "Colombia, Remote | Bogota, Colombia | Latin America [Remote]",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:8010090003",
@@ -4147,14 +4454,30 @@
       "countries": [
         "US"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "onsite",
+      "evidence": "Onsite in San Francisco or Palo Alto, with occasional travel.",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "unknown",
+        "countries": [
+          "US"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Label stays; workModel unknown -> onsite because body says Onsite",
+      "evidenceCheckedAt": "2026-11-04",
+      "travelRequirement": "occasional travel"
     },
     {
       "id": "greenhouse:turing:6236429004",
@@ -4180,13 +4503,14 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": null,
+      "evidence": "LOCATION: Brazil; Colombia, Huila, Colombia | Brazil - Remote | Colombia - Remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:caseware:1c6b8a04-b52d-4689-9092-e76acbd1bc33",
@@ -4537,14 +4861,29 @@
       "countries": [
         "BR"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "LOCATION: Brazil; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "BR"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "Body silent on work model so ATS metadata remote applies (was unknown); title and location say Brazil; team spread across countries is not eligibility.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:deuna:03223f29-f268-4150-8cff-98e2609468fa",
@@ -4698,14 +5037,29 @@
       "countries": [
         "MX"
       ],
-      "workModel": "unknown",
-      "evidence": null,
+      "workModel": "remote",
+      "evidence": "LOCATION: Ciudad de México, Mexico; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": false,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "relabeledFrom": {
+        "label": "country_specific",
+        "workModel": "unknown",
+        "countries": [
+          "MX"
+        ],
+        "workModelConflict": false,
+        "evidence": null,
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "relabelRule": "evidence_qc",
+      "relabeledAt": "2026-11-04",
+      "relabelNote": "workModel unknown to remote: ATS metadata remote and body silent except the Remote work from anywhere benefit. Label stays country_specific MX per the location (pattern 1, regla 5). Not applicable for CO.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:deuna:c4ab9d71-85b6-49c5-a96d-9c5116fd06b9",
@@ -4836,13 +5190,15 @@
         "BR"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: Guatemala | San Salvador | Costa Rica | Montevideo, Montevideo, Uruguay; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:b3a94106-ff84-4314-b112-58a9eb36d69a",
@@ -4870,13 +5226,15 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: Buenos Aires Province | Mexico City | Bogota,D.C., Capital District; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:cd66a853-ac1b-4740-a6b8-f6d33b13cb3c",
@@ -4904,13 +5262,15 @@
         "MX"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: São Paulo | Buenos Aires Province | Bogota,D.C., Capital District | Mexico City; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:oowlish:e7ce2491-2ec1-499e-b7f5-931bcb6f19e2",
@@ -4938,13 +5298,15 @@
         "CO"
       ],
       "workModel": "remote",
-      "evidence": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidence": "LOCATION: Mexico City | Buenos Aires Province | Bogota,D.C., Capital District; ATS_WORKPLACE_TYPE: remote",
       "bodyChecked": true,
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-01",
       "workModelConflict": false,
       "retiredFrom": "test-v1",
-      "movedToDevAt": "2026-11-03"
+      "movedToDevAt": "2026-11-03",
+      "evidenceBeforeQc": "We offer the convenience of remote work; locations list several LatAm countries, none region-wide.",
+      "evidenceCheckedAt": "2026-11-04"
     },
     {
       "id": "lever:palantir:373367a9-3160-49d8-b7af-2efec062fad1",
@@ -5170,11 +5532,12 @@
       ],
       "workModel": "hybrid",
       "workModelConflict": false,
-      "evidence": "TITLE: Tech Lead - Users & Auth ... - Hybrid; LOCATION: Bogota / CUN / Colombia",
+      "evidence": "Tech Lead — Users & Auth (Líder Técnico/a - Usuarios y Autenticación) - Hybrid",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title"
+      "labelNote": "Explicit hybrid in title",
+      "evidenceFixedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7695762003",
@@ -5921,11 +6284,12 @@
       ],
       "workModel": "hybrid",
       "workModelConflict": false,
-      "evidence": "TITLE: Tech Lead - Users & Auth ... - Mexico City (Hybrid)",
+      "evidence": "Tech Lead — Users & Auth (Líder Técnico/a - Usuarios y Autenticación) - Mexico City (Hybrid)",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title"
+      "labelNote": "Explicit hybrid in title",
+      "evidenceFixedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:5191982",
@@ -6234,11 +6598,12 @@
       ],
       "workModel": "hybrid",
       "workModelConflict": false,
-      "evidence": "TITLE: Tech Lead - Users & Auth ... - Sao Paulo (Hybrid)",
+      "evidence": "Tech Lead — Users & Auth (Liderança Técnica - Usuários e Autenticação) - São Paulo (Hybrid)",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Explicit hybrid in title"
+      "labelNote": "Explicit hybrid in title",
+      "evidenceFixedAt": "2026-11-04"
     },
     {
       "id": "lever:ciandt:2fee42ea-7501-4f7f-bb44-779b0e92f072",
@@ -6539,7 +6904,8 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Only Mexico is marked Remote; no remote tag in body and Bogota not marked remote; conservative rule gives unclear. Sibling Sezzle postings are remote contractors, so owner may prefer country_specific MX,CO remote."
+      "labelNote": "Only Mexico is marked Remote; no remote tag in body and Bogota not marked remote; conservative rule gives unclear. Sibling Sezzle postings are remote contractors, so owner may prefer country_specific MX,CO remote.",
+      "ownerConfirmedAt": "2026-11-04"
     },
     {
       "id": "greenhouse:sezzle:7504352003",
@@ -6552,20 +6918,34 @@
       "subtype": "candidate",
       "siblingKey": "sezzle|it operations intern",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "labeled",
+      "labelStatus": "owner_decided_pre_run",
       "testSetName": "test-v2",
       "addedAt": "2026-11-03",
-      "label": "onsite_or_hybrid",
+      "label": "country_specific",
       "countries": [
         "CO"
       ],
-      "workModel": "hybrid",
+      "workModel": "remote",
       "workModelConflict": false,
-      "evidence": "Based in Bogotá, Colombia; able to work both remotely and onsite when required.",
+      "evidence": "Location: Based in Bogotá, Colombia; able to work both remotely and onsite when required.",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Intern based in Bogota with onsite when required is hybrid; the #Li-remote tag does not override it."
+      "labelNote": "Intern based in Bogota with onsite when required is hybrid; the #Li-remote tag does not override it.",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "hybrid",
+        "countries": [
+          "CO"
+        ],
+        "workModelConflict": false,
+        "evidence": "Based in Bogotá, Colombia; able to work both remotely and onsite when required.",
+        "travelRequirement": null,
+        "labelStatus": "labeled"
+      },
+      "travelRequirement": "Onsite in Bogota when required",
+      "relabelRule": "rule6_onsite_when_required_is_not_weekly",
+      "relabeledAt": "2026-11-04"
     },
     {
       "id": "greenhouse:canonical:2808065",
@@ -7081,20 +7461,34 @@
       "subtype": "candidate",
       "siblingKey": "addi|addi gateway program | class of 2027",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "needs_owner",
+      "labelStatus": "owner_decided_pre_run",
       "testSetName": "test-v2",
       "addedAt": "2026-11-03",
-      "label": "onsite_or_hybrid",
+      "label": "country_specific",
       "countries": [
         "CO"
       ],
-      "workModel": "hybrid",
+      "workModel": "remote",
       "workModelConflict": false,
       "evidence": "Location: Remote-first, with in-person weeks in Bogotá, fully paid by Addi",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Metadata remote and Colombia, but body adds in-person weeks in Bogota. Conservative rule: onsite_or_hybrid. Owner could rule it remote (country_specific CO)."
+      "labelNote": "Metadata remote and Colombia, but body adds in-person weeks in Bogota. Conservative rule: onsite_or_hybrid. Owner could rule it remote (country_specific CO).",
+      "relabeledFrom": {
+        "label": "onsite_or_hybrid",
+        "workModel": "hybrid",
+        "countries": [
+          "CO"
+        ],
+        "workModelConflict": false,
+        "evidence": "Location: Remote-first, with in-person weeks in Bogotá, fully paid by Addi",
+        "travelRequirement": null,
+        "labelStatus": "needs_owner"
+      },
+      "travelRequirement": "In-person weeks in Bogota, paid by the company",
+      "relabelRule": "owner_rule6_travel_is_remote",
+      "relabeledAt": "2026-11-04"
     },
     {
       "id": "lever:ciandt:e37ecafd-65b1-46d5-abee-e8e75a1a59ad",
@@ -7157,10 +7551,10 @@
       "subtype": "candidate",
       "siblingKey": "supabase|customer solution architect",
       "selectionReason": "test-v2 selection (seed 11, candidate)",
-      "labelStatus": "needs_owner",
+      "labelStatus": "owner_decided_pre_run",
       "testSetName": "test-v2",
       "addedAt": "2026-11-03",
-      "label": "unclear",
+      "label": "latam_eligible",
       "countries": [],
       "workModel": "remote",
       "workModelConflict": false,
@@ -7168,7 +7562,18 @@
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Remote, AMER but \"East Coast region\" may imply US East Coast; conservative rule gives unclear. Under D5 reading (timezone/region only) it would be latam_eligible."
+      "labelNote": "Remote, AMER but \"East Coast region\" may imply US East Coast; conservative rule gives unclear. Under D5 reading (timezone/region only) it would be latam_eligible.",
+      "relabeledFrom": {
+        "label": "unclear",
+        "workModel": "remote",
+        "countries": [],
+        "workModelConflict": false,
+        "evidence": "This role will support the East Coast region across the Americas.",
+        "travelRequirement": null,
+        "labelStatus": "needs_owner"
+      },
+      "relabelRule": "owner_d5_americas_region",
+      "relabeledAt": "2026-11-04"
     },
     {
       "id": "ashby:addi:b32ab3e6-5782-4935-8c92-33cc77013659",
@@ -7621,18 +8026,29 @@
       "subtype": "negative_us",
       "siblingKey": "turing|senior software engineer, ai evaluation infrastructure",
       "selectionReason": "test-v2 selection (seed 11, negative_us)",
-      "labelStatus": "needs_owner",
+      "labelStatus": "owner_decided_pre_run",
       "testSetName": "test-v2",
       "addedAt": "2026-11-03",
-      "label": "unclear",
+      "label": "worldwide",
       "countries": [],
       "workModel": "remote",
       "workModelConflict": false,
-      "evidence": "LOCATION: United States | Global - Remote",
+      "evidence": "Global - Remote",
       "labelSource": "llm-assisted",
       "labeledAt": "2026-11-03",
       "bodyChecked": true,
-      "labelNote": "Compound location; body silent on eligibility. Pattern 3 would give worldwide, rule 5 gives non-applicable; chose unclear"
+      "labelNote": "Compound location; body silent on eligibility. Pattern 3 would give worldwide, rule 5 gives non-applicable; chose unclear",
+      "relabeledFrom": {
+        "label": "unclear",
+        "workModel": "remote",
+        "countries": [],
+        "workModelConflict": false,
+        "evidence": "LOCATION: United States | Global - Remote",
+        "travelRequirement": null,
+        "labelStatus": "needs_owner"
+      },
+      "relabelRule": "owner_pattern3_global_remote",
+      "relabeledAt": "2026-11-04"
     },
     {
       "id": "greenhouse:clara:5215613007",
@@ -9061,7 +9477,7 @@
     "selected": 157,
     "leftOut": 119,
     "frozenAt": "2026-11-03",
-    "applicableCO": 77,
+    "applicableCO": 81,
     "cases": 157,
     "perCompany": {
       "canonical": {
@@ -9070,11 +9486,11 @@
       },
       "sezzle": {
         "n": 25,
-        "applicable": 19
+        "applicable": 20
       },
       "supabase": {
         "n": 21,
-        "applicable": 17
+        "applicable": 18
       },
       "clara": {
         "n": 25,
@@ -9086,11 +9502,11 @@
       },
       "addi": {
         "n": 11,
-        "applicable": 7
+        "applicable": 8
       },
       "turing": {
         "n": 3,
-        "applicable": 0
+        "applicable": 1
       },
       "deuna": {
         "n": 3,
@@ -9112,6 +9528,19 @@
         "n": 1,
         "applicable": 0
       }
+    },
+    "preRunChanges": {
+      "date": "2026-11-04",
+      "note": "Made before any model run on test-v2 (owner decisions and rule 6 of the ADR 0004 labelling guide); each case keeps relabeledFrom.",
+      "changed": [
+        "ashby:addi:9438857e-28ed-41b7-848f-ad092ca63c5b",
+        "ashby:supabase:66bab062-b769-43cf-ac3c-a2630257624c",
+        "greenhouse:turing:6225409004",
+        "greenhouse:sezzle:7504352003"
+      ],
+      "confirmedUnchanged": [
+        "greenhouse:sezzle:8012023003"
+      ]
     }
   },
   "devLabelRevision": {
@@ -9153,6 +9582,17 @@
           "ashby:perplexity:be94e89b-89d5-4f2a-a58b-7929c8d97f92 (onsite_or_hybrid)",
           "greenhouse:sezzle:7984978003 (latam_eligible by pattern 3, accepted by the owner)"
         ]
+      },
+      {
+        "date": "2026-11-04",
+        "decidedBy": "owner (rule) + Claude (reading each body)",
+        "scope": "development split: evidence QC (cases whose evidence was missing or not literal in the posting)",
+        "rules": [
+          "Evidence must be a literal quote of the title, location or body (or verified metadata form).",
+          "ADR 0004 guide rule 6 (remote-first with periodic travel is remote; hybrid = regular weekly presence)."
+        ],
+        "changedCases": 14,
+        "evidenceFixed": 80
       }
     ]
   },

@@ -39,7 +39,7 @@ Monorepo npm workspaces en TypeScript. Detalle: `docs/02-arquitectura.md`, datos
 - Enviar aplicaciones a empleos de forma automática.
 - Enviar datos personales de usuarios (perfil, CV, correo) a capas gratuitas de LLM. Solo se envía texto público de ofertas.
 - Usar un LLM distinto de la capa gratuita de la API de Gemini o vincularle facturación. Pasar a un modelo de pago requiere un nuevo ADR.
-- `git push --force`, borrar ramas o reescribir historia sin que yo lo pida.
+- `git push --force`, borrar ramas remotas o sin unir, o reescribir historia sin que yo lo pida.
 
 ## Herramientas de este repo
 - Subagentes en `.claude/agents/`: `code-reviewer`, `test-writer`, `llm-evaluator`, `ats-researcher`.
@@ -53,6 +53,7 @@ Decide tú y continúa, explicando la decisión en el resumen final, cuando:
 - Es técnica y no contradice los ADR ni docs/: estructura, nombres, librerías menores, pruebas, refactors, orden de tareas dentro de una sesión.
 - La opción sigue las reglas del proyecto: privacidad, solo capa gratuita, precisión antes que recall, no contaminar el conjunto de prueba.
 - Es fácil de revertir con git.
+- Borrar ramas **locales** que ya estén unidas a main (`git branch -d`, nunca `-D`). Jamás ramas remotas ni ramas sin unir.
 
 Pregúntame y espera solo cuando:
 - Cambia el alcance del MVP, un ADR, la taxonomía o la métrica.
