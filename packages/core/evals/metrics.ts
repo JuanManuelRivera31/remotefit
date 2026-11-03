@@ -26,6 +26,9 @@ export interface EvalRow {
   notes: string[];
   usage: LLMUsage;
   attempts: number;
+  /** Company board and ATS of the case, for the acceptance breakdown. */
+  board?: string;
+  ats?: string;
 }
 
 export interface TokenStats {
