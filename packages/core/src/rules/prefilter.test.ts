@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { connectors } from "../ats/index.js";
 import type { WorkplaceType } from "../normalize/job.js";
 import {
+  PREFILTER_RULE_KINDS,
   PREFILTER_VERSION,
   evaluatePrefilterRules,
   prefilterJob,
@@ -48,6 +49,24 @@ describe("prefilterJob — never labels anything as applicable", () => {
     for (const fixture of locations) {
       expect(["pass", "discarded"]).toContain(prefilterJob(withLocation(fixture)).outcome);
     }
+  });
+});
+
+describe("rule kinds", () => {
+  it("separates eligibility rules from the product-scope rule", () => {
+    expect(PREFILTER_RULE_KINDS).toEqual({
+      non_latam_location: "eligibility",
+      onsite_or_hybrid_metadata: "eligibility",
+      non_tech_role: "scope",
+    });
+  });
+
+  it("returns the kind of the rule that discarded the posting", () => {
+    expect(prefilterJob(job({ locationRaw: "New York" }))).toMatchObject({ kind: "eligibility" });
+    expect(prefilterJob(job({ title: "Account Executive", locationRaw: "Remote" }))).toMatchObject({
+      rule: "non_tech_role",
+      kind: "scope",
+    });
   });
 });
 

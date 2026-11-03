@@ -26,6 +26,7 @@ export function toRow(result: PrefilterResult) {
     prefilterVersion: PREFILTER_VERSION,
     prefilterOutcome: result.outcome,
     prefilterRule: result.outcome === "discarded" ? result.rule : null,
+    prefilterRuleKind: result.outcome === "discarded" ? result.kind : null,
     prefilterMatchedText: result.outcome === "discarded" ? result.matchedText : null,
   };
 }
@@ -46,6 +47,7 @@ export async function runPrefilter(db: Db): Promise<PrefilterRunSummary> {
       version: jobs.prefilterVersion,
       outcome: jobs.prefilterOutcome,
       rule: jobs.prefilterRule,
+      kind: jobs.prefilterRuleKind,
       matched: jobs.prefilterMatchedText,
     })
     .from(jobs)
@@ -74,6 +76,7 @@ export async function runPrefilter(db: Db): Promise<PrefilterRunSummary> {
       row.version === next.prefilterVersion &&
       row.outcome === next.prefilterOutcome &&
       row.rule === next.prefilterRule &&
+      row.kind === next.prefilterRuleKind &&
       row.matched === next.prefilterMatchedText;
     if (same) continue;
     await db

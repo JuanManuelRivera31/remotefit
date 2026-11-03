@@ -53,6 +53,7 @@ export const jobs = pgTable(
     prefilterVersion: text("prefilter_version"),
     prefilterOutcome: text("prefilter_outcome"), // pass | discarded
     prefilterRule: text("prefilter_rule"), // non_latam_location | onsite_or_hybrid_metadata | non_tech_role
+    prefilterRuleKind: text("prefilter_rule_kind"), // eligibility | scope
     prefilterMatchedText: text("prefilter_matched_text"),
   },
   (table) => [

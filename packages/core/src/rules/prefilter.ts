@@ -23,6 +23,18 @@ export const PREFILTER_RULES = [
 ] as const;
 export type PrefilterRule = (typeof PREFILTER_RULES)[number];
 
+/**
+ * "eligibility" rules judge whether the posting can be applied to from LATAM: they must never discard an applicable
+ * posting (development goal: 0). "scope" rules are a product filter on the kind of role (the MVP is for developers);
+ * they say nothing about eligibility and can be revised if the product ever widens to non-technical roles.
+ */
+export const PREFILTER_RULE_KINDS = {
+  non_latam_location: "eligibility",
+  onsite_or_hybrid_metadata: "eligibility",
+  non_tech_role: "scope",
+} as const satisfies Record<PrefilterRule, string>;
+export type PrefilterRuleKind = (typeof PREFILTER_RULE_KINDS)[PrefilterRule];
+
 export interface PrefilterInput {
   title: string;
   locationRaw: string;
@@ -38,7 +50,8 @@ export interface RuleHit {
 }
 
 export type PrefilterResult =
-  { outcome: "pass" } | { outcome: "discarded"; rule: PrefilterRule; matchedText: string };
+  | { outcome: "pass" }
+  | { outcome: "discarded"; rule: PrefilterRule; kind: PrefilterRuleKind; matchedText: string };
 
 const MAX_MATCHED_TEXT = 200;
 const clip = (text: string): string =>
@@ -230,5 +243,10 @@ export function evaluatePrefilterRules(input: PrefilterInput): RuleHit[] {
 export function prefilterJob(input: PrefilterInput): PrefilterResult {
   const first = evaluatePrefilterRules(input)[0];
   if (!first) return { outcome: "pass" };
-  return { outcome: "discarded", rule: first.rule, matchedText: first.matchedText };
+  return {
+    outcome: "discarded",
+    rule: first.rule,
+    kind: PREFILTER_RULE_KINDS[first.rule],
+    matchedText: first.matchedText,
+  };
 }

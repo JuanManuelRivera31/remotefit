@@ -99,11 +99,13 @@ describe.skipIf(!hasDatabase)("runPrefilter against PostgreSQL", () => {
       prefilterVersion: PREFILTER_VERSION,
       prefilterOutcome: "discarded",
       prefilterRule: "non_latam_location",
+      prefilterRuleKind: "eligibility",
       prefilterMatchedText: "New York",
     });
     expect(await byId("col")).toMatchObject({
       prefilterOutcome: "pass",
       prefilterRule: null,
+      prefilterRuleKind: null,
       prefilterMatchedText: null,
     });
     expect(await byId("hyb")).toMatchObject({
@@ -114,6 +116,7 @@ describe.skipIf(!hasDatabase)("runPrefilter against PostgreSQL", () => {
     expect(await byId("ae")).toMatchObject({
       prefilterOutcome: "discarded",
       prefilterRule: "non_tech_role",
+      prefilterRuleKind: "scope",
     });
     // Closed postings are not evaluated.
     expect(await byId("closed")).toMatchObject({ prefilterVersion: null, prefilterOutcome: null });

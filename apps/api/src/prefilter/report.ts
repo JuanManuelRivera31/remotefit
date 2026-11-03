@@ -3,6 +3,7 @@ import { eq } from "drizzle-orm";
 import { z } from "zod";
 import {
   PREFILTER_RULES,
+  PREFILTER_RULE_KINDS,
   PREFILTER_VERSION,
   connectors,
   evaluatePrefilterRules,
@@ -101,7 +102,10 @@ export interface ReportData {
     fromBodies: number;
     unresolved: string[];
     applicable: number;
-    applicableDiscarded: DevDiscard[];
+    /** Applicable cases discarded by at least one eligibility rule. Goal: 0. */
+    eligibilityLost: DevDiscard[];
+    /** Applicable cases discarded only by scope rules (not development roles): expected, not a loss. */
+    outOfScopeExpected: DevDiscard[];
     nonApplicableDiscarded: number;
   };
 }
@@ -179,7 +183,8 @@ export async function collectReport(db: Db): Promise<ReportData> {
     fromBodies: 0,
     unresolved: [],
     applicable: devCases.filter(isApplicableForColombia).length,
-    applicableDiscarded: [],
+    eligibilityLost: [],
+    outOfScopeExpected: [],
     nonApplicableDiscarded: 0,
   };
   for (const item of devCases) {
@@ -208,10 +213,16 @@ export async function collectReport(db: Db): Promise<ReportData> {
     const { rules, matchedText } = found;
     dev.resolved += 1;
     if (rules.length === 0) continue;
-    const applicable = isApplicableForColombia(item);
-    if (applicable)
-      dev.applicableDiscarded.push({ id: item.id, applicable, rules, matchedText, source });
-    else dev.nonApplicableDiscarded += 1;
+    if (!isApplicableForColombia(item)) {
+      dev.nonApplicableDiscarded += 1;
+      continue;
+    }
+    const entry = { id: item.id, applicable: true, rules, matchedText, source };
+    if (rules.some((rule) => PREFILTER_RULE_KINDS[rule] === "eligibility")) {
+      dev.eligibilityLost.push(entry);
+    } else {
+      dev.outOfScopeExpected.push(entry);
+    }
   }
 
   return {
@@ -242,10 +253,14 @@ export function formatReport(data: ReportData): string {
   for (const rule of PREFILTER_RULES) {
     const count = data.byRule[rule];
     lines.push(
-      `  ${rule.padEnd(26)} fires ${String(count.fires).padStart(4)} (${pct(count.fires, data.total)}, ${count.firesWithoutBodyGuard} without body guard) · first hit ${String(count.firstHit).padStart(4)} (${pct(count.firstHit, data.total)})`,
+      `  ${rule.padEnd(26)} ${PREFILTER_RULE_KINDS[rule].padEnd(11)} fires ${String(count.fires).padStart(4)} (${pct(count.fires, data.total)}, ${count.firesWithoutBodyGuard} without body guard) · first hit ${String(count.firstHit).padStart(4)} (${pct(count.firstHit, data.total)})`,
     );
   }
+  const byKind = { eligibility: 0, scope: 0 };
+  for (const rule of PREFILTER_RULES)
+    byKind[PREFILTER_RULE_KINDS[rule]] += data.byRule[rule].firstHit;
   lines.push(
+    `  by kind (first hit): eligibility ${byKind.eligibility} (${pct(byKind.eligibility, data.total)}) · scope ${byKind.scope} (${pct(byKind.scope, data.total)})`,
     `  ${"TOTAL".padEnd(26)} discarded ${data.discarded} (${pct(data.discarded, data.total)})`,
   );
   lines.push("", "Per company (discarded / total · pass to classifier):");
@@ -260,11 +275,16 @@ export function formatReport(data: ReportData): string {
     `  dev cases ${dev.cases} · resolved ${dev.resolved} (${dev.fromBodies} from rescued bodies) · unresolved ${dev.unresolved.length}${dev.unresolved.length > 0 ? ` [${dev.unresolved.join(", ")}]` : ""}`,
   );
   lines.push(
-    `  applicable for CO in dev: ${dev.applicable} · applicable discarded: ${dev.applicableDiscarded.length} (goal 0) · non-applicable discarded: ${dev.nonApplicableDiscarded}`,
+    `  applicable for CO in dev: ${dev.applicable} · eligibility rules discarded: ${dev.eligibilityLost.length} (goal 0) · out of scope (expected): ${dev.outOfScopeExpected.length} · non-applicable discarded: ${dev.nonApplicableDiscarded}`,
   );
-  for (const item of dev.applicableDiscarded) {
+  for (const item of dev.eligibilityLost) {
     lines.push(
       `    LOST ${item.id} [${item.rules.join(", ")}] "${item.matchedText}" (${item.source})`,
+    );
+  }
+  for (const item of dev.outOfScopeExpected) {
+    lines.push(
+      `    OUT OF SCOPE (expected) ${item.id} [${item.rules.join(", ")}] "${item.matchedText}" (${item.source})`,
     );
   }
   return lines.join("\n");

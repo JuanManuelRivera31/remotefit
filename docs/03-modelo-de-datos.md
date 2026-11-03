@@ -39,6 +39,7 @@ erDiagram
         text prefilter_version "PREFILTER_VERSION; null si aún no se evalúa"
         text prefilter_outcome "pass | discarded"
         text prefilter_rule "non_latam_location | onsite_or_hybrid_metadata | non_tech_role"
+        text prefilter_rule_kind "eligibility | scope"
         text prefilter_matched_text "texto que disparó la regla"
     }
     eligibility_results {
