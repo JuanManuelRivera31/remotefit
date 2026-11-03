@@ -2,6 +2,37 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-03 · Corrida única sobre la prueba congelada: gemini-3.5-flash-lite + eligibility-v3 + postprocess-v1 NO cumple la precisión (rama `feat/s6-accept-v3`)
+- **Resultado: no aceptada.** Con tus decisiones: Canals revertido en desarrollo (`relabeledFrom` restaurado, `relabelRevertedAt`; ADR 0004 actualizado), etiquetas de Sezzle `7984978003`, Wizeline y CI&T sin tocar, y una sola corrida sobre la prueba. Como no cumple, paré: no ajusté nada ni miré más casos de prueba que los falsos positivos que pediste.
+- **Desarrollo recalculado desde la caché** (0 llamadas, Canals ya `country_specific` [US]): precisión **93,3 %** (28/30; IC 95 % Wilson 78,7–98,2 %), recall **100 %** (28/28; 87,9–100 %), TP/FP/FN/TN 28/2/0/18. Los 2 falsos positivos: Canals (otra vez "distributed across North and South America") y Sezzle `7984978003`. Sin postproceso: 90,3 % de precisión. Con Canals revertido, **v3 ya no llega al 95 % ni en desarrollo**.
+- **Prueba congelada** (112 casos: 61 aplicables y 51 no aplicables para CO), 112 llamadas sin reintentos ni salidas degradadas, informe en `packages/core/evals/reports/2026-11-03-eligibility-v3-gemini-3.5-flash-lite-test.md`:
+
+  | Métrica | Valor | IC 95 % (Wilson) | Meta ADR 0004 |
+  |---|---|---|---|
+  | Precisión de aplicables para CO | **92,2 %** (59/64) | 83,0–96,6 % | ≥ 95 % ✗ |
+  | Recall | **96,7 %** (59/61) | 88,8–99,1 % | ≥ 80 % ✓ |
+
+  TP/FP/FN/TN = 59/5/2/46. Exactitud de etiqueta de 6 clases 78,6 %; de `workModel` 76,8 %. Tokens por oferta: entrada 2159 (máx. 3445), salida visible 145 (máx. 208), thinking 0. Costo equivalente **$0,001011 por oferta** ($0,113 la prueba entera). El postproceso actuó 17 veces por título y 4 por recorte de cita, sin cambiar precisión ni recall (el modelo solo da lo mismo: 92,2 % / 96,7 %).
+
+  | esperada \ predicha | latam | world | us_only | country | onsite | unclear | total |
+  |---|---|---|---|---|---|---|---|
+  | latam | 8 | 0 | 0 | 0 | 0 | 0 | 8 |
+  | world | 1 | 9 | 0 | 0 | 0 | 0 | 10 |
+  | us_only | 0 | 0 | 3 | 0 | 0 | 0 | 3 |
+  | country | 6 | 0 | 1 | 52 | 11 | 0 | 70 |
+  | onsite | 0 | 0 | 0 | 5 | 15 | 0 | 20 |
+  | unclear | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+
+- **Falsos positivos (5), con la evidencia del modelo:**
+  1. `ashby:canals:d4b698c6-…` "Strategic Sales Manager": esperado `country_specific` [US]; predicho `latam_eligible`; cita "distributed across North and South America."
+  2. `greenhouse:canonical:5906570` "インサイドセールス (リモート)/ Sales Development Representative (Remote)": esperado `country_specific` [JP]; predicho `latam_eligible`; citas "Home Based - Americas" · "#LI-remote".
+  3. `greenhouse:sezzle:7906563003` "AI Engineering Intern": esperado `country_specific` [PE]; predicho `country_specific` [PE, CO]; citas "Peru | Bogota, Colombia" · "#Li-remote". Es aplicable para CO solo por la lista de países que dio el modelo.
+  4. `greenhouse:sezzle:8010090003` "Fraud & Risk Operations Team Lead": esperado `country_specific` [MX]; predicho `latam_eligible`; citas "Mexico, Remote | Latin America [Remote] | US Remote" · "Latin America [Remote]".
+  5. `lever:deuna:a1d9d480-…` "Backend Engineer": esperado `onsite_or_hybrid` / `hybrid` [CO, MX, AR]; predicho `country_specific` / `remote` [CO, MX, AR]; citas "Bogotá, Colombia | Ciudad de México, Mexico | Argentina" · "Remote work from anywhere 💻".
+- Los 2 falsos negativos no los listé ni los miré (no los pediste). En la matriz, 11 casos `country_specific` salieron `onsite_or_hybrid` y 5 `onsite_or_hybrid` salieron `country_specific`: encaja con el sesgo de `workModel` que ya anotamos en el ADR 0004 para la prueba; no afecta la métrica de aplicabilidad.
+- **Qué implica:** la prueba ya vio esta versión (una corrida). No se usa para ajustar: cualquier cambio de prompt o de postproceso debe validarse en desarrollo y después aceptarse con una corrida nueva. Antes conviene **ampliar el desarrollo** (48 casos y tres rondas de ajuste lo sobreajustaron: v3 pasó de 96,7 % a 93,3 % solo por revertir un caso) con ofertas nuevas de la ingesta que hayan pasado el prefiltro, etiquetadas por ti. Opciones, tú decides: (a) ampliar desarrollo y reintentar con v4; (b) aceptar el 92,2 % como brecha documentada y priorizar precisión (ADR 0005) a costa de recall, que deja margen (96,7 % frente a 80 %); (c) empezar S6b con v3 sabiendo que la precisión medida es 92,2 %.
+- Pendiente: tu decisión sobre (a)/(b)/(c); S6b (con el respaldo `gemini-3.1-flash-lite` anotado en el backlog, sin mezclar versiones en la caché).
+
 ## 2026-11-03 · Prompt v3 + postproceso: gemini-3.5-flash-lite llega a precisión 96,7 % y recall 100 % en desarrollo (rama `feat/s6-prompt-v2`)
 - **Resultado: se cumple el criterio de parada (precisión ≥ 95 % y recall ≥ 80 % en desarrollo) con `gemini-3.5-flash-lite`, prompt `eligibility-v3` y `postprocess-v1`, tras 2 de las 3 iteraciones permitidas.** Paré ahí, como pediste. La prueba congelada no se tocó; falta tu aprobación para la corrida única.
 - Etiquetas de desarrollo (reglas tuyas, documentadas en el ADR 0004): 7 casos corregidos (`cases.json`, `relabeledFrom`/`relabelRule`): Clara `5134418007`, Anthropic, Caseware, ClayLabs, Pigment y SumUp `7475989002` → `onsite_or_hybrid` (Clara, Anthropic, Caseware y SumUp por lo que dice el cuerpo; ClayLabs y Pigment por el metadato del ATS porque el cuerpo calla), y Canals → `latam_eligible` por la D5. SumUp lo encontré tras la primera corrida de v2 (`"office-first setup"`, mi regex inicial no lo cubría) y lo corregí con la misma regla. Aplicables para CO en desarrollo: de 28 a 29. Prueba verificada idéntica.

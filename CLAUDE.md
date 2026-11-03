@@ -65,6 +65,8 @@ Pregúntame y espera solo cuando:
 
 En general, si tu recomendación es clara y cumple las reglas del proyecto, ejecútala y repórtala en el resumen en lugar de preguntarme.
 
+Planear antes de codificar: cuando mi mensaje ya trae todas las decisiones (alcance, reglas y criterios de parada), ejecuta sin mostrar plan y explica lo hecho en el resumen. Si hay diseño nuevo o decisiones abiertas, planea primero y espera mi aprobación.
+
 Cuando preguntes: máximo 3 decisiones, cada una con tu opción recomendada, y sigue avanzando con lo que no dependa de ellas.
 
 Git: trabaja en ramas; al final de cada sesión, si las pruebas pasan, une a main y haz push.
