@@ -54,7 +54,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   **Modelo de respaldo (decisión del dueño, 2026-11-03):** `gemini-3.1-flash-lite` entra como respaldo cuando `gemini-3.5-flash-lite` responde 503 de forma sostenida o agota su cuota diaria. **Sin mezclar versiones en la caché:** el resultado del respaldo se guarda con su propio `model` en la clave (`content_hash + prompt_version + model + postprocess_version`) y nunca se escribe bajo la clave de 3.5; el modelo de respaldo debe tener su propia medición aceptada antes de usarse en producción (ninguno la tiene todavía: `gemini-3.5-flash-lite` + v3 no pasó la prueba y 3.1-flash-lite no se midió con v2/v3 por los 503). La cola toma los límites de cada modelo de `data/llm-limits.json` y cuenta el RPD por modelo.
   *Hecho cuando:* con un `FakeLLMProvider` que devuelve 429 y luego cuota agotada, `npm run classify` termina sin perder ofertas e informa cuántas quedan pendientes.
 
-- [ ] **S7 · Conjunto de evaluación** 🔴 👤
+- [x] **S7 · Conjunto de evaluación** 🔴 👤 *(cerrada el 2026-11-04: test-v3 congelada con 92 aplicables y `gemini-3.5-flash-lite` + `eligibility-v4` + `postprocess-v3` aceptada, ADR 0004)*
   Depende de S3–S4 y S6b. Primer hito: **150 casos** en `packages/core/evals/eligibility/`, sembrados desde `data/seed-career-ops/`: los 15 reportes, los 5 `jds`, la tabla de casos difíciles de `docs/07-aprendizajes-career-ops.md` (sección 3) y ofertas de `scan-history.tsv`.
   - Ese archivo no trae el cuerpo de las ofertas. 397 de las 411 de Greenhouse, Lever y Ashby ya están rescatadas en `data/seed-career-ops/bodies/`, con `raw` sin normalizar; `rescue-report.tsv` da el estado de cada URL.
   - De los reportes se toma **solo** el texto verbatim de la oferta, nunca tu evaluación personal: lo que va al LLM es capa gratuita.
@@ -76,11 +76,11 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
 
 ## Fase 4 — Producto usable
 
-- [ ] **S9 · API REST** 🟢
+- [x] **S9 · API REST** 🟢 *(hecha el 2026-11-04 con el alcance de `docs/plan-s9-s10.md`: `GET /api/jobs`, `/api/jobs/:id`, `/api/status`; quedan para S8 el filtro por puntaje y `GET/PUT /api/profile`)*
   `GET /api/jobs` (filtros: país, nivel, antigüedad máxima, puntaje mínimo, empresa, texto), `GET /api/jobs/:id` (con evidencia y vacantes hermanas), `GET/PUT /api/profile`. El filtro por país usa `isApplicable`. Validación con Zod. Pruebas con supertest. **Sin tracker:** no hay rutas de postulaciones.
   Define primero el contrato de tipos en `packages/core` para poder hacer S10 en paralelo.
 
-- [ ] **S10 · Panel web** 🟢
+- [x] **S10 · Panel web** 🟢 *(hecha el 2026-11-04 con el alcance de `docs/plan-s9-s10.md`: orden por antigüedad; quedan para S8 el orden por encaje, el desglose del encaje y la página de perfil)*
   Lista ordenada por encaje, filtros "aplicable desde mi país", "accesible para mi nivel" y antigüedad, indicador de vacantes de más de 180 días, una sola tarjeta por grupo de hermanas con su lista de países, detalle con la evidencia resaltada y el desglose del encaje, página de perfil. **Sin tracker:** no hay estados de postulación.
 
 - [ ] **S11 · Uso real + pulido** 👤
