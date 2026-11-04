@@ -19,12 +19,8 @@ import {
   type RawOutcome,
 } from "../src/index.js";
 import { unclearResult } from "../src/eligibility/postprocess.js";
-import {
-  loadDailyUsage,
-  loadRawCache,
-  saveDailyUsage,
-  saveRawCache,
-} from "./cache.js";
+import { DEFAULT_QUOTA_LEDGER_URL, FileQuotaLedger } from "../src/llm/quota-ledger.js";
+import { loadRawCache, saveRawCache } from "./cache.js";
 import { loadCases, loadDevLabelRevision, loadJob } from "./loader.js";
 import { computeMetrics, type EvalRow } from "./metrics.js";
 import { formatMarkdownReport } from "./report.js";
@@ -39,10 +35,17 @@ function fail(message: string): never {
 }
 
 function parseArgs(argv: string[]) {
-  const args = { split: "", model: "", limit: Infinity, approvedByOwner: false };
+  const args = {
+    split: "",
+    model: "",
+    limit: Infinity,
+    approvedByOwner: false,
+    releasePending: false,
+  };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === "--split") args.split = argv[(i += 1)] ?? "";
+    else if (arg === "--release-pending") args.releasePending = true;
     else if (arg === "--model") args.model = argv[(i += 1)] ?? "";
     else if (arg === "--limit") args.limit = Number(argv[(i += 1)]);
     else if (arg === "--approved-by-owner") args.approvedByOwner = true;
@@ -79,6 +82,18 @@ async function withRetries(run: () => Promise<RawOutcome>): Promise<RawOutcome> 
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
+  const ledger = new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL);
+  if (args.releasePending) {
+    // Abandon a pending eval on purpose (e.g. a version that will not be run after all), so classify may run again.
+    const pendingEval = ledger.pendingEval();
+    ledger.clearPendingEval();
+    console.log(
+      pendingEval
+        ? `Released the pending eval (${pendingEval.split}, ${pendingEval.model}, ${pendingEval.promptVersion}, ${pendingEval.remaining} cases left).`
+        : "No eval was pending.",
+    );
+    return;
+  }
   if (args.split !== "dev" && args.split !== "test")
     fail("Use --split dev (or test, which needs --approved-by-owner).");
   const split = args.split;
@@ -120,12 +135,34 @@ async function main(): Promise<void> {
     fail("GEMINI_API_KEY is not set (put it in .env or the environment). Nothing was sent.");
   }
 
-  const stored = loadDailyUsage(model);
-  const limiter = new RateLimiter({
-    rpm: limits.rpm,
-    rpd: limits.rpd,
-    ...(stored ? { usedToday: stored.count, usedDay: stored.day } : {}),
-  });
+  // One counter per model and Pacific day, shared with `npm run classify` (data/llm-quota.json).
+  const limiter = new RateLimiter({ rpm: limits.rpm, rpd: limits.rpd });
+  const shared = ledger.counterFor(model);
+  limiter.syncUsedToday(shared.used(limiter.quotaDayKey));
+  const reservePending = (remaining: number): void => {
+    // The eval has priority: while this reservation exists, classify refuses to start.
+    ledger.setPendingEval({
+      split,
+      model,
+      promptVersion: ELIGIBILITY_PROMPT_VERSION,
+      postprocessVersion: POSTPROCESS_VERSION,
+      remaining,
+      since: ledger.pendingEval()?.since ?? new Date().toISOString(),
+    });
+  };
+  const current = ledger.pendingEval();
+  const isThisRun =
+    current !== null &&
+    current.split === split &&
+    current.model === model &&
+    current.promptVersion === ELIGIBILITY_PROMPT_VERSION;
+  if (current && !isThisRun && pending.length > 0) {
+    fail(
+      `Another eval is pending (${current.split}, ${current.model}, ${current.promptVersion}, ${current.remaining} cases left). ` +
+        "Finish it first, or release it with `npm run eval -- --release-pending`. Nothing was sent.",
+    );
+  }
+  if (pending.length > 0) reservePending(pending.length);
   console.log(
     `Eval ${split}: ${cases.length} cases · model ${model} (thinking ${limits.thinkingLevel}) · prompt ${ELIGIBILITY_PROMPT_VERSION} · postprocess ${POSTPROCESS_VERSION}`,
   );
@@ -138,8 +175,8 @@ async function main(): Promise<void> {
   const metered = apiKey
     ? new MeteredProvider(new GeminiProvider({ apiKey }), limiter, {
         sleep,
+        shared,
         onRequest: (current) => {
-          saveDailyUsage(model, current.quotaDayKey, current.usedTodayCount);
           if (current.consumeWarning()) {
             console.warn(
               `WARNING: more than 80 % of today's ${limits.rpd} requests used for ${model}.`,
@@ -189,12 +226,15 @@ async function main(): Promise<void> {
 
   const remaining = jobs.filter(({ job }) => !cache.has(job.contentHash)).length;
   if (remaining > 0) {
+    reservePending(remaining);
     console.log(
       `\nIncomplete: ${remaining} of ${cases.length} cases are still unclassified${stoppedByQuota ? " (daily quota)" : ""}. ` +
         "No report was written because partial metrics would mislead. Run the same command after the Pacific-midnight quota reset: finished cases come from the cache.",
     );
     process.exit(3);
   }
+  // Every case has an answer: this run no longer holds the quota (classify may run again).
+  if (ledger.pendingEval() && (isThisRun || pending.length > 0)) ledger.clearPendingEval();
 
   const rows: EvalRow[] = [];
   const rawRows: EvalRow[] = [];

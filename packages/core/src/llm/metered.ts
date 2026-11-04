@@ -1,3 +1,4 @@
+import type { SharedQuotaCounter } from "./quota-ledger.js";
 import type { RateLimiter } from "./rate-limiter.js";
 import {
   QuotaExhaustedError,
@@ -10,6 +11,11 @@ export interface MeteredProviderOptions {
   sleep: (ms: number) => Promise<void>;
   /** Called after each request is counted (e.g. to persist the daily usage or print the 80 % warning). */
   onRequest?: (limiter: RateLimiter) => void;
+  /**
+   * The shared per-model counter (eval and classify use the same one). Read before each request so requests made by
+   * another process count against the limit, and written after each request is counted.
+   */
+  shared?: SharedQuotaCounter;
 }
 
 /**
@@ -30,12 +36,15 @@ export class MeteredProvider implements LLMProvider {
   async generateStructured<T>(
     args: GenerateStructuredArgs<T>,
   ): Promise<GenerateStructuredResult<T>> {
+    const shared = this.options.shared;
+    if (shared) this.limiter.syncUsedToday(shared.used(this.limiter.quotaDayKey));
     if (this.limiter.remainingToday <= 0) {
       throw new QuotaExhaustedError("local daily request limit reached");
     }
     const wait = this.limiter.msUntilNextSlot();
     if (wait > 0) await this.options.sleep(wait);
     this.limiter.record();
+    shared?.record(this.limiter.quotaDayKey);
     this.options.onRequest?.(this.limiter);
     return this.inner.generateStructured(args);
   }

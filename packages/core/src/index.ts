@@ -37,7 +37,11 @@ export { equivalentCostUsd, priceFor, PRICING_SOURCE } from "./llm/pricing.js";
 export { effectiveLimits, llmLimitsSchema, parseLimits } from "./llm/limits.js";
 export type { EffectiveLimits, LlmLimitsConfig, ModelLimits } from "./llm/limits.js";
 export { RateLimiter, quotaDay } from "./llm/rate-limiter.js";
-export { ELIGIBILITY_LABELS, EligibilitySchema, RawEligibilitySchema } from "./eligibility/schema.js";
+export {
+  ELIGIBILITY_LABELS,
+  EligibilitySchema,
+  RawEligibilitySchema,
+} from "./eligibility/schema.js";
 export type { Eligibility, EligibilityLabel, RawEligibility } from "./eligibility/schema.js";
 export { LATAM_COUNTRIES, isApplicable } from "./eligibility/applicable.js";
 export {
@@ -57,6 +61,17 @@ export {
 } from "./eligibility/postprocess.js";
 export type { ClassifyStatus, PostprocessOutcome } from "./eligibility/postprocess.js";
 export { MeteredProvider } from "./llm/metered.js";
+export {
+  DEFAULT_QUOTA_LEDGER_URL,
+  FileQuotaLedger,
+  MemoryQuotaLedger,
+  QuotaLedger,
+  emptyQuotaState,
+  quotaStateSchema,
+  usedOn,
+  withRequest,
+} from "./llm/quota-ledger.js";
+export type { PendingEval, QuotaState, SharedQuotaCounter } from "./llm/quota-ledger.js";
 export { runClassifyQueue } from "./queue/classify-queue.js";
 export type {
   QueueEvent,

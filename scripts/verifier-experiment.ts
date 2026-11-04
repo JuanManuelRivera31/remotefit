@@ -17,7 +17,8 @@ import {
   verifyPositive,
   type RawOutcome,
 } from "../packages/core/src/index.js";
-import { loadDailyUsage, loadRawCache, saveDailyUsage } from "../packages/core/evals/cache.js";
+import { loadRawCache } from "../packages/core/evals/cache.js";
+import { DEFAULT_QUOTA_LEDGER_URL, FileQuotaLedger } from "../packages/core/src/llm/quota-ledger.js";
 import { loadCases, loadJob } from "../packages/core/evals/loader.js";
 import { applicableFor } from "../packages/core/evals/metrics.js";
 
@@ -100,11 +101,12 @@ const pending = sample.filter((r) => !(r.hash in results));
 console.log(`${sample.length - pending.length} from cache · ${pending.length} to ask · limits ${limits.rpm} RPM / ${limits.rpd} RPD`);
 if (pending.length > 0) {
   if (!apiKey) throw new Error("GEMINI_API_KEY is not set. Nothing was sent.");
-  const stored = loadDailyUsage(model);
-  const limiter = new RateLimiter({ rpm: limits.rpm, rpd: limits.rpd, ...(stored ? { usedToday: stored.count, usedDay: stored.day } : {}) });
+  // Same shared per-model counter as eval and classify (data/llm-quota.json).
+  const shared = new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL).counterFor(model);
+  const limiter = new RateLimiter({ rpm: limits.rpm, rpd: limits.rpd });
   const metered = new MeteredProvider(new GeminiProvider({ apiKey, timeoutMs: 240_000 }), limiter, {
     sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
-    onRequest: (l) => saveDailyUsage(model, l.quotaDayKey, l.usedTodayCount),
+    shared,
   });
   for (const row of pending) {
     try {

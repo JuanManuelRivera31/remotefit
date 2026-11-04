@@ -3,6 +3,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import {
   ELIGIBILITY_PROMPT_VERSION,
   FakeLLMProvider,
+  MemoryQuotaLedger,
   QuotaExhaustedError,
   RateLimitError,
   parseLimits,
@@ -41,10 +42,14 @@ const answer = {
 };
 const ok: FakeStep = { data: answer };
 
+let ledger = new MemoryQuotaLedger();
 const base = {
   sleep: async () => undefined,
   limits,
   backoffBaseMs: 1,
+  get ledger() {
+    return ledger;
+  },
 };
 
 // Needs a migrated database whose name ends in _test (it truncates jobs, companies and the result tables).
@@ -62,6 +67,7 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
     connection = await openTestDatabase(testDatabaseUrl ?? "");
   });
   beforeEach(async () => {
+    ledger = new MemoryQuotaLedger();
     await wipe();
     const [company] = await connection.db
       .insert(companies)
@@ -205,6 +211,43 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
     expect(summary.pendingAfter).toBe(1);
   });
 
+  it("does not run while an eval is pending: no call, nothing written, everything stays pending", async () => {
+    await seed([{ externalId: "1" }, { externalId: "2" }]);
+    ledger.setPendingEval({
+      split: "test",
+      model: "model-a",
+      promptVersion: "eligibility-v4",
+      postprocessVersion: "postprocess-v3",
+      remaining: 144,
+      since: "2026-11-04T22:00:00Z",
+    });
+    const fake = new FakeLLMProvider([ok, ok]);
+    const summary = await runClassify(connection.db, {
+      ...base,
+      model: "model-a",
+      providerFor: () => fake,
+    });
+    expect(summary).toMatchObject({ classified: 0, pendingAfter: 2 });
+    expect(summary.blockedByEval?.split).toBe("test");
+    expect(fake.callCount).toBe(0);
+    expect(await connection.db.select().from(eligibilityResults)).toHaveLength(0);
+  });
+
+  it("counts against the same ledger the eval uses (one counter per model and day)", async () => {
+    await seed([{ externalId: "1" }, { externalId: "2" }, { externalId: "3" }]);
+    const now = new Date("2026-11-04T20:00:00Z");
+    for (let i = 0; i < 999; i += 1) ledger.record("model-a", "2026-11-04"); // the eval spent 999 of 1000
+    const summary = await runClassify(connection.db, {
+      ...base,
+      now: () => now,
+      model: "model-a",
+      providerFor: () => new FakeLLMProvider([ok, ok, ok]),
+    });
+    expect(summary.classified).toBe(1);
+    expect(summary.stopped?.reason).toBeDefined();
+    expect(ledger.used("model-a", "2026-11-04")).toBe(1000);
+  });
+
   it("respects --limit and reuses the requests already counted today", async () => {
     await seed([{ externalId: "1" }, { externalId: "2" }, { externalId: "3" }]);
     const first = await runClassify(connection.db, {
@@ -224,5 +267,6 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
       .from(llmUsageDaily)
       .where(eq(llmUsageDaily.model, "model-a"));
     expect(usage?.requests).toBe(3);
+    expect(ledger.used("model-a", usage?.usageDate ?? "")).toBe(3);
   });
 });

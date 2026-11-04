@@ -73,6 +73,12 @@ export class RateLimiter {
     return Math.max(0, this.lastRequestAt + this.minIntervalMs - this.now().getTime());
   }
 
+  /** Raises the local count to what a shared ledger says was used today (other processes count too). */
+  syncUsedToday(sharedCount: number): void {
+    this.rollDay();
+    this.used = Math.max(this.used, sharedCount);
+  }
+
   /** Count one request (retries included). */
   record(): void {
     this.rollDay();
