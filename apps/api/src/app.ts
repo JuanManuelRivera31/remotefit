@@ -15,7 +15,9 @@ export function createApp(options: { jobs?: JobsRoutesOptions } = {}): express.E
     const body: ApiError = { error: { code: "not_found", message: "Unknown route" } };
     res.status(404).json(body);
   });
-  // One error format for every route. Internal details stay in the server log.
+  // One error format for every route. Internal details stay in the server log. Express recognises an error handler
+  // by its four parameters, so `_next` must stay even though it is unused.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   app.use((error: unknown, _req: Request, res: Response, _next: NextFunction) => {
     if (error instanceof HttpError) {
       const body: ApiError = { error: { code: error.code, message: error.message } };
