@@ -20,12 +20,13 @@ import {
 } from "../src/index.js";
 import { unclearResult } from "../src/eligibility/postprocess.js";
 import { DEFAULT_QUOTA_LEDGER_URL, FileQuotaLedger } from "../src/llm/quota-ledger.js";
+import { DEFAULT_CLASSIFY_MODEL } from "../src/eligibility/decisions.js";
 import { loadRawCache, saveRawCache } from "./cache.js";
 import { loadCases, loadDevLabelRevision, loadJob } from "./loader.js";
 import { computeMetrics, type EvalRow } from "./metrics.js";
 import { formatMarkdownReport } from "./report.js";
 
-const DEFAULT_MODEL = "gemini-3.5-flash-lite";
+const DEFAULT_MODEL = DEFAULT_CLASSIFY_MODEL;
 const LIMITS_URL = new URL("../../../data/llm-limits.json", import.meta.url);
 const REPORTS_URL = new URL("reports/", import.meta.url);
 

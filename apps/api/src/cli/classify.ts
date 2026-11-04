@@ -2,6 +2,7 @@
 // Classifies pending postings with the free Gemini tier. The key comes from GEMINI_API_KEY (alias RF_LLM_API_KEY).
 import { readFileSync } from "node:fs";
 import {
+  DEFAULT_CLASSIFY_MODEL,
   DEFAULT_QUOTA_LEDGER_URL,
   ELIGIBILITY_PROMPT_VERSION,
   FileQuotaLedger,
@@ -14,7 +15,7 @@ import { loadEnv } from "../db/env.js";
 import { runClassify } from "../classify/run.js";
 import { selectPendingJobs } from "../classify/store.js";
 
-const DEFAULT_MODEL = "gemini-3.5-flash-lite";
+const DEFAULT_MODEL = DEFAULT_CLASSIFY_MODEL;
 const FALLBACK_MODEL = "gemini-3.1-flash-lite";
 const LIMITS_URL = new URL("../../../../data/llm-limits.json", import.meta.url);
 

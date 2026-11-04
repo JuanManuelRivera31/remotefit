@@ -91,3 +91,4 @@ export {
   verifyPositive,
 } from "./eligibility/verifier.js";
 export type { VerifierAnswer, VerifierOptions, VerifierOutcome } from "./eligibility/verifier.js";
+export * from "./api/index.js";
