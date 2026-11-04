@@ -26,7 +26,22 @@ export interface ClassifierDecision extends ClassifierKey {
   measuredCountries: string[];
 }
 
-export const CLASSIFIER_DECISIONS: readonly ClassifierDecision[] = [];
+export const CLASSIFIER_DECISIONS: readonly ClassifierDecision[] = [
+  {
+    // ADR 0004 section 6: single approved run on the frozen test-v3 (144 cases, 92 applicable for CO).
+    promptVersion: "eligibility-v4",
+    postprocessVersion: "postprocess-v3",
+    model: "gemini-3.5-flash-lite",
+    state: "accepted",
+    decidedAt: "2026-11-04",
+    testSet: "test-v3",
+    precision: 88 / 90,
+    recall: 88 / 92,
+    precisionCi: [0.923, 0.994],
+    recallCi: [0.893, 0.983],
+    measuredCountries: ["CO"],
+  },
+];
 
 export type AcceptanceState = ClassifierDecision["state"] | "not_accepted";
 
