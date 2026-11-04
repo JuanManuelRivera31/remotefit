@@ -28,13 +28,29 @@ export function assertTestDatabaseName(name: string): void {
   }
 }
 
-/** Reads TEST_DATABASE_URL only (never DATABASE_URL). Returns null when it is not set, so the tests are skipped. */
-export function getTestDatabaseUrl(): string | null {
-  loadEnv();
-  const url = process.env["TEST_DATABASE_URL"];
-  if (!url) return null;
+/**
+ * Pure core of getTestDatabaseUrl. Reads TEST_DATABASE_URL only (never DATABASE_URL). When it is missing:
+ * - in a full run (RF_REQUIRE_DB_TESTS=1, set by `npm test` at the repo root) it throws, so the suite FAILS;
+ * - otherwise (one workspace, one file) it returns null and the database tests are skipped.
+ */
+export function resolveTestDatabaseUrl(env: Record<string, string | undefined>): string | null {
+  const url = env["TEST_DATABASE_URL"];
+  if (!url) {
+    if (env["RF_REQUIRE_DB_TESTS"] === "1") {
+      throw new Error(
+        "TEST_DATABASE_URL is not set, but this is a full test run (RF_REQUIRE_DB_TESTS=1): the database tests " +
+          "must run, not be skipped. Add TEST_DATABASE_URL to .env (see .env.example).",
+      );
+    }
+    return null;
+  }
   assertTestDatabaseName(databaseNameOf(url));
   return url;
+}
+
+export function getTestDatabaseUrl(): string | null {
+  loadEnv();
+  return resolveTestDatabaseUrl(process.env);
 }
 
 /** Connects and double-checks the server-side database name before the caller can truncate anything. */
