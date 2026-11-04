@@ -86,6 +86,11 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
 - [ ] **S11 · Uso real + pulido** 👤
   Correr la ingesta a diario durante 2 semanas, anotar errores en `docs/notas-de-uso.md`, corregir los más graves. Cada semana, revisar las empresas candidatas que proponga el scan y aprobar las que entren a `data/companies.json` (ADR 0002). Sumar al conjunto de prueba hasta llegar a 60 aplicables. README de portafolio con capturas, diagrama y resultados del eval.
 
+## Pendientes para una futura `eligibility-v5` (no gastar cuota hasta abrir esa iteración)
+
+- [ ] **Contradicción regla 8b del prompt v4 vs. regla 6 del ADR 0004** *(anotada el 2026-11-04 por decisión del dueño)*. La 8b dice que lo híbrido gana a cualquier frase que suene remota; la regla 6 dice que remote-first con viajes periódicos es remoto y que híbrido exige presencia regular semanal o puesto declarado híbrido. Efecto medido: solo cuesta recall (los 5 FN de desarrollo leídos como híbridos: Clara, Sezzle, Addi), no precisión. Para v5: reescribir la 8b con la definición de la regla 6, iterar solo sobre desarrollo y medir con una prueba nueva.
+- [ ] **Contador de cuota en base de datos al desplegar.** Hoy eval y classify comparten `data/llm-quota.json` (un contador por modelo y día del Pacífico, con prioridad del eval). Si classify corre en otra máquina, implementar `QuotaLedger` sobre PostgreSQL con los mismos métodos.
+
 ## Después del MVP (no empezar hasta cerrar S11)
 
 - Validación: boletín semanal de ofertas verificadas, con meta de ≥ 100 suscriptores en 8 semanas (ADR 0005). Antes, revisar términos de los ATS y definir cómo se tratan los correos.
