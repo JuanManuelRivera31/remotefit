@@ -159,8 +159,13 @@ describe.skipIf(!testDatabaseUrl)("jobs API against PostgreSQL", () => {
     const { status, body } = await get("/api/jobs");
     expect(status).toBe(200);
     const page = JobsPageSchema.parse(body);
-    expect(page.items.map((i) => i.id)).toEqual([ids.get("latam"), ids.get("sib-pe")]);
-    expect(page.items[1]).toMatchObject({ siblingCount: 1, siblingLocations: ["Colombia"] });
+    // The vacancy is led by its Colombia posting (even though the Peru one is newer) and lists both countries.
+    expect(page.items.map((i) => i.id)).toEqual([ids.get("latam"), ids.get("sib-co")]);
+    expect(page.items[1]).toMatchObject({
+      siblingCount: 1,
+      siblingLocations: ["Peru"],
+      groupCountries: ["CO", "PE"],
+    });
     expect(page.counts).toEqual({ applicable: 2, unconfirmed: 1 });
     expect(page.items[0]?.evidence).toEqual(["anywhere in Latin America"]);
     expect(page.items[0]?.lastVerifiedAt).toBe(daysAgo(0).toISOString());

@@ -16,6 +16,8 @@ export const companyEntrySchema = z.object({
   ats: z.enum(["greenhouse", "lever", "ashby"]),
   boardToken: z.string().min(1),
   active: z.boolean(),
+  /** Classified after every other company (e.g. a board that repeats the same role per country). */
+  classifyLast: z.boolean().optional(),
 });
 export const companiesFileSchema = z.object({ companies: z.array(companyEntrySchema) });
 export type CompanyEntry = z.infer<typeof companyEntrySchema>;

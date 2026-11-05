@@ -1,13 +1,11 @@
 // Database edge of S9: loads active postings with the classification of the classifier in use. The decision of what a
 // user sees is made in code by the pure listing functions of @remotefit/core (same isApplicable as the eval).
-import { and, eq, ne, notInArray } from "drizzle-orm";
+import { and, eq, ne } from "drizzle-orm";
 import type { ClassifierKey, ListingResult, ListingRow } from "@remotefit/core";
 import type { Db } from "../db/client.js";
 import { companies, eligibilityResults, jobs } from "../db/schema.js";
 import { countPendingJobs } from "../classify/store.js";
 
-/** Labels that can never be shown (clearly not applicable from any LATAM country); SQL drops them early. */
-const NEVER_SHOWN = ["us_only", "onsite_or_hybrid"];
 
 const columns = {
   id: jobs.id,
@@ -81,14 +79,17 @@ const resultJoin = (key: ClassifierKey) =>
 
 const listable = and(eq(jobs.isActive, true), eq(jobs.prefilterOutcome, "pass"));
 
-/** Every active posting with a result of the classifier in use, minus the labels that are never shown. */
+/**
+ * Every active posting with a result of the classifier in use. All labels are loaded (not only applicable ones) so a
+ * vacancy card can list the countries of every sibling; what is shown is decided in code by listJobs.
+ */
 export async function loadListingRows(db: Db, key: ClassifierKey): Promise<ListingRow[]> {
   const rows = await db
     .select(columns)
     .from(jobs)
     .innerJoin(companies, eq(companies.id, jobs.companyId))
     .innerJoin(eligibilityResults, resultJoin(key))
-    .where(and(listable, notInArray(eligibilityResults.label, NEVER_SHOWN)));
+    .where(listable);
   return rows.map(toRow);
 }
 

@@ -93,6 +93,8 @@ export const JobSummarySchema = z.object({
   /** Other postings of the same vacancy (one card per sibling group). */
   siblingCount: z.number().int().nonnegative(),
   siblingLocations: z.array(z.string()),
+  /** ISO codes of the countries of every posting of the vacancy (this one included), sorted. */
+  groupCountries: z.array(z.string()),
 });
 export type JobSummary = z.infer<typeof JobSummarySchema>;
 
@@ -113,7 +115,14 @@ export const JobDetailSchema = JobSummarySchema.extend({
   /** About 400 characters of the posting around the first quote, never the whole posting (ADR 0002). */
   excerpt: ExcerptSchema.nullable(),
   siblings: z.array(
-    z.object({ id: z.number().int(), location: z.string().nullable(), url: z.string() }),
+    z.object({
+      id: z.number().int(),
+      location: z.string().nullable(),
+      url: z.string(),
+      countries: z.array(z.string()),
+      /** Whether this sibling posting itself is visible (applicable or unconfirmed) for the requested country. */
+      visible: z.boolean(),
+    }),
   ),
   provenance: z.object({
     promptVersion: z.string(),

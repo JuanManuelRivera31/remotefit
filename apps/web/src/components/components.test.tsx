@@ -37,7 +37,8 @@ const job: JobSummary = {
   lastVerifiedAt: "2026-11-04T15:00:00.000Z",
   evidence: ["We hire anywhere in Latin America"],
   siblingCount: 1,
-  siblingLocations: ["Mexico"],
+  siblingLocations: ["Mexico City, Mexico"],
+  groupCountries: ["CO", "MX"],
 };
 
 describe("StatusBanner", () => {
@@ -59,7 +60,7 @@ describe("JobCard", () => {
   it("shows the quote, the original link, the last verification date and the stale badge", () => {
     render(
       <MemoryRouter>
-        <JobCard job={job} detailHref="/ofertas/7" />
+        <JobCard job={job} detailHref="/ofertas/7" country="CO" />
       </MemoryRouter>,
     );
     expect(screen.getByText("“We hire anywhere in Latin America”")).toBeTruthy();
@@ -69,7 +70,10 @@ describe("JobCard", () => {
     expect(screen.getByText(/Vista activa el 4 de nov de 2026/)).toBeTruthy();
     expect(screen.getByText("Más de 180 días")).toBeTruthy();
     expect(screen.getByText("Remoto desde Latinoamérica")).toBeTruthy();
-    expect(screen.getByText(/también en: Mexico/)).toBeTruthy();
+    expect(screen.getByText(/2 publicaciones de la misma vacante/)).toBeTruthy();
+    // The user's country is highlighted in the vacancy's country list; the others are plain text.
+    expect(screen.getByText("Colombia").tagName).toBe("STRONG");
+    expect(screen.getByText(/México/).tagName).not.toBe("STRONG");
   });
 
   it("marks unconfirmed postings", () => {
@@ -78,10 +82,13 @@ describe("JobCard", () => {
         <JobCard
           job={{ ...job, verdict: "unconfirmed", label: "unclear" }}
           detailHref="/ofertas/7"
+          country="CO"
         />
       </MemoryRouter>,
     );
     expect(screen.getByText("Sin confirmar")).toBeTruthy();
+    // Not confirmed for the user's country: no highlight.
+    expect(screen.queryByText("Colombia", { selector: "strong" })).toBeNull();
   });
 });
 

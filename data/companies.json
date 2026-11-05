@@ -181,7 +181,8 @@
       "ats": "lever",
       "boardToken": "bluelightconsulting",
       "active": true,
-      "notes": "Aprobada 2026-11-04. Nearshore; mismo rol duplicado por pais y avisos viejos. robots.txt 'Allow: /'; el sitio no publica terminos de uso (solo politica de cookies)."
+      "notes": "Aprobada 2026-11-04. Nearshore; mismo rol duplicado por pais y avisos viejos. robots.txt 'Allow: /'; el sitio no publica terminos de uso (solo politica de cookies). Se clasifica al final de la cola (decision del dueno, 2026-11-04).",
+      "classifyLast": true
     }
   ]
 }

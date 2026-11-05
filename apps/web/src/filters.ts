@@ -78,5 +78,25 @@ export function apiQueryFromFilters(filters: Filters): string {
 
 export const isMeasured = (country: string): boolean => MEASURED_COUNTRIES.includes(country);
 
+// Countries outside the selector (Belize, Guyana, the US...) still get a Spanish name from the browser.
+const regionNames = (() => {
+  try {
+    return new Intl.DisplayNames(["es"], { type: "region" });
+  } catch {
+    return null;
+  }
+})();
+
 export const countryName = (code: string): string =>
-  COUNTRY_OPTIONS.find((c) => c.code === code)?.name ?? code;
+  COUNTRY_OPTIONS.find((c) => c.code === code)?.name ?? regionNames?.of(code) ?? code;
+
+/** How many filters differ from the default, besides the country (for the collapsed mobile bar). */
+export function activeFilterCount(filters: Filters): number {
+  return (
+    (filters.seniority.length > 0 ? 1 : 0) +
+    (filters.maxAgeDays !== null ? 1 : 0) +
+    (filters.company ? 1 : 0) +
+    (filters.q ? 1 : 0) +
+    (filters.showUnconfirmed ? 1 : 0)
+  );
+}

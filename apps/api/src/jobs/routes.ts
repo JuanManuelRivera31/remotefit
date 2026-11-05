@@ -6,7 +6,9 @@ import {
   decisionFor,
   excerptAround,
   listJobs,
+  postingCountries,
   summarizeOne,
+  verdictFor,
   type ApiStatus,
   type ClassifierDecision,
   type ClassifierKey,
@@ -89,9 +91,14 @@ export function jobsRouter(options: JobsRoutesOptions): Router {
     const detail: JobDetail = {
       ...summary,
       excerpt,
-      siblings: loaded.siblings
-        .filter((s) => summarizeOne(s, [], country, now()) !== null)
-        .map((s) => ({ id: s.id, location: s.locationRaw, url: s.url })),
+      // The whole vacancy: siblings for other countries are listed too, marked as not visible for this country.
+      siblings: loaded.siblings.map((s) => ({
+        id: s.id,
+        location: s.locationRaw,
+        url: s.url,
+        countries: postingCountries(s),
+        visible: verdictFor(s.result, country) !== null,
+      })),
       provenance: loaded.provenance,
     };
     res.json(detail);

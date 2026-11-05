@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_FILTERS,
+  activeFilterCount,
   apiQueryFromFilters,
+  countryName,
   filtersFromParams,
   isMeasured,
   paramsFromFilters,
@@ -52,6 +54,19 @@ describe("filters in the URL", () => {
       seniority: "mid",
       showUnconfirmed: "1",
     });
+  });
+
+  it("counts active filters besides the country, for the folded mobile bar", () => {
+    expect(activeFilterCount({ ...DEFAULT_FILTERS, country: "MX" })).toBe(0);
+    expect(
+      activeFilterCount({ ...DEFAULT_FILTERS, seniority: ["mid"], q: "react", showUnconfirmed: true }),
+    ).toBe(3);
+  });
+
+  it("names every country in Spanish, also those outside the selector", () => {
+    expect(countryName("CO")).toBe("Colombia");
+    expect(countryName("BZ")).toBe("Belice");
+    expect(countryName("US")).toBe("Estados Unidos");
   });
 
   it("marks only Colombia as measured", () => {

@@ -1,4 +1,4 @@
-import { and, eq, notExists, sql } from "drizzle-orm";
+import { and, eq, inArray, notExists, sql } from "drizzle-orm";
 import {
   POSTPROCESS_VERSION,
   buildUserMessage,
@@ -9,7 +9,7 @@ import {
   type WorkplaceType,
 } from "@remotefit/core";
 import type { Db } from "../db/client.js";
-import { eligibilityResults, jobs, llmUsageDaily } from "../db/schema.js";
+import { companies, eligibilityResults, jobs, llmUsageDaily } from "../db/schema.js";
 
 export const LLM_PROVIDER_NAME = "gemini";
 
@@ -21,12 +21,20 @@ function toWorkplaceType(value: string | null): WorkplaceType | null {
  * Active postings that passed the rules pre-filter and have no stored result for (content_hash, prompt_version, model).
  * Postings with identical content share one result, so each content_hash appears once. Newest first: postings seen for
  * the first time (new or with changed content) go before older ones that are merely missing a result.
+ * Companies in `lastBoardTokens` (`classifyLast` in data/companies.json) go after every other company, so a board that
+ * publishes hundreds of copies of the same role does not hold back the rest of the directory.
  */
 export async function selectPendingJobs(
   db: Db,
   key: { promptVersion: string; model: string },
   limit?: number,
+  order: { lastBoardTokens?: readonly string[] } = {},
 ): Promise<QueueJob[]> {
+  const last = order.lastBoardTokens ?? [];
+  const priority =
+    last.length > 0
+      ? [sql`case when ${inArray(companies.boardToken, [...last])} then 1 else 0 end`]
+      : [];
   const rows = await db
     .select({
       id: jobs.id,
@@ -37,6 +45,7 @@ export async function selectPendingJobs(
       descriptionText: jobs.descriptionText,
     })
     .from(jobs)
+    .innerJoin(companies, eq(companies.id, jobs.companyId))
     .where(
       and(
         eq(jobs.isActive, true),
@@ -55,7 +64,7 @@ export async function selectPendingJobs(
         ),
       ),
     )
-    .orderBy(sql`${jobs.firstSeenAt} desc`, sql`${jobs.id} desc`);
+    .orderBy(...priority, sql`${jobs.firstSeenAt} desc`, sql`${jobs.id} desc`);
 
   const seen = new Set<string>();
   const queue: QueueJob[] = [];
@@ -82,6 +91,26 @@ export async function countPendingJobs(
   key: { promptVersion: string; model: string },
 ): Promise<number> {
   return (await selectPendingJobs(db, key)).length;
+}
+
+/** Pending postings per company, in queue order (for the backlog report). */
+export async function pendingByCompany(
+  db: Db,
+  key: { promptVersion: string; model: string },
+  order: { lastBoardTokens?: readonly string[] } = {},
+): Promise<{ company: string; pending: number }[]> {
+  const queue = await selectPendingJobs(db, key, undefined, order);
+  const rows = await db
+    .select({ id: jobs.id, company: companies.name })
+    .from(jobs)
+    .innerJoin(companies, eq(companies.id, jobs.companyId));
+  const nameOf = new Map(rows.map((r) => [r.id, r.company]));
+  const counts = new Map<string, number>();
+  for (const job of queue) {
+    const name = nameOf.get(job.id) ?? "?";
+    counts.set(name, (counts.get(name) ?? 0) + 1);
+  }
+  return [...counts].map(([company, pending]) => ({ company, pending }));
 }
 
 /** Requests already counted today for a model, so the limiter survives between runs. */
