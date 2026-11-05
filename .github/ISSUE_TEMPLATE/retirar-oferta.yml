@@ -1,0 +1,33 @@
+name: Retirar o corregir una oferta
+description: Pide que una oferta se retire del sitio o avisa que está mal clasificada.
+title: "Retirar/corregir oferta: "
+labels: ["retiro-de-oferta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por avisar. **No incluyas datos personales** (correo, teléfono, CV): este issue es público.
+  - type: input
+    id: enlace
+    attributes:
+      label: Enlace de la oferta original
+      description: El enlace "Ver oferta original" de la tarjeta.
+      placeholder: https://job-boards.greenhouse.io/empresa/jobs/123
+    validations:
+      required: true
+  - type: dropdown
+    id: motivo
+    attributes:
+      label: Motivo
+      options:
+        - Soy de la empresa y pido retirarla
+        - La oferta ya cerró
+        - Está mal clasificada (no se puede postular desde el país indicado)
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: detalle
+    attributes:
+      label: Detalle (opcional)
+      description: Por ejemplo, la frase de la oferta que contradice la cita mostrada.

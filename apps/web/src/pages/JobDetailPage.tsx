@@ -121,9 +121,11 @@ export function JobDetailPage() {
           </a>
 
           <footer className="border-t border-slate-100 pt-3 text-xs text-slate-600">
-            Vista activa en el portal el {dateText(job.data.lastVerifiedAt)} · clasificada el{" "}
-            {dateText(job.data.provenance.classifiedAt)} con {job.data.provenance.model} +{" "}
-            {job.data.provenance.promptVersion} +{" "}
+            Vista activa en el portal el {dateText(job.data.lastVerifiedAt)} · clasificada
+            {job.data.provenance.classifiedAt
+              ? ` el ${dateText(job.data.provenance.classifiedAt)}`
+              : ""}{" "}
+            con {job.data.provenance.model} + {job.data.provenance.promptVersion} +{" "}
             {job.data.provenance.postprocessVersion ?? "sin postproceso"}
           </footer>
         </article>
