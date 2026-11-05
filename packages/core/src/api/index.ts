@@ -23,3 +23,14 @@ export type {
   ClassifierDecision,
   ClassifierKey,
 } from "../eligibility/decisions.js";
+export {
+  PUBLIC_QUOTE_MAX,
+  PublicDataSchema,
+  PublicJobSchema,
+  STALE_DATA_AFTER_DAYS,
+  dataAgeDays,
+  fromPublicJob,
+  publishableRows,
+  toPublicJob,
+} from "./public-data.js";
+export type { PublicData, PublicJob } from "./public-data.js";
