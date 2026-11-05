@@ -1,6 +1,6 @@
 # Plan S9 + S10: resultados con evidencia citada y filtros (propuesta, 2026-11-03)
 
-Estado: **pendiente de tu aprobación**. No se escribió código de S9/S10. Puede avanzar en paralelo con la evaluación de test-v3.
+Estado: **aprobado el 2026-11-04 con las 3 recomendaciones y hecho el mismo día** (S9a, S9b, S10a–c). Agregados del dueño, todos implementados: ofertas `unclear` ocultas por defecto con el interruptor "Ver sin confirmar"; cada oferta con su cita, el enlace a la original y la fecha de la última verificación (última vez que la ingesta la vio activa en el ATS); selector de país con Colombia por defecto y los demás marcados "sin medir"; interfaz en español, adaptable al celular, sin login ni datos personales (filtros en la URL); la franja de "versión no aceptada" se quita sola cuando `CLASSIFIER_DECISIONS` registra la versión en uso (ya ocurrió: v4 + postprocess-v3 quedó aceptada). Diferencias con la propuesta: las rutas se prueban con `fetch` contra un servidor real en lugar de supertest (sin dependencia nueva), y "sin confirmar" incluye también las ofertas cuya etiqueta aplicaría pero con modalidad desconocida.
 
 ## Alcance
 

@@ -85,20 +85,6 @@ export async function countPendingJobs(
 }
 
 /** Requests already counted today for a model, so the limiter survives between runs. */
-export async function loadUsedToday(db: Db, model: string, now: Date): Promise<number> {
-  const [row] = await db
-    .select({ requests: llmUsageDaily.requests })
-    .from(llmUsageDaily)
-    .where(
-      and(
-        eq(llmUsageDaily.usageDate, quotaDay(now)),
-        eq(llmUsageDaily.provider, LLM_PROVIDER_NAME),
-        eq(llmUsageDaily.model, model),
-      ),
-    );
-  return row?.requests ?? 0;
-}
-
 /** Adds to llm_usage_daily (per quota day and model). Atomic: safe if two processes ever run together. */
 export async function addUsage(db: Db, model: string, delta: UsageDelta, now: Date): Promise<void> {
   const values = {

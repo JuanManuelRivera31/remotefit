@@ -28,7 +28,6 @@ export type CachedRaw = Omit<RawOutcome, "sentText">;
 const safe = (text: string): string => text.replace(/[^a-zA-Z0-9._-]/g, "_");
 const cacheFile = (promptVersion: string, model: string): URL =>
   new URL(`raw-${safe(promptVersion)}-${safe(model)}.json`, CACHE_DIR);
-const usageFile = new URL("usage.json", CACHE_DIR);
 
 /** Raw model answers keyed by content_hash for one (prompt version, model): the expensive part of the cache key. */
 export function loadRawCache(promptVersion: string, model: string): Map<string, CachedRaw> {
@@ -52,26 +51,4 @@ export function saveRawCache(
     cacheFile(promptVersion, model),
     `${JSON.stringify(Object.fromEntries(cache), null, 1)}\n`,
   );
-}
-
-const usageFileSchema = z.record(z.string(), z.object({ day: z.string(), count: z.number() }));
-
-function readUsage(): z.infer<typeof usageFileSchema> {
-  try {
-    return usageFileSchema.parse(JSON.parse(readFileSync(usageFile, "utf8")) as unknown);
-  } catch {
-    return {};
-  }
-}
-
-/** Requests already made today per model (provider quota day), so the daily count survives between runs. */
-export function loadDailyUsage(model: string): { day: string; count: number } | null {
-  return readUsage()[model] ?? null;
-}
-
-export function saveDailyUsage(model: string, day: string, count: number): void {
-  const all = readUsage();
-  all[model] = { day, count };
-  mkdirSync(CACHE_DIR, { recursive: true });
-  writeFileSync(usageFile, `${JSON.stringify(all, null, 1)}\n`);
 }

@@ -1,13 +1,21 @@
 // npm run classify [-- --limit N] [--model m] [--allow-fallback] [--dry-run]
 // Classifies pending postings with the free Gemini tier. The key comes from GEMINI_API_KEY (alias RF_LLM_API_KEY).
 import { readFileSync } from "node:fs";
-import { ELIGIBILITY_PROMPT_VERSION, GeminiProvider, parseLimits } from "@remotefit/core";
+import {
+  DEFAULT_CLASSIFY_MODEL,
+  DEFAULT_QUOTA_LEDGER_URL,
+  ELIGIBILITY_PROMPT_VERSION,
+  FileQuotaLedger,
+  GeminiProvider,
+  POSTPROCESS_VERSION,
+  parseLimits,
+} from "@remotefit/core";
 import { createDb } from "../db/client.js";
 import { loadEnv } from "../db/env.js";
 import { runClassify } from "../classify/run.js";
 import { selectPendingJobs } from "../classify/store.js";
 
-const DEFAULT_MODEL = "gemini-3.5-flash-lite";
+const DEFAULT_MODEL = DEFAULT_CLASSIFY_MODEL;
 const FALLBACK_MODEL = "gemini-3.1-flash-lite";
 const LIMITS_URL = new URL("../../../../data/llm-limits.json", import.meta.url);
 
@@ -39,11 +47,19 @@ const limits = parseLimits(JSON.parse(readFileSync(LIMITS_URL, "utf8")) as unkno
 const { db, pool } = createDb();
 try {
   const key = { promptVersion: ELIGIBILITY_PROMPT_VERSION, model };
+  const ledger = new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL);
   const pending = await selectPendingJobs(db, key, args.limit);
   console.log(
-    `Prompt ${key.promptVersion} · model ${model} · ${pending.length} postings to classify`,
+    `Prompt ${key.promptVersion} · postprocess ${POSTPROCESS_VERSION} · model ${model} · ${pending.length} postings to classify`,
   );
-  if (args.dryRun || pending.length === 0) {
+  const pendingEval = ledger.pendingEval();
+  if (pendingEval) {
+    // The eval has priority on the shared daily quota (owner decision, 2026-11-04).
+    console.log(
+      `An eval run is pending (${pendingEval.split}, ${pendingEval.model}, ${pendingEval.promptVersion}, ` +
+        `${pendingEval.remaining} cases left): classify does not run until it finishes. Nothing was sent.`,
+    );
+  } else if (args.dryRun || pending.length === 0) {
     if (args.dryRun) console.log("Dry run: nothing was sent.");
   } else {
     const apiKey = process.env["GEMINI_API_KEY"] ?? process.env["RF_LLM_API_KEY"];
@@ -61,6 +77,7 @@ try {
       ...(args.allowFallback ? { fallbackModel: FALLBACK_MODEL } : {}),
       providerFor: () => new GeminiProvider({ apiKey }),
       limits,
+      ledger,
       ...(args.limit !== undefined ? { limit: args.limit } : {}),
       sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
       onEvent: (event) => {

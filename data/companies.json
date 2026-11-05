@@ -161,6 +161,27 @@
       "boardToken": "thrivecart",
       "active": true,
       "notes": "Aprobada 2026-11-03. 6 ofertas; 2 de QA Remote - LATAM. robots.txt solo bloquea rutas privadas; /terms y /legal revisados sin clausula de scraping."
+    },
+    {
+      "name": "Yuno",
+      "ats": "lever",
+      "boardToken": "yuno",
+      "active": true,
+      "notes": "Aprobada 2026-11-04. Fintech de pagos. Sin prohibicion de acceso automatizado: robots.txt de y.uno permite todo (incluidos bots de IA, solo bloquea /api/ y /studio); las restricciones de sus terminos (seccion 10) obligan a comercios contratados sobre su plataforma, no al sitio ni al tablero de empleo. Terminos leidos de forma parcial (~306k caracteres)."
+    },
+    {
+      "name": "Coderio",
+      "ats": "lever",
+      "boardToken": "coderio",
+      "active": true,
+      "notes": "Aprobada 2026-11-04. Nearshore; varios roles hibridos (filtrar por workplaceType). robots.txt declara ai-train=yes; sus terminos (seccion 1) limitan reproducir contenido del sitio, sin clausula sobre acceso automatizado."
+    },
+    {
+      "name": "Bluelight Consulting",
+      "ats": "lever",
+      "boardToken": "bluelightconsulting",
+      "active": true,
+      "notes": "Aprobada 2026-11-04. Nearshore; mismo rol duplicado por pais y avisos viejos. robots.txt 'Allow: /'; el sitio no publica terminos de uso (solo politica de cookies)."
     }
   ]
 }

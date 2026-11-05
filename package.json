@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "test": "npm test --workspaces --if-present",
+    "test": "node scripts/test-all.mjs",
     "ingest": "npm run ingest -w apps/api",
     "prefilter": "npm run prefilter -w apps/api --",
     "classify": "npm run classify -w apps/api --",

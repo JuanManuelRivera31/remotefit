@@ -29,3 +29,7 @@ data/seed-career-ops/
 
 # test-v2 labelling workspace (local, outside git: posting text and in-progress labels)
 data/eval-v2-*
+
+# Shared LLM quota ledger (eval + classify): local state, not code
+data/llm-quota.json
+data/llm-quota.json.*.tmp

@@ -74,8 +74,21 @@ export function formatAcceptanceSections(rows: readonly EvalRow[], country = "CO
       country,
     ),
     metricsRow(
+      "Sin Nortal",
+      rows.filter((r) => r.board !== "nortal"),
+      country,
+    ),
+    metricsRow(
       "Sin Lever",
       rows.filter((r) => r.ats !== "lever"),
+      country,
+    ),
+    // The concentrated sources removed together: what is left is the long tail of companies.
+    metricsRow(
+      "Sin Canonical, Nortal, Sezzle ni Lever",
+      rows.filter(
+        (r) => !["canonical", "nortal", "sezzle"].includes(r.board ?? "") && r.ats !== "lever",
+      ),
       country,
     ),
   ];
