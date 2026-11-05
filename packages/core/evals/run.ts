@@ -19,7 +19,12 @@ import {
   type RawOutcome,
 } from "../src/index.js";
 import { unclearResult } from "../src/eligibility/postprocess.js";
-import { DEFAULT_QUOTA_LEDGER_URL, FileQuotaLedger } from "../src/llm/quota-ledger.js";
+import {
+  DEFAULT_QUOTA_LEDGER_URL,
+  FileQuotaLedger,
+  SqlQuotaLedger,
+  type QuotaLedger,
+} from "../src/llm/quota-ledger.js";
 import { DEFAULT_CLASSIFY_MODEL } from "../src/eligibility/decisions.js";
 import { loadRawCache, saveRawCache } from "./cache.js";
 import { loadCases, loadDevLabelRevision, loadJob } from "./loader.js";
@@ -81,13 +86,54 @@ async function withRetries(run: () => Promise<RawOutcome>): Promise<RawOutcome> 
   }
 }
 
+/**
+ * The shared quota ledger: PostgreSQL when QUOTA_DATABASE_URL (or DATABASE_URL) is set, so the local eval and the
+ * daily GitHub Actions classify count against the same quota; otherwise a local file. Point QUOTA_DATABASE_URL at the
+ * production database (Neon) when the published pipeline is running, or the two will not see each other.
+ */
+async function openLedger(): Promise<{ ledger: QuotaLedger; where: string; close: () => Promise<void> }> {
+  const url = process.env["QUOTA_DATABASE_URL"] ?? process.env["DATABASE_URL"];
+  if (!url) {
+    return {
+      ledger: new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL),
+      where: "data/llm-quota.json",
+      close: async () => undefined,
+    };
+  }
+  const { default: pg } = await import("pg");
+  const pool = new pg.Pool({ connectionString: url, max: 2 });
+  return {
+    ledger: new SqlQuotaLedger((text, params) => pool.query(text, params)),
+    where: process.env["QUOTA_DATABASE_URL"] ? "QUOTA_DATABASE_URL" : "DATABASE_URL",
+    close: () => pool.end(),
+  };
+}
+
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
-  const ledger = new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL);
+  // The runner (not Claude) loads .env so GEMINI_API_KEY and the database URL reach the process; real env vars win.
+  try {
+    process.loadEnvFile(new URL("../../../.env", import.meta.url));
+  } catch {
+    // No .env file: rely on the real environment.
+  }
+  const opened = await openLedger();
+  try {
+    await runEval(args, opened.ledger, opened.where);
+  } finally {
+    await opened.close();
+  }
+}
+
+async function runEval(
+  args: ReturnType<typeof parseArgs>,
+  ledger: QuotaLedger,
+  ledgerWhere: string,
+): Promise<void> {
   if (args.releasePending) {
     // Abandon a pending eval on purpose (e.g. a version that will not be run after all), so classify may run again.
-    const pendingEval = ledger.pendingEval();
-    ledger.clearPendingEval();
+    const pendingEval = await ledger.pendingEval();
+    await ledger.clearPendingEval();
     console.log(
       pendingEval
         ? `Released the pending eval (${pendingEval.split}, ${pendingEval.model}, ${pendingEval.promptVersion}, ${pendingEval.remaining} cases left).`
@@ -103,13 +149,6 @@ async function main(): Promise<void> {
       "The frozen test split only accepts candidate versions the owner approved (ADR 0004). " +
         "Run with --approved-by-owner once they have said so; nothing was read or sent.",
     );
-  }
-
-  // The runner (not Claude) loads .env so GEMINI_API_KEY reaches the process; real env vars win.
-  try {
-    process.loadEnvFile(new URL("../../../.env", import.meta.url));
-  } catch {
-    // No .env file: rely on the real environment.
   }
 
   const model = args.model || process.env["RF_LLM_MODEL_CLASSIFY"] || DEFAULT_MODEL;
@@ -136,22 +175,24 @@ async function main(): Promise<void> {
     fail("GEMINI_API_KEY is not set (put it in .env or the environment). Nothing was sent.");
   }
 
-  // One counter per model and Pacific day, shared with `npm run classify` (data/llm-quota.json).
+  // One counter per model and Pacific day, shared with `npm run classify`.
   const limiter = new RateLimiter({ rpm: limits.rpm, rpd: limits.rpd });
   const shared = ledger.counterFor(model);
-  limiter.syncUsedToday(shared.used(limiter.quotaDayKey));
-  const reservePending = (remaining: number): void => {
+  limiter.syncUsedToday(await shared.used(limiter.quotaDayKey));
+  console.log(`Quota ledger: ${ledgerWhere}`);
+  const since = (await ledger.pendingEval())?.since ?? new Date().toISOString();
+  const reservePending = async (remaining: number): Promise<void> => {
     // The eval has priority: while this reservation exists, classify refuses to start.
-    ledger.setPendingEval({
+    await ledger.setPendingEval({
       split,
       model,
       promptVersion: ELIGIBILITY_PROMPT_VERSION,
       postprocessVersion: POSTPROCESS_VERSION,
       remaining,
-      since: ledger.pendingEval()?.since ?? new Date().toISOString(),
+      since,
     });
   };
-  const current = ledger.pendingEval();
+  const current = await ledger.pendingEval();
   const isThisRun =
     current !== null &&
     current.split === split &&
@@ -163,7 +204,7 @@ async function main(): Promise<void> {
         "Finish it first, or release it with `npm run eval -- --release-pending`. Nothing was sent.",
     );
   }
-  if (pending.length > 0) reservePending(pending.length);
+  if (pending.length > 0) await reservePending(pending.length);
   console.log(
     `Eval ${split}: ${cases.length} cases · model ${model} (thinking ${limits.thinkingLevel}) · prompt ${ELIGIBILITY_PROMPT_VERSION} · postprocess ${POSTPROCESS_VERSION}`,
   );
@@ -227,7 +268,7 @@ async function main(): Promise<void> {
 
   const remaining = jobs.filter(({ job }) => !cache.has(job.contentHash)).length;
   if (remaining > 0) {
-    reservePending(remaining);
+    await reservePending(remaining);
     console.log(
       `\nIncomplete: ${remaining} of ${cases.length} cases are still unclassified${stoppedByQuota ? " (daily quota)" : ""}. ` +
         "No report was written because partial metrics would mislead. Run the same command after the Pacific-midnight quota reset: finished cases come from the cache.",
@@ -235,7 +276,9 @@ async function main(): Promise<void> {
     process.exit(3);
   }
   // Every case has an answer: this run no longer holds the quota (classify may run again).
-  if (ledger.pendingEval() && (isThisRun || pending.length > 0)) ledger.clearPendingEval();
+  if ((await ledger.pendingEval()) && (isThisRun || pending.length > 0)) {
+    await ledger.clearPendingEval();
+  }
 
   const rows: EvalRow[] = [];
   const rawRows: EvalRow[] = [];

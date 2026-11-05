@@ -37,14 +37,14 @@ export class MeteredProvider implements LLMProvider {
     args: GenerateStructuredArgs<T>,
   ): Promise<GenerateStructuredResult<T>> {
     const shared = this.options.shared;
-    if (shared) this.limiter.syncUsedToday(shared.used(this.limiter.quotaDayKey));
+    if (shared) this.limiter.syncUsedToday(await shared.used(this.limiter.quotaDayKey));
     if (this.limiter.remainingToday <= 0) {
       throw new QuotaExhaustedError("local daily request limit reached");
     }
     const wait = this.limiter.msUntilNextSlot();
     if (wait > 0) await this.options.sleep(wait);
     this.limiter.record();
-    shared?.record(this.limiter.quotaDayKey);
+    await shared?.record(this.limiter.quotaDayKey);
     this.options.onRequest?.(this.limiter);
     return this.inner.generateStructured(args);
   }

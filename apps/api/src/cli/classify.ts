@@ -3,9 +3,8 @@
 import { readFileSync } from "node:fs";
 import {
   DEFAULT_CLASSIFY_MODEL,
-  DEFAULT_QUOTA_LEDGER_URL,
   ELIGIBILITY_PROMPT_VERSION,
-  FileQuotaLedger,
+  SqlQuotaLedger,
   GeminiProvider,
   POSTPROCESS_VERSION,
   parseLimits,
@@ -54,12 +53,13 @@ const lastBoardTokens = companiesFileSchema
 const { db, pool } = createDb();
 try {
   const key = { promptVersion: ELIGIBILITY_PROMPT_VERSION, model };
-  const ledger = new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL);
+  // The quota counter lives in the same database (llm_usage_daily + llm_eval_reservation), shared with the eval.
+  const ledger = new SqlQuotaLedger((text, params) => pool.query(text, params));
   const pending = await selectPendingJobs(db, key, args.limit, { lastBoardTokens });
   console.log(
     `Prompt ${key.promptVersion} · postprocess ${POSTPROCESS_VERSION} · model ${model} · ${pending.length} postings to classify`,
   );
-  const pendingEval = ledger.pendingEval();
+  const pendingEval = await ledger.pendingEval();
   if (pendingEval) {
     // The eval has priority on the shared daily quota (owner decision, 2026-11-04).
     console.log(

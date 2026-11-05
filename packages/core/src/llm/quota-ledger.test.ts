@@ -43,16 +43,16 @@ describe("FileQuotaLedger", () => {
     if (dir) rmSync(dir, { recursive: true, force: true });
   });
 
-  it("is shared by two instances (two processes) and keeps the pending-eval reservation", () => {
+  it("is shared by two instances (two processes) and keeps the pending-eval reservation", async () => {
     dir = mkdtempSync(join(tmpdir(), "rf-quota-"));
     const path = join(dir, "llm-quota.json");
     const evalSide = new FileQuotaLedger(path);
     const classifySide = new FileQuotaLedger(path);
-    evalSide.record("m", "2026-11-04");
-    classifySide.record("m", "2026-11-04");
-    expect(evalSide.used("m", "2026-11-04")).toBe(2);
+    await evalSide.record("m", "2026-11-04");
+    await classifySide.record("m", "2026-11-04");
+    expect(await evalSide.used("m", "2026-11-04")).toBe(2);
 
-    evalSide.setPendingEval({
+    await evalSide.setPendingEval({
       split: "test",
       model: "m",
       promptVersion: "eligibility-v4",
@@ -60,17 +60,17 @@ describe("FileQuotaLedger", () => {
       remaining: 144,
       since: "2026-11-04T22:00:00Z",
     });
-    expect(classifySide.pendingEval()?.remaining).toBe(144);
-    evalSide.clearPendingEval();
-    expect(classifySide.pendingEval()).toBeNull();
-    expect(classifySide.used("m", "2026-11-04")).toBe(2);
+    expect((await classifySide.pendingEval())?.remaining).toBe(144);
+    await evalSide.clearPendingEval();
+    expect(await classifySide.pendingEval()).toBeNull();
+    expect(await classifySide.used("m", "2026-11-04")).toBe(2);
   });
 
-  it("fails loudly on a corrupt file instead of resetting the count to 0", () => {
+  it("fails loudly on a corrupt file instead of resetting the count to 0", async () => {
     dir = mkdtempSync(join(tmpdir(), "rf-quota-"));
     const path = join(dir, "llm-quota.json");
     writeFileSync(path, "{ not json");
-    expect(() => new FileQuotaLedger(path).used("m", "2026-11-04")).toThrow();
+    await expect(new FileQuotaLedger(path).used("m", "2026-11-04")).rejects.toThrow();
   });
 });
 
@@ -78,8 +78,8 @@ describe("MeteredProvider with a shared counter", () => {
   it("counts requests made by another process against the daily limit", async () => {
     const now = new Date("2026-11-04T20:00:00Z"); // 2026-11-04 in Pacific time
     const ledger = new MemoryQuotaLedger();
-    ledger.record("m", "2026-11-04"); // the eval already spent one request today
-    ledger.record("m", "2026-11-04");
+    await ledger.record("m", "2026-11-04"); // the eval already spent two requests today
+    await ledger.record("m", "2026-11-04");
     const fake = new FakeLLMProvider([{ data: { n: 1 } }, { data: { n: 2 } }]);
     const metered = new MeteredProvider(
       fake,
@@ -87,7 +87,7 @@ describe("MeteredProvider with a shared counter", () => {
       { sleep: async () => undefined, shared: ledger.counterFor("m") },
     );
     await metered.generateStructured(args);
-    expect(ledger.used("m", "2026-11-04")).toBe(3);
+    expect(await ledger.used("m", "2026-11-04")).toBe(3);
     await expect(metered.generateStructured(args)).rejects.toBeInstanceOf(QuotaExhaustedError);
     expect(fake.callCount).toBe(1);
   });
