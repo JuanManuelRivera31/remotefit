@@ -92,7 +92,7 @@ async function withRetries(run: () => Promise<RawOutcome>): Promise<RawOutcome> 
  * production database (Neon) when the published pipeline is running, or the two will not see each other.
  */
 async function openLedger(): Promise<{ ledger: QuotaLedger; where: string; close: () => Promise<void> }> {
-  const url = process.env["QUOTA_DATABASE_URL"] ?? process.env["DATABASE_URL"];
+  const url = process.env["QUOTA_DATABASE_URL"] || process.env["DATABASE_URL"];
   if (!url) {
     return {
       ledger: new FileQuotaLedger(DEFAULT_QUOTA_LEDGER_URL),

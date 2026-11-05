@@ -1,0 +1,53 @@
+# Lint, typecheck, every test (database tests included, against a throwaway PostgreSQL) and a secret scan.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: remotefit
+          POSTGRES_PASSWORD: remotefit
+          POSTGRES_DB: remotefit_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U remotefit" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      # Throwaway service container: not a secret. The database tests refuse names that do not end in _test.
+      TEST_DATABASE_URL: postgres://remotefit:remotefit@localhost:5432/remotefit_test
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - name: Migrate the test database
+        run: npm run db:migrate
+        env:
+          DATABASE_URL: ${{ env.TEST_DATABASE_URL }}
+      - run: npm test
+
+  secrets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks (whole history, findings redacted)
+        run: docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:v8.28.0 git /repo --redact --no-banner --log-opts="--all"
