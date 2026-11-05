@@ -129,7 +129,8 @@ export const JobDetailSchema = JobSummarySchema.extend({
     model: z.string(),
     postprocessVersion: z.string().nullable(),
     status: z.string().nullable(),
-    classifiedAt: z.string(),
+    /** Null on the static site (the public file does not carry it). */
+    classifiedAt: z.string().nullable(),
   }),
 });
 export type JobDetail = z.infer<typeof JobDetailSchema>;
@@ -146,8 +147,12 @@ export const ApiStatusSchema = z.object({
     testSet: z.string().nullable(),
     precision: z.number().nullable(),
     recall: z.number().nullable(),
+    precisionCi: z.tuple([z.number(), z.number()]).nullable(),
+    recallCi: z.tuple([z.number(), z.number()]).nullable(),
   }),
   measuredCountries: z.array(z.string()),
+  /** When the published data was generated (static site); null when the API reads the database live. */
+  dataGeneratedAt: z.string().nullable(),
   /** Active postings that passed the pre-filter and still have no result for the classifier in use. */
   pendingClassification: z.number().int().nonnegative(),
 });

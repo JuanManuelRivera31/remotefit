@@ -1,0 +1,111 @@
+# The published site (S11, ADR 0007): once a day, ingest → prefilter → classify → export, then build the static site
+# and deploy it to GitHub Pages. USD 0: public-repo runners, Neon Free (no card) and the Gemini free tier.
+#
+# Secrets (Settings → Secrets and variables → Actions): DATABASE_URL (Neon) and GEMINI_API_KEY. Never in the code.
+# Variable PIPELINE_MODE: "full" (default) or "publish-only" (plan B: the pipeline runs on the owner's PC against the
+# same database, and GitHub only exports and publishes; no Gemini calls and no ATS requests from Actions).
+#
+# Logs are public: the pipeline prints counts and ids only (tested in apps/api/src/pipeline/run.db.test.ts).
+name: Daily pipeline and site
+
+on:
+  schedule:
+    # 09:17 UTC: after the Gemini quota reset (midnight Pacific = 08:00 UTC) and away from the busy top of the hour.
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "full (pipeline + publish) or publish-only (export the database as it is)"
+        type: choice
+        options: [full, publish-only]
+        default: full
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-pipeline
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: read
+      actions: write # only to re-enable this workflow (see the last step)
+    outputs:
+      configured: ${{ steps.check.outputs.configured }}
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      MODE: ${{ inputs.mode || vars.PIPELINE_MODE || 'full' }}
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+    steps:
+      - name: Check configuration (names only, never values)
+        id: check
+        run: |
+          missing=""
+          [ -n "$DATABASE_URL" ] || missing="$missing DATABASE_URL"
+          if [ "$MODE" = "full" ] && [ -z "$GEMINI_API_KEY" ]; then missing="$missing GEMINI_API_KEY"; fi
+          if [ -n "$missing" ]; then
+            echo "Not configured yet, missing secret(s):$missing. Nothing to do."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Mode: $MODE"
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.configured == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.configured == 'true'
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        if: steps.check.outputs.configured == 'true'
+      - run: npm run db:migrate
+        if: steps.check.outputs.configured == 'true'
+
+      - name: Pipeline (ingest, prefilter, classify, export)
+        if: steps.check.outputs.configured == 'true' && env.MODE == 'full'
+        run: npm run pipeline -- --out "$GITHUB_WORKSPACE/apps/web/public/data/jobs.json"
+      - name: Export only (plan B)
+        if: steps.check.outputs.configured == 'true' && env.MODE == 'publish-only'
+        run: npm run export -- --out "$GITHUB_WORKSPACE/apps/web/public/data/jobs.json"
+
+      - name: Build the static site
+        if: steps.check.outputs.configured == 'true'
+        run: npm run build:static
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.check.outputs.configured == 'true'
+        with:
+          path: apps/web/dist
+
+      # GitHub disables scheduled workflows after 60 days without repository activity. It does not document whether
+      # a bot commit or this call counts as activity, so this is a cheap extra, not a guarantee: the site also shows
+      # a "datos desactualizados" notice after 3 days, and the workflow can always be started by hand.
+      - name: Keep this scheduled workflow enabled (best effort)
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/daily.yml/enable" --silent
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.configured == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

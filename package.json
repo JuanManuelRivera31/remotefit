@@ -18,7 +18,10 @@
     "classify": "npm run classify -w apps/api --",
     "eval": "npm run eval -w packages/core --",
     "db:generate": "npm run db:generate -w apps/api",
-    "db:migrate": "npm run db:migrate -w apps/api"
+    "db:migrate": "npm run db:migrate -w apps/api",
+    "export": "npm run export -w apps/api --",
+    "pipeline": "npm run pipeline -w apps/api --",
+    "build:static": "npm run build:static -w apps/web"
   },
   "engines": {
     "node": ">=22"

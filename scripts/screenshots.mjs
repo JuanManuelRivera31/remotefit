@@ -1,6 +1,6 @@
 // Screenshots of the main views at phone (375 px) and tablet (768 px) widths, for review and the README.
-// Needs the app running (`npm run dev`) against a database with classified postings.
-// Usage: node scripts/screenshots.mjs [outDir]   (default docs/capturas)
+// Needs the app running: `npm run dev` (API mode) or a static build served with `vite preview` (static mode,
+// RF_WEB_URL=http://localhost:4173/remotefit). Usage: node scripts/screenshots.mjs [outDir]   (default docs/capturas)
 import { mkdirSync } from "node:fs";
 import { chromium } from "playwright";
 
@@ -8,10 +8,26 @@ const BASE = process.env.RF_WEB_URL ?? "http://localhost:5173";
 const outDir = process.argv[2] ?? "docs/capturas";
 const MAX_HEIGHT = 2400; // long lists are clipped: the review is about layout, not every card
 
-const api = async (path) => (await fetch(`${BASE}${path}`)).json();
-const list = await api("/api/jobs?country=CO");
-const grouped = list.items.find((job) => job.siblingCount > 3) ?? list.items[0];
-const single = list.items.find((job) => job.siblingCount === 0) ?? list.items[0];
+// Pick a vacancy with many postings and a single posting, from the API or, on the static site, from the public JSON.
+async function pick() {
+  const api = await fetch(`${BASE}/api/jobs?country=CO`).catch(() => null);
+  if (api?.ok && (api.headers.get("content-type") ?? "").includes("json")) {
+    const list = await api.json();
+    return {
+      grouped: list.items.find((job) => job.siblingCount > 3) ?? list.items[0],
+      single: list.items.find((job) => job.siblingCount === 0) ?? list.items[0],
+    };
+  }
+  const data = await (await fetch(`${BASE}/data/jobs.json`)).json();
+  const visible = data.jobs.filter((j) => ["latam_eligible", "worldwide"].includes(j.result.label));
+  const sizes = new Map();
+  for (const j of data.jobs) if (j.siblingGroup) sizes.set(j.siblingGroup, (sizes.get(j.siblingGroup) ?? 0) + 1);
+  return {
+    grouped: visible.find((j) => (sizes.get(j.siblingGroup) ?? 0) > 3) ?? visible[0],
+    single: visible.find((j) => !j.siblingGroup || sizes.get(j.siblingGroup) === 1) ?? visible[0],
+  };
+}
+const { grouped, single } = await pick();
 if (!grouped || !single) throw new Error("No postings to show: run ingest/prefilter/classify first.");
 
 const views = [
@@ -21,6 +37,7 @@ const views = [
   { name: "lista-sin-medir-y-sin-confirmar", path: "/?pais=MX&sin_confirmar=1" },
   { name: "detalle-vacante-con-hermanas", path: `/ofertas/${grouped.id}` },
   { name: "detalle-oferta", path: `/ofertas/${single.id}` },
+  { name: "metodo", path: "/metodo" },
 ];
 const widths = [
   { width: 375, height: 812 },

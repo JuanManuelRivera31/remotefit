@@ -3,7 +3,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import {
   ELIGIBILITY_PROMPT_VERSION,
   FakeLLMProvider,
-  MemoryQuotaLedger,
+  SqlQuotaLedger,
   QuotaExhaustedError,
   RateLimitError,
   parseLimits,
@@ -42,7 +42,7 @@ const answer = {
 };
 const ok: FakeStep = { data: answer };
 
-let ledger = new MemoryQuotaLedger();
+let ledger: SqlQuotaLedger;
 const base = {
   sleep: async () => undefined,
   limits,
@@ -60,14 +60,14 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
 
   const wipe = () =>
     connection.db.execute(
-      sql`truncate table eligibility_results, llm_usage_daily, fit_results, jobs, companies restart identity cascade`,
+      sql`truncate table eligibility_results, llm_usage_daily, llm_eval_reservation, fit_results, jobs, companies restart identity cascade`,
     );
 
   beforeAll(async () => {
     connection = await openTestDatabase(testDatabaseUrl ?? "");
   });
   beforeEach(async () => {
-    ledger = new MemoryQuotaLedger();
+    ledger = new SqlQuotaLedger((text, params) => connection.pool.query(text, params));
     await wipe();
     const [company] = await connection.db
       .insert(companies)
@@ -213,7 +213,7 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
 
   it("does not run while an eval is pending: no call, nothing written, everything stays pending", async () => {
     await seed([{ externalId: "1" }, { externalId: "2" }]);
-    ledger.setPendingEval({
+    await ledger.setPendingEval({
       split: "test",
       model: "model-a",
       promptVersion: "eligibility-v4",
@@ -236,7 +236,13 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
   it("counts against the same ledger the eval uses (one counter per model and day)", async () => {
     await seed([{ externalId: "1" }, { externalId: "2" }, { externalId: "3" }]);
     const now = new Date("2026-11-04T20:00:00Z");
-    for (let i = 0; i < 999; i += 1) ledger.record("model-a", "2026-11-04"); // the eval spent 999 of 1000
+    // The eval already spent 999 of the 1000 requests of the day (same counter row it writes).
+    await connection.db.insert(llmUsageDaily).values({
+      usageDate: "2026-11-04",
+      provider: "gemini",
+      model: "model-a",
+      requests: 999,
+    });
     const summary = await runClassify(connection.db, {
       ...base,
       now: () => now,
@@ -245,7 +251,7 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
     });
     expect(summary.classified).toBe(1);
     expect(summary.stopped?.reason).toBeDefined();
-    expect(ledger.used("model-a", "2026-11-04")).toBe(1000);
+    expect(await ledger.used("model-a", "2026-11-04")).toBe(1000);
   });
 
   it("classifies companies marked classifyLast after every other company, whatever their age", async () => {
@@ -299,6 +305,6 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
       .from(llmUsageDaily)
       .where(eq(llmUsageDaily.model, "model-a"));
     expect(usage?.requests).toBe(3);
-    expect(ledger.used("model-a", usage?.usageDate ?? "")).toBe(3);
+    expect(await ledger.used("model-a", usage?.usageDate ?? "")).toBe(3);
   });
 });

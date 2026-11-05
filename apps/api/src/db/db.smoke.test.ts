@@ -34,6 +34,7 @@ describe.skipIf(!testDatabaseUrl)("database smoke test", () => {
         "profiles",
         "fit_results",
         "llm_usage_daily",
+        "llm_eval_reservation",
       ]),
     );
   });

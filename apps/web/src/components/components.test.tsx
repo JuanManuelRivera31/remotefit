@@ -16,8 +16,11 @@ const status = (state: ApiStatus["acceptance"]["state"]): ApiStatus => ({
     testSet: null,
     precision: state === "not_accepted" ? null : 0.93,
     recall: null,
+    precisionCi: null,
+    recallCi: null,
   },
   measuredCountries: ["CO"],
+  dataGeneratedAt: null,
   pendingClassification: 0,
 });
 

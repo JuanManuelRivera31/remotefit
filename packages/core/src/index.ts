@@ -65,13 +65,19 @@ export {
   DEFAULT_QUOTA_LEDGER_URL,
   FileQuotaLedger,
   MemoryQuotaLedger,
-  QuotaLedger,
+  SqlQuotaLedger,
   emptyQuotaState,
   quotaStateSchema,
   usedOn,
   withRequest,
 } from "./llm/quota-ledger.js";
-export type { PendingEval, QuotaState, SharedQuotaCounter } from "./llm/quota-ledger.js";
+export type {
+  PendingEval,
+  QuotaLedger,
+  QuotaState,
+  SharedQuotaCounter,
+  SqlRunner,
+} from "./llm/quota-ledger.js";
 export { runClassifyQueue } from "./queue/classify-queue.js";
 export type {
   QueueEvent,

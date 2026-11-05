@@ -12,11 +12,11 @@ import {
   type QueueSummary,
 } from "@remotefit/core";
 import type { Db } from "../db/client.js";
-import { addUsage, createDbQueueStore, selectPendingJobs } from "./store.js";
+import { createDbQueueStore, selectPendingJobs } from "./store.js";
 
-/** The shared quota ledger (FileQuotaLedger in the CLI): one counter per model and Pacific day, plus the eval reservation. */
+/** The shared quota ledger (SqlQuotaLedger in the CLI): one counter per model and Pacific day, plus the eval reservation. */
 export interface ClassifyQuotaLedger {
-  pendingEval(): PendingEval | null;
+  pendingEval(): Promise<PendingEval | null>;
   counterFor(model: string): SharedQuotaCounter;
 }
 
@@ -71,7 +71,7 @@ export async function runClassify(
     order,
   );
 
-  const blockedByEval = options.ledger.pendingEval();
+  const blockedByEval = await options.ledger.pendingEval();
   if (blockedByEval) {
     // Nothing is sent: the pending eval keeps its share of the daily quota. Everything stays pending for the next run.
     const pendingAfter = (
@@ -95,14 +95,13 @@ export async function runClassify(
 
   const makeModel = (model: string) => {
     const limits = effectiveLimits(options.limits, model);
-    // The limit is enforced on the shared ledger (eval + classify); llm_usage_daily keeps the history with tokens.
+    // The limit is enforced on the shared ledger (eval + classify). With the SQL ledger its counter IS
+    // llm_usage_daily.requests, so requests are not added here again (tokens and 429s go through the queue store).
     const limiter = new RateLimiter({ rpm: limits.rpm, rpd: limits.rpd, now });
     const provider = new MeteredProvider(options.providerFor(model), limiter, {
       sleep: options.sleep,
       shared: options.ledger.counterFor(model),
       onRequest: (l) => {
-        // History row per quota day (not the gate). Awaited at the end of the run.
-        pendingWrites.push(addUsage(db, model, { requests: 1 }, now()));
         if (l.consumeWarning()) {
           options.onWarn?.(
             `${model}: 80 % of the daily request limit used (${l.usedTodayCount}/${limits.rpd})`,
@@ -112,7 +111,6 @@ export async function runClassify(
     });
     return { model, provider, thinkingLevel: limits.thinkingLevel };
   };
-  const pendingWrites: Promise<void>[] = [];
 
   const primary = makeModel(options.model);
   const fallback = options.fallbackModel ? makeModel(options.fallbackModel) : undefined;
@@ -130,7 +128,6 @@ export async function runClassify(
       ? { failuresBeforeStop: options.failuresBeforeStop }
       : {}),
   });
-  await Promise.all(pendingWrites);
 
   const pendingAfter = (
     await selectPendingJobs(db, {

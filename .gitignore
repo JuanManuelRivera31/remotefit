@@ -33,3 +33,6 @@ data/eval-v2-*
 # Shared LLM quota ledger (eval + classify): local state, not code
 data/llm-quota.json
 data/llm-quota.json.*.tmp
+
+# Public data of the static site (written by npm run export / pipeline; published by the workflow, never versioned)
+apps/web/public/data/

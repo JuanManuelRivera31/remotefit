@@ -114,8 +114,11 @@ export function jobsRouter(options: JobsRoutesOptions): Router {
         testSet: decision?.testSet ?? null,
         precision: decision?.precision ?? null,
         recall: decision?.recall ?? null,
+        precisionCi: decision?.precisionCi ?? null,
+        recallCi: decision?.recallCi ?? null,
       },
       measuredCountries: [...MEASURED_COUNTRIES],
+      dataGeneratedAt: null,
       pendingClassification: await countPendingClassification(db, classifier),
     };
     res.json(status);

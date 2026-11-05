@@ -84,6 +84,7 @@ Cada sesión es **una tarea pequeña y cerrada** que cabe en una conversación d
   Lista ordenada por encaje, filtros "aplicable desde mi país", "accesible para mi nivel" y antigüedad, indicador de vacantes de más de 180 días, una sola tarjeta por grupo de hermanas con su lista de países, detalle con la evidencia resaltada y el desglose del encaje, página de perfil. **Sin tracker:** no hay estados de postulación.
 
 - [ ] **S11 · Uso real + pulido** 👤
+  **Publicación a costo cero (plan aprobado el 2026-11-04, `docs/plan-s11.md`, ADR 0007): código hecho el 2026-11-04.** Incluye: historial reescrito, contador de cuota en PostgreSQL, `npm run pipeline` y `npm run export` con logs probados, modo estático de la web, página Método, CI y workflow diario. Falta: 👤 push forzado, Neon, secretos, visibilidad pública y GitHub Pages (`docs/despliegue.md`); después, la primera corrida y las 2 semanas de uso real de abajo.
   Correr la ingesta a diario durante 2 semanas, anotar errores en `docs/notas-de-uso.md`, corregir los más graves. Cada semana, revisar las empresas candidatas que proponga el scan y aprobar las que entren a `data/companies.json` (ADR 0002). Sumar al conjunto de prueba hasta llegar a 60 aplicables. README de portafolio con capturas, diagrama y resultados del eval.
 
 ## Pendientes para una futura `eligibility-v5` (no gastar cuota hasta abrir esa iteración)

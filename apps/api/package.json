@@ -12,7 +12,9 @@
     "prefilter": "tsx src/cli/prefilter.ts",
     "classify": "tsx src/cli/classify.ts",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "tsx src/db/migrate.ts"
+    "db:migrate": "tsx src/db/migrate.ts",
+    "export": "tsx src/cli/export.ts",
+    "pipeline": "tsx src/cli/pipeline.ts"
   },
   "dependencies": {
     "@remotefit/core": "*",

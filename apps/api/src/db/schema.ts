@@ -1,5 +1,6 @@
 import {
   boolean,
+  check,
   date,
   index,
   integer,
@@ -12,6 +13,7 @@ import {
   timestamp,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
 // Mirrors docs/03-modelo-de-datos.md. Columns are snake_case in the database, camelCase here.
 const timestampTz = (name: string) => timestamp(name, { withTimezone: true });
@@ -156,4 +158,16 @@ export const llmUsageDaily = pgTable(
     equivalentCostUsd: numeric("equivalent_cost_usd").notNull().default("0"),
   },
   (table) => [primaryKey({ columns: [table.usageDate, table.provider, table.model] })],
+);
+
+// S11: the "pending eval" reservation of the shared quota ledger (SqlQuotaLedger). A single row (id = 1) while an eval
+// run holds priority on the daily quota; classify does not start while it exists.
+export const llmEvalReservation = pgTable(
+  "llm_eval_reservation",
+  {
+    id: integer("id").primaryKey(),
+    data: jsonb("data").$type<unknown>().notNull(),
+    updatedAt: timestampTz("updated_at").notNull().defaultNow(),
+  },
+  (table) => [check("llm_eval_reservation_single_row", sql`${table.id} = 1`)],
 );
