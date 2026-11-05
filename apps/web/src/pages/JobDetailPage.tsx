@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link, useParams, useSearchParams } from "react-router";
 import { ApiRequestError, fetchJob } from "../api.js";
 import { Excerpt } from "../components/Excerpt.js";
+import { GroupCountries } from "../components/JobCard.js";
 import { SENIORITY_NAMES, ageText, dateText, eligibilityText } from "../format.js";
 import { countryName, filtersFromParams, paramsFromFilters } from "../filters.js";
 
@@ -81,22 +82,32 @@ export function JobDetailPage() {
           {job.data.siblings.length > 0 && (
             <section>
               <h2 className="text-sm font-semibold text-slate-900">
-                La misma vacante en otras ubicaciones
+                La misma vacante en otras ubicaciones ({job.data.siblings.length})
               </h2>
-              <ul className="mt-1 list-disc pl-5 text-sm">
-                {job.data.siblings.map((s) => (
-                  <li key={s.id}>
-                    <a
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sky-700 hover:underline"
-                    >
-                      {s.location ?? "Sin ubicación"} ↗
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <GroupCountries job={job.data} country={filters.country} />
+              <details className="mt-1 text-sm">
+                <summary className="cursor-pointer text-sky-700">Ver cada publicación</summary>
+                <ul className="mt-1 list-disc pl-5">
+                  {job.data.siblings.map((s) => (
+                    <li key={s.id}>
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sky-700 hover:underline"
+                      >
+                        {s.location ?? "Sin ubicación"} ↗
+                      </a>
+                      {!s.visible && (
+                        <span className="text-xs text-slate-500">
+                          {" "}
+                          · no aplica desde {countryName(filters.country)}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </details>
             </section>
           )}
 

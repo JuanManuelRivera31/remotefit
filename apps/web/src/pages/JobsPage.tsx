@@ -72,7 +72,7 @@ export function JobsPage() {
           <ul className="space-y-3">
             {data.items.map((job) => (
               <li key={job.id}>
-                <JobCard job={job} detailHref={detailHref(job.id)} />
+                <JobCard job={job} detailHref={detailHref(job.id)} country={filters.country} />
               </li>
             ))}
           </ul>

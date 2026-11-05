@@ -4,6 +4,7 @@ import {
   ageInDays,
   excerptAround,
   listJobs,
+  postingCountries,
   summarizeOne,
   verdictFor,
   type ListingResult,
@@ -96,16 +97,38 @@ describe("excerptAround", () => {
 });
 
 describe("listJobs", () => {
-  it("shows one card per sibling group, newest first, with the other locations", () => {
+  it("shows one card per vacancy, led by the posting in the user's country, with every country of the vacancy", () => {
     const rows = [
-      row({ id: 1, siblingGroup: "g1", locationRaw: "Colombia", postedAt: daysAgo(5) }),
-      row({ id: 2, siblingGroup: "g1", locationRaw: "Mexico", postedAt: daysAgo(1) }),
-      row({ id: 3, postedAt: daysAgo(2) }),
+      row({ id: 1, siblingGroup: "g1", locationRaw: "Bogotá, Colombia", postedAt: daysAgo(5) }),
+      row({ id: 2, siblingGroup: "g1", locationRaw: "Lima, Peru", postedAt: daysAgo(1) }),
+      row({ id: 3, postedAt: daysAgo(2), locationRaw: "Remote - LATAM" }),
     ];
     const page = listJobs(rows, query(), now);
-    expect(page.items.map((i) => i.id)).toEqual([2, 3]);
-    expect(page.items[0]).toMatchObject({ siblingCount: 1, siblingLocations: ["Colombia"] });
+    expect(page.items.map((i) => i.id)).toEqual([3, 1]);
+    expect(page.items[1]).toMatchObject({
+      siblingCount: 1,
+      siblingLocations: ["Lima, Peru"],
+      groupCountries: ["CO", "PE"],
+    });
     expect(page.total).toBe(2);
+  });
+
+  it("keeps a vacancy whose only visible posting is for the user's country and lists the others' countries", () => {
+    const sezzleLike = (id: number, location: string, countries: string[]) =>
+      row({
+        id,
+        siblingGroup: "g2",
+        locationRaw: location,
+        result: result({ label: "country_specific", countries }),
+      });
+    const rows = [
+      sezzleLike(5, "Mexico, Remote", ["MX"]),
+      sezzleLike(6, "Colombia, Remote", ["CO"]),
+      row({ id: 7, siblingGroup: "g2", locationRaw: "US Remote", result: result({ label: "us_only" }) }),
+    ];
+    const page = listJobs(rows, query(), now);
+    expect(page.items).toHaveLength(1);
+    expect(page.items[0]).toMatchObject({ id: 6, siblingCount: 2, groupCountries: ["CO", "MX", "US"] });
   });
 
   it("hides unconfirmed postings unless asked, and puts them after the applicable ones", () => {
@@ -155,6 +178,19 @@ describe("listJobs", () => {
     expect(page.total).toBe(5);
     expect(page.items[0]?.evidence).toHaveLength(2);
     expect(page.items[0]?.evidence[0]?.length).toBe(160);
+  });
+});
+
+describe("postingCountries", () => {
+  it("reads countries from the ATS location, or from a country_specific result when the location names none", () => {
+    expect(postingCountries(row({ locationRaw: "Sucre, Bolivia" }))).toEqual(["BO"]);
+    expect(postingCountries(row({ locationRaw: "Brazil | Latin America [Remote]" }))).toEqual(["BR"]);
+    expect(
+      postingCountries(
+        row({ locationRaw: "Remote", result: result({ label: "country_specific", countries: ["AR"] }) }),
+      ),
+    ).toEqual(["AR"]);
+    expect(postingCountries(row({ locationRaw: "Remote - LATAM" }))).toEqual([]);
   });
 });
 

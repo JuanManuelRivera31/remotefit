@@ -6,6 +6,7 @@ export {
   excerptAround,
   fold,
   listJobs,
+  postingCountries,
   seniorityOf,
   summarizeOne,
   trimEvidence,

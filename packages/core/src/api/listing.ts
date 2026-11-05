@@ -1,6 +1,7 @@
 // Pure listing logic for S9: which postings a user from a country sees, grouped and filtered. No I/O.
 // The API loads rows from the database and calls these functions; the same `isApplicable` as the eval decides.
 import { isApplicable } from "../eligibility/applicable.js";
+import { parseLocationSegments } from "../eligibility/location-rules.js";
 import type { Eligibility, EligibilityLabel } from "../eligibility/schema.js";
 import {
   STALE_AFTER_DAYS,
@@ -120,6 +121,16 @@ export function excerptAround(text: string, quote: string, radius = 200): Excerp
   };
 }
 
+/**
+ * Countries a posting is for, read from its ATS location ("Lima, Peru" -> PE); when the location names none, the
+ * countries of a country_specific result. Used to list the countries of a vacancy, not to decide eligibility.
+ */
+export function postingCountries(row: Pick<ListingRow, "locationRaw" | "result">): string[] {
+  const fromLocation = parseLocationSegments(row.locationRaw ?? "").flatMap((s) => s.countries);
+  if (fromLocation.length > 0) return [...new Set(fromLocation)];
+  return row.result.label === "country_specific" ? [...row.result.countries] : [];
+}
+
 interface Visible {
   row: ListingRow;
   verdict: Verdict;
@@ -129,9 +140,11 @@ interface Visible {
 const groupKey = (row: ListingRow): string =>
   row.siblingGroup ? `g:${row.siblingGroup}` : `j:${row.id}`;
 
-function toSummary(item: Visible, siblings: readonly ListingRow[]): JobSummary {
+/** `members` is the whole vacancy (this posting included), visible for the user's country or not. */
+function toSummary(item: Visible, members: readonly ListingRow[]): JobSummary {
   const { row, verdict, ageDays } = item;
-  const others = siblings.filter((s) => s.id !== row.id);
+  const others = members.filter((s) => s.id !== row.id);
+  const groupCountries = [...new Set([row, ...others].flatMap(postingCountries))].sort();
   return {
     id: row.id,
     title: row.title,
@@ -151,6 +164,7 @@ function toSummary(item: Visible, siblings: readonly ListingRow[]): JobSummary {
     siblingLocations: [
       ...new Set(others.map((s) => s.locationRaw).filter((l): l is string => !!l)),
     ],
+    groupCountries,
   };
 }
 
@@ -179,27 +193,38 @@ function matches(item: Visible, query: JobsQuery): boolean {
  * (the newest visible posting represents the group), filtered, applicable first and then newest first, paginated.
  */
 export function listJobs(rows: readonly ListingRow[], query: JobsQuery, now: Date): JobsPage {
-  const visible: Visible[] = [];
+  // A vacancy (sibling group) is one card. It is shown when at least one of its postings is visible for the country;
+  // its country list covers every posting of the group, so the user sees where else the same role is open.
+  const groups = new Map<string, ListingRow[]>();
   for (const row of rows) {
-    const verdict = verdictFor(row.result, query.country);
-    if (verdict === null) continue;
-    visible.push({ row, verdict, ageDays: ageInDays(row.postedAt, row.firstSeenAt, now) });
+    const key = groupKey(row);
+    groups.set(key, [...(groups.get(key) ?? []), row]);
   }
-
-  // Siblings are grouped among the postings visible for this country: a sibling for another country is not shown.
-  const groups = new Map<string, Visible[]>();
-  for (const item of visible) {
-    const key = groupKey(item.row);
-    groups.set(key, [...(groups.get(key) ?? []), item]);
-  }
+  const inUserCountry = (row: ListingRow) => postingCountries(row).includes(query.country);
+  // Cards: applicable first, then newest first.
   const order = (a: Visible, b: Visible): number =>
     (a.verdict === b.verdict ? 0 : a.verdict === "applicable" ? -1 : 1) ||
     a.ageDays - b.ageDays ||
     b.row.id - a.row.id;
-  const representatives = [...groups.values()].map((members) => {
-    const sorted = [...members].sort(order);
-    return { head: sorted[0] as Visible, members: sorted.map((m) => m.row) };
-  });
+  // Inside a vacancy: the posting located in the user's country leads (its link is the one to apply to).
+  const headOrder = (a: Visible, b: Visible): number =>
+    (a.verdict === b.verdict ? 0 : a.verdict === "applicable" ? -1 : 1) ||
+    Number(inUserCountry(b.row)) - Number(inUserCountry(a.row)) ||
+    order(a, b);
+
+  const representatives: { head: Visible; members: ListingRow[] }[] = [];
+  for (const members of groups.values()) {
+    const visible: Visible[] = [];
+    for (const row of members) {
+      const verdict = verdictFor(row.result, query.country);
+      if (verdict !== null) {
+        visible.push({ row, verdict, ageDays: ageInDays(row.postedAt, row.firstSeenAt, now) });
+      }
+    }
+    // The head is the best visible posting: applicable, located in the user's country, then the newest.
+    const head = visible.sort(headOrder)[0];
+    if (head) representatives.push({ head, members });
+  }
 
   const counts = { applicable: 0, unconfirmed: 0 };
   for (const { head } of representatives) counts[head.verdict] += 1;
@@ -225,7 +250,7 @@ export function listJobs(rows: readonly ListingRow[], query: JobsQuery, now: Dat
   };
 }
 
-/** Summary of one posting for the detail view; null when it is not visible for that country. */
+/** Summary of one posting for the detail view (its whole vacancy as siblings); null when not visible for the country. */
 export function summarizeOne(
   row: ListingRow,
   siblings: readonly ListingRow[],
@@ -234,9 +259,8 @@ export function summarizeOne(
 ): JobSummary | null {
   const verdict = verdictFor(row.result, country);
   if (verdict === null) return null;
-  const visibleSiblings = siblings.filter((s) => verdictFor(s.result, country) !== null);
   return toSummary({ row, verdict, ageDays: ageInDays(row.postedAt, row.firstSeenAt, now) }, [
     row,
-    ...visibleSiblings.filter((s) => s.id !== row.id),
+    ...siblings.filter((s) => s.id !== row.id),
   ]);
 }
