@@ -30,6 +30,8 @@ export interface ClassifyRunOptions {
   limits: LlmLimitsConfig;
   /** Shared with `npm run eval`. The eval has priority: while one is pending, classify makes no call. */
   ledger: ClassifyQuotaLedger;
+  /** Board tokens classified after every other company (`classifyLast` in data/companies.json). */
+  lastBoardTokens?: readonly string[];
   /** Maximum postings to classify in this run (a manual cap while the pipeline is young). */
   limit?: number;
   sleep: (ms: number) => Promise<void>;
@@ -61,10 +63,12 @@ export async function runClassify(
   options: ClassifyRunOptions,
 ): Promise<ClassifyRunSummary> {
   const now = options.now ?? (() => new Date());
+  const order = { lastBoardTokens: options.lastBoardTokens ?? [] };
   const pending = await selectPendingJobs(
     db,
     { promptVersion: ELIGIBILITY_PROMPT_VERSION, model: options.model },
     options.limit,
+    order,
   );
 
   const blockedByEval = options.ledger.pendingEval();

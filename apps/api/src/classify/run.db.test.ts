@@ -248,6 +248,38 @@ describe.skipIf(!testDatabaseUrl)("runClassify against PostgreSQL", () => {
     expect(ledger.used("model-a", "2026-11-04")).toBe(1000);
   });
 
+  it("classifies companies marked classifyLast after every other company, whatever their age", async () => {
+    const [noisy] = await connection.db
+      .insert(companies)
+      .values({ name: "NoisyCo", ats: "lever", boardToken: "noisyco" })
+      .returning({ id: companies.id });
+    // The noisy board's posting is the newest one: without the priority it would go first.
+    await seed([{ externalId: "old" }]);
+    await connection.db.insert(jobs).values({
+      companyId: noisy?.id ?? 0,
+      source: "lever",
+      externalId: "noisy-new",
+      title: "Software Engineer",
+      locationRaw: "Colombia, Remote",
+      url: "https://example.test/noisy",
+      descriptionText: "Fully remote role.",
+      contentHash: "hash-noisy",
+      firstSeenAt: new Date(Date.now() + 60_000),
+      prefilterVersion: "prefilter-v1",
+      prefilterOutcome: "pass",
+    });
+    const summary = await runClassify(connection.db, {
+      ...base,
+      model: "model-a",
+      limit: 1,
+      lastBoardTokens: ["noisyco"],
+      providerFor: () => new FakeLLMProvider([ok]),
+    });
+    expect(summary.classified).toBe(1);
+    const stored = await results();
+    expect(stored.map((r) => r.contentHash)).toEqual(["hash-old"]);
+  });
+
   it("respects --limit and reuses the requests already counted today", async () => {
     await seed([{ externalId: "1" }, { externalId: "2" }, { externalId: "3" }]);
     const first = await runClassify(connection.db, {
