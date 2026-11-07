@@ -34,14 +34,22 @@ Las ramas locales viejas no se suben: solo se empuja `main`. Respaldo completo p
 
 ### Copiar a Neon lo que ya tienes (opcional, recomendado)
 
-Así no pierdes las 318 clasificaciones ni gastas cuota repitiéndolas. Desde la terminal de Claude Code, con Docker encendido:
+Así no pierdes las 318 clasificaciones ni gastas cuota repitiéndolas. Con Docker encendido (`docker start remotefit-db-1`), en **una ventana de PowerShell aparte** (no en la de Claude Code: la URL no debe pasar por el chat), desde la carpeta del repo:
 
-```
-! docker exec remotefit-db-1 pg_dump -U remotefit -d remotefit --no-owner --no-privileges -Fc -f /tmp/remotefit.dump
-! docker exec -it remotefit-db-1 sh -c 'read -s -p "URL de Neon: " U; echo; pg_restore --no-owner --no-privileges -d "$U" /tmp/remotefit.dump'
+```powershell
+docker cp scripts/neon-restore.sh remotefit-db-1:/tmp/neon-restore.sh
+docker exec -it remotefit-db-1 bash /tmp/neon-restore.sh
 ```
 
-El segundo comando te pide la URL sin mostrarla en pantalla. Si prefieres empezar vacío, sáltalo: el primer run hace las migraciones e ingiere todo, pero tardará unos 5 días de cuota en clasificar el atraso.
+El script ([`scripts/neon-restore.sh`](../scripts/neon-restore.sh)) pide la URL de Neon sin mostrarla (pega la de *Connect*, con o sin `-pooler`), se niega si Neon ya tiene tablas, respalda la base local, la restaura y muestra los conteos local | Neon lado a lado: deben coincidir. Hecho el 2026-11-07: 20 empresas, 2250 ofertas, 318 clasificaciones, 5 migraciones.
+
+Por qué un script y no un comando de una línea (lo que falló la primera vez):
+
+- **Comillas:** PowerShell 5.1 les quita las comillas dobles a los argumentos de programas externos, así que un `sh -c '... "..." ...'` llega roto al contenedor.
+- **`read -s`:** el `sh` de la imagen de Postgres (dash) no lo soporta; el script corre con `bash`.
+- **Pooler:** `pg_restore` debe usar la conexión **directa**. A través del pooler (PgBouncer en modo transacción) su `search_path` vacío se queda en conexiones compartidas y las consultas siguientes no encuentran las tablas. El script quita `-pooler` del host por ti. El cron y la app sí usan la URL con `-pooler`.
+
+Si prefieres empezar vacío, sáltalo: el primer run hace las migraciones e ingiere todo, pero tardará unos 5 días de cuota en clasificar el atraso.
 
 ## 2. Secretos en GitHub
 
