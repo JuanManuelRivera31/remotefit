@@ -2,18 +2,29 @@
 
 Arquitectura y motivos: ADR 0007. Aquí van solo los pasos. Ninguno pide tarjeta. Los valores secretos los pegas tú, nunca van en el código ni en el chat.
 
-## 0. Antes de publicar: subir el historial reescrito (lo haces tú)
+## 0. Antes de publicar: subir el historial reescrito a un repo nuevo
 
-El historial se reescribió el 2026-11-04: fixtures sintéticos y autor con el correo `noreply`. El `.claude/settings.json` del proyecto le prohíbe a Claude hacer `git push --force`, así que este paso es tuyo. En la terminal de Claude Code:
+El historial se reescribió el 2026-11-04: fixtures sintéticos y autor con el correo `noreply`. **No se usa `git push --force`** sobre el repo existente: la vista de Actividad de GitHub enlaza los commits anteriores a un push forzado y quedarían visibles al hacer público el repo. En su lugar se sube a un repo nuevo y vacío (hecho el 2026-11-05):
 
-```
-! git push --force origin main
-! git push origin --delete feat/s4-ingest
-```
+1. En GitHub (lo haces tú): renombrar el repo viejo a `remotefit-archivo` y dejarlo **privado**. Crear un repo nuevo llamado `remotefit`, vacío (sin README, licencia ni `.gitignore`).
+2. Comprobar que `origin` apunta al repo nuevo y que está vacío:
+   ```
+   git remote -v                 # origin -> https://github.com/JuanManuelRivera31/remotefit.git
+   git ls-remote origin          # sin salida = repo vacío
+   ```
+3. Limpiar las referencias de seguimiento que quedaron del repo viejo y hacer un push normal:
+   ```
+   git fetch --prune origin
+   git push -u origin main
+   ```
+4. Verificar que el remoto solo tiene `main` y que coincide con el HEAD local:
+   ```
+   git rev-parse HEAD
+   git ls-remote origin          # solo HEAD y refs/heads/main, mismo SHA
+   ```
+   Mientras el repo sea privado, la API pública (`https://api.github.com/repos/JuanManuelRivera31/remotefit/branches`) responde `Not Found`; después de hacerlo público sirve como segunda comprobación.
 
-La segunda línea borra la única rama remota vieja, que todavía tiene el historial anterior. Respaldo completo previo: `C:\remotefit-respaldo-20261104\remotefit-respaldo-20261104.bundle` (se restaura con `git clone C:\remotefit-respaldo-20261104\remotefit-respaldo-20261104.bundle`).
-
-Nota: GitHub puede conservar un tiempo los commits viejos si alguien conoce su SHA exacto. No hay forks ni PRs que los referencien. Si quieres purgarlos del todo, se le pide a GitHub Support.
+Las ramas locales viejas no se suben: solo se empuja `main`. Respaldo completo previo: `C:\remotefit-respaldo-20261104\remotefit-respaldo-20261104.bundle` (se restaura con `git clone C:\remotefit-respaldo-20261104\remotefit-respaldo-20261104.bundle`); el historial anterior también sigue en `remotefit-archivo`, que no debe hacerse público.
 
 ## 1. Base de datos en Neon (Free, sin tarjeta)
 
