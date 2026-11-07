@@ -2,6 +2,58 @@
 
 La entrada más reciente va arriba. La skill `/cierre-de-sesion` la actualiza al final de cada sesión.
 
+## 2026-11-07 · S11 (publicación): desplegado y en línea; siguiente sesión, S8 (rama `docs/neon-restore-script`, unida a main y con push)
+
+**Sitio en vivo:** https://juanmanuelrivera31.github.io/remotefit/
+
+- **Repo nuevo en vez de push forzado** (2026-11-05):
+  - El repo viejo pasó a `remotefit-archivo` y es privado; **no debe hacerse público**.
+  - El historial reescrito se subió con un push normal a `remotefit`, que estaba vacío.
+  - Verificado con `ls-remote` y con la API pública: solo existe `main` y su SHA coincide con el local.
+  - Antes de publicarlo se auditaron el árbol y el historial completo: autor solo `noreply`, sin claves reales, sin `.env`, `profile.json` ni etiquetas del eval, y ningún archivo de más de 1 MB.
+- **Neon:**
+  - Proyecto `remotefit`, en AWS us-east-1, con PostgreSQL 17.
+  - Se copió la base local: 20 empresas, 2250 ofertas, 318 clasificaciones y 5 migraciones, con conteos verificados. `profiles` iba vacía, así que no se copió ningún dato personal.
+  - Incidente: la URL con contraseña se pegó en el chat. Se pidió reiniciar la contraseña. **Pendiente de confirmar** que se hizo y que el secreto `DATABASE_URL` tiene la URL nueva.
+- **Restauración:** el comando de una línea de la guía falló de tres formas:
+  - PowerShell 5.1 quita las comillas internas;
+  - el `sh` de la imagen no soporta `read -s`;
+  - `pg_restore` por el pooler deja `search_path=''` pegado en conexiones compartidas.
+
+  Se reemplazó por `scripts/neon-restore.sh`, más `.gitattributes` con `*.sh eol=lf`. El script se probó contra una base local desechable: restaura con destino vacío y se niega si ya hay tablas.
+- **GitHub:** secretos `DATABASE_URL` (con `-pooler`) y `GEMINI_API_KEY`, Pages con fuente *GitHub Actions* y repo público.
+- **Primera corrida manual**, el 2026-11-07 a las 06:18 UTC: `success` en 36 minutos.
+  - Se publicaron 550 ofertas, con 1123 pendientes de clasificar que se irán clasificando con la cuota diaria.
+  - El JSON se revisó: sin correos ni secretos.
+  - La corrida programada del 2026-11-06, anterior a los secretos, se saltó todo por diseño.
+- **Pendientes:**
+  - Agregar `QUOTA_DATABASE_URL` a tu `.env` local antes de correr un eval.
+  - Decidir la propuesta de reglas `deny` ampliadas para `.claude/settings.json`: variantes de `git reset --hard` y de push forzado, `--delete`, `branch -D`. Está propuesta en el chat del 2026-11-05 y no se ha aplicado.
+- **Siguiente:** correr `/siguiente-tarea` para la **S8 · Perfil + puntaje de encaje**, solo local. Lo que falta de la S11 (dos semanas de uso real, `docs/notas-de-uso.md`, README con capturas) avanza en paralelo mientras corre el cron.
+
+### Por qué las ofertas todavía no están personalizadas (respuesta del 2026-11-07)
+
+El MVP no está terminado al 100%. Faltan la **S8** y el resto de la **S11**.
+
+Hoy los resultados **no tienen relación con tu CV**. Salen de:
+1. **El clasificador**: decide desde qué países se puede aplicar a cada oferta. Es la parte con IA.
+2. **Los filtros** que elige el usuario: país, antigüedad, empresa, texto.
+
+**Cómo será la personalización (S8):** no se sube el CV como documento. Se llena un **perfil estructurado** en `data/profile.json` (país, nivel, años, stack, inglés), a partir de la plantilla `data/profile.example.json`. Unas reglas deterministas lo comparan con cada oferta y muestran qué sube o baja el puntaje. Hay dos motivos para hacerlo así:
+- **Privacidad.** Leer un CV en PDF requeriría un LLM, y está prohibido mandar datos personales a la capa gratuita de Gemini. El perfil no sale de tu PC: `profile.json` está en `.gitignore` y en la lista `deny` de Claude, así que lo llenas tú y Claude nunca lo lee.
+- **Explicabilidad.** Las reglas dicen *por qué* encaja una oferta ("pide React y lo tienes; pide 5 años y tienes 3"). Un LLM sería una caja negra.
+
+**El sitio público nunca usa tu perfil:** su JSON es el mismo para todos. La personalización vive en la versión local (`npm run dev` más `npm run score`). Queda una idea a futuro, que cambiaría el alcance y por eso requiere tu decisión: calcular el encaje **en el navegador** con un perfil guardado ahí, porque las reglas son puras y no usan LLM.
+
+**Lo que se imaginaba al principio** era que cada usuario subiera su CV y la lista se armara sola. Está previsto en versiones posteriores: **v0.2** "CV y carta adaptados", con su propio ADR por los datos personales, y **v0.4** multiusuario con autenticación. El MVP se recortó a propósito para que funcione primero para una persona.
+
+**Uso recomendado cuando exista el encaje:**
+- Unos 15 minutos al día para revisar las 3–5 ofertas con mejor encaje.
+- Para cada una, adaptar el CV y escribir 3–4 frases específicas para la empresa.
+- Anotar los errores del clasificador en `docs/notas-de-uso.md`.
+
+**Límites:** Claude no envía postulaciones por ti, porque lo prohíbe CLAUDE.md. Sí puede ayudarte, si tú decides compartir tus datos en esa conversación, a adaptar el CV a una oferta concreta, redactar cartas y preparar entrevistas.
+
 ## 2026-11-05 · S11 (publicación a costo cero): historial reescrito y código completo; faltan tus pasos (push forzado, Neon, secretos, Pages) (rama `feat/s11-publishing`, unida a main en local)
 - **Respaldo previo:** `C:\remotefit-respaldo-20261104\remotefit-respaldo-20261104.bundle` (1 MB). Contiene las 21 referencias, incluida `refs/original` de la reescritura anterior, y 96 commits. Lo restauré en un repo vacío y `fsck` salió limpio. Windows no deja crear archivos en la raíz `C:\` sin ser administrador, así que va dentro de una carpeta con ese nombre.
 - **Reescritura con `git filter-repo` 2.47** (en Docker, sobre una copia espejo):
